@@ -5,5 +5,3 @@ class Mozo(Empleado):
 
     class Meta:
         app_label = 'moduloLogin'
-
-
