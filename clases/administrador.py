@@ -1,21 +1,16 @@
-from django.db import models
 from .empleado import Empleado
 
 class Administrador(Empleado):
-    #cantidad_empleados_contratados = models.IntegerField(default=0)
-    #cantidad_fiestas_organizadas = models.IntegerField(default=0)
-
-    class Meta:
-        app_label = 'moduloLogin'
-
     @property
     def cantidad_empleados_contratados(self):
         from .contratacion import Contratacion
-        # Asumimos que tienes un modelo Contratacion con un campo administrador
-        return Contratacion.objects.filter(administrador=self).count()
+        return Contratacion.objects.filter(_administrador=self).count()
 
     def __str__(self):
         return f"{self.nombre} {self.apellido}"
+    
+    class Meta:
+        app_label = 'moduloLogin'
 
    # @property
     #def cantidad_fiestas_organizadas(self):
