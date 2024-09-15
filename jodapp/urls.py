@@ -21,9 +21,10 @@ from django.urls import path
 #    path('admin/', admin.site.urls),
 #]
 
-
+from modulo_evento import views
 from moduloLogin.admin import admin_site 
 
 urlpatterns = [
     path('', admin_site.urls),
+    path('crear/', views.crear_evento, name='crear_evento'),
 ]

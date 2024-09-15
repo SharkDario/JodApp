@@ -41,8 +41,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django_admin_geomap',
     'phonenumber_field',
+    'easy_maps',
     'moduloLogin',
+    'modulo_stock',
+    'cities_light',
+    'mapbox_location_field',
+    'modulo_evento',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +134,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOCATION_FIELD = {
+    'provider.openstreetmap.max_zoom': 18,
+}
+
+MAPBOX_KEY = 'HhZs7tN2CwC4JrhbLLTL'
+EASY_MAPS_GOOGLE_KEY = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ___0123456789'
