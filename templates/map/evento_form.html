@@ -1,0 +1,37 @@
+<!-- templates/map/evento_form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleccionar ubicación</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+    <h1>Seleccionar ubicación para el evento</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div id="map" style="height: 400px;"></div>
+        <input id="lat" name="latitud" type="text" value="{{ form.latitud.value }}">
+        <input id="lng" name="longitud" type="text" value="{{ form.longitud.value }}">
+        <button type="submit">Guardar</button>
+    </form>
+
+    <script>
+        var map = L.map('map').setView([-34.6118, -58.4173], 13);  // Coordenadas iniciales
+        L.tileLayer('https://api.maptiler.com/maps/basic/{z}/{x}/{y}.png?key=HhZs7tN2CwC4JrhbLLTL').addTo(map);
+
+        var marker = L.marker([-34.6118, -58.4173]).addTo(map);  // Coordenadas iniciales
+
+        map.on('click', function(e) {
+            var lat = e.latlng.lat;
+            var lng = e.latlng.lng;
+            document.getElementById('lat').value = lat;
+            document.getElementById('lng').value = lng;
+            marker.setLatLng([lat, lng]);
+        });
+    </script>
+</body>
+</html>

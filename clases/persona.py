@@ -2,12 +2,13 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Persona(models.Model):
-    _user = models.OneToOneField(User, on_delete=models.CASCADE)
-    _dni = models.CharField(max_length=20, unique=True)
-    _cuil = models.CharField(max_length=20, unique=True)
-    _nombre = models.CharField(max_length=100)
-    _apellido = models.CharField(max_length=100)
-    _fecha_nacimiento = models.DateField()
+    #PBKDF2 (Password-Based Key Derivation Function 2) con un SHA256 hash
+    _user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name="Usuario")
+    _dni = models.CharField(max_length=20, unique=True, verbose_name="DNI")
+    _cuil = models.CharField(max_length=20, unique=True, verbose_name="CUIL")
+    _nombre = models.CharField(max_length=100, verbose_name="Nombre")
+    _apellido = models.CharField(max_length=100, verbose_name="Apellido")
+    _fecha_nacimiento = models.DateField(verbose_name="Fecha de nacimiento")
 
     @property
     def user(self):
@@ -62,3 +63,5 @@ class Persona(models.Model):
     
     class Meta:
         app_label = 'moduloLogin'
+        verbose_name = "Persona"
+        verbose_name_plural = "Personas"
