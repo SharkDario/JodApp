@@ -2,13 +2,12 @@ from django.db import models
 from .persona import Persona
 
 class Empleado(Persona):
-    _zona_asignada = models.CharField(max_length=100, choices=[('Planta baja', 'Planta baja'), ('Primer piso', 'Primer piso')])
-    _sueldo = models.DecimalField(max_digits=10, decimal_places=2)
-    _estado = models.CharField(max_length=50, choices=[('Activo', 'Activo'), ('Inactivo', 'Inactivo')])
-    _telefono = models.CharField(max_length=50)
-    _fecha_inicio = models.DateField()
-    _seniority = models.CharField(max_length=50, choices=[('Trainee', 'Trainee'), ('Junior', 'Junior'), ('Senior', 'Senior')])
-    _annos_experiencia = models.PositiveIntegerField()
+    _zona_asignada = models.CharField(max_length=100, choices=[('Planta baja', 'Planta baja'), ('Primer piso', 'Primer piso')], verbose_name="Zona Asignada")
+    _sueldo = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Sueldo")
+    _estado = models.CharField(max_length=50, choices=[('Activo', 'Activo'), ('Inactivo', 'Inactivo')], default='Inactivo', verbose_name="Estado")
+    _fecha_inicio = models.DateField(verbose_name="Fecha Inicio")
+    _seniority = models.CharField(max_length=50, choices=[('Trainee', 'Trainee'), ('Junior', 'Junior'), ('Senior', 'Senior')], verbose_name="Seniority")
+    _annos_experiencia = models.PositiveIntegerField(verbose_name="Años de experiencia")
 
     @property
     def zona_asignada(self):
@@ -33,15 +32,7 @@ class Empleado(Persona):
     @estado.setter
     def estado(self, value):
         self._estado = value
-
-    @property
-    def telefono(self):
-        return self._telefono
-
-    @telefono.setter
-    def telefono(self, value):
-        self._telefono = value
-
+    
     @property
     def fecha_inicio(self):
         return self._fecha_inicio
@@ -66,54 +57,25 @@ class Empleado(Persona):
     def annos_experiencia(self, value):
         self._annos_experiencia = value
 
-    def asignar_turno(self, turno):
-        pass
+    def save(self, *args, **kwargs):
+        # Si es una actualización, comprobamos el estado anterior
+        if self.pk:  # Si ya tiene un ID (es decir, existe en la base de datos)
+            estado_anterior = Empleado.objects.get(pk=self.pk)._estado
+            # Si el estado cambia de 'Inactivo' a 'Activo', marcamos el usuario como staff
+            if estado_anterior == 'Inactivo' and self._estado == 'Activo':
+                self._user.is_staff = True
+                self._user.save()
+            # Si cambia de 'Activo' a 'Inactivo', removemos el estado de staff
+            elif estado_anterior == 'Activo' and self._estado == 'Inactivo':
+                self._user.is_staff = False
+                self._user.save()
 
-    def calcular_estado(self):
-        pass
+        # Llamamos al método save original para guardar el objeto
+        super().save(*args, **kwargs)
 
-    def calcular_sueldo(self):
-        pass
-
-    class Meta:
-        app_label = 'moduloLogin'
-
-"""
-from django.db import models
-from .persona import Persona
-
-class Empleado(Persona):
-    ZONA_CHOICES = [
-        ('Planta baja', 'Planta baja'),
-        ('Primer piso', 'Primer piso'),
-    ]
-    ESTADO_CHOICES = [
-        ('Activo', 'Activo'),
-        ('Inactivo', 'Inactivo'),
-    ]
-    SENIORITY_CHOICES = [
-        ('Trainee', 'Trainee'),
-        ('Junior', 'Junior'),
-        ('Senior', 'Senior'),
-    ]
-
-    zona_asignada = models.CharField(max_length=100, choices=ZONA_CHOICES)
-    sueldo = models.DecimalField(max_digits=10, decimal_places=2)
-    estado = models.CharField(max_length=50, choices=ESTADO_CHOICES)
-    telefono = models.CharField(max_length=50)
-    fecha_inicio = models.DateField()
-    seniority = models.CharField(max_length=50, choices=SENIORITY_CHOICES)
-    annos_experiencia = models.PositiveIntegerField()
-
-    def asignar_turno(self, turno):
-        pass
-
-    def calcular_estado(self):
-        pass
-
-    def calcular_sueldo(self):
-        pass
+    def __str__(self):
+        return f"{self.nombre} {self.apellido} (Empleado)"
 
     class Meta:
         app_label = 'moduloLogin'
-"""
+        verbose_name = "Empleado"

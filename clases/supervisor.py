@@ -2,7 +2,7 @@ from django.db import models
 from .empleado import Empleado
 
 class Supervisor(Empleado):
-    _frecuencia = models.PositiveIntegerField()
+    _frecuencia = models.PositiveIntegerField(verbose_name="Frecuencia", help_text="(días)")
 
     @property
     def frecuencia(self):
@@ -12,15 +12,10 @@ class Supervisor(Empleado):
     def frecuencia(self, value):
         self._frecuencia = value
 
-    class Meta:
-        app_label = 'moduloLogin'
-"""
-from django.db import models
-from .empleado import Empleado
-
-class Supervisor(Empleado):
-    frecuencia = models.PositiveIntegerField()
+    def __str__(self):
+        return f"{self.nombre} {self.apellido} (Supervisor)"
 
     class Meta:
         app_label = 'moduloLogin'
-"""
+        verbose_name = "Supervisor"
+        verbose_name_plural = "Supervisores"

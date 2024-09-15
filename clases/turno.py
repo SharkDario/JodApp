@@ -1,8 +1,8 @@
 from django.db import models
 
 class Turno(models.Model):
-    _hora_inicio = models.TimeField()
-    _hora_fin = models.TimeField()
+    _hora_inicio = models.TimeField(verbose_name="Hora Inicio")
+    _hora_fin = models.TimeField(verbose_name="Hora Fin")
 
     @property
     def hora_inicio(self):
@@ -25,20 +25,10 @@ class Turno(models.Model):
         self.hora_fin = hora_fin
         self.save()
 
-    class Meta:
-        app_label = 'moduloLogin'
-"""
-from django.db import models
-
-class Turno(models.Model):
-    hora_inicio = models.TimeField()
-    hora_fin = models.TimeField()
-
-    def cambiar_horario(self, hora_inicio, hora_fin):
-        self.hora_inicio = hora_inicio
-        self.hora_fin = hora_fin
-        self.save()
+    def __str__(self):
+        return f"(Hora inicio: {self.hora_inicio}. Hora fin: {self.hora_fin}.)"
 
     class Meta:
         app_label = 'moduloLogin'
-"""
+        verbose_name = "Turno"
+        verbose_name_plural = "Turnos"
