@@ -1,0 +1,43 @@
+{% extends "admin/change_form.html" %}
+
+{% block extrahead %}
+    {{ block.super }}
+    <script src="https://cdn.maptiler.com/maptiler-sdk-js/v2.2.2/maptiler-sdk.umd.min.js"></script>
+    <link href="https://cdn.maptiler.com/maptiler-sdk-js/v2.2.2/maptiler-sdk.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@maplibre/maplibre-gl@latest/dist/maplibre-gl.js"></script>
+    <script src="https://api.maptiler.com/maps/sdk.js?key=HhZs7tN2CwC4JrhbLLTL"></script>  
+    <style>
+        #map {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+{% endblock %}
+
+{% block after_field_sets %}
+    {{ block.super }}
+    <div id="map"></div>
+    <script>
+        maptilersdk.config.apiKey = 'HhZs7tN2CwC4JrhbLLTL';
+        var map = new maptilersdk.Map({
+            container: 'map', // container's id or the HTML element to render the map
+            style: maptilersdk.MapStyle.STREETS,
+            center: [-58.1731, -26.1849], // starting position [lng, lat]
+            zoom: 10, // starting zoom
+        });
+
+        // Agregar control de zoom y rotación
+        map.addControl(new maplibregl.NavigationControl());
+
+        // Agregar un marcador en las coordenadas actuales
+        var marker = new maplibregl.Marker()
+            .setLngLat([-58.1731, -26.1849])
+            .addTo(map);
+        
+        // Actualizar las coordenadas al mover el marcador
+        map.on('click', function (e) {
+            marker.setLngLat(e.lngLat);
+            document.getElementById('id_coordenadas').value = e.lngLat.lat + ',' + e.lngLat.lng;
+        });
+    </script>
+{% endblock %}
