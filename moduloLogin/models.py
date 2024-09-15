@@ -14,3 +14,5 @@ from clases.bartender import Bartender
 from clases.mozo import Mozo
 from clases.cajero import Cajero
 from clases.administrador import Administrador
+from clases.domicilio import Domicilio
+from clases.telefono import Telefono
