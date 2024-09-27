@@ -49,7 +49,7 @@ class Articulo(models.Model):
         self._stock_minimo = value
     
     def __str__(self):
-        return f"{self.nombre}"
+        return f"{self.nombre} ({self.volumen}ml)"
 
     class Meta:
         app_label = 'modulo_stock'

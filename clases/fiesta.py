@@ -20,8 +20,26 @@ class Fiesta(Evento):
         ('Disfraz Tematico', 'Disfraz Temático'),
     ]
 
-    _vestimenta = models.CharField(max_length=20, choices=VESTIMENTA_CHOICES)
-    _categoria = models.CharField(max_length=20, choices=CATEGORIA_CHOICES)
+    _vestimenta = models.CharField(verbose_name="Vestimenta", max_length=20, choices=VESTIMENTA_CHOICES)
+    _categoria = models.CharField(verbose_name="Categoría", max_length=20, choices=CATEGORIA_CHOICES)
+    _cantidad_entrada_popular = models.PositiveIntegerField(verbose_name="Cantidad Entradas Populares", default=1)
+    _cantidad_entrada_vip = models.PositiveIntegerField(verbose_name="Cantidad Entradas VIP", default=1)
+
+    @property
+    def cantidad_entrada_popular(self):
+        return self._cantidad_entrada_popular
+    
+    @cantidad_entrada_popular.setter
+    def cantidad_entrada_popular(self, value):
+        self._cantidad_entrada_popular = value
+
+    @property
+    def cantidad_entrada_vip(self):
+        return self._cantidad_entrada_vip
+    
+    @cantidad_entrada_vip.setter
+    def cantidad_entrada_vip(self, value):
+        self._cantidad_entrada_vip = value
 
     @property
     def vestimenta(self):
