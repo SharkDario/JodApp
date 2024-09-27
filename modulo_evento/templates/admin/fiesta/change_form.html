@@ -1,0 +1,85 @@
+{% extends "admin/change_form.html" %}
+
+{% block after_related_objects %}
+    {{ block.super }}
+    <!-- Primer mapa para la ubicacion -->
+    <div class="flex group mb-6 flex-col">
+        <div class="">
+            <label class="block font-medium mb-2 text-font-important-light text-sm dark:text-font-important-dark required">Selecciona la ubicación en el mapa</label>
+        </div>
+        <div class="flex-grow">
+            <div id="map" class="border bg-white font-medium min-w-20 rounded-md shadow-sm text-font-default-light text-sm focus:ring focus:ring-primary-300 focus:border-primary-600 focus:outline-none group-[.errors]:border-red-600 group-[.errors]:focus:ring-red-200 dark:bg-gray-900 dark:border-gray-700 dark:text-font-default-dark dark:focus:border-primary-600 dark:focus:ring-primary-700 dark:focus:ring-opacity-50 dark:group-[.errors]:border-red-500 dark:group-[.errors]:focus:ring-red-600/40 w-full max-w-2xl" style="height: 400px;"></div>
+        </div>
+    </div>
+    <!-- Segundo mapa para las mesas -->
+    <h3>Gestionar las mesas</h3>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          let newX = 0, newY = 0, startX = 0, startY = 0;
+      
+          const card = document.getElementById('card');
+          const container = document.getElementById('container');
+      
+          card.addEventListener('mousedown', mouseDown);
+      
+          function mouseDown(e) {
+            startX = e.clientX;
+            startY = e.clientY;
+      
+            document.addEventListener('mousemove', mouseMove);
+            document.addEventListener('mouseup', mouseUp);
+          }
+      
+          function mouseMove(e) {
+            newX = startX - e.clientX;
+            newY = startY - e.clientY;
+      
+            startX = e.clientX;
+            startY = e.clientY;
+      
+            // Calcular las nuevas posiciones
+            let newTop = card.offsetTop - newY;
+            let newLeft = card.offsetLeft - newX;
+      
+            // Obtener dimensiones del contenedor
+            const containerRect = container.getBoundingClientRect();
+            const cardRect = card.getBoundingClientRect();
+      
+            // Limitar la posición de la tarjeta dentro del contenedor
+            if (newTop < 0) newTop = 0;
+            if (newLeft < 0) newLeft = 0;
+            if (newTop + cardRect.height > containerRect.height) {
+              newTop = containerRect.height - cardRect.height;
+            }
+            if (newLeft + cardRect.width > containerRect.width) {
+              newLeft = containerRect.width - cardRect.width;
+            }
+      
+            // Actualizar la posición de la tarjeta
+            card.style.top = newTop + 'px';
+            card.style.left = newLeft + 'px';
+          }
+      
+          function mouseUp(e) {
+            document.removeEventListener('mousemove', mouseMove);
+          }
+        });
+    </script>
+     
+    <div id="container" class="border bg-white max-w-4xl" style="position: relative; height: 730px; background: url('/static/images/plano_evento.png') no-repeat center center; background-size: contain;">
+        {% for mesa in mesas %}
+        <div class="mesa-card" 
+             id="mesa-{{ mesa.id }}" 
+             style="width: 40px; height: 40px; background-color: {{ mesa.color }}; 
+                    border-radius: 50px; position: absolute; top: {{ mesa.top }}px; 
+                    left: {{ mesa.left }}px; border: 3px solid {% if mesa.categoria == 'VIP' %} gold {% else %} black {% endif %};
+                     display: flex; justify-content: center; align-items: center; 
+                    color: {% if mesa.categoria == 'VIP' %} gold {% else %} black {% endif %}; 
+                    font-size: 20px; box-shadow: 0 0 10px {{ mesa.color }}, 0 0 20px {{ mesa.color }};" 
+             data-id="{{ mesa.id }}">
+             {{mesa.numero}}
+        </div>
+        {% endfor %}
+    </div>
+    
+{% endblock %}
