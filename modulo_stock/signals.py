@@ -46,7 +46,7 @@ def registrar_movimiento_stock(sender, instance, **kwargs):
 
     # Obtener el empleado relacionado con el usuario que hizo la modificación (esto depende de cómo registres al usuario en admin)
     # Si usas `request.user` en admin, este debe estar relacionado con un empleado.
-    usuario = instance._empleado  # Suponiendo que tienes acceso al empleado que realiza el cambio
+    usuario = instance._empleado  
 
     # Registrar el movimiento de stock
     MovimientoStock.objects.create(

@@ -1,30 +1,15 @@
 from django.core.exceptions import ValidationError
+from django.utils import timezone
 from django.db import models
-#from mapbox_location_field.models import LocationField  # Asegúrate de tener la dependencia
 
 class Evento(models.Model):
-    _nombre = models.CharField(max_length=100)
-    _descripcion = models.CharField(max_length=100)
-    _edad_minima = models.PositiveIntegerField(default=18) 
-    _edad_maxima = models.PositiveIntegerField(default=40)
-    _latitud = models.DecimalField(max_digits=9, decimal_places=6, default=-26.1849)
-    _longitud = models.DecimalField(max_digits=9, decimal_places=6, default=-58.1731)
-
-    @property
-    def latitud(self):
-        return self._latitud
-    
-    @latitud.setter
-    def latitud(self, value):
-        self._latitud = value
-
-    @property
-    def longitud(self):
-        return self._longitud
-    
-    @longitud.setter
-    def longitud(self, value):
-        self._longitud = value
+    _nombre = models.CharField(verbose_name="Nombre", max_length=100)
+    _descripcion = models.CharField(verbose_name="Descripción", max_length=100)
+    _edad_minima = models.PositiveIntegerField(verbose_name="Edad mínima", default=18) 
+    _edad_maxima = models.PositiveIntegerField(verbose_name="Edad máxima", default=40)
+    _fecha = models.DateField(verbose_name="Fecha", default=timezone.now)
+    latitud = models.DecimalField(max_digits=12, decimal_places=4, default=-26.1855)
+    longitud = models.DecimalField(max_digits=12, decimal_places=4, default=-58.1739)
 
     @property
     def nombre(self):
@@ -33,6 +18,14 @@ class Evento(models.Model):
     @nombre.setter
     def nombre(self, value):
         self._nombre = value
+
+    @property
+    def fecha(self):
+        return self._fecha
+    
+    @fecha.setter
+    def fecha(self, value):
+        self._fecha = value
 
     @property
     def descripcion(self):
@@ -59,7 +52,7 @@ class Evento(models.Model):
         self._edad_maxima = value
 
     def __str__(self):
-        return f"{self.nombre} ({self.descripcion})"
+        return f"{self.nombre} ({self.fecha})"
     
     def clean(self):
         if self._edad_minima >= self._edad_maxima:

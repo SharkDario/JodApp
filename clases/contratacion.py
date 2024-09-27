@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 
 class Contratacion(models.Model):
-    _tipo = models.CharField(max_length=50, choices=[('Contratacion', 'Contratacion'), ('Renovacion', 'Renovacion'), ('Despido', 'Despido')])
+    _tipo = models.CharField(max_length=50, choices=[('Contratacion', 'Contratacion'), ('Renovacion', 'Renovacion'), ('Despido', 'Despido')], verbose_name="Tipo")
     _administrador = models.ForeignKey('Administrador', on_delete=models.CASCADE, related_name='contrataciones_administradas', verbose_name="Administrador")
     _empleado = models.ForeignKey('Empleado', on_delete=models.CASCADE, related_name='contrataciones', verbose_name="Empleado")
     _fecha_contratacion = models.DateField(verbose_name="Fecha Contratación", default=timezone.now)

@@ -1,0 +1,216 @@
+<!-- mapa_mesas.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Mesas</title>
+    <style>
+        .map-container {
+            position: relative;
+            width: 800px;  /* Ajusta el tamaño a la imagen */
+            height: 600px;
+            background-image: url('/static/images/plano_evento.png');  /* Ruta de tu imagen */
+            background-size: cover;
+            border: 1px solid #ccc;
+        }
+
+        .mesa {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bold;
+            cursor: move;
+            user-select: none;
+        }
+
+        .mesa.disponible {
+            background-color: green;
+        }
+
+        .mesa.ocupada {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Mapa de Mesas para {{ fiesta.nombre }}</h2>
+<div class="map-container" id="mapa">
+    {% for mesa in mesas %}
+        <div class="mesa {% if mesa.disponibilidad == 'Disponible' %}disponible{% else %}ocupada{% endif %}"
+             id="mesa-{{ mesa.id }}"
+             style="top: {{ mesa.top }}px; left: {{ mesa.left }}px;"
+             data-id="{{ mesa.id }}">
+             {{ mesa.categoria }} - Capacidad: {{ mesa.capacidad }}
+        </div>
+    {% endfor %}
+</div>
+
+<!-- CSRF Token para solicitudes AJAX -->
+<script>
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Verifica si este es el nombre del cookie que buscamos
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    const csrftoken = getCookie('csrftoken');
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const mesas = document.querySelectorAll('.mesa');
+        let selectedMesa = null;
+        let offsetX = 0;
+        let offsetY = 0;
+
+        mesas.forEach(mesa => {
+            mesa.addEventListener('mousedown', mouseDown);
+
+            // Para dispositivos táctiles
+            mesa.addEventListener('touchstart', touchStart);
+        });
+
+        function mouseDown(e) {
+            e.preventDefault();
+            selectedMesa = e.target;
+            offsetX = e.clientX - selectedMesa.offsetLeft;
+            offsetY = e.clientY - selectedMesa.offsetTop;
+
+            document.addEventListener('mousemove', mouseMove);
+            document.addEventListener('mouseup', mouseUp);
+        }
+
+        function mouseMove(e) {
+            if (selectedMesa) {
+                let map = document.getElementById('mapa');
+                let newLeft = e.clientX - map.getBoundingClientRect().left - offsetX;
+                let newTop = e.clientY - map.getBoundingClientRect().top - offsetY;
+
+                // Limitar dentro del contenedor
+                newLeft = Math.max(0, Math.min(newLeft, map.clientWidth - selectedMesa.clientWidth));
+                newTop = Math.max(0, Math.min(newTop, map.clientHeight - selectedMesa.clientHeight));
+
+                selectedMesa.style.left = newLeft + 'px';
+                selectedMesa.style.top = newTop + 'px';
+            }
+        }
+
+        function mouseUp(e) {
+            if (selectedMesa) {
+                // Obtener nuevas coordenadas
+                let newLeft = parseInt(selectedMesa.style.left);
+                let newTop = parseInt(selectedMesa.style.top);
+                let mesaId = selectedMesa.getAttribute('data-id');
+
+                // Enviar las nuevas coordenadas al servidor
+                fetch("{% url 'actualizar_posicion_mesa' %}", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrftoken
+                    },
+                    body: JSON.stringify({
+                        id: mesaId,
+                        left: newLeft,
+                        top: newTop
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status !== 'success') {
+                        alert('Error al actualizar la posición de la mesa: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+
+                selectedMesa = null;
+                document.removeEventListener('mousemove', mouseMove);
+                document.removeEventListener('mouseup', mouseUp);
+            }
+        }
+
+        // Manejo de eventos táctiles
+        function touchStart(e) {
+            e.preventDefault();
+            selectedMesa = e.target;
+            const touch = e.touches[0];
+            offsetX = touch.clientX - selectedMesa.offsetLeft;
+            offsetY = touch.clientY - selectedMesa.offsetTop;
+
+            document.addEventListener('touchmove', touchMove);
+            document.addEventListener('touchend', touchEnd);
+        }
+
+        function touchMove(e) {
+            if (selectedMesa) {
+                const touch = e.touches[0];
+                let map = document.getElementById('mapa');
+                let newLeft = touch.clientX - map.getBoundingClientRect().left - offsetX;
+                let newTop = touch.clientY - map.getBoundingClientRect().top - offsetY;
+
+                // Limitar dentro del contenedor
+                newLeft = Math.max(0, Math.min(newLeft, map.clientWidth - selectedMesa.clientWidth));
+                newTop = Math.max(0, Math.min(newTop, map.clientHeight - selectedMesa.clientHeight));
+
+                selectedMesa.style.left = newLeft + 'px';
+                selectedMesa.style.top = newTop + 'px';
+            }
+        }
+
+        function touchEnd(e) {
+            if (selectedMesa) {
+                // Obtener nuevas coordenadas
+                let newLeft = parseInt(selectedMesa.style.left);
+                let newTop = parseInt(selectedMesa.style.top);
+                let mesaId = selectedMesa.getAttribute('data-id');
+
+                // Enviar las nuevas coordenadas al servidor
+                fetch("{% url 'actualizar_posicion_mesa' %}", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrftoken
+                    },
+                    body: JSON.stringify({
+                        id: mesaId,
+                        left: newLeft,
+                        top: newTop
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status !== 'success') {
+                        alert('Error al actualizar la posición de la mesa: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+
+                selectedMesa = null;
+                document.removeEventListener('touchmove', touchMove);
+                document.removeEventListener('touchend', touchEnd);
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

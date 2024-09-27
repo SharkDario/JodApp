@@ -39,7 +39,7 @@ class DetalleRemitoProveedor(models.Model):
         self._fecha_entrega_producto = value
 
     def __str__(self):
-        return f"{self.remito} - {self.producto} ({self.cantidad})"
+        return f"(Detalle)"
 
     class Meta:
         app_label = 'modulo_stock'
