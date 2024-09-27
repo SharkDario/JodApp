@@ -1,15 +1,16 @@
 from django import forms
+from unfold.admin import UnfoldAdminTextInputWidget, UnfoldAdminSelectWidget
 from .models import Empleado, Contratacion, Persona, User
 
 class EmpleadoAdminForm(forms.ModelForm):
     email = forms.EmailField(label='Correo Electrónico', required=True)
-    _annos_experiencia = forms.DecimalField(label="Años de experiencia", required=True)
+    #_annos_experiencia = forms.DecimalField(label="Años de experiencia", required=True)
 
     class Meta:
         model = Empleado
         fields = '__all__'
         widgets = {
-            '_estado': forms.TextInput(attrs={'readonly': 'readonly'}),
+            '_estado': UnfoldAdminTextInputWidget(attrs={'readonly': 'readonly'}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -26,6 +27,9 @@ class EmpleadoAdminForm(forms.ModelForm):
         # Guardar el email en el objeto User relacionado
         user = self.instance.user
         user.email = self.cleaned_data['email']
+        # Asignar _nombre y _apellido a first_name y last_name del User
+        user.first_name = self.instance._nombre
+        user.last_name = self.instance._apellido
         user.save()
         return super().save(commit=commit)
     
@@ -38,7 +42,7 @@ class ContratacionForm(forms.ModelForm):
         ('Despido', 'Despido'),
     ]
 
-    _tipo = forms.ChoiceField(choices=TIPO_CHOICES, required=True)
+    _tipo = UnfoldAdminSelectWidget(choices=TIPO_CHOICES)
 
     class Meta:
         model = Contratacion

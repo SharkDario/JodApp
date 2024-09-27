@@ -1,0 +1,29 @@
+/* Cambiar el tamaño de los input fields */
+input[type="text"], input[type="email"], input[type="number"] {
+    max-width: 300px; /* Ajusta este valor según el tamaño que quieras */
+    width: 100%;
+}
+/* Asegurarse de que el select también herede el tamaño */
+select {
+    max-width: 300px !important; /* Ajusta el valor según el tamaño deseado */
+    width: 100% !important; /* Usamos !important para forzar el estilo */
+}
+.module h2 a, .section, .changelink h2 {
+    color: #B43892; /* Reemplaza con el color que desees */
+}
+.password-input, input[type="email"], input[type="password"] {
+    color: #ccc;
+    font-size: 14px;
+    padding: 8px;
+    background-color: #111827;
+    border: 1px solid #374151;
+    border-radius: 4px;
+    /* Otros estilos que desees aplicar */
+}
+.date-field-button {
+    /* Personaliza los estilos según tus preferencias */
+    color: #333;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    /* Otros estilos que desees aplicar */
+}

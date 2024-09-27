@@ -1,0 +1,151 @@
+CREATE TRIGGER insert_movimientofiesta_after_fiesta_insert
+AFTER INSERT ON `modulo_evento_fiesta`
+FOR EACH ROW
+BEGIN
+    DECLARE admin_id INT;
+
+    SET admin_id = @admin_id;
+
+    -- Insertar en la tabla 'MovimientoFiesta'
+    INSERT INTO `modulo_evento_movimientofiesta` (
+        `_fecha`, 
+        `_descripcion`, 
+        `_administrador_id`, 
+        `_fiesta_id`
+    )
+    VALUES (
+        NOW(),
+        'registró',
+        admin_id,
+        NEW.evento_ptr_id
+    );
+END;
+
+CREATE TRIGGER update_movimientofiesta_after_fiesta_update
+AFTER UPDATE ON `modulo_evento_fiesta`
+FOR EACH ROW
+BEGIN
+    DECLARE admin_id INT;
+    DECLARE descripcion TEXT DEFAULT '';
+    DECLARE cambio BOOLEAN DEFAULT FALSE;
+
+    -- Obtener el id del administrador (suponiendo que lo tengas en una variable de sesión o similar)
+    SET admin_id = @admin_id;
+
+    -- Detectar cambios en los campos de Fiesta
+    IF NEW._vestimenta <> OLD._vestimenta THEN
+        SET descripcion = CONCAT(descripcion, 'Vestimenta cambió de ', OLD._vestimenta, ' a ', NEW._vestimenta, '; ');
+        SET cambio = TRUE;
+    END IF;
+
+    IF NEW._categoria <> OLD._categoria THEN
+        SET descripcion = CONCAT(descripcion, 'Categoría cambió de ', OLD._categoria, ' a ', NEW._categoria, '; ');
+        SET cambio = TRUE;
+    END IF;
+
+    IF NEW._cantidad_entrada_popular <> OLD._cantidad_entrada_popular THEN
+        SET descripcion = CONCAT(descripcion, 'Cantidad de entradas populares cambió de ', OLD._cantidad_entrada_popular, ' a ', NEW._cantidad_entrada_popular, '; ');
+        SET cambio = TRUE;
+    END IF;
+
+    IF NEW._cantidad_entrada_vip <> OLD._cantidad_entrada_vip THEN
+        SET descripcion = CONCAT(descripcion, 'Cantidad de entradas VIP cambió de ', OLD._cantidad_entrada_vip, ' a ', NEW._cantidad_entrada_vip, '; ');
+        SET cambio = TRUE;
+    END IF;
+
+    -- Solo inserta en MovimientoFiesta si hubo un cambio
+    IF cambio THEN
+        INSERT INTO `modulo_evento_movimientofiesta` (
+            `_fecha`, 
+            `_descripcion`, 
+            `_administrador_id`, 
+            `_fiesta_id`
+        )
+        VALUES (
+            NOW(),
+            descripcion,
+            admin_id,
+            NEW.evento_ptr_id
+        );
+    END IF;
+END;
+
+
+CREATE TRIGGER update_movimientofiesta_after_evento_update
+AFTER UPDATE ON `modulo_evento_evento`
+FOR EACH ROW
+BEGIN
+    DECLARE admin_id INT;
+    DECLARE descripcion TEXT DEFAULT '';
+    DECLARE cambio BOOLEAN DEFAULT FALSE;
+    DECLARE id_evento_ptr_id INT;
+
+    SELECT evento_ptr_id
+    INTO id_evento_ptr_id
+    FROM `modulo_evento_fiesta`
+    WHERE evento_ptr_id = NEW.id;
+
+    -- Obtener el id del administrador (suponiendo que lo tengas en una variable de sesión o similar)
+    SET admin_id = @admin_id;
+    -- Comparar el campo _nombre de la tabla modulo_evento_evento
+    IF NEW._nombre <> OLD._nombre THEN
+        SET descripcion = CONCAT(descripcion, 'Nombre cambió de ', OLD._nombre, ' a ', NEW._nombre, '; ');
+        SET cambio = TRUE;
+    END IF;
+        
+        -- Comparar el campo _descripcion de la tabla modulo_evento_evento
+    IF NEW._descripcion <> OLD._descripcion THEN
+        SET descripcion = CONCAT(descripcion, 'Descripción cambió de ', OLD._descripcion, ' a ', NEW._descripcion, '; ');
+        SET cambio = TRUE;
+    END IF;
+        
+    -- Comparar otros campos de modulo_evento_evento como edad_minima, edad_maxima, latitud, longitud, etc.
+    IF NEW._edad_minima <> OLD._edad_minima THEN
+        SET descripcion = CONCAT(descripcion, 'Edad mínima cambió de ', OLD._edad_minima, ' a ', NEW._edad_minima, '; ');
+        SET cambio = TRUE;
+    END IF;
+
+    IF NEW._edad_maxima <> OLD._edad_maxima THEN
+        SET descripcion = CONCAT(descripcion, 'Edad máxima cambió de ', OLD._edad_maxima, ' a ', NEW._edad_maxima, '; ');
+        SET cambio = TRUE;
+    END IF;
+
+    -- Solo inserta en MovimientoFiesta si hubo un cambio
+    IF cambio THEN
+        INSERT INTO `modulo_evento_movimientofiesta` (
+            `_fecha`, 
+            `_descripcion`, 
+            `_administrador_id`, 
+            `_fiesta_id`
+        )
+        VALUES (
+            NOW(),
+            descripcion,
+            admin_id,
+            evento_ptr_id
+        );
+    END IF;
+END;
+
+
+_evento_evento IF NEW._nombre <> OLD._nombre THEN SET descripcion = CONCAT(descripcion, 'Nombre cambió de ', OLD._nombre, ' a ', NEW._nombre, '; '); SET cambio = TRUE; END IF; -- Comparar el campo _descripcion de la tabla modulo_evento_evento IF NEW._descripcion <> OLD._descripcion THEN SET descripcion = CONCAT(descripcion, 'Descripción cambió de ', OLD._descripcion, ' a ', NEW._descripcion, '; '); SET cambio = TRUE; END IF; -- Comparar otros campos de modulo_evento_evento como edad_minima, edad_maxima, latitud, longitud, etc. IF NEW._edad_minima <> OLD._edad_minima THEN SET descripcion = CONCAT(descripcion, 'Edad mínima cambió de ', OLD._edad_minima, ' a ', NEW._edad_minima, '; '); SET cambio = TRUE; END IF; IF NEW._edad_maxima <> OLD._edad_maxima THEN SET descripcion = CONCAT(descripcion, 'Edad máxima cambió de ', OLD._edad_maxima, ' a ', NEW._edad_maxima, '; '); SET cambio = TRUE; END IF; -- Solo inserta en MovimientoFiesta si hubo un cambio IF cambio THEN INSERT INTO `modulo_evento_movimientofiesta` ( `_fecha`, `_descripcion`, `_administrador_id`, `_fiesta_id` ) VALUES ( NOW(), descripcion, admin_id, evento_ptr_id ); END IF; END;"
+NCAT(descripcion, 'Nombre cambió de ', OLD._nombre, ' a ', NEW._nombre, '; '); SET cambio = TRUE; END IF; -- Comparar el campo _descripcion de la tabla modulo_evento_evento IF NEW._descripcion <> OLD._descripcion THEN SET descripcion = CONCAT(descripcion, 'Descripción cambió de ', OLD._descripcion, ' a ', NEW._descripcion, '; '); SET cambio = TRUE; END IF; -- Comparar otros campos de modulo_evento_evento como edad_minima, edad_maxima, latitud, longitud, etc. IF NEW._edad_minima <> OLD._edad_minima THEN SET descripcion = CONCAT(descripcion, 'Edad mínima cambió de ', OLD._edad_minima, ' a ', NEW._edad_minima, '; '); SET cambio = TRUE; END IF; IF NEW._edad_maxima <> OLD._edad_maxima THEN SET descripcion = CONCAT(descripcion, 'Edad máxima cambió de ', OLD._edad_maxima, ' a ', NEW._edad_maxima, '; '); SET cambio = TRUE; END IF; -- Solo inserta en MovimientoFiesta si hubo un cambio IF cambio THEN INSERT INTO `modulo_evento_movimientofiesta` ( `_fecha`, `_descripcion`, `_administrador_id`, `_fiesta_id` ) VALUES ( NOW(), descripcion, admin_id, evento_ptr_id ); END IF; END;"
+
+MySQL ha dicho: #1064 - Algo está equivocado en su sintax cerca 'SELECT evento_ptr_id INTO id_evento_ptr_id FROM `modulo_evento_fiesta`' en la linea 7
+ Disparadores Documentación
+Seleccionar todo
+Nombre	Tabla	Tiempo	Evento	
+	insert_movimientofiesta_after_fiesta_insert	modulo_evento_fiesta	AFTER	INSERT	Editar Editar	Exportar Exportar	Eliminar Eliminar
+	update_movimientofiesta_after_fiesta_update	modulo_evento_fiesta	AFTER	UPDATE	Editar Editar	Exportar Exportar	Eliminar Eliminar
+Abrir nueva ventana de phpMyAdmin
+ Crear nuevo disparador
+Detalles Documentación
+Nombre del disparador	
+update_movimientofiesta_after_evento_update
+Tabla	
+modulo_evento_evento
+Tiempo	
+AFTER
+Evento	
+UPDATE
+Defi
