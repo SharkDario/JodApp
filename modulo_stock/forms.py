@@ -1,5 +1,6 @@
 from django import forms
 from .models import Trago
+from unfold.admin import UnfoldAdminTextInputWidget
 
 class TragoAdminForm(forms.ModelForm):
 
@@ -7,6 +8,6 @@ class TragoAdminForm(forms.ModelForm):
         model = Trago
         fields = '__all__'
         widgets = {
-            '_volumen': forms.TextInput(attrs={'readonly': 'readonly'}),
-            '_stock': forms.TextInput(attrs={'readonly': 'readonly'}),
+            '_volumen': UnfoldAdminTextInputWidget(attrs={'readonly': 'readonly'}),
+            '_stock': UnfoldAdminTextInputWidget(attrs={'readonly': 'readonly'}),
         }
