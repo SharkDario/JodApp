@@ -11,7 +11,68 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from django.templatetags.static import static
+from django.urls import reverse_lazy
+from django.utils.translation import gettext_lazy as _
 
+UNFOLD = {
+    "SITE_TITLE": "Administración de Roxo (JodApp)",
+    "SITE_HEADER": "Roxo (JodApp)",
+    "SITE_URL": "/",
+    # "SITE_ICON": lambda request: static("icon.svg"),  # both modes, optimise for 32px height
+    #"SITE_ICON": {
+    #    "light": lambda request: static("icon-light.svg"),  # light mode
+    #    "dark": lambda request: static("icon-dark.svg"),  # dark mode
+    #},
+    # "SITE_LOGO": lambda request: static("logo.svg"),  # both modes, optimise for 32px height
+    #"SITE_LOGO": {
+    #    "light": lambda request: static("logo-light.svg"),  # light mode
+    #    "dark": lambda request: static("logo-dark.svg"),  # dark mode
+    #},
+    "SITE_SYMBOL": "home",  # symbol from icon set
+    "SITE_FAVICONS": [
+        {
+            "rel": "icon",
+            "sizes": "32x32",
+            "type": "image/svg+xml",
+            "href": lambda request: static("favicon.svg"),
+        },
+    ],
+    "SHOW_HISTORY": True, # show/hide "History" button, default: True
+    "SHOW_VIEW_ON_SITE": True, # show/hide "View on site" button, default: True
+    "THEME": "dark", # Force theme: "dark" or "light". Will disable theme switcher
+    "STYLES": [
+        lambda request: static("css/style.css"),
+    ],
+    "SCRIPTS": [
+        lambda request: static("js/script.js"),
+    ],
+    "COLORS": {
+    "font": {
+        "subtle-light": "107 114 128",
+        "subtle-dark": "156 163 175",
+        "default-light": "75 85 99",
+        "default-dark": "209 213 219",
+        "important-light": "17 24 39",
+        "important-dark": "243 244 246"
+    },
+   "primary": {
+        "50": "255 245 251",   # Lightest tone
+        "100": "253 235 247",  
+        "200": "250 215 240",  
+        "300": "245 185 227",  
+        "400": "240 145 210",  
+        "500": "227 97 185",   # Brighter main violet
+        "600": "180 56 146",   
+        "700": "150 34 117",   # Darker violet
+        "800": "120 15 90",    # Darker
+        "900": "95 5 70",      # Near black
+        "950": "75 3 55"       # Darkest tone
+    }
+    }
+}
+
+LANGUAGE_CODE = 'es'
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -32,9 +93,39 @@ INDEX_TITLE = "Bienvenido al Panel de Control"
 ALLOWED_HOSTS = []
 
 
+CITIES_LIGHT_TRANSLATION_LANGUAGES = ['es']  # Idioma español para las traducciones de nombres
+CITIES_LIGHT_INCLUDE_COUNTRIES = ['AR', 'BO', 'BR', 'CL', 'CO', 'CR', 'CU', 'DO', 'EC', 'SV', 'GT', 'HN', 'MX', 'NI', 'PA', 'PY', 'PE', 'PR', 'UY', 'VE']  # Lista de códigos de países de Latinoamérica
+CITIES_LIGHT_INCLUDE_CITY_TYPES = [
+    'PPL',   # Poblado
+    'PPLA',  # Capital de entidad política
+    'PPLA2', # Capital de segunda subdivisión
+    'PPLA3', # Capital de tercera subdivisión
+    'PPLA4', # Capital de cuarta subdivisión
+    'PPLC',  # Capital del país
+    'PPLF',  # Poblado que incluye instalaciones militares
+    'PPLG',  # Poblado en una región agrícola
+    'PPLL',  # Pueblo o aldea
+    'PPLR',  # Poblado religioso
+    'PPLS',  # Poblado disperso
+    'STLMT', # Asentamiento
+]
+
 # Application definition
 
 INSTALLED_APPS = [
+    #'admin_star.apps.AdminStarConfig',
+    #'admin_berry.apps.AdminBerryConfig' 'admin_adminlte.apps.AdminAdminlteConfig','admin_argon.apps.AdminArgonConfig','admin_volt.apps.AdminVoltConfig',,
+    #'admin_material.apps.AdminMaterialDashboardConfig',
+    #'jazzmin', 'unfold',
+    #THEONE:'admin_soft.apps.AdminSoftDashboardConfig',
+    'cities_light',
+    "unfold",
+    "unfold.contrib.filters",  # optional, if special filters are needed
+    "unfold.contrib.forms",  # optional, if special form elements are needed
+    "unfold.contrib.inlines",  # optional, if special inlines are needed
+    "unfold.contrib.import_export",  # optional, if django-import-export package is used
+    "unfold.contrib.guardian",  # optional, if django-guardian package is used
+    "unfold.contrib.simple_history",  # optional, if django-simple-history package is used
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,10 +135,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django_admin_geomap',
     'phonenumber_field',
-    'easy_maps',
     'moduloLogin',
     'modulo_stock',
-    'cities_light',
     'mapbox_location_field',
     'modulo_evento',
 ]
@@ -88,11 +177,18 @@ WSGI_APPLICATION = 'jodapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'bd_jodapp',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES', innodb_strict_mode=1",
+            'charset': 'utf8',
+        },
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -138,6 +234,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOCATION_FIELD = {
     'provider.openstreetmap.max_zoom': 18,
 }
+SITE_ID = 1 
+
+#LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
 MAPBOX_KEY = 'HhZs7tN2CwC4JrhbLLTL'
 EASY_MAPS_GOOGLE_KEY = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ___0123456789'
