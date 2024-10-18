@@ -4,12 +4,16 @@ from django.db import connection
 from django.utils import timezone
 from unfold.admin import ModelAdmin, TabularInline
 from moduloLogin.admin import admin_site  # Importa el AdminSite personalizado de moduloLogin
-from .forms import FiestaForm, MesaForm
+from .forms import FiestaForm, MesaForm, EntradaInlineForm
 from .models import Fiesta, Entrada, Mesa, MesaTieneArticulo, MovimientoFiesta, Administrador
 
 class EntradaInline(TabularInline):
     model = Entrada
-    extra = 1
+    form = EntradaInlineForm
+    extra = 0  # No agregar entradas extras por defecto
+    max_num = 2  # Máximo de 2 entradas permitidas
+    min_num = 2  # Mínimo de 2 entradas requeridas
+    can_delete = False
 
 class MesaTieneArticuloInline(TabularInline):
     model = MesaTieneArticulo
@@ -33,7 +37,7 @@ class FiestaAdmin(ModelAdmin):
     list_display = ('nombre', 'descripcion', 'edad_minima', 'edad_maxima', 'fecha')
     search_fields = ('_nombre', '_descripcion', '_categoria', '_vestimenta')
     
-    inlines = [MesaInline]
+    inlines = [EntradaInline, MesaInline]
 
     fieldsets = (
         ('Fiesta', {
