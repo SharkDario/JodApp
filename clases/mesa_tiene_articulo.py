@@ -1,5 +1,4 @@
 from django.db import models
-from django.core.validators import MinValueValidator
 from .mesa import Mesa
 from .articulo import Articulo
 

@@ -17,3 +17,4 @@ from clases.trago import Trago
 from clases.supervisor import Supervisor
 from clases.bartender import Bartender
 from clases.administrador import Administrador
+from clases.persona import Persona

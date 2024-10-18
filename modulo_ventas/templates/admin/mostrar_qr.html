@@ -1,0 +1,8 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+    <h1>QR de Pago de Binance Pay</h1>
+    <p>Escanea el código QR para realizar el pago:</p>
+    <img src="{{ qr_code_url }}" alt="Código QR de Pago" />
+    <p><a href="{% url 'admin:index' %}">Volver al Admin</a></p>
+{% endblock %}

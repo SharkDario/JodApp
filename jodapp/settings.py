@@ -19,16 +19,8 @@ UNFOLD = {
     "SITE_TITLE": "Administración de Roxo (JodApp)",
     "SITE_HEADER": "Roxo (JodApp)",
     "SITE_URL": "/",
-    # "SITE_ICON": lambda request: static("icon.svg"),  # both modes, optimise for 32px height
-    #"SITE_ICON": {
-    #    "light": lambda request: static("icon-light.svg"),  # light mode
-    #    "dark": lambda request: static("icon-dark.svg"),  # dark mode
-    #},
-    # "SITE_LOGO": lambda request: static("logo.svg"),  # both modes, optimise for 32px height
-    #"SITE_LOGO": {
-    #    "light": lambda request: static("logo-light.svg"),  # light mode
-    #    "dark": lambda request: static("logo-dark.svg"),  # dark mode
-    #},
+    "SITE_ICON": lambda request: static("logo_j.svg"),  # both modes, optimise for 32px height
+    #"SITE_LOGO": lambda request: static("logo_j.svg"),  # both modes, optimise for 32px height
     "SITE_SYMBOL": "home",  # symbol from icon set
     "SITE_FAVICONS": [
         {
@@ -120,12 +112,12 @@ INSTALLED_APPS = [
     #THEONE:'admin_soft.apps.AdminSoftDashboardConfig',
     'cities_light',
     "unfold",
-    "unfold.contrib.filters",  # optional, if special filters are needed
-    "unfold.contrib.forms",  # optional, if special form elements are needed
-    "unfold.contrib.inlines",  # optional, if special inlines are needed
-    "unfold.contrib.import_export",  # optional, if django-import-export package is used
-    "unfold.contrib.guardian",  # optional, if django-guardian package is used
-    "unfold.contrib.simple_history",  # optional, if django-simple-history package is used
+    #"unfold.contrib.filters",  # optional, if special filters are needed
+    #"unfold.contrib.forms",  # optional, if special form elements are needed
+    #"unfold.contrib.inlines",  # optional, if special inlines are needed
+    #"unfold.contrib.import_export",  # optional, if django-import-export package is used
+    #"unfold.contrib.guardian",  # optional, if django-guardian package is used
+    #"unfold.contrib.simple_history",  # optional, if django-simple-history package is used
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -139,6 +131,7 @@ INSTALLED_APPS = [
     'modulo_stock',
     'mapbox_location_field',
     'modulo_evento',
+    'modulo_ventas',
 ]
 
 MIDDLEWARE = [
@@ -226,6 +219,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Or any directory where you want to collect static files
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
@@ -244,3 +239,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MAPBOX_KEY = 'HhZs7tN2CwC4JrhbLLTL'
 EASY_MAPS_GOOGLE_KEY = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ___0123456789'
+
+#BINANCE_PAY_API_KEY
+#BINANCE_PAY_API_SECRET
+
+MERCADO_PAGO_ACCESS_TOKEN = 'TEST-3740368549063213-101318-0d95d75375945cdc6e8292d4e9ee2aa4-173182515'
+MERCADO_PAGO_USER_ID = '173182515'
+MERCADO_PAGO_POS_ID = 'TU_POS_ID'

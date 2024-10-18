@@ -12,12 +12,14 @@ from cities_light.models import City, Country, Region, SubRegion
 from unfold.admin import ModelAdmin, TabularInline
 from unfold.sites import UnfoldAdminSite
 from modulo_evento.views import save_mesa_position
+from modulo_ventas.views import ver_qr_pago
 from .models import Mozo, Cajero, Auditor, Supervisor, Seguridad, Bartender, Administrador, Turno, Contratacion, EmpleadoTieneTurno, Domicilio, Telefono
 from .forms import ContratacionForm, EmpleadoAdminForm
 
 class MyAdminSite(UnfoldAdminSite):
     site_header = "Panel de Administración de ROXO"
     site_title = "Admin ROXO"
+    
     index_title = "Bienvenido al Panel de Control"
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -27,6 +29,7 @@ class MyAdminSite(UnfoldAdminSite):
         custom_urls = [
             path('logout', LogoutView.as_view(), name='logout'),
             path('save_mesa_position/<int:mesa_id>/', save_mesa_position, name='save_mesa_position'),
+            path('ver_qr_pago/<int:factura_id>/', ver_qr_pago, name='ver_qr_pago'),
         ]
         return custom_urls + urls
 
@@ -35,6 +38,7 @@ class MyAdminSite(UnfoldAdminSite):
         
         # Define el orden de las aplicaciones como antes
         app_order = [
+            'modulo_ventas',
             'modulo_evento',
             'modulo_stock',
             'moduloLogin',

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 27-09-2024 a las 04:01:01
+-- Tiempo de generación: 18-10-2024 a las 22:07:55
 -- Versión del servidor: 8.3.0
 -- Versión de PHP: 8.2.18
 
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `auth_permission` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `auth_permission_content_type_id_codename_01ab375a_uniq` (`content_type_id`,`codename`),
   KEY `auth_permission_content_type_id_2f476e4b` (`content_type_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=169 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=201 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `auth_permission`
@@ -241,7 +241,39 @@ INSERT INTO `auth_permission` (`id`, `name`, `content_type_id`, `codename`) VALU
 (165, 'Can add Movimientos de Fiestas', 42, 'add_movimientofiesta'),
 (166, 'Can change Movimientos de Fiestas', 42, 'change_movimientofiesta'),
 (167, 'Can delete Movimientos de Fiestas', 42, 'delete_movimientofiesta'),
-(168, 'Can view Movimientos de Fiestas', 42, 'view_movimientofiesta');
+(168, 'Can view Movimientos de Fiestas', 42, 'view_movimientofiesta'),
+(169, 'Can add Factura (Cliente)', 43, 'add_facturacliente'),
+(170, 'Can change Factura (Cliente)', 43, 'change_facturacliente'),
+(171, 'Can delete Factura (Cliente)', 43, 'delete_facturacliente'),
+(172, 'Can view Factura (Cliente)', 43, 'view_facturacliente'),
+(173, 'Can add Tipo Factura', 44, 'add_tipofactura'),
+(174, 'Can change Tipo Factura', 44, 'change_tipofactura'),
+(175, 'Can delete Tipo Factura', 44, 'delete_tipofactura'),
+(176, 'Can view Tipo Factura', 44, 'view_tipofactura'),
+(177, 'Can add Detalle Factura (Cliente)', 45, 'add_detallefactura'),
+(178, 'Can change Detalle Factura (Cliente)', 45, 'change_detallefactura'),
+(179, 'Can delete Detalle Factura (Cliente)', 45, 'delete_detallefactura'),
+(180, 'Can view Detalle Factura (Cliente)', 45, 'view_detallefactura'),
+(181, 'Can add Medio de Pago', 46, 'add_mediodepago'),
+(182, 'Can change Medio de Pago', 46, 'change_mediodepago'),
+(183, 'Can delete Medio de Pago', 46, 'delete_mediodepago'),
+(184, 'Can view Medio de Pago', 46, 'view_mediodepago'),
+(185, 'Can add Detalle Entrada', 47, 'add_detalleentrada'),
+(186, 'Can change Detalle Entrada', 47, 'change_detalleentrada'),
+(187, 'Can delete Detalle Entrada', 47, 'delete_detalleentrada'),
+(188, 'Can view Detalle Entrada', 47, 'view_detalleentrada'),
+(189, 'Can add Detalle Articulo', 48, 'add_detallearticulo'),
+(190, 'Can change Detalle Articulo', 48, 'change_detallearticulo'),
+(191, 'Can delete Detalle Articulo', 48, 'delete_detallearticulo'),
+(192, 'Can view Detalle Articulo', 48, 'view_detallearticulo'),
+(193, 'Can add Detalle de Reservación', 49, 'add_detallereservacion'),
+(194, 'Can change Detalle de Reservación', 49, 'change_detallereservacion'),
+(195, 'Can delete Detalle de Reservación', 49, 'delete_detallereservacion'),
+(196, 'Can view Detalle de Reservación', 49, 'view_detallereservacion'),
+(197, 'Can add Transacción de Pago', 50, 'add_transaccionpago'),
+(198, 'Can change Transacción de Pago', 50, 'change_transaccionpago'),
+(199, 'Can delete Transacción de Pago', 50, 'delete_transaccionpago'),
+(200, 'Can view Transacción de Pago', 50, 'view_transaccionpago');
 
 -- --------------------------------------------------------
 
@@ -264,14 +296,16 @@ CREATE TABLE IF NOT EXISTS `auth_user` (
   `date_joined` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `auth_user`
 --
 
 INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
-(1, 'pbkdf2_sha256$870000$wQWQKYhcHTeY5xEiprkTIv$PkIKRQr3QIoE2tqptq6o+xsqFva6/U6XBnmNaFVtHAU=', '2024-09-26 02:46:25.284498', 1, 'Dario07', 'Miguel Dario', 'Coronel', 'mdarioc1998@gmail.com', 1, 1, '2024-09-26 02:46:02.218933');
+(1, 'pbkdf2_sha256$870000$wQWQKYhcHTeY5xEiprkTIv$PkIKRQr3QIoE2tqptq6o+xsqFva6/U6XBnmNaFVtHAU=', '2024-10-16 03:07:53.910426', 1, 'Dario07', 'Miguel Dario', 'Coronel', 'mdarioc1998@gmail.com', 1, 1, '2024-09-26 02:46:02.218933'),
+(2, 'pbkdf2_sha256$870000$4rxLjFM3rSDHFaMxYCPHmu$3+RHiVoM7jXJDbzKSXcwFibdEhnOHTP+1K3HUb8C4c0=', NULL, 0, 'Azul07', 'Azul Yanel', 'Coronel', 'coronelazul144@gmail.com', 1, 1, '2024-09-28 14:45:07.731340'),
+(3, 'pbkdf2_sha256$870000$T6n3Dd6IozUO5b64yFTi0I$mAQb7CRe94p2x1uBWaOqn3rtZVDOZNty9c0l/cuGZK0=', NULL, 0, 'Franco07', '', '', '', 0, 1, '2024-10-06 22:19:24.640759');
 
 -- --------------------------------------------------------
 
@@ -17676,7 +17710,110 @@ INSERT INTO `django_admin_log` (`id`, `action_time`, `object_id`, `object_repr`,
 (41, '2024-09-27 03:01:47.566965', '14', 'Hola23 (2024-09-27)', 2, '[{\"changed\": {\"fields\": [\"Nombre\", \"Descripci\\u00f3n\", \"Edad m\\u00ednima\", \"Edad m\\u00e1xima\", \"Vestimenta\"]}}]', 37, 1),
 (42, '2024-09-27 03:26:09.059492', '14', 'Hola2322 (2024-09-27)', 2, '[{\"changed\": {\"fields\": [\"Nombre\"]}}]', 37, 1),
 (43, '2024-09-27 03:26:38.511303', '14', 'Hola2322 (2024-09-27)', 2, '[{\"changed\": {\"fields\": [\"Descripci\\u00f3n\"]}}]', 37, 1),
-(44, '2024-09-27 03:31:49.931263', '14', 'Hola2322 (2024-09-27)', 3, '', 37, 1);
+(44, '2024-09-27 03:31:49.931263', '14', 'Hola2322 (2024-09-27)', 3, '', 37, 1),
+(45, '2024-09-28 14:45:08.209793', '2', 'Azul07', 1, '[{\"added\": {}}]', 8, 1),
+(46, '2024-09-28 14:45:53.029759', '2', 'Azul Yanel Coronel (Auditor)', 1, '[{\"added\": {}}]', 16, 1),
+(47, '2024-09-28 14:47:04.210406', '1', 'Miguel Dario Coronel (1) contrató a Azul Yanel Coronel (Empleado) el 2024-09-28', 1, '[{\"added\": {}}]', 23, 1),
+(48, '2024-09-28 14:47:29.238622', '2', 'Miguel Dario Coronel (2) contrató a Miguel Dario Coronel (Empleado) el 2024-09-28', 1, '[{\"added\": {}}]', 23, 1),
+(49, '2024-09-28 14:49:40.460193', '1', '(Hora inicio: 22:00:00. Hora fin: 01:00:00.)', 1, '[{\"added\": {}}]', 13, 1),
+(50, '2024-09-28 14:49:50.995826', '1', 'Miguel Dario Coronel (Empleado) tiene el turno (Hora inicio: 22:00:00. Hora fin: 01:00:00.)', 1, '[{\"added\": {}}]', 22, 1),
+(51, '2024-09-28 14:49:57.120058', '2', 'Azul Yanel Coronel (Empleado) tiene el turno (Hora inicio: 22:00:00. Hora fin: 01:00:00.)', 1, '[{\"added\": {}}]', 22, 1),
+(52, '2024-09-28 15:01:51.132385', '1', 'Vodka (Smirnoff)', 2, '[{\"changed\": {\"fields\": [\"Stock\"]}}]', 29, 1),
+(53, '2024-09-28 15:01:59.487125', '2', 'Energizante (Redbull)', 2, '[{\"changed\": {\"fields\": [\"Stock\"]}}]', 29, 1),
+(54, '2024-09-28 15:10:47.288660', '15', 'Roxo Club (2024-09-28)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa (1)\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa (2)\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa (3)\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa (4)\"}}]', 37, 1),
+(55, '2024-09-28 15:11:15.249577', '15', 'Roxo Club (2024-09-28)', 2, '[]', 37, 1),
+(56, '2024-09-28 15:12:56.629102', '5', 'Mesa (1)', 2, '[{\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa (1) tiene Vodka (1000.00ml)\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa (1) tiene Energizante (500.00ml)\"}}]', 40, 1),
+(57, '2024-09-28 15:13:14.321894', '6', 'Mesa (2)', 2, '[{\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa (2) tiene Vodka (1000.00ml)\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa (2) tiene Energizante (500.00ml)\"}}]', 40, 1),
+(58, '2024-09-28 15:13:39.902202', '7', 'Mesa (3)', 2, '[{\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa (3) tiene Vodka (1000.00ml)\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa (3) tiene Energizante (500.00ml)\"}}]', 40, 1),
+(59, '2024-09-28 15:14:08.357547', '8', 'Mesa (4)', 2, '[{\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa (4) tiene Vodka (1000.00ml)\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa (4) tiene Energizante (500.00ml)\"}}]', 40, 1),
+(60, '2024-09-28 15:14:15.005227', '8', 'Mesa (4)', 2, '[{\"changed\": {\"fields\": [\"Disponibilidad\"]}}]', 40, 1),
+(61, '2024-09-28 15:14:20.574652', '5', 'Mesa (1)', 2, '[{\"changed\": {\"fields\": [\"Disponibilidad\"]}}]', 40, 1),
+(62, '2024-09-28 15:42:53.608518', '15', 'Roxo Club (2024-09-28)', 2, '[{\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada (Popular)\"}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada (VIP)\"}}]', 37, 1),
+(63, '2024-09-28 15:49:31.212530', '15', 'Roxo Club (2024-09-28)', 2, '[{\"changed\": {\"fields\": [\"Edad m\\u00e1xima\", \"Cantidad Entradas Populares\", \"Cantidad Entradas VIP\"]}}]', 37, 1),
+(64, '2024-09-28 20:12:59.380911', '16', 'Prueba (2024-10-05)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada (Popular)\"}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada (VIP)\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa (1)\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa (2)\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa (3)\"}}]', 37, 1),
+(65, '2024-09-28 20:14:16.224583', '16', 'Prueba (2024-10-05)', 2, '[]', 37, 1),
+(66, '2024-09-28 20:18:07.341360', '9', 'Mesa (1)', 2, '[{\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa (1) tiene Vodka (1000.00ml)\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa (1) tiene Energizante (500.00ml)\"}}]', 40, 1),
+(67, '2024-09-28 20:18:46.758064', '11', 'Mesa (2)', 2, '[{\"changed\": {\"fields\": [\"Disponibilidad\"]}}]', 40, 1),
+(68, '2024-09-28 20:20:21.350258', '16', 'Prueba (2024-10-12)', 2, '[{\"changed\": {\"fields\": [\"Fecha\"]}}]', 37, 1),
+(69, '2024-09-28 20:20:52.869164', '16', 'Prueba (2024-10-12)', 2, '[{\"changed\": {\"fields\": [\"Vestimenta\"]}}]', 37, 1),
+(70, '2024-09-28 20:21:25.621750', '16', 'Roxo 12 (2024-10-12)', 2, '[{\"changed\": {\"fields\": [\"Nombre\"]}}]', 37, 1),
+(71, '2024-09-28 20:38:57.258585', '16', 'Roxo 12 (2024-10-05)', 2, '[{\"changed\": {\"fields\": [\"Fecha\"]}}]', 37, 1),
+(72, '2024-09-28 23:10:17.251383', '16', 'Roxo 12 (2024-10-05)', 2, '[{\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa (3)\"}}]', 37, 1),
+(73, '2024-09-28 23:10:29.808569', '16', 'Roxo 12 (2024-10-05)', 2, '[{\"deleted\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa ((actualizar))\"}}]', 37, 1),
+(74, '2024-10-01 01:14:06.196783', '15', 'Roxo Club (2024-09-28)', 2, '[]', 37, 1),
+(75, '2024-10-01 01:15:57.701875', '6', 'Mesa (2)', 2, '[{\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa (2) tiene Vodka + Redbull (500.00ml)\"}}]', 40, 1),
+(76, '2024-10-01 01:15:57.842529', '6', 'Mesa (2)', 2, '[{\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa (2) tiene Vodka + Redbull (500.00ml)\"}}]', 40, 1),
+(77, '2024-10-01 01:17:37.609311', '15', 'Roxo Club-50 (2024-09-28)', 2, '[{\"changed\": {\"fields\": [\"Nombre\", \"Descripci\\u00f3n\"]}}]', 37, 1),
+(78, '2024-10-01 01:19:03.730328', '15', 'Roxo Club-50 (2024-09-28)', 2, '[{\"deleted\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa ((actualizar))\"}}]', 37, 1),
+(79, '2024-10-04 15:28:17.027119', '5', 'Mesa (1)', 2, '[{\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa (1) tiene Vodka + Redbull (500.00ml)\"}}]', 40, 1),
+(80, '2024-10-04 15:28:36.428685', '6', 'Mesa (2)', 2, '[{\"deleted\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa (2) tiene Vodka + Redbull (500.00ml)\"}}, {\"deleted\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa (2) tiene Vodka + Redbull (500.00ml)\"}}]', 40, 1),
+(81, '2024-10-04 15:28:53.758967', '5', 'Mesa (1)', 2, '[{\"changed\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa (1) tiene Vodka + Redbull (500.00ml)\", \"fields\": [\"Cantidad\"]}}]', 40, 1),
+(82, '2024-10-04 15:30:18.617019', '5', 'Mesa (1)', 2, '[{\"changed\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa (1) tiene Vodka + Redbull (500.00ml)\", \"fields\": [\"Cantidad\"]}}]', 40, 1),
+(83, '2024-10-04 15:35:30.387033', '9', 'Mesa (1)', 2, '[{\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa (1) tiene Vodka + Redbull (500.00ml)\"}}]', 40, 1),
+(84, '2024-10-04 15:35:44.513772', '9', 'Mesa (1)', 2, '[{\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa (1) tiene Vodka (1000.00ml)\"}}]', 40, 1),
+(85, '2024-10-04 15:36:00.358250', '9', 'Mesa (1)', 2, '[{\"deleted\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa (1) tiene Vodka (1000.00ml)\"}}]', 40, 1),
+(86, '2024-10-06 22:19:24.892198', '3', 'Franco07', 1, '[{\"added\": {}}]', 8, 1),
+(87, '2024-10-06 22:19:56.015999', '3', 'Franco Gimenez (Proveedor)', 1, '[{\"added\": {}}]', 28, 1),
+(88, '2024-10-06 22:20:10.389587', '1', 'tiempo y forma', 1, '[{\"added\": {}}]', 27, 1),
+(89, '2024-10-09 01:47:20.295990', '1', 'MedioDePago object (1)', 1, '[{\"added\": {}}]', 46, 1),
+(90, '2024-10-09 01:57:16.677281', '1', 'B', 1, '[{\"added\": {}}]', 44, 1),
+(91, '2024-10-10 02:42:56.695933', '16', 'Roxo 12 (2024-10-05)', 2, '[]', 37, 1),
+(92, '2024-10-11 15:29:07.206349', '2', 'Binance', 1, '[{\"added\": {}}]', 44, 1),
+(93, '2024-10-11 15:29:20.411866', '1', 'Factura Binance N°1 (2024-10-11 15:29:20.411866+00:00)', 1, '[{\"added\": {}}]', 43, 1),
+(94, '2024-10-11 15:29:38.506306', '2', 'Binance', 1, '[{\"added\": {}}]', 46, 1),
+(95, '2024-10-11 15:29:46.935381', '1', 'Factura B N°1 (2024-10-11 15:29:20.411866+00:00)', 2, '[{\"changed\": {\"fields\": [\"Medio de pago\", \"Tipo Factura\"]}}]', 43, 1),
+(96, '2024-10-11 15:30:25.222018', '2', 'Binance', 3, '', 44, 1),
+(97, '2024-10-11 15:46:27.925326', '2', 'BINANCE', 2, '[{\"changed\": {\"fields\": [\"Descripci\\u00f3n\"]}}]', 46, 1),
+(98, '2024-10-11 16:05:26.624168', '1', 'Factura B N°1 (2024-10-11 15:29:20.411866+00:00)', 2, '[{\"changed\": {\"fields\": [\"Medio de pago\"]}}]', 43, 1),
+(99, '2024-10-11 16:05:45.299383', '1', 'Factura B N°1 (2024-10-11 15:29:20.411866+00:00)', 2, '[{\"changed\": {\"fields\": [\"Medio de pago\"]}}]', 43, 1),
+(100, '2024-10-13 22:45:23.938489', '3', 'Mercado Pago', 1, '[{\"added\": {}}]', 46, 1),
+(101, '2024-10-13 22:45:41.402873', '2', 'BINANCE', 3, '', 46, 1),
+(102, '2024-10-13 23:12:32.315991', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 1, '[{\"added\": {}}]', 43, 1),
+(103, '2024-10-13 23:12:45.683709', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 2, '[{\"changed\": {\"fields\": [\"Estado del pago\"]}}]', 43, 1),
+(104, '2024-10-13 23:12:51.634527', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 2, '[{\"changed\": {\"fields\": [\"Estado del pago\"]}}]', 43, 1),
+(105, '2024-10-13 23:33:52.976012', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}, {\"added\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (1)\"}}, {\"added\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (2)\"}}, {\"added\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (3)\"}}]', 43, 1),
+(106, '2024-10-13 23:38:55.835492', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}]', 43, 1),
+(107, '2024-10-13 23:39:12.873151', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 2, '[{\"added\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (4)\"}}]', 43, 1),
+(108, '2024-10-13 23:39:20.335667', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}]', 43, 1),
+(109, '2024-10-13 23:39:34.228452', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 2, '[{\"added\": {\"name\": \"Detalle de Entrada\", \"object\": \"DetalleEntrada object (5)\"}}]', 43, 1),
+(110, '2024-10-13 23:40:04.177211', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}]', 43, 1),
+(111, '2024-10-13 23:42:59.788804', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}, {\"added\": {\"name\": \"Detalle de Reservaci\\u00f3n\", \"object\": \"DetalleReservacion object (6)\"}}]', 43, 1),
+(112, '2024-10-13 23:45:08.569836', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}]', 43, 1),
+(113, '2024-10-13 23:51:27.190621', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}, {\"changed\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (4)\", \"fields\": [\"Cantidad\"]}}, {\"changed\": {\"name\": \"Detalle de Entrada\", \"object\": \"DetalleEntrada object (5)\", \"fields\": [\"Cantidad\"]}}, {\"changed\": {\"name\": \"Detalle de Reservaci\\u00f3n\", \"object\": \"DetalleReservacion object (6)\", \"fields\": [\"Precio Unitario\"]}}]', 43, 1),
+(114, '2024-10-13 23:53:00.934983', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}, {\"changed\": {\"name\": \"Detalle de Reservaci\\u00f3n\", \"object\": \"DetalleReservacion object (6)\", \"fields\": [\"Precio Unitario\"]}}]', 43, 1),
+(115, '2024-10-14 00:41:59.678854', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 2, '[]', 43, 1),
+(116, '2024-10-14 00:42:48.135106', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 2, '[{\"changed\": {\"name\": \"Detalle de Entrada\", \"object\": \"DetalleEntrada object (5)\", \"fields\": [\"Precio Unitario\"]}}, {\"changed\": {\"name\": \"Detalle de Reservaci\\u00f3n\", \"object\": \"DetalleReservacion object (6)\", \"fields\": [\"Precio Unitario\"]}}]', 43, 1),
+(117, '2024-10-14 00:42:57.222321', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 2, '[{\"changed\": {\"name\": \"Detalle de Entrada\", \"object\": \"DetalleEntrada object (5)\", \"fields\": [\"Precio Unitario\"]}}, {\"changed\": {\"name\": \"Detalle de Reservaci\\u00f3n\", \"object\": \"DetalleReservacion object (6)\", \"fields\": [\"Precio Unitario\"]}}]', 43, 1),
+(118, '2024-10-14 00:45:07.460783', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 2, '[]', 43, 1),
+(119, '2024-10-14 00:46:48.532516', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}, {\"changed\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (4)\", \"fields\": [\"Precio Unitario\"]}}]', 43, 1),
+(120, '2024-10-14 00:50:08.813302', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}, {\"changed\": {\"name\": \"Detalle de Entrada\", \"object\": \"DetalleEntrada object (5)\", \"fields\": [\"Cantidad\"]}}]', 43, 1),
+(121, '2024-10-14 00:50:36.145205', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}, {\"changed\": {\"name\": \"Detalle de Reservaci\\u00f3n\", \"object\": \"DetalleReservacion object (6)\", \"fields\": [\"Precio Unitario\"]}}]', 43, 1),
+(122, '2024-10-14 00:51:17.086791', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}, {\"changed\": {\"name\": \"Detalle de Reservaci\\u00f3n\", \"object\": \"DetalleReservacion object (6)\", \"fields\": [\"Precio Unitario\"]}}]', 43, 1),
+(123, '2024-10-14 00:52:13.808836', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}, {\"changed\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (1)\", \"fields\": [\"Cantidad\"]}}]', 43, 1),
+(124, '2024-10-15 00:00:51.136341', '3', 'Factura B N°2 (2024-10-15 00:00:51.124296+00:00)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (7)\"}}]', 43, 1),
+(125, '2024-10-15 00:01:05.523404', '3', 'Factura B N°2 (2024-10-15 00:00:51.124296+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}]', 43, 1),
+(126, '2024-10-16 02:35:26.022997', '3', 'Factura B N°2 (2024-10-15 00:00:51.124296+00:00)', 3, '', 43, 1),
+(127, '2024-10-16 02:35:49.724782', '4', 'Factura B N°2 (2024-10-16 02:35:49.722536+00:00)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (8)\"}}]', 43, 1),
+(128, '2024-10-16 02:40:19.514179', '4', 'Factura B N°2 (2024-10-16 02:35:49.722536+00:00)', 3, '', 43, 1),
+(129, '2024-10-16 02:40:47.127696', '5', 'Factura B N°2 (2024-10-16 02:40:47.126682+00:00)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (9)\"}}]', 43, 1),
+(130, '2024-10-16 02:41:00.319341', '5', 'Factura B N°2 (2024-10-16 02:40:47.126682+00:00)', 3, '', 43, 1),
+(131, '2024-10-16 02:48:30.332310', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 2, '[{\"added\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (10)\"}}]', 43, 1),
+(132, '2024-10-16 02:50:52.588309', '6', 'Factura B N°2 (2024-10-16 02:50:52.587310+00:00)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (11)\"}}]', 43, 1),
+(133, '2024-10-16 03:08:29.110526', '7', 'Factura B N°3 (2024-10-16 03:08:29.110526+00:00)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (12)\"}}, {\"added\": {\"name\": \"Detalle de Entrada\", \"object\": \"DetalleEntrada object (13)\"}}]', 43, 1),
+(134, '2024-10-16 14:21:32.856892', '8', 'Factura B N°4 (2024-10-16 14:21:32.852890+00:00)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (14)\"}}]', 43, 1),
+(135, '2024-10-16 14:21:55.352726', '8', 'Factura B N°4 (2024-10-16 14:21:32.852890+00:00)', 3, '', 43, 1),
+(136, '2024-10-16 14:21:55.352726', '7', 'Factura B N°3 (2024-10-16 03:08:29.110526+00:00)', 3, '', 43, 1),
+(137, '2024-10-16 14:21:55.352726', '6', 'Factura B N°2 (2024-10-16 02:50:52.587310+00:00)', 3, '', 43, 1),
+(138, '2024-10-16 20:49:13.428518', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}, {\"deleted\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (None)\"}}, {\"deleted\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (None)\"}}, {\"deleted\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (None)\"}}, {\"deleted\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (None)\"}}]', 43, 1),
+(139, '2024-10-17 14:35:03.671844', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 2, '[{\"changed\": {\"fields\": [\"Medio de pago\", \"Precio Total\"]}}]', 43, 1),
+(140, '2024-10-17 15:09:51.435690', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}, {\"changed\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (1)\", \"fields\": [\"Precio Unitario\"]}}, {\"deleted\": {\"name\": \"Detalle de Entrada\", \"object\": \"DetalleEntrada object (None)\"}}, {\"deleted\": {\"name\": \"Detalle de Reservaci\\u00f3n\", \"object\": \"DetalleReservacion object (None)\"}}]', 43, 1),
+(141, '2024-10-17 15:09:57.551531', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}]', 43, 1),
+(142, '2024-10-17 15:10:47.311828', '2', 'Factura B N°1 (2024-10-13 23:12:32.314992+00:00)', 3, '', 43, 1),
+(143, '2024-10-17 21:58:54.795764', '9', 'Factura B N°1 (2024-10-17 21:58:54.789193+00:00)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (15)\"}}]', 43, 1),
+(144, '2024-10-17 22:45:08.936448', '9', 'Factura B N°1 (2024-10-17 21:58:54.789193+00:00)', 3, '', 43, 1),
+(145, '2024-10-17 22:45:28.572389', '10', 'Factura B N°1 (2024-10-17 22:45:28.566665+00:00)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (16)\"}}]', 43, 1),
+(146, '2024-10-17 22:49:23.578161', '10', 'Factura B N°1 (2024-10-17 22:45:28.566665+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}, {\"changed\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (16)\", \"fields\": [\"Precio Unitario\", \"Cantidad\"]}}]', 43, 1),
+(147, '2024-10-17 22:54:37.964098', '10', 'Factura B N°1 (2024-10-17 22:45:28.566665+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}, {\"changed\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (16)\", \"fields\": [\"Precio Unitario\", \"Cantidad\"]}}]', 43, 1);
 
 -- --------------------------------------------------------
 
@@ -17691,7 +17828,7 @@ CREATE TABLE IF NOT EXISTS `django_content_type` (
   `model` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `django_content_type_app_label_model_76bd3d3b_uniq` (`app_label`,`model`)
-) ENGINE=MyISAM AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `django_content_type`
@@ -17739,7 +17876,15 @@ INSERT INTO `django_content_type` (`id`, `app_label`, `model`) VALUES
 (39, 'modulo_evento', 'entrada'),
 (40, 'modulo_evento', 'mesa'),
 (41, 'modulo_evento', 'mesatienearticulo'),
-(42, 'modulo_evento', 'movimientofiesta');
+(42, 'modulo_evento', 'movimientofiesta'),
+(43, 'modulo_ventas', 'facturacliente'),
+(44, 'modulo_ventas', 'tipofactura'),
+(45, 'modulo_ventas', 'detallefactura'),
+(46, 'modulo_ventas', 'mediodepago'),
+(47, 'modulo_ventas', 'detalleentrada'),
+(48, 'modulo_ventas', 'detallearticulo'),
+(49, 'modulo_ventas', 'detallereservacion'),
+(50, 'modulo_ventas', 'transaccionpago');
 
 -- --------------------------------------------------------
 
@@ -17754,7 +17899,7 @@ CREATE TABLE IF NOT EXISTS `django_migrations` (
   `name` varchar(255) NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=79 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=90 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `django_migrations`
@@ -17838,7 +17983,18 @@ INSERT INTO `django_migrations` (`id`, `app`, `name`, `applied`) VALUES
 (75, 'modulo_evento', '0021_entrada__precio_unitario_and_more', '2024-09-26 04:18:58.344017'),
 (76, 'modulo_evento', '0022_mesatienearticulo', '2024-09-26 04:40:47.218517'),
 (77, 'modulo_evento', '0023_alter_mesa_options_alter_mesatienearticulo_options', '2024-09-26 21:00:39.716470'),
-(78, 'modulo_evento', '0024_movimientofiesta', '2024-09-26 21:01:33.435556');
+(78, 'modulo_evento', '0024_movimientofiesta', '2024-09-26 21:01:33.435556'),
+(79, 'modulo_evento', '0025_alter_movimientofiesta_options_and_more', '2024-09-28 04:15:01.277498'),
+(80, 'modulo_evento', '0026_remove_entrada__cliente_delete_cliente', '2024-10-06 22:15:11.343658'),
+(81, 'modulo_stock', '0009_remitoproveedor__empleado', '2024-10-06 22:15:11.391736'),
+(82, 'modulo_evento', '0027_cliente', '2024-10-09 01:25:30.353146'),
+(83, 'modulo_ventas', '0001_initial', '2024-10-09 01:25:31.133300'),
+(84, 'modulo_ventas', '0002_alter_facturacliente__cliente', '2024-10-09 01:30:12.886136'),
+(85, 'modulo_ventas', '0003_alter_detallearticulo_options_and_more', '2024-10-10 02:35:32.437084'),
+(86, 'modulo_ventas', '0004_transaccionpago', '2024-10-11 15:28:19.997644'),
+(87, 'modulo_ventas', '0005_facturacliente__pagado', '2024-10-13 23:11:36.082988'),
+(88, 'modulo_ventas', '0006_remove_transaccionpago__detalles_pago_and_more', '2024-10-17 14:31:20.079784'),
+(89, 'modulo_ventas', '0007_transaccionpago__qr_image', '2024-10-17 21:59:21.495715');
 
 -- --------------------------------------------------------
 
@@ -17860,7 +18016,11 @@ CREATE TABLE IF NOT EXISTS `django_session` (
 --
 
 INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
-('0a9hi3jonvnjly1et3drjtr1g6yagaru', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1steWP:A7q5XSWY1Dm8WNkPoftHtzHEr-4E5lZ-PmSs8Ybm9I4', '2024-10-10 02:46:25.301435');
+('ae0mdfkkb3usbpmx2ho96dv383wdwy3h', '.eJxVjEEOgyAQRe_CuiEBlBGX3fcMZBgGtTWSAK6a3r2auGi3_73_3sLj3ma_Vy5-iWIUStx-t4D04u0E8YnblCXlrZUlyFORF63ykSOv98v9C8xY5-MdqOtIBeKOtVJOJVLaDdYY6xJQSoAWnKEIRrvegkFIARzC0OveMuMRbXmaVvZ1iRywiLGVnT9fBz8_5w:1suaVc:WX8sumebuekkhouEAu7kA-1NGPRW0XU2DQeaob_PoI0', '2024-10-12 16:41:28.882656'),
+('ykyzpte2kpaq1mtfxh05kd2cg0m4jeoa', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1sudOR:f5GhEvbunFNZk2Cjy_6WqEtk68E1zWQr6YAvJIMzzls', '2024-10-12 19:46:15.584150'),
+('cej16tlwmgnpwvlv0tkuoo5lo6ulswu5', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t04hx:s_i0vDL06VFp_OkStVAAsGdjpIF37dp9CiJaUHdi16M', '2024-10-27 19:56:53.033993'),
+('79txmi83uwo2v7eskd64a5lpy67nlqos', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t0u8l:dkDzu0lmPgrYLqGSi5ECbQNKm_0E3R5gaN3daZjaOmQ', '2024-10-30 02:51:59.045114'),
+('eu8nvq9vlz1zfrt8oxhc4pgyp4q291kw', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t0uO9:x_-lg4Jh_L71cj2GKTD8YptK9cSPBJjP-Ss5SByGIqs', '2024-10-30 03:07:53.911425');
 
 -- --------------------------------------------------------
 
@@ -17916,6 +18076,13 @@ CREATE TABLE IF NOT EXISTS `modulologin_auditor` (
   PRIMARY KEY (`empleado_ptr_id`)
 ) ;
 
+--
+-- Volcado de datos para la tabla `modulologin_auditor`
+--
+
+INSERT INTO `modulologin_auditor` (`empleado_ptr_id`, `_frecuencia`) VALUES
+(2, 7);
+
 -- --------------------------------------------------------
 
 --
@@ -17958,7 +18125,15 @@ CREATE TABLE IF NOT EXISTS `modulologin_contratacion` (
   PRIMARY KEY (`id`),
   KEY `moduloLogin_contratacion__empleado_id_368f756f` (`_empleado_id`),
   KEY `moduloLogin_contratacion__administrador_id_4522022d` (`_administrador_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `modulologin_contratacion`
+--
+
+INSERT INTO `modulologin_contratacion` (`id`, `_fecha_contratacion`, `_empleado_id`, `_administrador_id`, `_tipo`) VALUES
+(1, '2024-09-28', 2, 1, 'Contratacion'),
+(2, '2024-09-28', 1, 1, 'Contratacion');
 
 -- --------------------------------------------------------
 
@@ -18009,7 +18184,8 @@ CREATE TABLE IF NOT EXISTS `modulologin_empleado` (
 --
 
 INSERT INTO `modulologin_empleado` (`persona_ptr_id`, `_zona_asignada`, `_sueldo`, `_estado`, `_fecha_inicio`, `_seniority`, `_annos_experiencia`) VALUES
-(1, 'Planta baja', 500000.00, 'Inactivo', '2024-09-25', 'Trainee', 1);
+(1, 'Planta baja', 500000.00, 'Activo', '2024-09-25', 'Trainee', 1),
+(2, 'Planta baja', 500000.00, 'Activo', '2024-09-28', 'Junior', 1);
 
 -- --------------------------------------------------------
 
@@ -18025,7 +18201,15 @@ CREATE TABLE IF NOT EXISTS `modulologin_empleadotieneturno` (
   PRIMARY KEY (`id`),
   KEY `moduloLogin_empleadotieneturno__turno_id_687b7222` (`_turno_id`),
   KEY `moduloLogin_empleadotieneturno__empleado_id_a8f9a4e0` (`_empleado_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `modulologin_empleadotieneturno`
+--
+
+INSERT INTO `modulologin_empleadotieneturno` (`id`, `_turno_id`, `_empleado_id`) VALUES
+(1, 1, 1),
+(2, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -18058,14 +18242,16 @@ CREATE TABLE IF NOT EXISTS `modulologin_persona` (
   UNIQUE KEY `_dni` (`_dni`),
   UNIQUE KEY `_cuil` (`_cuil`),
   UNIQUE KEY `_user_id` (`_user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `modulologin_persona`
 --
 
 INSERT INTO `modulologin_persona` (`id`, `_dni`, `_cuil`, `_nombre`, `_apellido`, `_fecha_nacimiento`, `_user_id`) VALUES
-(1, '49864986', '20498649868', 'Miguel Dario', 'Coronel', '1998-08-07', 1);
+(1, '49864986', '20498649868', 'Miguel Dario', 'Coronel', '1998-08-07', 1),
+(2, '78787878', '20787878788', 'Azul Yanel', 'Coronel', '2003-08-14', 2),
+(3, '59595958', '20595959588', 'Franco', 'Gimenez', '1999-02-19', 3);
 
 -- --------------------------------------------------------
 
@@ -18127,7 +18313,14 @@ CREATE TABLE IF NOT EXISTS `modulologin_turno` (
   `_hora_inicio` time(6) NOT NULL,
   `_hora_fin` time(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `modulologin_turno`
+--
+
+INSERT INTO `modulologin_turno` (`id`, `_hora_inicio`, `_hora_fin`) VALUES
+(1, '22:00:00.000000', '01:00:00.000000');
 
 -- --------------------------------------------------------
 
@@ -18152,13 +18345,21 @@ DROP TABLE IF EXISTS `modulo_evento_entrada`;
 CREATE TABLE IF NOT EXISTS `modulo_evento_entrada` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `_categoria` varchar(20) NOT NULL,
-  `_cliente_id` bigint DEFAULT NULL,
   `_fiesta_id` bigint NOT NULL,
   `_precio_unitario` decimal(10,2) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `modulo_evento_entrada__cliente_id_d1a33f83` (`_cliente_id`),
   KEY `modulo_evento_entrada__fiesta_id_f5bf39de` (`_fiesta_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `modulo_evento_entrada`
+--
+
+INSERT INTO `modulo_evento_entrada` (`id`, `_categoria`, `_fiesta_id`, `_precio_unitario`) VALUES
+(1, 'Popular', 15, 3000.00),
+(2, 'VIP', 15, 5000.00),
+(3, 'Popular', 16, 2000.00),
+(4, 'VIP', 16, 5000.00);
 
 -- --------------------------------------------------------
 
@@ -18178,6 +18379,14 @@ CREATE TABLE IF NOT EXISTS `modulo_evento_evento` (
   `_fecha` date NOT NULL,
   PRIMARY KEY (`id`)
 ) ;
+
+--
+-- Volcado de datos para la tabla `modulo_evento_evento`
+--
+
+INSERT INTO `modulo_evento_evento` (`id`, `_nombre`, `_descripcion`, `_edad_minima`, `_edad_maxima`, `latitud`, `longitud`, `_fecha`) VALUES
+(15, 'Roxo Club-50', 'DJ Ferreira-2', 18, 50, -26.1615, -58.1844, '2024-09-28'),
+(16, 'Roxo 12', 'DJ Agustín', 18, 40, -26.1781, -58.1761, '2024-10-05');
 
 --
 -- Disparadores `modulo_evento_evento`
@@ -18206,6 +18415,11 @@ CREATE TRIGGER `update_movimientofiesta_after_evento_update` AFTER UPDATE ON `mo
         -- Comparar el campo _descripcion de la tabla modulo_evento_evento
     IF NEW._descripcion <> OLD._descripcion THEN
         SET descripcion = CONCAT(descripcion, 'Descripción cambió de ', OLD._descripcion, ' a ', NEW._descripcion, '; ');
+        SET cambio = TRUE;
+    END IF;
+        
+        IF NEW._fecha <> OLD._fecha THEN
+        SET descripcion = CONCAT(descripcion, 'La fecha cambió de ', OLD._fecha, ' a ', NEW._fecha, '; ');
         SET cambio = TRUE;
     END IF;
         
@@ -18254,6 +18468,14 @@ CREATE TABLE IF NOT EXISTS `modulo_evento_fiesta` (
   `_cantidad_entrada_vip` int UNSIGNED NOT NULL,
   PRIMARY KEY (`evento_ptr_id`)
 ) ;
+
+--
+-- Volcado de datos para la tabla `modulo_evento_fiesta`
+--
+
+INSERT INTO `modulo_evento_fiesta` (`evento_ptr_id`, `_vestimenta`, `_categoria`, `_cantidad_entrada_popular`, `_cantidad_entrada_vip`) VALUES
+(16, 'Formal', 'Electronica', 100, 50),
+(15, 'Streetwear', 'Reggaeton', 60, 25);
 
 --
 -- Disparadores `modulo_evento_fiesta`
@@ -18369,6 +18591,17 @@ CREATE TABLE IF NOT EXISTS `modulo_evento_mesa` (
   KEY `modulo_evento_mesa__fiesta_id_2196c321` (`_fiesta_id`)
 ) ;
 
+--
+-- Volcado de datos para la tabla `modulo_evento_mesa`
+--
+
+INSERT INTO `modulo_evento_mesa` (`id`, `_capacidad`, `_categoria`, `_fiesta_id`, `_disponibilidad`, `_left`, `_top`, `_precio`) VALUES
+(7, 8, 'VIP', 15, 1, 827, 267, 20000.00),
+(6, 8, 'Popular', 15, 1, 349, 230, 10000.00),
+(5, 8, 'Popular', 15, 0, 27, 205, 10000.00),
+(9, 10, 'Popular', 16, 1, 25, 246, 10000.00),
+(11, 7, 'VIP', 16, 1, 516, 200, 20000.00);
+
 -- --------------------------------------------------------
 
 --
@@ -18386,6 +18619,22 @@ CREATE TABLE IF NOT EXISTS `modulo_evento_mesatienearticulo` (
   KEY `modulo_evento_mesatienearticulo__mesa_id_65f6a1ad` (`_mesa_id`)
 ) ;
 
+--
+-- Volcado de datos para la tabla `modulo_evento_mesatienearticulo`
+--
+
+INSERT INTO `modulo_evento_mesatienearticulo` (`id`, `_cantidad`, `_articulo_id`, `_mesa_id`) VALUES
+(2, 3, 1, 5),
+(3, 10, 2, 5),
+(4, 3, 1, 6),
+(5, 10, 2, 6),
+(6, 6, 1, 7),
+(7, 20, 2, 7),
+(14, 7, 3, 5),
+(10, 3, 1, 9),
+(11, 10, 2, 9),
+(15, 7, 3, 9);
+
 -- --------------------------------------------------------
 
 --
@@ -18396,13 +18645,27 @@ DROP TABLE IF EXISTS `modulo_evento_movimientofiesta`;
 CREATE TABLE IF NOT EXISTS `modulo_evento_movimientofiesta` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `_fecha` date NOT NULL,
-  `_descripcion` varchar(300) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `_descripcion` varchar(300) NOT NULL,
   `_administrador_id` bigint NOT NULL,
   `_fiesta_id` bigint NOT NULL,
   PRIMARY KEY (`id`),
   KEY `modulo_evento_movimientofiesta__administrador_id_665d6e63` (`_administrador_id`),
   KEY `modulo_evento_movimientofiesta__fiesta_id_55aa0df9` (`_fiesta_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `modulo_evento_movimientofiesta`
+--
+
+INSERT INTO `modulo_evento_movimientofiesta` (`id`, `_fecha`, `_descripcion`, `_administrador_id`, `_fiesta_id`) VALUES
+(13, '2024-09-28', 'Nombre cambió de Prueba a Roxo 12; ', 1, 16),
+(14, '2024-09-28', 'La fecha cambió de 2024-10-12 a 2024-10-05; ', 1, 16),
+(12, '2024-09-28', 'Vestimenta cambió de Streetwear a Formal; ', 1, 16),
+(11, '2024-09-28', 'registró', 1, 16),
+(10, '2024-09-28', 'Cantidad de entradas populares cambió de 50 a 60; Cantidad de entradas VIP cambió de 30 a 25; ', 1, 15),
+(9, '2024-09-28', 'Edad máxima cambió de 40 a 50; ', 1, 15),
+(8, '2024-09-28', 'registró', 1, 15),
+(15, '2024-09-30', 'Nombre cambió de Roxo Club a Roxo Club-50; Descripción cambió de DJ Ferreira a DJ Ferreira-2; ', 1, 15);
 
 -- --------------------------------------------------------
 
@@ -18426,9 +18689,9 @@ CREATE TABLE IF NOT EXISTS `modulo_stock_articulo` (
 --
 
 INSERT INTO `modulo_stock_articulo` (`id`, `_nombre`, `_volumen`, `_precio_unitario`, `_stock`, `_stock_minimo`) VALUES
-(1, 'Vodka', 1000.00, 5000.00, 108, 100),
-(2, 'Energizante', 500.00, 2000.00, 50, 100),
-(3, 'Vodka + Redbull', 500.00, 3000.00, 83, 50);
+(1, 'Vodka', 1000.00, 5000.00, 105, 100),
+(2, 'Energizante', 500.00, 2000.00, 47, 100),
+(3, 'Vodka + Redbull', 500.00, 3000.00, 78, 50);
 
 -- --------------------------------------------------------
 
@@ -18461,7 +18724,14 @@ CREATE TABLE IF NOT EXISTS `modulo_stock_estadoproducto` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `_descripcion` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `modulo_stock_estadoproducto`
+--
+
+INSERT INTO `modulo_stock_estadoproducto` (`id`, `_descripcion`) VALUES
+(1, 'tiempo y forma');
 
 -- --------------------------------------------------------
 
@@ -18525,14 +18795,16 @@ CREATE TABLE IF NOT EXISTS `modulo_stock_movimientostock` (
   PRIMARY KEY (`id`),
   KEY `modulo_stock_movimientostock__id_empleado_id_0dd6b6b2` (`_empleado_id`),
   KEY `modulo_stock_movimientostock__id_producto_id_b821bb45` (`_producto_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `modulo_stock_movimientostock`
 --
 
 INSERT INTO `modulo_stock_movimientostock` (`id`, `_cantidad`, `_fecha_movimiento`, `_empleado_id`, `_producto_id`) VALUES
-(1, 8, '2024-09-26', 1, 1);
+(1, 8, '2024-09-26', 1, 1),
+(2, -3, '2024-09-28', 1, 1),
+(3, -3, '2024-09-28', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -18569,6 +18841,13 @@ CREATE TABLE IF NOT EXISTS `modulo_stock_proveedor` (
   PRIMARY KEY (`persona_ptr_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Volcado de datos para la tabla `modulo_stock_proveedor`
+--
+
+INSERT INTO `modulo_stock_proveedor` (`persona_ptr_id`, `_condicion_iva`) VALUES
+(3, 'Responsable Inscripto');
+
 -- --------------------------------------------------------
 
 --
@@ -18581,9 +18860,11 @@ CREATE TABLE IF NOT EXISTS `modulo_stock_remitoproveedor` (
   `_fecha_emision_remito` date NOT NULL,
   `_numero_remito` varchar(100) NOT NULL,
   `_proveedor_id` bigint NOT NULL,
+  `_empleado_id` bigint NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `modulo_stock_remitoprove__proveedor_id__numero_re_e21592f6_uniq` (`_proveedor_id`,`_numero_remito`),
-  KEY `modulo_stock_remitoproveedor__id_proveedor_id_de443459` (`_proveedor_id`)
+  KEY `modulo_stock_remitoproveedor__id_proveedor_id_de443459` (`_proveedor_id`),
+  KEY `modulo_stock_remitoproveedor__empleado_id_47c64aff` (`_empleado_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -18605,6 +18886,177 @@ CREATE TABLE IF NOT EXISTS `modulo_stock_trago` (
 
 INSERT INTO `modulo_stock_trago` (`articulo_ptr_id`, `_tipo`) VALUES
 (3, 'Cóctel');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `modulo_ventas_detallearticulo`
+--
+
+DROP TABLE IF EXISTS `modulo_ventas_detallearticulo`;
+CREATE TABLE IF NOT EXISTS `modulo_ventas_detallearticulo` (
+  `detallefactura_ptr_id` bigint NOT NULL,
+  `_articulo_id` bigint NOT NULL,
+  PRIMARY KEY (`detallefactura_ptr_id`),
+  KEY `modulo_ventas_detallearticulo__articulo_id_4927bdd7` (`_articulo_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `modulo_ventas_detallearticulo`
+--
+
+INSERT INTO `modulo_ventas_detallearticulo` (`detallefactura_ptr_id`, `_articulo_id`) VALUES
+(16, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `modulo_ventas_detalleentrada`
+--
+
+DROP TABLE IF EXISTS `modulo_ventas_detalleentrada`;
+CREATE TABLE IF NOT EXISTS `modulo_ventas_detalleentrada` (
+  `detallefactura_ptr_id` bigint NOT NULL,
+  `_entrada_id` bigint NOT NULL,
+  PRIMARY KEY (`detallefactura_ptr_id`),
+  KEY `modulo_ventas_detalleentrada__entrada_id_44de22b6` (`_entrada_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `modulo_ventas_detallefactura`
+--
+
+DROP TABLE IF EXISTS `modulo_ventas_detallefactura`;
+CREATE TABLE IF NOT EXISTS `modulo_ventas_detallefactura` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `_cantidad` int UNSIGNED NOT NULL,
+  `_precio_unitario` decimal(10,2) NOT NULL,
+  `_subtotal` decimal(10,2) NOT NULL,
+  `_factura_id` bigint NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `modulo_ventas_detallefactura__factura_id_f6bbe047` (`_factura_id`)
+) ;
+
+--
+-- Volcado de datos para la tabla `modulo_ventas_detallefactura`
+--
+
+INSERT INTO `modulo_ventas_detallefactura` (`id`, `_cantidad`, `_precio_unitario`, `_subtotal`, `_factura_id`) VALUES
+(16, 1, 1.00, 1.00, 10);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `modulo_ventas_detallereservacion`
+--
+
+DROP TABLE IF EXISTS `modulo_ventas_detallereservacion`;
+CREATE TABLE IF NOT EXISTS `modulo_ventas_detallereservacion` (
+  `detallefactura_ptr_id` bigint NOT NULL,
+  `_reservacion_id` bigint NOT NULL,
+  PRIMARY KEY (`detallefactura_ptr_id`),
+  KEY `modulo_ventas_detallereservacion__reservacion_id_06b3d764` (`_reservacion_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `modulo_ventas_facturacliente`
+--
+
+DROP TABLE IF EXISTS `modulo_ventas_facturacliente`;
+CREATE TABLE IF NOT EXISTS `modulo_ventas_facturacliente` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `_numero_factura` varchar(100) NOT NULL,
+  `_fecha_emision` datetime(6) NOT NULL,
+  `_precio_total` decimal(10,2) NOT NULL,
+  `_cliente_id` bigint DEFAULT NULL,
+  `_empleado_id` bigint NOT NULL,
+  `_medio_de_pago_id` bigint NOT NULL,
+  `_tipo_factura_id` bigint NOT NULL,
+  `_pagado` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `_numero_factura` (`_numero_factura`),
+  UNIQUE KEY `modulo_ventas_facturacli__empleado_id__numero_fac_7547c83f_uniq` (`_empleado_id`,`_numero_factura`),
+  KEY `modulo_ventas_facturacliente__cliente_id_363adbe2` (`_cliente_id`),
+  KEY `modulo_ventas_facturacliente__empleado_id_8092f424` (`_empleado_id`),
+  KEY `modulo_ventas_facturacliente__medio_de_pago_id_735fd784` (`_medio_de_pago_id`),
+  KEY `modulo_ventas_facturacliente__tipo_factura_id_80dc92f6` (`_tipo_factura_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `modulo_ventas_facturacliente`
+--
+
+INSERT INTO `modulo_ventas_facturacliente` (`id`, `_numero_factura`, `_fecha_emision`, `_precio_total`, `_cliente_id`, `_empleado_id`, `_medio_de_pago_id`, `_tipo_factura_id`, `_pagado`) VALUES
+(10, '1', '2024-10-17 22:45:28.566665', 1.00, NULL, 1, 3, 1, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `modulo_ventas_mediodepago`
+--
+
+DROP TABLE IF EXISTS `modulo_ventas_mediodepago`;
+CREATE TABLE IF NOT EXISTS `modulo_ventas_mediodepago` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `_descripcion` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `modulo_ventas_mediodepago`
+--
+
+INSERT INTO `modulo_ventas_mediodepago` (`id`, `_descripcion`) VALUES
+(1, 'Efectivo'),
+(3, 'Mercado Pago');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `modulo_ventas_tipofactura`
+--
+
+DROP TABLE IF EXISTS `modulo_ventas_tipofactura`;
+CREATE TABLE IF NOT EXISTS `modulo_ventas_tipofactura` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `_descripcion` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `modulo_ventas_tipofactura`
+--
+
+INSERT INTO `modulo_ventas_tipofactura` (`id`, `_descripcion`) VALUES
+(1, 'B');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `modulo_ventas_transaccionpago`
+--
+
+DROP TABLE IF EXISTS `modulo_ventas_transaccionpago`;
+CREATE TABLE IF NOT EXISTS `modulo_ventas_transaccionpago` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `_fecha_creacion` datetime(6) NOT NULL,
+  `_factura_id` bigint NOT NULL,
+  `_qr_url` varchar(200) DEFAULT NULL,
+  `_qr_image` longblob,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `modulo_ventas_transaccionpago__factura_id_f5cd777c_uniq` (`_factura_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `modulo_ventas_transaccionpago`
+--
+
+INSERT INTO `modulo_ventas_transaccionpago` (`id`, `_fecha_creacion`, `_factura_id`, `_qr_url`, `_qr_image`) VALUES
+(8, '2024-10-17 22:45:35.892853', 10, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-d8c7e55b-d60b-450c-a826-ab27e27c5f50', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe010000000055145188000003ec49444154789ced9d416ee3300c453f47dedbc01ca047516e56cc91e606f6517a036519400667215196920cba288316c9f7c28815e7c1060852fca414517ce9d87f7dedf7000104104000010410400001041040c027804dea512f1700dbb28b9cb08b9cce13446482c8b2db9d8bef1310f0e200a8aaaaaeb3aaaa66d84915983374455044cd404c80ae73befac5f7bf0201cf05d89b9b0b0a6017c48f09c09c8b8bd41541e5041407fa802720e0a501d3edd05ec6747b53086640811d82f92288ebeefd04041000dcb5440098130498b2e22c40fcbb94e13b32f8f7bf02014f01b89927aeed9b980044b5c9621953ce13097808c0ecaa5dae73fee4540f5a22019e806a89e38198427fc29ca19a00c4eb5b698904f800ba585b759a321c2cfe260bcc98554dd4a12512e00d309f98501c5e1d3523544dd53a6b740650c7189d09f004b4e85c45ed9aa7240098556bc632db54329a8ba44f24c017d0f9c4c3266b79a539c615804d1683d6b4853e91004f40b3c456d453cb8e8b6344b3441cb94b505a2201be805ec589e3c45093ddb27615e87e52494b24c00dd02cd1a26e27e034a13b96f43ab70e08466702bc014dc5c99d77bc1270ea58b9b94e20698904f802c6e88c3e27a95974a89975b945abeecddc99005f40576331d9c634eeeb09a45ab52f323a13e00e1894ed74afc632d4a29b77a4b24d802fa07585852c40c812d36f9371ce02dd4e284d8ac0790280a0fd2d3fe11508780a40af27b64b6bfeca37524e55c033551c029c0143b7a1f5dd1ccd379636f742a3f5e7d012097004743ed17c5dbeee8a3077d89ac400fa44021e03d8de2e826d3133db44444e7306709e20ef1f1344de2eb68eca5659793e01012f0ee86b2cb517c742742ccd0fe3a929e0d413097005f4bd384db6b1c9625bf45ce7841693a96c13e00e18fa1353cb4e5a1653a5ec768931c7a12512e00bd896a072425079d70c396117e02c5255c4f249a4f8c96d01e43df93e01012f0e18a3b395f26a7f586875bf0c7475175565ee4c802fa05771565c252b8780686d385d14677426c013d0afed3b1ab2e3e1f552e8668c4352434b24c01130aea85245bf5c00d75d61bdbc4d4b24c0133076ca0e8ba96ab21caa758e7b95303a13e00bb8d903a2353a1c69cba17b1f264a9f48c04300c79eb2f16342adfbcd97b2a72ca2b6425f9177a6b6f2efe7bc0201cf01a81eceeac9a5b27c94a127c809557204e68be89fc5f90908786d40374fbcca9dfbb5a509634737d88b438033e0c6128f5ec46e6d5f3777acc90a2d91005fc01d9f082b34a3f5675bcb43dd308cbb9110e00ef8cf7f0fb495f747a7f671c414e813097006dcee298b56e89bc7fd63930566809648803740f85fa604104000010410400001041040c08f05fc03e3474077f857db730000000049454e44ae426082);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

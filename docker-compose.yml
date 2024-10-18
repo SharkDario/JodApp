@@ -1,0 +1,30 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - DEBUG=1
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_DATABASE: bd_jodapp
+      MYSQL_RANDOM_ROOT_PASSWORD: 6d4af1e1cdef90c4545bbe7148465aba96546b71a2ddf14007f09951fa52d4e4
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  ngrok:
+    image: wernight/ngrok
+    ports:
+      - "4040:4040" # Para acceder al dashboard de Ngrok
+    environment:
+      NGROK_AUTHTOKEN: "2nafjdlEblFeZHvGlJWZ1EMkg2v_3jNMjuhpENECVVLBXWrce"
+    command: ngrok http web:8000
+
+volumes:
+  mysql_data:

@@ -18,9 +18,11 @@ from django.contrib import admin
 from django.urls import path, include
 #from django.contrib.auth import views as auth_views
 from moduloLogin.admin import admin_site
+from modulo_ventas.views import ver_qr_pago
 #from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     #path("", admin.site.urls),
     path('', admin_site.urls),
+    path('ver_qr_pago/<int:factura_id>/', ver_qr_pago, name='ver_qr_pago'),
 ]
