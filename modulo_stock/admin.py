@@ -18,11 +18,18 @@ class DetalleRemitoProveedorInline(TabularInline):
 
 @admin.register(RemitoProveedor, site=admin_site)
 class RemitoProveedorAdmin(ModelAdmin):
+    #form = RemitoAdminForm
     compressed_fields = True
     warn_unsaved_form = True
-    list_display = ('numero_remito', 'fecha_emision_remito', 'proveedor')
+    list_display = ('numero_remito', 'fecha_emision_remito', 'proveedor', 'empleado')
     search_fields = ('_numero_remito', '_proveedor___nombre')
     inlines = [DetalleRemitoProveedorInline]
+
+    """def get_form(self, request, obj=None, **kwargs):
+        # Sobreescribe get_form para pasar el request al formulario
+        form = super().get_form(request, obj, **kwargs)
+        form.request = request  # Pasa el request al formulario
+        return form"""
 
 
 @admin.register(Producto, site=admin_site)
