@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pago con Binance</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Pagar factura {{ factura.numero_factura }}</h1>
+    <img src="data:image/png;base64,{{ qr_image }}" alt="QR Code">
+    <p>Monto a pagar: {{ monto_usdt }} USDT</p>
+    <p>Estado del pago: <span id="estado-pago">Pendiente</span></p>
+
+    <script>
+        function verificarPago() {
+            $.get('/verificar-pago/{{ transaccion_id }}/', function(data) {
+                if (data.status === 'SUCCESS') {
+                    $('#estado-pago').text('Pagado');
+                    clearInterval(intervalId);
+                } else if (data.status === 'FAILED') {
+                    $('#estado-pago').text('Fallido');
+                    clearInterval(intervalId);
+                }
+            });
+        }
+
+        var intervalId = setInterval(verificarPago, 5000);
+    </script>
+</body>
+</html>
