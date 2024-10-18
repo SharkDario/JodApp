@@ -52,35 +52,23 @@ class FacturaClienteAdmin(ModelAdmin):
         return form
 
     def generar_qr_mercado_pago(self, request, queryset):
+        medio_de_pago = ""
         for factura in queryset:
-            transaccion, created = TransaccionPago.objects.get_or_create(_factura=factura)
-            if not transaccion.qr_url:
-                qr_url, qr_image = generar_qr_mercado_pago(factura)
-                transaccion.qr_url = qr_url
-                transaccion.qr_image = qr_image
-                transaccion.save()
-        self.message_user(request, "QR generado correctamente.")
+            medio_de_pago = factura.medio_de_pago.descripcion
+            medio_de_pago = medio_de_pago.upper()
+            if  medio_de_pago == "MERCADO PAGO":  # Verifica si el medio de pago es "Mercado Pago"
+                transaccion, created = TransaccionPago.objects.get_or_create(_factura=factura)
+                if not transaccion.qr_url:
+                    qr_url, qr_image = generar_qr_mercado_pago(factura)
+                    transaccion.qr_url = qr_url
+                    transaccion.qr_image = qr_image
+                    transaccion.save()
+        if(medio_de_pago!="MERCADO PAGO"):
+            self.message_user(request, "El medio de pago no es válido.")
+        else:
+            self.message_user(request, "QR generado correctamente.")
 
     generar_qr_mercado_pago.short_description = "Generar QR de Mercado Pago"
-
-    """def generar_qr_mercado_pago(self, request, queryset):
-        for factura in queryset:
-            # Verificar si la transacción de pago ya existe
-            transaccion, created = TransaccionPago.objects.get_or_create(_factura=factura)
-            if not transaccion.qr_url:
-                # Generar el QR si aún no está creado
-                transaccion.qr_url = generar_qr_mercado_pago(factura)
-                transaccion.save()
-        self.message_user(request, "QR generado correctamente.")
-
-    generar_qr_mercado_pago.short_description = "Generar QR de Mercado Pago" """
-
-    """@admin.display(description='Ver QR')
-    def ver_qr(self, obj):
-        if hasattr(obj, 'transaccion_pago') and obj.transaccion_pago.qr_url:
-            url = reverse('ver_qr_pago', args=[obj.id])
-            return format_html(f'<a href="{url}" target="_blank">Ver QR</a>')
-        return "No disponible" """
     
     @admin.display(description='Ver QR')
     def ver_qr(self, obj):
