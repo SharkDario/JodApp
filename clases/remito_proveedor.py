@@ -1,14 +1,20 @@
 from django.db import models
 from .proveedor import Proveedor
+from .empleado import Empleado
 
 class RemitoProveedor(models.Model):
     _proveedor = models.ForeignKey(Proveedor, on_delete=models.CASCADE, verbose_name="Proveedor")
+    _empleado = models.ForeignKey(Empleado, on_delete=models.CASCADE, verbose_name="Empleado", default=None)
     _fecha_emision_remito = models.DateField(verbose_name="Fecha de emisión")
     _numero_remito = models.CharField(max_length=100, verbose_name="Número")
 
     @property
     def proveedor(self):
         return self._proveedor
+
+    @property
+    def empleado(self):
+        return self._empleado
 
     @property
     def fecha_emision_remito(self):

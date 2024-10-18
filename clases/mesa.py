@@ -81,13 +81,16 @@ class Mesa(models.Model):
     
     @property
     def numero(self):
-        # Obtener todas las mesas relacionadas con la misma fiesta
-        mesas = list(self._fiesta.mesa_set.order_by('id'))
-        # Retornar el índice de la mesa actual +1 para que empiece en 1
-        return mesas.index(self) + 1
+        try:
+            # Obtener todas las mesas relacionadas con la misma fiesta
+            mesas = list(self._fiesta.mesa_set.order_by('id'))
+            # Retornar el índice de la mesa actual +1 para que empiece en 1
+            return mesas.index(self) + 1
+        except ValueError:
+            return "(actualizar)"
     
     def __str__(self):
-        return f"Mesa ({self.numero})"
+        return f"Mesa [{self.numero}] [{self.fiesta}]"
 
     class Meta:
         app_label = 'modulo_evento'
