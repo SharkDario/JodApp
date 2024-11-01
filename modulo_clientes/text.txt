@@ -1,0 +1,122 @@
+
+"""
+def generate_verification_code(length=6):
+    # Caracteres permitidos (solo números y letras mayúsculas para mejor legibilidad)
+    characters = string.ascii_uppercase + string.digits
+    
+    while True:
+        # Generar código
+        code = ''.join(random.choices(characters, k=length))
+        
+        # Verificar que el código no esté en uso en el cache
+        if not cache.get(f'verification_code_{code}'):
+            return code
+
+def generate_verification_code():
+
+    chars = string.ascii_uppercase + string.digits
+    code = ''.join(random.choices(chars, k=6))
+    return code
+
+def get_urls(self):
+        urls = super().get_urls()
+        custom_urls = [
+            path(
+                'iniciar-canje/<int:ticket_id>/<str:tipo>/',
+                self.admin_site.admin_view(self.iniciar_canje),
+                name='cliente_iniciar_canje',
+            ),
+            path(
+                'confirmar-canje/<int:ticket_id>/<str:tipo>/',
+                self.admin_site.admin_view(self.confirmar_canje),
+                name='cliente_confirmar_canje',
+            ),
+        ]
+        return custom_urls + urls
+@method_decorator(csrf_protect)
+    @method_decorator(require_http_methods(["POST"]))
+    def iniciar_canje(self, request, ticket_id, tipo):
+        try:
+            # Obtener cantidad del request
+            data = json.loads(request.body.decode('utf-8'))
+            cantidad = int(data.get('cantidad', 1))
+
+            # Validar el ticket según su tipo
+            if tipo == 'articulo':
+                ticket = TicketArticulo.objects.get(id=ticket_id)
+            elif tipo == 'entrada':
+                ticket = TicketEntrada.objects.get(id=ticket_id)
+            else:
+                return JsonResponse({'error': 'Tipo de ticket inválido'}, status=400)
+
+            # Validar cantidad
+            if cantidad > ticket.cantidad:
+                return JsonResponse({'error': 'Cantidad solicitada mayor a la disponible'}, status=400)
+
+            # Generar y almacenar código de verificación
+            codigo = generate_verification_code()
+            cache_key = f'ticket_canje_{ticket_id}_{tipo}'
+            cache_data = {
+                'codigo': codigo,
+                'cantidad': cantidad,
+                'timestamp': timezone.now().timestamp()
+            }
+            # Guardar en cache por 5 minutos
+            cache.set(cache_key, cache_data, 300)
+
+            return JsonResponse({
+                'success': True,
+                'codigo': codigo
+            })
+
+        except (TicketArticulo.DoesNotExist, TicketEntrada.DoesNotExist):
+            return JsonResponse({'error': 'Ticket no encontrado'}, status=404)
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=500)
+
+    @method_decorator(csrf_protect)
+    @method_decorator(require_http_methods(["POST"]))
+    def confirmar_canje(self, request, ticket_id, tipo):
+        try:
+            # Obtener código del request
+            data = json.loads(request.body.decode('utf-8'))
+            codigo_ingresado = data.get('codigo', '').upper()
+
+            # Validar código
+            cache_key = f'ticket_canje_{ticket_id}_{tipo}'
+            cache_data = cache.get(cache_key)
+
+            if not cache_data:
+                return JsonResponse({'error': 'Código expirado o inválido'}, status=400)
+
+            if codigo_ingresado != cache_data['codigo']:
+                return JsonResponse({'error': 'Código incorrecto'}, status=400)
+
+            # Procesar el canje
+            cantidad = cache_data['cantidad']
+            if tipo == 'articulo':
+                ticket = TicketArticulo.objects.get(id=ticket_id)
+            else:
+                ticket = TicketEntrada.objects.get(id=ticket_id)
+
+            # Actualizar cantidad
+            ticket.cantidad -= cantidad
+            ticket.save()
+
+            # Eliminar código de cache
+            cache.delete(cache_key)
+
+            return JsonResponse({
+                'success': True,
+                'mensaje': f'Canje exitoso de {cantidad} unidad(es)'
+            })
+
+        except (TicketArticulo.DoesNotExist, TicketEntrada.DoesNotExist):
+            return JsonResponse({'error': 'Ticket no encontrado'}, status=404)
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=500)
+        
+    class Media:
+        js = ('js/ticket_canje.js',)
+"""
+
