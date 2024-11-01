@@ -2,6 +2,15 @@ from django.db import models
 from django.core.validators import MinValueValidator
 from .fiesta import Fiesta
 
+class MesaManager(models.Manager):
+    def get_queryset(self):
+        # Sobrescribir el queryset para que use los nombres de campo con guion bajo
+        return super().get_queryset()
+
+    def filter_by_fiesta(self, fiesta):
+        # Permite filtrar por _dni utilizando el manager personalizado
+        return self.get_queryset().filter(_fiesta=fiesta)
+
 class Mesa(models.Model):
     CATEGORIA_CHOICES = [
         ('Popular', 'Popular'),
@@ -15,7 +24,8 @@ class Mesa(models.Model):
     _top = models.PositiveIntegerField(verbose_name="Posición Top", default=0, editable=False)  # Coordenada top
     _left = models.PositiveIntegerField(verbose_name="Posición Left", default=0, editable=False)  # Coordenada left
     
-    
+    objects = MesaManager()  # Usar el manager personalizado
+
     @property
     def precio(self):
         return self._precio

@@ -1,12 +1,22 @@
 from django.db import models
 from django.core.validators import MinValueValidator
 
+class ArticuloManager(models.Manager):
+    def get_queryset(self):
+        # Sobrescribir el queryset para que use los nombres de campo con guion bajo
+        return super().get_queryset()
+
+    def filter_by_stock_positive(self):
+        return self.get_queryset().filter(_stock__gt=0)
+
 class Articulo(models.Model):
     _nombre = models.CharField(verbose_name="Nombre", max_length=100)
     _volumen = models.DecimalField(verbose_name="Volumen", max_digits=10, decimal_places=2, help_text="Volumen en mililitros", default=0, validators=[MinValueValidator(0)])
     _precio_unitario = models.DecimalField(verbose_name="Precio Unitario", max_digits=10, decimal_places=2, validators=[MinValueValidator(0)])
     _stock = models.PositiveIntegerField(verbose_name="Stock", default=0)
     _stock_minimo = models.PositiveIntegerField(verbose_name="Stock Mínimo")
+
+    objects = ArticuloManager()  # Usar el manager personalizado
 
     @property
     def nombre(self):

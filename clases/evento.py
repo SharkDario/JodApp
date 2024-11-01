@@ -2,6 +2,15 @@ from django.core.exceptions import ValidationError
 from django.utils import timezone
 from django.db import models
 
+class EventoManager(models.Manager):
+    def get_queryset(self):
+        # Sobrescribir el queryset para que use los nombres de campo con guion bajo
+        return super().get_queryset()
+
+    def filter_by_fecha(self, fecha):
+        # Permite filtrar por _dni utilizando el manager personalizado
+        return self.get_queryset().filter(_fecha=fecha)
+
 class Evento(models.Model):
     _nombre = models.CharField(verbose_name="Nombre", max_length=100)
     _descripcion = models.CharField(verbose_name="Descripción", max_length=100)
@@ -10,6 +19,8 @@ class Evento(models.Model):
     _fecha = models.DateField(verbose_name="Fecha", default=timezone.now)
     latitud = models.DecimalField(max_digits=12, decimal_places=4, default=-26.1855)
     longitud = models.DecimalField(max_digits=12, decimal_places=4, default=-58.1739)
+
+    objects = EventoManager()  # Usar el manager personalizado
 
     @property
     def nombre(self):
