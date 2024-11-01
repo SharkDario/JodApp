@@ -82,7 +82,7 @@ ADMIN_SITE_HEADER = "Panel de Administración de ROXO"
 ADMIN_TITLE = "ROXO Admin"
 INDEX_TITLE = "Bienvenido al Panel de Control"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 CITIES_LIGHT_TRANSLATION_LANGUAGES = ['es']  # Idioma español para las traducciones de nombres
@@ -112,12 +112,12 @@ INSTALLED_APPS = [
     #THEONE:'admin_soft.apps.AdminSoftDashboardConfig',
     'cities_light',
     "unfold",
-    #"unfold.contrib.filters",  # optional, if special filters are needed
-    #"unfold.contrib.forms",  # optional, if special form elements are needed
-    #"unfold.contrib.inlines",  # optional, if special inlines are needed
-    #"unfold.contrib.import_export",  # optional, if django-import-export package is used
-    #"unfold.contrib.guardian",  # optional, if django-guardian package is used
-    #"unfold.contrib.simple_history",  # optional, if django-simple-history package is used
+    "unfold.contrib.filters",  # optional, if special filters are needed
+    "unfold.contrib.forms",  # optional, if special form elements are needed
+    "unfold.contrib.inlines",  # optional, if special inlines are needed
+    "unfold.contrib.import_export",  # optional, if django-import-export package is used
+    "unfold.contrib.guardian",  # optional, if django-guardian package is used
+    "unfold.contrib.simple_history",  # optional, if django-simple-history package is used
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -132,17 +132,36 @@ INSTALLED_APPS = [
     'mapbox_location_field',
     'modulo_evento',
     'modulo_ventas',
+    'modulo_clientes',
+    'rest_framework',  # Para usar Django REST Framework
+    'rest_framework.authtoken',
+    'rest_framework_simplejwt',
+    'corsheaders',     # Para habilitar CORS
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+# Permite solicitudes desde cualquier origen
+CORS_ALLOW_ALL_ORIGINS = True  # Esto es para desarrollo, hay que restringirlo en producción
+# CORS_ORIGIN_WHITELIST = (
+#     'http://example.com',
+#     'https://api.example.com',
+# )
+CORS_ALLOW_CREDENTIALS = True
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
 
 ROOT_URLCONF = 'jodapp.urls'
 
@@ -230,6 +249,9 @@ LOCATION_FIELD = {
     'provider.openstreetmap.max_zoom': 18,
 }
 SITE_ID = 1 
+
+MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'
 
 #LOGOUT_REDIRECT_URL = '/'
 LOGIN_REDIRECT_URL = '/'
