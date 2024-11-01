@@ -1,6 +1,23 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+class PersonaManager(models.Manager):
+    def get_queryset(self):
+        # Sobrescribir el queryset para que use los nombres de campo con guion bajo
+        return super().get_queryset()
+
+    def filter_by_dni(self, dni):
+        # Permite filtrar por _dni utilizando el manager personalizado
+        return self.get_queryset().filter(_dni=dni)
+
+    def filter_by_cuil(self, cuil):
+        # Permite filtrar por _cuil utilizando el manager personalizado
+        return self.get_queryset().filter(_cuil=cuil)
+    
+    def filter_by_user(self, user):
+        # Permite filtrar por _user utilizando el manager personalizado
+        return self.get_queryset().filter(_user=user)
+
 class Persona(models.Model):
     #PBKDF2 (Password-Based Key Derivation Function 2) con un SHA256 hash
     _user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name="Usuario")
@@ -9,6 +26,8 @@ class Persona(models.Model):
     _nombre = models.CharField(max_length=100, verbose_name="Nombre")
     _apellido = models.CharField(max_length=100, verbose_name="Apellido")
     _fecha_nacimiento = models.DateField(verbose_name="Fecha de nacimiento")
+
+    objects = PersonaManager()  # Usar el manager personalizado
 
     @property
     def user(self):

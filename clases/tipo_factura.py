@@ -1,7 +1,18 @@
 from django.db import models
 
+class TipoFacturaManager(models.Manager):
+    def get_queryset(self):
+        # Sobrescribir el queryset para que use los nombres de campo con guion bajo
+        return super().get_queryset()
+    
+    def filter_by_descripcion(self, descripcion):
+        # Permite filtrar por _dni utilizando el manager personalizado
+        return self.get_queryset().filter(_descripcion=descripcion)
+
 class TipoFactura(models.Model):
     _descripcion = models.CharField(verbose_name="Descripción", max_length=100)
+
+    objects = TipoFacturaManager()  # Usar el manager personalizado
 
     @property
     def descripcion(self):

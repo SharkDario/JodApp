@@ -13,9 +13,10 @@ from unfold.admin import ModelAdmin, TabularInline
 from unfold.sites import UnfoldAdminSite
 from modulo_evento.views import save_mesa_position
 from modulo_ventas.views import ver_qr_pago
+from modulo_clientes.views import registrar_cliente, login_view, actualizar_perfil, cambiar_password, refresh_data, reservar_mesa, comprar_entradas, comprar_carrito, confirmar_canje_cliente, obtener_tickets_cliente
 from .models import Mozo, Cajero, Auditor, Supervisor, Seguridad, Bartender, Administrador, Turno, Contratacion, EmpleadoTieneTurno, Domicilio, Telefono
 from .forms import ContratacionForm, EmpleadoAdminForm
-
+# python manage.py runserver 0.0.0.0:8000
 class MyAdminSite(UnfoldAdminSite):
     site_header = "Panel de Administración de ROXO"
     site_title = "Admin ROXO"
@@ -30,6 +31,18 @@ class MyAdminSite(UnfoldAdminSite):
             path('logout', LogoutView.as_view(), name='logout'),
             path('save_mesa_position/<int:mesa_id>/', save_mesa_position, name='save_mesa_position'),
             path('ver_qr_pago/<int:factura_id>/', ver_qr_pago, name='ver_qr_pago'),
+            path('api/modulo_clientes/registrar/', registrar_cliente, name='registrar'),
+            path('api/modulo_clientes/login/', login_view, name='login'),
+            path('api/modulo_clientes/actualizar-perfil/', actualizar_perfil, name='actualizar_perfil'),
+            path('api/modulo_clientes/cambiar-password/', cambiar_password, name='cambiar_password'),
+            path('api/modulo_clientes/refresh-data/', refresh_data, name='refresh-data'),
+            path('api/modulo_clientes/reservar-mesa/', reservar_mesa, name='reservar-mesa'),
+            path('api/modulo_clientes/comprar-entradas/', comprar_entradas, name='comprar-entradas'),
+            path('api/modulo_clientes/comprar-carrito/', comprar_carrito, name='comprar-carrito'),
+            path('api/modulo_clientes/confirmar-canje-cliente', confirmar_canje_cliente, name='confirmar-canje-cliente'),
+            path('api/modulo_clientes/obtener-tickets-cliente/<int:cliente_id>/', obtener_tickets_cliente, name='obtener-tickets-cliente'),
+            #path('iniciar-canje/<int:ticket_id>/<str:tipo>/', iniciar_canje_view, name='iniciar_canje'),
+            #path('confirmar-canje/<int:ticket_id>/<str:tipo>/', confirmar_canje_view, name='confirmar_canje'),
         ]
         return custom_urls + urls
 
@@ -38,6 +51,7 @@ class MyAdminSite(UnfoldAdminSite):
         
         # Define el orden de las aplicaciones como antes
         app_order = [
+            'modulo_clientes',
             'modulo_ventas',
             'modulo_evento',
             'modulo_stock',
@@ -96,7 +110,7 @@ class MozoAdmin(ModelAdmin):
     form = EmpleadoAdminForm
     compressed_fields = True
     warn_unsaved_form = True
-    list_display = ('user', 'zona_asignada', 'sueldo', 'estado', 'fecha_inicio')
+    list_display = ('_user', '_zona_asignada', '_sueldo', '_estado', '_fecha_inicio')
     search_fields = ('_user__username', '_zona_asignada')
     inlines = [DomicilioInline, TelefonoInline]
 
@@ -105,7 +119,7 @@ class CajeroAdmin(ModelAdmin):
     form = EmpleadoAdminForm
     compressed_fields = True
     warn_unsaved_form = True
-    list_display = ('user', 'caja_asignada', 'sueldo', 'estado', 'fecha_inicio')
+    list_display = ('_user', '_caja_asignada', '_sueldo', '_estado', '_fecha_inicio')
     search_fields = ('_user__username', '_caja_asignada')
     inlines = [DomicilioInline, TelefonoInline]
 
@@ -114,7 +128,7 @@ class AuditorAdmin(ModelAdmin):
     form = EmpleadoAdminForm
     compressed_fields = True
     warn_unsaved_form = True
-    list_display = ('user', 'frecuencia', 'sueldo', 'estado', 'fecha_inicio')
+    list_display = ('_user', '_frecuencia', '_sueldo', '_estado', '_fecha_inicio')
     search_fields = ('_user__username',)
     inlines = [DomicilioInline, TelefonoInline]
 
@@ -123,7 +137,7 @@ class SupervisorAdmin(ModelAdmin):
     form = EmpleadoAdminForm
     compressed_fields = True
     warn_unsaved_form = True
-    list_display = ('user', 'frecuencia', 'sueldo', 'estado', 'fecha_inicio')
+    list_display = ('_user', '_frecuencia', '_sueldo', '_estado', '_fecha_inicio')
     search_fields = ('_user__username',)
     inlines = [DomicilioInline, TelefonoInline]
 
@@ -132,7 +146,7 @@ class SeguridadAdmin(ModelAdmin):
     form = EmpleadoAdminForm
     compressed_fields = True
     warn_unsaved_form = True
-    list_display = ('user', 'entrada_asignada', 'sueldo', 'estado', 'fecha_inicio')
+    list_display = ('_user', '_entrada_asignada', '_sueldo', '_estado', '_fecha_inicio')
     search_fields = ('_user__username', '_entrada_asignada')
     inlines = [DomicilioInline, TelefonoInline]
 
@@ -141,7 +155,7 @@ class BartenderAdmin(ModelAdmin):
     form = EmpleadoAdminForm
     compressed_fields = True
     warn_unsaved_form = True
-    list_display = ('user', 'barra_asignada', 'sueldo', 'estado', 'fecha_inicio')
+    list_display = ('_user', '_barra_asignada', '_sueldo', '_estado', '_fecha_inicio')
     search_fields = ('_user__username', '_barra_asignada')
     inlines = [DomicilioInline, TelefonoInline]
 
@@ -150,7 +164,7 @@ class AdministradorAdmin(ModelAdmin):
     form = EmpleadoAdminForm
     compressed_fields = True
     warn_unsaved_form = True
-    list_display = ('user', 'nombre', 'apellido', 'cantidad_empleados_contratados')
+    list_display = ('_user', '_nombre', '_apellido', 'cantidad_empleados_contratados')
     search_fields = ('_user__username',)
     inlines = [DomicilioInline, TelefonoInline]
 
@@ -164,14 +178,14 @@ class AdministradorAdmin(ModelAdmin):
 class TurnoAdmin(ModelAdmin):
     compressed_fields = True
     warn_unsaved_form = True
-    list_display = ('hora_inicio', 'hora_fin')
+    list_display = ('_hora_inicio', '_hora_fin')
     search_fields = ('_hora_inicio', '_hora_fin')
 
 @admin.register(EmpleadoTieneTurno, site=admin_site)
 class EmpleadoTieneTurnoAdmin(ModelAdmin):
     compressed_fields = True
     warn_unsaved_form = True
-    list_display = ('turno', 'empleado')
+    list_display = ('_turno', '_empleado')
     search_fields = ('_turno___hora_inicio', '_turno___hora_fin', '_empleado___user__username', '_empleado___nombre')
 
 @admin.register(Contratacion, site=admin_site)
@@ -179,7 +193,7 @@ class ContratacionAdmin(ModelAdmin):
     form = ContratacionForm
     compressed_fields = True
     warn_unsaved_form = True
-    list_display = ('tipo', 'administrador', 'empleado', 'fecha_contratacion')
+    list_display = ('_tipo', '_administrador', '_empleado', '_fecha_contratacion')
     search_fields = ('_administrador___nombre', '_empleado___nombre')
     class Media:
         js = ('js/reload_form.js',)

@@ -2,11 +2,18 @@ from django.db import models
 from django.core.validators import MinValueValidator
 from .factura_cliente import FacturaCliente
 
+class DetalleFacturaManager(models.Manager):
+    def get_queryset(self):
+        # Sobrescribir el queryset para que use los nombres de campo con guion bajo
+        return super().get_queryset()
+
 class DetalleFactura(models.Model):
     _factura = models.ForeignKey(FacturaCliente, on_delete=models.CASCADE, verbose_name="Factura")
     _cantidad = models.PositiveIntegerField(verbose_name="Cantidad")
     _precio_unitario = models.DecimalField(verbose_name="Precio Unitario", max_digits=10, validators=[MinValueValidator(0)], decimal_places=2)
     _subtotal = models.DecimalField(verbose_name="Subtotal", max_digits=10, validators=[MinValueValidator(0)], decimal_places=2, default=0)
+
+    objects = DetalleFacturaManager()  # Usar el manager personalizado
 
     @property
     def factura(self):
