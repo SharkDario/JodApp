@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 18-10-2024 a las 22:07:55
+-- Tiempo de generación: 01-11-2024 a las 22:06:03
 -- Versión del servidor: 8.3.0
 -- Versión de PHP: 8.2.18
 
@@ -20,6 +20,21 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `bd_jodapp`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `authtoken_token`
+--
+
+DROP TABLE IF EXISTS `authtoken_token`;
+CREATE TABLE IF NOT EXISTS `authtoken_token` (
+  `key` varchar(40) NOT NULL,
+  `created` datetime(6) NOT NULL,
+  `user_id` int NOT NULL,
+  PRIMARY KEY (`key`),
+  UNIQUE KEY `user_id` (`user_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -67,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `auth_permission` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `auth_permission_content_type_id_codename_01ab375a_uniq` (`content_type_id`,`codename`),
   KEY `auth_permission_content_type_id_2f476e4b` (`content_type_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=201 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=221 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `auth_permission`
@@ -273,7 +288,27 @@ INSERT INTO `auth_permission` (`id`, `name`, `content_type_id`, `codename`) VALU
 (197, 'Can add Transacción de Pago', 50, 'add_transaccionpago'),
 (198, 'Can change Transacción de Pago', 50, 'change_transaccionpago'),
 (199, 'Can delete Transacción de Pago', 50, 'delete_transaccionpago'),
-(200, 'Can view Transacción de Pago', 50, 'view_transaccionpago');
+(200, 'Can view Transacción de Pago', 50, 'view_transaccionpago'),
+(201, 'Can add Cliente', 51, 'add_cliente'),
+(202, 'Can change Cliente', 51, 'change_cliente'),
+(203, 'Can delete Cliente', 51, 'delete_cliente'),
+(204, 'Can view Cliente', 51, 'view_cliente'),
+(205, 'Can add Token', 52, 'add_token'),
+(206, 'Can change Token', 52, 'change_token'),
+(207, 'Can delete Token', 52, 'delete_token'),
+(208, 'Can view Token', 52, 'view_token'),
+(209, 'Can add Token', 53, 'add_tokenproxy'),
+(210, 'Can change Token', 53, 'change_tokenproxy'),
+(211, 'Can delete Token', 53, 'delete_tokenproxy'),
+(212, 'Can view Token', 53, 'view_tokenproxy'),
+(213, 'Can add Ticket Entrada', 54, 'add_ticketentrada'),
+(214, 'Can change Ticket Entrada', 54, 'change_ticketentrada'),
+(215, 'Can delete Ticket Entrada', 54, 'delete_ticketentrada'),
+(216, 'Can view Ticket Entrada', 54, 'view_ticketentrada'),
+(217, 'Can add Ticket Bebida', 55, 'add_ticketarticulo'),
+(218, 'Can change Ticket Bebida', 55, 'change_ticketarticulo'),
+(219, 'Can delete Ticket Bebida', 55, 'delete_ticketarticulo'),
+(220, 'Can view Ticket Bebida', 55, 'view_ticketarticulo');
 
 -- --------------------------------------------------------
 
@@ -296,16 +331,21 @@ CREATE TABLE IF NOT EXISTS `auth_user` (
   `date_joined` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `auth_user`
 --
 
 INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
-(1, 'pbkdf2_sha256$870000$wQWQKYhcHTeY5xEiprkTIv$PkIKRQr3QIoE2tqptq6o+xsqFva6/U6XBnmNaFVtHAU=', '2024-10-16 03:07:53.910426', 1, 'Dario07', 'Miguel Dario', 'Coronel', 'mdarioc1998@gmail.com', 1, 1, '2024-09-26 02:46:02.218933'),
-(2, 'pbkdf2_sha256$870000$4rxLjFM3rSDHFaMxYCPHmu$3+RHiVoM7jXJDbzKSXcwFibdEhnOHTP+1K3HUb8C4c0=', NULL, 0, 'Azul07', 'Azul Yanel', 'Coronel', 'coronelazul144@gmail.com', 1, 1, '2024-09-28 14:45:07.731340'),
-(3, 'pbkdf2_sha256$870000$T6n3Dd6IozUO5b64yFTi0I$mAQb7CRe94p2x1uBWaOqn3rtZVDOZNty9c0l/cuGZK0=', NULL, 0, 'Franco07', '', '', '', 0, 1, '2024-10-06 22:19:24.640759');
+(1, 'pbkdf2_sha256$870000$wQWQKYhcHTeY5xEiprkTIv$PkIKRQr3QIoE2tqptq6o+xsqFva6/U6XBnmNaFVtHAU=', '2024-10-30 14:06:38.726424', 1, 'Dario07', 'Miguel Dario', 'Coronel', 'mdarioc1998@gmail.com', 1, 1, '2024-09-26 02:46:02.218933'),
+(2, 'pbkdf2_sha256$870000$4rxLjFM3rSDHFaMxYCPHmu$3+RHiVoM7jXJDbzKSXcwFibdEhnOHTP+1K3HUb8C4c0=', NULL, 0, 'Azul07', 'Azul Yanel', 'Coronel', 'azul44@gmail.com', 1, 1, '2024-09-28 14:45:07.000000'),
+(3, 'pbkdf2_sha256$870000$T6n3Dd6IozUO5b64yFTi0I$mAQb7CRe94p2x1uBWaOqn3rtZVDOZNty9c0l/cuGZK0=', NULL, 0, 'Franco07', '', '', '', 0, 1, '2024-10-06 22:19:24.640759'),
+(15, 'pbkdf2_sha256$870000$2gVPyvDw7bZawLTh231qVy$wJ9ViqR4sAvkkxKQ74TAcZqk8YHXKuqUzaTgEIEwq5Q=', NULL, 0, 'Dario08', '', '', 'www.dariocoronel@live.com.ar', 0, 1, '2024-10-26 16:47:54.776218'),
+(16, 'pbkdf2_sha256$870000$OawlZBm72AKpU3oDLDkse2$RkZrgUAPaiXkwMNH6pE9Irj9IWlhxxM0hUAtA4m+oT0=', NULL, 0, 'Azul14', '', '', 'coronelazul144@gmail.com', 0, 1, '2024-10-31 00:29:38.188213'),
+(17, 'pbkdf2_sha256$870000$1CEv7ybVRGeHwvNN2NpQEe$+QaysjotK12jVMGGw3en4xjepAWqT9i5Cdq59OnhciQ=', NULL, 0, 'Diana07', '', '', 'diana07@gmail.com', 0, 1, '2024-10-31 22:46:48.331764'),
+(18, 'pbkdf2_sha256$870000$m13JamWkQTcaixMHxk05u9$mjeiUaSIGkSdf2I/nDXJbkJLaTbtjT73WnGXWDicd0k=', NULL, 0, 'Maiten07', '', '', 'maiten07@gmail.com', 0, 1, '2024-10-31 22:50:19.703618'),
+(19, 'pbkdf2_sha256$870000$wb1oZhSOzYiSC8Y7lvuIzL$fTSPBbGwSdS6qLCPa5Zq3KCmGCIZEJtcG9l3mfPKppk=', NULL, 0, 'Damian07', '', '', 'damian07@gmail.com', 0, 1, '2024-10-31 22:58:00.359828');
 
 -- --------------------------------------------------------
 
@@ -17813,7 +17853,109 @@ INSERT INTO `django_admin_log` (`id`, `action_time`, `object_id`, `object_repr`,
 (144, '2024-10-17 22:45:08.936448', '9', 'Factura B N°1 (2024-10-17 21:58:54.789193+00:00)', 3, '', 43, 1),
 (145, '2024-10-17 22:45:28.572389', '10', 'Factura B N°1 (2024-10-17 22:45:28.566665+00:00)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (16)\"}}]', 43, 1),
 (146, '2024-10-17 22:49:23.578161', '10', 'Factura B N°1 (2024-10-17 22:45:28.566665+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}, {\"changed\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (16)\", \"fields\": [\"Precio Unitario\", \"Cantidad\"]}}]', 43, 1),
-(147, '2024-10-17 22:54:37.964098', '10', 'Factura B N°1 (2024-10-17 22:45:28.566665+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}, {\"changed\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (16)\", \"fields\": [\"Precio Unitario\", \"Cantidad\"]}}]', 43, 1);
+(147, '2024-10-17 22:54:37.964098', '10', 'Factura B N°1 (2024-10-17 22:45:28.566665+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}, {\"changed\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (16)\", \"fields\": [\"Precio Unitario\", \"Cantidad\"]}}]', 43, 1),
+(148, '2024-10-18 23:03:13.152937', '11', 'Factura B N°4 (2024-10-18 23:03:13.151934+00:00)', 1, '[{\"added\": {}}]', 43, 1),
+(149, '2024-10-18 23:14:06.131222', '11', 'Factura B N°4 (2024-10-18 23:03:13.151934+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}, {\"added\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (17)\"}}]', 43, 1),
+(150, '2024-10-18 23:14:15.862020', '11', 'Factura B N°4 (2024-10-18 23:03:13.151934+00:00)', 2, '[{\"changed\": {\"fields\": [\"Medio de pago\"]}}]', 43, 1),
+(151, '2024-10-18 23:16:01.782593', '11', 'Factura B N°4 (2024-10-18 23:03:13.151934+00:00)', 3, '', 43, 1),
+(152, '2024-10-19 00:00:40.465262', '12', 'Factura B N°4 (2024-10-19 00:00:40.463279+00:00)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (18)\"}}]', 43, 1),
+(153, '2024-10-19 00:04:28.236046', '12', 'Factura B N°4 (2024-10-19 00:00:40.463279+00:00)', 3, '', 43, 1),
+(154, '2024-10-19 00:11:04.579885', '13', 'Factura B N°2 (2024-10-19 00:11:04.579885+00:00)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Detalle de Bebida\", \"object\": \"DetalleArticulo object (19)\"}}, {\"added\": {\"name\": \"Detalle de Entrada\", \"object\": \"DetalleEntrada object (20)\"}}, {\"added\": {\"name\": \"Detalle de Reservaci\\u00f3n\", \"object\": \"DetalleReservacion object (21)\"}}]', 43, 1),
+(155, '2024-10-19 00:11:24.041646', '13', 'Factura B N°2 (2024-10-19 00:11:04.579885+00:00)', 2, '[{\"changed\": {\"fields\": [\"Medio de pago\"]}}]', 43, 1),
+(156, '2024-10-27 21:17:18.584728', '16', 'Roxo (2024-11-01)', 2, '[{\"changed\": {\"fields\": [\"Nombre\", \"Fecha\", \"Vestimenta\"]}}]', 37, 1),
+(157, '2024-10-27 21:17:36.550116', '15', 'Fiestacha (2024-11-02)', 2, '[{\"changed\": {\"fields\": [\"Nombre\", \"Fecha\"]}}]', 37, 1),
+(158, '2024-10-28 15:07:30.928531', '17', 'Prueba (2024-11-02)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada [Popular] [Prueba (2024-11-02)]\"}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada [VIP] [Prueba (2024-11-02)]\"}}]', 37, 1),
+(159, '2024-10-28 15:22:00.782462', '16', 'Roxo (2024-10-28)', 2, '[{\"changed\": {\"fields\": [\"Fecha\"]}}]', 37, 1),
+(160, '2024-10-28 15:22:31.692736', '16', 'Roxo (2024-11-01)', 2, '[{\"changed\": {\"fields\": [\"Fecha\"]}}]', 37, 1),
+(161, '2024-10-28 15:23:52.948533', '17', 'Sweet Spring (2024-11-02)', 2, '[{\"changed\": {\"fields\": [\"Nombre\"]}}]', 37, 1),
+(162, '2024-10-28 15:26:28.209138', '17', 'Sweet Spring (2024-11-02)', 2, '[{\"changed\": {\"fields\": [\"Edad m\\u00ednima\", \"Edad m\\u00e1xima\"]}}]', 37, 1),
+(163, '2024-10-28 15:26:35.772600', '15', 'Fiestacha (2024-11-02)', 2, '[{\"changed\": {\"fields\": [\"Edad m\\u00e1xima\"]}}]', 37, 1),
+(164, '2024-10-28 16:58:26.968685', '17', 'Sweet Spring (2024-11-02)', 2, '[{\"changed\": {\"fields\": [\"Descripci\\u00f3n\"]}}]', 37, 1),
+(165, '2024-10-28 17:19:49.543951', '15', 'Fiestacha (2024-11-02)', 2, '[{\"changed\": {\"fields\": [\"Descripci\\u00f3n\"]}}]', 37, 1),
+(166, '2024-10-28 22:48:46.983709', '17', 'Sweet (2024-11-02)', 2, '[{\"changed\": {\"fields\": [\"Nombre\"]}}]', 37, 1),
+(167, '2024-10-30 02:39:35.405248', '17', 'Sweet (2024-11-02)', 2, '[{\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [1] [Sweet (2024-11-02)]\"}}]', 37, 1),
+(168, '2024-10-30 02:39:46.336592', '17', 'Sweet (2024-11-02)', 2, '[]', 37, 1),
+(169, '2024-10-30 02:40:24.427063', '13', 'Mesa [1] [Sweet (2024-11-02)]', 2, '[{\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa [1] [Sweet (2024-11-02)] tiene Vodka (1000.00ml)\"}}]', 40, 1),
+(170, '2024-10-30 14:16:41.014120', '16', 'Roxo (2024-11-01)', 2, '[]', 37, 1),
+(171, '2024-10-30 14:21:01.084388', '16', 'Roxo (2024-11-01)', 2, '[]', 37, 1),
+(172, '2024-10-30 14:21:10.181408', '17', 'Sweet (2024-11-02)', 2, '[]', 37, 1),
+(173, '2024-10-30 15:15:03.634217', '16', 'Roxo (2024-11-01)', 2, '[]', 37, 1),
+(174, '2024-10-30 15:16:08.221732', '16', 'Roxo (2024-11-01)', 2, '[]', 37, 1),
+(175, '2024-10-30 15:16:23.699536', '16', 'Roxo (2024-11-01)', 2, '[]', 37, 1),
+(176, '2024-10-30 15:17:09.352731', '16', 'Roxo (2024-11-01)', 2, '[]', 37, 1),
+(177, '2024-10-30 15:18:27.456649', '16', 'Roxo (2024-11-01)', 2, '[]', 37, 1),
+(178, '2024-10-30 15:18:42.344003', '16', 'Roxo (2024-11-01)', 2, '[]', 37, 1),
+(179, '2024-10-30 15:23:46.277358', '16', 'Roxo (2024-11-01)', 2, '[]', 37, 1),
+(180, '2024-10-30 19:40:35.349075', '2', 'Energizante (Redbull)', 2, '[{\"changed\": {\"fields\": [\"Stock\"]}}]', 29, 1),
+(181, '2024-10-30 19:40:45.485712', '2', 'Energizante (Redbull)', 2, '[{\"changed\": {\"fields\": [\"Stock\"]}}]', 29, 1),
+(182, '2024-10-30 19:51:21.584157', '1', 'Vodka (Smirnoff)', 2, '[{\"changed\": {\"fields\": [\"Stock\"]}}]', 29, 1),
+(183, '2024-10-30 19:51:52.340340', '1', 'Vodka (Smirnoff)', 2, '[{\"changed\": {\"fields\": [\"Stock\"]}}]', 29, 1),
+(184, '2024-10-30 22:30:35.506227', '3', 'Branca', 1, '[{\"added\": {}}]', 35, 1),
+(185, '2024-10-30 22:30:52.054501', '4', 'Fernet (Branca)', 1, '[{\"added\": {}}]', 29, 1),
+(186, '2024-10-30 22:31:30.253338', '4', 'Corona', 1, '[{\"added\": {}}]', 35, 1),
+(187, '2024-10-30 22:31:41.478394', '5', 'Cerveza (Corona)', 1, '[{\"added\": {}}]', 29, 1),
+(188, '2024-10-30 22:32:19.061657', '5', 'Budweiser', 1, '[{\"added\": {}}]', 35, 1),
+(189, '2024-10-30 22:32:20.271518', '5', 'Cerveza (Budweiser)', 2, '[{\"changed\": {\"fields\": [\"Marca\"]}}]', 29, 1),
+(190, '2024-10-30 22:33:14.415915', '6', 'Coca-Cola', 1, '[{\"added\": {}}]', 35, 1),
+(191, '2024-10-30 22:33:27.970602', '6', 'Gaseosa Cola (Coca-Cola)', 1, '[{\"added\": {}}]', 29, 1),
+(192, '2024-10-30 22:38:48.329468', '4', 'Fernet (Branca)', 2, '[{\"changed\": {\"fields\": [\"Stock\"]}}]', 29, 1),
+(193, '2024-10-31 00:20:25.024360', '2', 'Azul07', 2, '[{\"changed\": {\"fields\": [\"Email address\"]}}]', 8, 1),
+(194, '2024-10-31 00:35:21.991368', '7', 'Villavicencio', 1, '[{\"added\": {}}]', 35, 1),
+(195, '2024-10-31 00:35:26.554416', '7', 'Agua Mineral (Villavicencio)', 1, '[{\"added\": {}}]', 29, 1),
+(196, '2024-10-31 00:35:52.058634', '8', 'King', 1, '[{\"added\": {}}]', 35, 1),
+(197, '2024-10-31 00:35:53.741457', '7', 'Agua Mineral (King)', 2, '[{\"changed\": {\"fields\": [\"Marca\"]}}]', 29, 1),
+(198, '2024-10-31 00:36:12.904957', '7', 'Agua (King)', 2, '[{\"changed\": {\"fields\": [\"Nombre\"]}}]', 29, 1),
+(199, '2024-10-31 00:36:37.780205', '7', 'Agua (Water) (King)', 2, '[{\"changed\": {\"fields\": [\"Nombre\"]}}]', 29, 1),
+(200, '2024-10-31 00:37:13.030906', '7', 'Agua (Water) (King)', 3, '', 29, 1),
+(201, '2024-10-31 17:32:54.204463', '14', 'Factura B N°1 (2024-10-31 17:30:37.091468+00:00)', 3, '', 43, 1),
+(202, '2024-10-31 18:51:59.704725', '15', 'Factura B N°1 (2024-10-31 17:33:02.226826+00:00)', 3, '', 43, 1),
+(203, '2024-10-31 18:52:15.217060', '16', 'Roxo (2024-11-01)', 2, '[{\"changed\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [1] [Roxo (2024-11-01)]\", \"fields\": [\"Disponibilidad\"]}}]', 37, 1),
+(204, '2024-10-31 19:42:19.186142', '16', 'Factura B N°1 (2024-10-31 19:41:47.160190+00:00)', 3, '', 43, 1),
+(205, '2024-10-31 19:42:34.619216', '9', 'Mesa [1] [Roxo (2024-11-01)]', 2, '[{\"changed\": {\"fields\": [\"Disponibilidad\"]}}]', 40, 1),
+(206, '2024-10-31 20:31:25.209121', '18', 'Factura B N°2 (2024-10-31 20:30:27.284435+00:00)', 3, '', 43, 1),
+(207, '2024-10-31 20:31:25.209121', '17', 'Factura B N°1 (2024-10-31 20:27:50.221003+00:00)', 3, '', 43, 1),
+(208, '2024-10-31 20:31:34.633404', '15', 'Fiestacha (2024-11-02)', 2, '[{\"changed\": {\"fields\": [\"Cantidad Entradas VIP\"]}}]', 37, 1),
+(209, '2024-10-31 20:36:01.347549', '20', 'Factura B N°2 (2024-10-31 20:32:04.150589+00:00)', 3, '', 43, 1),
+(210, '2024-10-31 20:36:01.347549', '19', 'Factura B N°1 (2024-10-31 20:31:53.808857+00:00)', 3, '', 43, 1),
+(211, '2024-10-31 20:37:12.944420', '22', 'Factura B N°2 (2024-10-31 20:36:48.861722+00:00)', 3, '', 43, 1),
+(212, '2024-10-31 20:37:12.944420', '21', 'Factura B N°1 (2024-10-31 20:36:35.056020+00:00)', 3, '', 43, 1),
+(213, '2024-10-31 20:42:21.353390', '24', 'Factura B N°2 (2024-10-31 20:41:10.071202+00:00)', 3, '', 43, 1),
+(214, '2024-10-31 20:42:21.353390', '23', 'Factura B N°1 (2024-10-31 20:40:43.618648+00:00)', 3, '', 43, 1),
+(215, '2024-10-31 20:47:19.014887', '26', 'Factura B N°2 (2024-10-31 20:46:37.586460+00:00)', 3, '', 43, 1),
+(216, '2024-10-31 20:47:19.014887', '25', 'Factura B N°1 (2024-10-31 20:46:25.500836+00:00)', 3, '', 43, 1),
+(217, '2024-11-01 00:23:48.212909', '27', 'Factura B N°1 (2024-11-01 00:21:00.344757+00:00)', 3, '', 43, 1),
+(218, '2024-11-01 00:23:55.243400', '28', 'Factura B N°2 (2024-11-01 00:21:46.582277+00:00)', 3, '', 43, 1),
+(219, '2024-11-01 00:26:16.490480', '1', 'Vodka (Smirnoff)', 2, '[{\"changed\": {\"fields\": [\"Stock\"]}}]', 29, 1),
+(220, '2024-11-01 00:26:28.802375', '1', 'Vodka (Smirnoff)', 2, '[{\"changed\": {\"fields\": [\"Stock\"]}}]', 29, 1),
+(221, '2024-11-01 02:18:48.005814', '30', 'Factura B N°2 (2024-11-01 02:17:54.001995+00:00)', 3, '', 43, 1),
+(222, '2024-11-01 02:21:01.980222', '31', 'Factura B N°3 (2024-11-01 02:18:03.931753+00:00)', 3, '', 43, 1),
+(223, '2024-11-01 05:56:14.211687', '9', 'Dario Villalba (Cliente)', 2, '[{\"changed\": {\"name\": \"Ticket Bebida\", \"object\": \"Dario Villalba (Cliente) tiene 1 bebidas (Vodka + Redbull (500.00ml)) para canjear\", \"fields\": [\"Cantidad\"]}}]', 51, 1),
+(224, '2024-11-01 05:56:19.812385', '9', 'Dario Villalba (Cliente)', 2, '[{\"changed\": {\"name\": \"Ticket Bebida\", \"object\": \"Dario Villalba (Cliente) tiene 2 bebidas (Vodka + Redbull (500.00ml)) para canjear\", \"fields\": [\"Cantidad\"]}}]', 51, 1),
+(225, '2024-11-01 06:38:34.777954', '9', 'Dario Villalba (Cliente)', 2, '[{\"changed\": {\"name\": \"Ticket Entrada\", \"object\": \"Dario Villalba (Cliente) tiene 0 entradas (Entrada [Popular] [Roxo (2024-11-01)]) para canjear\", \"fields\": [\"Cantidad\"]}}]', 51, 1),
+(226, '2024-11-01 06:43:34.901255', '9', 'Dario Villalba (Cliente)', 2, '[{\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Dario Villalba (Cliente) tiene 0 entradas (Entrada [Popular] [Roxo (2024-11-01)]) para canjear\"}}]', 51, 1),
+(227, '2024-11-01 06:47:22.445402', '9', 'Dario Villalba (Cliente)', 2, '[{\"changed\": {\"name\": \"Ticket Bebida\", \"object\": \"Dario Villalba (Cliente) tiene 6 bebidas (Vodka + Redbull (500.00ml)) para canjear\", \"fields\": [\"Cantidad\"]}}]', 51, 1),
+(228, '2024-11-01 06:50:31.916932', '9', 'Dario Villalba (Cliente)', 2, '[{\"changed\": {\"name\": \"Ticket Bebida\", \"object\": \"Dario Villalba (Cliente) tiene 7 bebidas (Vodka + Redbull (500.00ml)) para canjear\", \"fields\": [\"Cantidad\"]}}]', 51, 1),
+(229, '2024-11-01 06:54:09.920966', '9', 'Dario Villalba (Cliente)', 2, '[{\"changed\": {\"name\": \"Ticket Bebida\", \"object\": \"Dario Villalba (Cliente) tiene 2 bebidas (Vodka (1000.00ml)) para canjear\", \"fields\": [\"Cantidad\"]}}]', 51, 1),
+(230, '2024-11-01 07:01:07.216054', '32', 'Factura B N°2 (2024-11-01 06:06:43.789225+00:00)', 3, '', 43, 1),
+(231, '2024-11-01 07:01:15.732245', '33', 'Factura B N°2 (2024-11-01 06:07:35.442705+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(232, '2024-11-01 07:01:20.905925', '34', 'Factura B N°3 (2024-11-01 06:13:30.340287+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(233, '2024-11-01 07:10:27.455365', '9', 'Dario Villalba (Cliente)', 2, '[{\"changed\": {\"name\": \"Ticket Bebida\", \"object\": \"Dario Villalba (Cliente) tiene 3 bebidas (Vodka (1000.00ml)) para canjear\", \"fields\": [\"Cantidad\"]}}]', 51, 1),
+(234, '2024-11-01 07:10:36.540252', '9', 'Dario Villalba (Cliente)', 2, '[{\"changed\": {\"name\": \"Ticket Bebida\", \"object\": \"Dario Villalba (Cliente) tiene 2 bebidas (Vodka (1000.00ml)) para canjear\", \"fields\": [\"Cantidad\"]}}]', 51, 1),
+(235, '2024-11-01 07:15:27.214454', '9', 'Dario Villalba (Cliente)', 2, '[{\"changed\": {\"name\": \"Ticket Bebida\", \"object\": \"Dario Villalba (Cliente) tiene 1 bebidas (Vodka (1000.00ml)) para canjear\", \"fields\": [\"Cantidad\"]}}]', 51, 1),
+(236, '2024-11-01 07:17:55.057893', '9', 'Dario Villalba (Cliente)', 2, '[{\"changed\": {\"name\": \"Ticket Bebida\", \"object\": \"Dario Villalba (Cliente) tiene 2 bebidas (Vodka (1000.00ml)) para canjear\", \"fields\": [\"Cantidad\"]}}]', 51, 1),
+(237, '2024-11-01 07:17:59.251363', '9', 'Dario Villalba (Cliente)', 2, '[{\"changed\": {\"name\": \"Ticket Bebida\", \"object\": \"Dario Villalba (Cliente) tiene 1 bebidas (Vodka (1000.00ml)) para canjear\", \"fields\": [\"Cantidad\"]}}]', 51, 1),
+(238, '2024-11-01 07:18:13.244143', '9', 'Dario Villalba (Cliente)', 2, '[{\"changed\": {\"name\": \"Ticket Bebida\", \"object\": \"Dario Villalba (Cliente) tiene 3 bebidas (Vodka (1000.00ml)) para canjear\", \"fields\": [\"Cantidad\"]}}]', 51, 1),
+(239, '2024-11-01 14:03:54.671495', '35', 'Factura B N°4 (2024-11-01 14:02:31.557301+00:00)', 3, '', 43, 1),
+(240, '2024-11-01 14:12:19.579478', '9', 'Dario Villalba (Cliente)', 2, '[{\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Dario Villalba (Cliente) tiene 2 entradas (Entrada [Popular] [Roxo (2024-11-01)]) para canjear\"}}]', 51, 1),
+(241, '2024-11-01 14:16:27.425555', '36', 'Factura B N°4 (2024-11-01 14:15:07.429746+00:00)', 3, '', 43, 1),
+(242, '2024-11-01 14:16:32.832495', '9', 'Dario Villalba (Cliente)', 2, '[{\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Dario Villalba (Cliente) tiene 1 entradas (Entrada [Popular] [Roxo (2024-11-01)]) para canjear\"}}]', 51, 1),
+(243, '2024-11-01 14:27:23.587106', '41', 'Factura B N°8 (2024-11-01 14:25:27.407039+00:00)', 3, '', 43, 1),
+(244, '2024-11-01 14:27:23.587106', '40', 'Factura B N°7 (2024-11-01 14:22:55.259202+00:00)', 3, '', 43, 1),
+(245, '2024-11-01 14:27:23.587106', '39', 'Factura B N°6 (2024-11-01 14:22:38.677469+00:00)', 3, '', 43, 1),
+(246, '2024-11-01 14:27:23.587106', '38', 'Factura B N°5 (2024-11-01 14:22:33.840392+00:00)', 3, '', 43, 1),
+(247, '2024-11-01 14:27:23.587106', '37', 'Factura B N°4 (2024-11-01 14:20:16.095079+00:00)', 3, '', 43, 1),
+(248, '2024-11-01 14:27:33.552260', '9', 'Dario Villalba (Cliente)', 2, '[{\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Dario Villalba (Cliente) tiene 3 entradas (Entrada [Popular] [Roxo (2024-11-01)]) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Dario Villalba (Cliente) tiene 2 entradas (Entrada [Popular] [Sweet (2024-11-02)]) para canjear\"}}]', 51, 1),
+(249, '2024-11-01 14:40:28.899315', '9', 'Dario Villalba (Cliente)', 2, '[{\"changed\": {\"name\": \"Ticket Bebida\", \"object\": \"Dario Villalba (Cliente) tiene 2 bebidas (Vodka (1000.00ml)) para canjear\", \"fields\": [\"Cantidad\"]}}]', 51, 1);
 
 -- --------------------------------------------------------
 
@@ -17828,7 +17970,7 @@ CREATE TABLE IF NOT EXISTS `django_content_type` (
   `model` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `django_content_type_app_label_model_76bd3d3b_uniq` (`app_label`,`model`)
-) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `django_content_type`
@@ -17884,7 +18026,12 @@ INSERT INTO `django_content_type` (`id`, `app_label`, `model`) VALUES
 (47, 'modulo_ventas', 'detalleentrada'),
 (48, 'modulo_ventas', 'detallearticulo'),
 (49, 'modulo_ventas', 'detallereservacion'),
-(50, 'modulo_ventas', 'transaccionpago');
+(50, 'modulo_ventas', 'transaccionpago'),
+(51, 'modulo_clientes', 'cliente'),
+(52, 'authtoken', 'token'),
+(53, 'authtoken', 'tokenproxy'),
+(54, 'modulo_clientes', 'ticketentrada'),
+(55, 'modulo_clientes', 'ticketarticulo');
 
 -- --------------------------------------------------------
 
@@ -17899,7 +18046,7 @@ CREATE TABLE IF NOT EXISTS `django_migrations` (
   `name` varchar(255) NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=90 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=101 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `django_migrations`
@@ -17994,7 +18141,18 @@ INSERT INTO `django_migrations` (`id`, `app`, `name`, `applied`) VALUES
 (86, 'modulo_ventas', '0004_transaccionpago', '2024-10-11 15:28:19.997644'),
 (87, 'modulo_ventas', '0005_facturacliente__pagado', '2024-10-13 23:11:36.082988'),
 (88, 'modulo_ventas', '0006_remove_transaccionpago__detalles_pago_and_more', '2024-10-17 14:31:20.079784'),
-(89, 'modulo_ventas', '0007_transaccionpago__qr_image', '2024-10-17 21:59:21.495715');
+(89, 'modulo_ventas', '0007_transaccionpago__qr_image', '2024-10-17 21:59:21.495715'),
+(90, 'modulo_clientes', '0001_initial', '2024-10-24 15:29:27.428053'),
+(91, 'modulo_ventas', '0008_alter_facturacliente__cliente', '2024-10-24 15:29:27.554226'),
+(92, 'modulo_evento', '0028_delete_cliente', '2024-10-24 15:29:27.579130'),
+(93, 'authtoken', '0001_initial', '2024-10-26 03:09:14.155636'),
+(94, 'authtoken', '0002_auto_20160226_1747', '2024-10-26 03:09:14.219540'),
+(95, 'authtoken', '0003_tokenproxy', '2024-10-26 03:09:14.222092'),
+(96, 'authtoken', '0004_alter_tokenproxy_options', '2024-10-26 03:09:14.227307'),
+(97, 'modulo_clientes', '0002_cliente__foto', '2024-10-26 22:20:37.112303'),
+(98, 'modulo_ventas', '0009_alter_facturacliente__empleado', '2024-10-30 23:47:21.032276'),
+(99, 'modulo_ventas', '0010_alter_facturacliente__numero_factura', '2024-10-31 17:29:35.126526'),
+(100, 'modulo_clientes', '0003_ticketarticulo_ticketentrada', '2024-11-01 02:13:57.051165');
 
 -- --------------------------------------------------------
 
@@ -18018,9 +18176,15 @@ CREATE TABLE IF NOT EXISTS `django_session` (
 INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
 ('ae0mdfkkb3usbpmx2ho96dv383wdwy3h', '.eJxVjEEOgyAQRe_CuiEBlBGX3fcMZBgGtTWSAK6a3r2auGi3_73_3sLj3ma_Vy5-iWIUStx-t4D04u0E8YnblCXlrZUlyFORF63ykSOv98v9C8xY5-MdqOtIBeKOtVJOJVLaDdYY6xJQSoAWnKEIRrvegkFIARzC0OveMuMRbXmaVvZ1iRywiLGVnT9fBz8_5w:1suaVc:WX8sumebuekkhouEAu7kA-1NGPRW0XU2DQeaob_PoI0', '2024-10-12 16:41:28.882656'),
 ('ykyzpte2kpaq1mtfxh05kd2cg0m4jeoa', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1sudOR:f5GhEvbunFNZk2Cjy_6WqEtk68E1zWQr6YAvJIMzzls', '2024-10-12 19:46:15.584150'),
-('cej16tlwmgnpwvlv0tkuoo5lo6ulswu5', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t04hx:s_i0vDL06VFp_OkStVAAsGdjpIF37dp9CiJaUHdi16M', '2024-10-27 19:56:53.033993'),
+('ivjf5mzq4dwfoswfxqeum0cx0dgb6elq', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t4rs1:5JkcAEs8vk3dt0_Fe3UL5x2Fxox1ZEYt5enRJcr7x3o', '2024-11-10 01:15:05.409390'),
 ('79txmi83uwo2v7eskd64a5lpy67nlqos', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t0u8l:dkDzu0lmPgrYLqGSi5ECbQNKm_0E3R5gaN3daZjaOmQ', '2024-10-30 02:51:59.045114'),
-('eu8nvq9vlz1zfrt8oxhc4pgyp4q291kw', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t0uO9:x_-lg4Jh_L71cj2GKTD8YptK9cSPBJjP-Ss5SByGIqs', '2024-10-30 03:07:53.911425');
+('eu8nvq9vlz1zfrt8oxhc4pgyp4q291kw', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t0uO9:x_-lg4Jh_L71cj2GKTD8YptK9cSPBJjP-Ss5SByGIqs', '2024-10-30 03:07:53.911425'),
+('rx0s5h0annqre58agz3hrdlraeorp0ot', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t48EM:QvrDb3s4WZig7DjyrGuHcXE0z5zZz7dGQLhMnq6g0II', '2024-11-08 00:31:06.690336'),
+('isl9mvw52jf38n6mkn7mevwbwbr8hpar', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t5y7q:8d6eQz_vt87g0Mj6r4S3p3IGPgBoLcpNLDtQNBlESKM', '2024-11-13 02:07:58.956412'),
+('6a3y9gomxd8owliag8bayg64ci9xwqdd', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t69D0:oFm4rh8hKuY88fSo9Y2cZKSHX-qdnmqg1xosGrrPaT0', '2024-11-13 13:58:02.148874'),
+('hx3fv8p84j3u6amxj6ncdngma8ic6h52', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t69EG:B2c5sWcHV0E9j6TG2tL43Xk6xnzF3dV-gFrQ7U2-QRg', '2024-11-13 13:59:20.532752'),
+('oa6ulr6m0eq813g8nhxe8afvtp6t3og3', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t69I0:KsDjzsmkp10J-1EutQ-oWAiKi1gqKqXGIrwnkKWzJ2M', '2024-11-13 14:03:12.916337'),
+('k2jhvdkyvh3wdf1fi2o3uabj1o903whn', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t69LK:u1HTt3BmuzFsnICnHtRkQqgIlXVy9vbz0kzFWNJ9nDw', '2024-11-13 14:06:38.727433');
 
 -- --------------------------------------------------------
 
@@ -18242,7 +18406,7 @@ CREATE TABLE IF NOT EXISTS `modulologin_persona` (
   UNIQUE KEY `_dni` (`_dni`),
   UNIQUE KEY `_cuil` (`_cuil`),
   UNIQUE KEY `_user_id` (`_user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `modulologin_persona`
@@ -18251,7 +18415,12 @@ CREATE TABLE IF NOT EXISTS `modulologin_persona` (
 INSERT INTO `modulologin_persona` (`id`, `_dni`, `_cuil`, `_nombre`, `_apellido`, `_fecha_nacimiento`, `_user_id`) VALUES
 (1, '49864986', '20498649868', 'Miguel Dario', 'Coronel', '1998-08-07', 1),
 (2, '78787878', '20787878788', 'Azul Yanel', 'Coronel', '2003-08-14', 2),
-(3, '59595958', '20595959588', 'Franco', 'Gimenez', '1999-02-19', 3);
+(3, '59595958', '20595959588', 'Franco', 'Gimenez', '1999-02-19', 3),
+(9, '58585857', '20585858578', 'Dario', 'Villalba', '1998-08-08', 15),
+(10, '44982213', '27449822132', 'Azul Yanel', 'Coronel ', '2003-08-15', 16),
+(11, '63636363', '20636363638', 'Diana', 'Coronel', '1996-10-12', 17),
+(12, '63636261', '20636362618', 'Maiten', 'Avalos', '2000-10-07', 18),
+(13, '42434241', '20424342418', 'Damian Alejo', 'Coronel', '2005-10-13', 19);
 
 -- --------------------------------------------------------
 
@@ -18325,15 +18494,79 @@ INSERT INTO `modulologin_turno` (`id`, `_hora_inicio`, `_hora_fin`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `modulo_evento_cliente`
+-- Estructura de tabla para la tabla `modulo_clientes_cliente`
 --
 
-DROP TABLE IF EXISTS `modulo_evento_cliente`;
-CREATE TABLE IF NOT EXISTS `modulo_evento_cliente` (
+DROP TABLE IF EXISTS `modulo_clientes_cliente`;
+CREATE TABLE IF NOT EXISTS `modulo_clientes_cliente` (
   `persona_ptr_id` bigint NOT NULL,
   `_embedding` json DEFAULT NULL,
+  `_foto` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`persona_ptr_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `modulo_clientes_cliente`
+--
+
+INSERT INTO `modulo_clientes_cliente` (`persona_ptr_id`, `_embedding`, `_foto`) VALUES
+(9, NULL, ''),
+(10, NULL, ''),
+(11, NULL, ''),
+(12, NULL, ''),
+(13, NULL, '');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `modulo_clientes_ticketarticulo`
+--
+
+DROP TABLE IF EXISTS `modulo_clientes_ticketarticulo`;
+CREATE TABLE IF NOT EXISTS `modulo_clientes_ticketarticulo` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `_cantidad` int UNSIGNED NOT NULL,
+  `_fecha_limite` datetime(6) NOT NULL,
+  `_articulo_id` bigint NOT NULL,
+  `_cliente_id` bigint NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `modulo_clientes_ticketarticulo__articulo_id_2f4862f2` (`_articulo_id`),
+  KEY `modulo_clientes_ticketarticulo__cliente_id_54d1abe9` (`_cliente_id`)
+) ;
+
+--
+-- Volcado de datos para la tabla `modulo_clientes_ticketarticulo`
+--
+
+INSERT INTO `modulo_clientes_ticketarticulo` (`id`, `_cantidad`, `_fecha_limite`, `_articulo_id`, `_cliente_id`) VALUES
+(1, 7, '2024-11-01 02:16:50.450011', 3, 9),
+(2, 2, '2024-11-01 06:13:30.355879', 1, 9),
+(3, 1, '2024-11-01 14:38:34.140535', 6, 9);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `modulo_clientes_ticketentrada`
+--
+
+DROP TABLE IF EXISTS `modulo_clientes_ticketentrada`;
+CREATE TABLE IF NOT EXISTS `modulo_clientes_ticketentrada` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `_cantidad` int UNSIGNED NOT NULL,
+  `_cliente_id` bigint NOT NULL,
+  `_entrada_id` bigint NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `modulo_clientes_ticketentrada__cliente_id_138bbe33` (`_cliente_id`),
+  KEY `modulo_clientes_ticketentrada__entrada_id_1a97af9c` (`_entrada_id`)
+) ;
+
+--
+-- Volcado de datos para la tabla `modulo_clientes_ticketentrada`
+--
+
+INSERT INTO `modulo_clientes_ticketentrada` (`id`, `_cantidad`, `_cliente_id`, `_entrada_id`) VALUES
+(9, 1, 9, 5),
+(8, 1, 9, 3);
 
 -- --------------------------------------------------------
 
@@ -18349,7 +18582,7 @@ CREATE TABLE IF NOT EXISTS `modulo_evento_entrada` (
   `_precio_unitario` decimal(10,2) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `modulo_evento_entrada__fiesta_id_f5bf39de` (`_fiesta_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `modulo_evento_entrada`
@@ -18359,7 +18592,9 @@ INSERT INTO `modulo_evento_entrada` (`id`, `_categoria`, `_fiesta_id`, `_precio_
 (1, 'Popular', 15, 3000.00),
 (2, 'VIP', 15, 5000.00),
 (3, 'Popular', 16, 2000.00),
-(4, 'VIP', 16, 5000.00);
+(4, 'VIP', 16, 5000.00),
+(5, 'Popular', 17, 5000.00),
+(6, 'VIP', 17, 10000.00);
 
 -- --------------------------------------------------------
 
@@ -18385,8 +18620,9 @@ CREATE TABLE IF NOT EXISTS `modulo_evento_evento` (
 --
 
 INSERT INTO `modulo_evento_evento` (`id`, `_nombre`, `_descripcion`, `_edad_minima`, `_edad_maxima`, `latitud`, `longitud`, `_fecha`) VALUES
-(15, 'Roxo Club-50', 'DJ Ferreira-2', 18, 50, -26.1615, -58.1844, '2024-09-28'),
-(16, 'Roxo 12', 'DJ Agustín', 18, 40, -26.1781, -58.1761, '2024-10-05');
+(17, 'Sweet', 'DJ Agostina', 18, 40, -26.3481, -58.4360, '2024-11-02'),
+(15, 'Fiestacha', 'DJ Pablo', 18, 40, -26.1615, -58.1844, '2024-11-02'),
+(16, 'Roxo', 'DJ Agustín', 18, 40, -26.1781, -58.1761, '2024-11-01');
 
 --
 -- Disparadores `modulo_evento_evento`
@@ -18474,8 +18710,9 @@ CREATE TABLE IF NOT EXISTS `modulo_evento_fiesta` (
 --
 
 INSERT INTO `modulo_evento_fiesta` (`evento_ptr_id`, `_vestimenta`, `_categoria`, `_cantidad_entrada_popular`, `_cantidad_entrada_vip`) VALUES
-(16, 'Formal', 'Electronica', 100, 50),
-(15, 'Streetwear', 'Reggaeton', 60, 25);
+(17, 'Formal', 'Fiesta Retro', 99, 45),
+(16, 'Disfraz Tematico', 'Electronica', 88, 47),
+(15, 'Streetwear', 'Reggaeton', 59, 50);
 
 --
 -- Disparadores `modulo_evento_fiesta`
@@ -18598,9 +18835,10 @@ CREATE TABLE IF NOT EXISTS `modulo_evento_mesa` (
 INSERT INTO `modulo_evento_mesa` (`id`, `_capacidad`, `_categoria`, `_fiesta_id`, `_disponibilidad`, `_left`, `_top`, `_precio`) VALUES
 (7, 8, 'VIP', 15, 1, 827, 267, 20000.00),
 (6, 8, 'Popular', 15, 1, 349, 230, 10000.00),
-(5, 8, 'Popular', 15, 0, 27, 205, 10000.00),
-(9, 10, 'Popular', 16, 1, 25, 246, 10000.00),
-(11, 7, 'VIP', 16, 1, 516, 200, 20000.00);
+(13, 10, 'VIP', 17, 0, 256, 144, 20000.00),
+(5, 8, 'Popular', 15, 0, 28, 206, 10000.00),
+(9, 10, 'Popular', 16, 0, 256, 143, 10000.00),
+(11, 7, 'VIP', 16, 1, 596, 143, 20000.00);
 
 -- --------------------------------------------------------
 
@@ -18633,6 +18871,7 @@ INSERT INTO `modulo_evento_mesatienearticulo` (`id`, `_cantidad`, `_articulo_id`
 (14, 7, 3, 5),
 (10, 3, 1, 9),
 (11, 10, 2, 9),
+(17, 5, 1, 13),
 (15, 7, 3, 9);
 
 -- --------------------------------------------------------
@@ -18651,7 +18890,7 @@ CREATE TABLE IF NOT EXISTS `modulo_evento_movimientofiesta` (
   PRIMARY KEY (`id`),
   KEY `modulo_evento_movimientofiesta__administrador_id_665d6e63` (`_administrador_id`),
   KEY `modulo_evento_movimientofiesta__fiesta_id_55aa0df9` (`_fiesta_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `modulo_evento_movimientofiesta`
@@ -18665,7 +18904,32 @@ INSERT INTO `modulo_evento_movimientofiesta` (`id`, `_fecha`, `_descripcion`, `_
 (10, '2024-09-28', 'Cantidad de entradas populares cambió de 50 a 60; Cantidad de entradas VIP cambió de 30 a 25; ', 1, 15),
 (9, '2024-09-28', 'Edad máxima cambió de 40 a 50; ', 1, 15),
 (8, '2024-09-28', 'registró', 1, 15),
-(15, '2024-09-30', 'Nombre cambió de Roxo Club a Roxo Club-50; Descripción cambió de DJ Ferreira a DJ Ferreira-2; ', 1, 15);
+(15, '2024-09-30', 'Nombre cambió de Roxo Club a Roxo Club-50; Descripción cambió de DJ Ferreira a DJ Ferreira-2; ', 1, 15),
+(16, '2024-10-27', 'Nombre cambió de Roxo 12 a Roxo; La fecha cambió de 2024-10-05 a 2024-11-01; ', 1, 16),
+(17, '2024-10-27', 'Vestimenta cambió de Formal a Disfraz Tematico; ', 1, 16),
+(18, '2024-10-27', 'Nombre cambió de Roxo Club-50 a Fiestacha; La fecha cambió de 2024-09-28 a 2024-11-02; ', 1, 15),
+(19, '2024-10-28', 'registró', 1, 17),
+(20, '2024-10-28', 'La fecha cambió de 2024-11-01 a 2024-10-28; ', 1, 16),
+(21, '2024-10-28', 'La fecha cambió de 2024-10-28 a 2024-11-01; ', 1, 16),
+(22, '2024-10-28', 'Nombre cambió de Prueba a Sweet Spring; ', 1, 17),
+(23, '2024-10-28', 'Edad mínima cambió de 30 a 18; Edad máxima cambió de 50 a 40; ', 1, 17),
+(24, '2024-10-28', 'Edad máxima cambió de 50 a 40; ', 1, 15),
+(25, '2024-10-28', 'Descripción cambió de DJ Agustín a DJ Agostina; ', 1, 17),
+(26, '2024-10-28', 'Descripción cambió de DJ Ferreira-2 a DJ Pablo; ', 1, 15),
+(27, '2024-10-28', 'Nombre cambió de Sweet Spring a Sweet; ', 1, 17),
+(28, '2024-10-31', 'Cantidad de entradas populares cambió de 60 a 59; ', 0, 15),
+(29, '2024-10-31', 'Cantidad de entradas VIP cambió de 5 a 100; ', 1, 15),
+(30, '2024-10-31', 'Cantidad de entradas populares cambió de 100 a 99; ', 0, 17),
+(31, '2024-10-31', 'Cantidad de entradas VIP cambió de 49 a 48; ', 0, 17),
+(32, '2024-10-31', 'Cantidad de entradas populares cambió de 100 a 99; ', 0, 16),
+(33, '2024-10-31', 'Cantidad de entradas VIP cambió de 50 a 49; ', 0, 16),
+(34, '2024-10-31', 'Cantidad de entradas VIP cambió de 47 a 45; ', 0, 17),
+(35, '2024-11-01', 'Cantidad de entradas populares cambió de 99 a 98; ', 0, 16),
+(36, '2024-11-01', 'Cantidad de entradas populares cambió de 98 a 96; ', 0, 16),
+(37, '2024-11-01', 'Cantidad de entradas populares cambió de 96 a 95; ', 0, 16),
+(38, '2024-11-01', 'Cantidad de entradas populares cambió de 92 a 91; ', 0, 16),
+(39, '2024-11-01', 'Cantidad de entradas populares cambió de 91 a 90; ', 0, 16),
+(40, '2024-11-01', 'Cantidad de entradas populares cambió de 89 a 88; ', 0, 16);
 
 -- --------------------------------------------------------
 
@@ -18689,9 +18953,12 @@ CREATE TABLE IF NOT EXISTS `modulo_stock_articulo` (
 --
 
 INSERT INTO `modulo_stock_articulo` (`id`, `_nombre`, `_volumen`, `_precio_unitario`, `_stock`, `_stock_minimo`) VALUES
-(1, 'Vodka', 1000.00, 5000.00, 105, 100),
-(2, 'Energizante', 500.00, 2000.00, 47, 100),
-(3, 'Vodka + Redbull', 500.00, 3000.00, 78, 50);
+(1, 'Vodka', 1000.00, 5000.00, 100, 100),
+(2, 'Energizante', 500.00, 2000.00, 48, 100),
+(3, 'Vodka + Redbull', 500.00, 3000.00, 80, 50),
+(4, 'Fernet', 1000.00, 17000.00, 30, 50),
+(5, 'Cerveza', 1000.00, 10000.00, 100, 100),
+(6, 'Gaseosa Cola', 1000.00, 8000.00, 100, 100);
 
 -- --------------------------------------------------------
 
@@ -18769,7 +19036,7 @@ CREATE TABLE IF NOT EXISTS `modulo_stock_marca` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `_nombre` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `modulo_stock_marca`
@@ -18777,7 +19044,13 @@ CREATE TABLE IF NOT EXISTS `modulo_stock_marca` (
 
 INSERT INTO `modulo_stock_marca` (`id`, `_nombre`) VALUES
 (1, 'Smirnoff'),
-(2, 'Redbull');
+(2, 'Redbull'),
+(3, 'Branca'),
+(4, 'Corona'),
+(5, 'Budweiser'),
+(6, 'Coca-Cola'),
+(7, 'Villavicencio'),
+(8, 'King');
 
 -- --------------------------------------------------------
 
@@ -18795,7 +19068,7 @@ CREATE TABLE IF NOT EXISTS `modulo_stock_movimientostock` (
   PRIMARY KEY (`id`),
   KEY `modulo_stock_movimientostock__id_empleado_id_0dd6b6b2` (`_empleado_id`),
   KEY `modulo_stock_movimientostock__id_producto_id_b821bb45` (`_producto_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `modulo_stock_movimientostock`
@@ -18804,7 +19077,14 @@ CREATE TABLE IF NOT EXISTS `modulo_stock_movimientostock` (
 INSERT INTO `modulo_stock_movimientostock` (`id`, `_cantidad`, `_fecha_movimiento`, `_empleado_id`, `_producto_id`) VALUES
 (1, 8, '2024-09-26', 1, 1),
 (2, -3, '2024-09-28', 1, 1),
-(3, -3, '2024-09-28', 1, 2);
+(3, -3, '2024-09-28', 1, 2),
+(4, -47, '2024-10-30', 1, 2),
+(5, 48, '2024-10-30', 1, 2),
+(6, -3, '2024-10-30', 1, 1),
+(7, -2, '2024-10-30', 1, 1),
+(8, -70, '2024-10-30', 1, 4),
+(9, -1, '2024-10-31', 1, 1),
+(10, 1, '2024-10-31', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -18826,7 +19106,10 @@ CREATE TABLE IF NOT EXISTS `modulo_stock_producto` (
 
 INSERT INTO `modulo_stock_producto` (`articulo_ptr_id`, `_marca_id`) VALUES
 (1, 1),
-(2, 2);
+(2, 2),
+(4, 3),
+(5, 5),
+(6, 6);
 
 -- --------------------------------------------------------
 
@@ -18906,7 +19189,12 @@ CREATE TABLE IF NOT EXISTS `modulo_ventas_detallearticulo` (
 --
 
 INSERT INTO `modulo_ventas_detallearticulo` (`detallefactura_ptr_id`, `_articulo_id`) VALUES
-(16, 1);
+(16, 1),
+(41, 1),
+(36, 3),
+(40, 3),
+(19, 2),
+(52, 6);
 
 -- --------------------------------------------------------
 
@@ -18921,6 +19209,15 @@ CREATE TABLE IF NOT EXISTS `modulo_ventas_detalleentrada` (
   PRIMARY KEY (`detallefactura_ptr_id`),
   KEY `modulo_ventas_detalleentrada__entrada_id_44de22b6` (`_entrada_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `modulo_ventas_detalleentrada`
+--
+
+INSERT INTO `modulo_ventas_detalleentrada` (`detallefactura_ptr_id`, `_entrada_id`) VALUES
+(20, 2),
+(50, 5),
+(49, 3);
 
 -- --------------------------------------------------------
 
@@ -18944,7 +19241,17 @@ CREATE TABLE IF NOT EXISTS `modulo_ventas_detallefactura` (
 --
 
 INSERT INTO `modulo_ventas_detallefactura` (`id`, `_cantidad`, `_precio_unitario`, `_subtotal`, `_factura_id`) VALUES
-(16, 1, 1.00, 1.00, 10);
+(16, 1, 1.00, 1.00, 10),
+(40, 5, 3000.00, 15000.00, 33),
+(36, 2, 3000.00, 6000.00, 29),
+(20, 1, 5000.00, 5000.00, 13),
+(19, 1, 2000.00, 2000.00, 13),
+(21, 1, 10000.00, 10000.00, 13),
+(50, 1, 5000.00, 5000.00, 43),
+(51, 1, 10000.00, 10000.00, 44),
+(52, 1, 8000.00, 8000.00, 45),
+(41, 1, 5000.00, 5000.00, 34),
+(49, 1, 2000.00, 2000.00, 42);
 
 -- --------------------------------------------------------
 
@@ -18960,6 +19267,14 @@ CREATE TABLE IF NOT EXISTS `modulo_ventas_detallereservacion` (
   KEY `modulo_ventas_detallereservacion__reservacion_id_06b3d764` (`_reservacion_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Volcado de datos para la tabla `modulo_ventas_detallereservacion`
+--
+
+INSERT INTO `modulo_ventas_detallereservacion` (`detallefactura_ptr_id`, `_reservacion_id`) VALUES
+(21, 6),
+(51, 9);
+
 -- --------------------------------------------------------
 
 --
@@ -18973,25 +19288,32 @@ CREATE TABLE IF NOT EXISTS `modulo_ventas_facturacliente` (
   `_fecha_emision` datetime(6) NOT NULL,
   `_precio_total` decimal(10,2) NOT NULL,
   `_cliente_id` bigint DEFAULT NULL,
-  `_empleado_id` bigint NOT NULL,
+  `_empleado_id` bigint DEFAULT NULL,
   `_medio_de_pago_id` bigint NOT NULL,
   `_tipo_factura_id` bigint NOT NULL,
   `_pagado` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `_numero_factura` (`_numero_factura`),
   UNIQUE KEY `modulo_ventas_facturacli__empleado_id__numero_fac_7547c83f_uniq` (`_empleado_id`,`_numero_factura`),
   KEY `modulo_ventas_facturacliente__cliente_id_363adbe2` (`_cliente_id`),
   KEY `modulo_ventas_facturacliente__empleado_id_8092f424` (`_empleado_id`),
   KEY `modulo_ventas_facturacliente__medio_de_pago_id_735fd784` (`_medio_de_pago_id`),
   KEY `modulo_ventas_facturacliente__tipo_factura_id_80dc92f6` (`_tipo_factura_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `modulo_ventas_facturacliente`
 --
 
 INSERT INTO `modulo_ventas_facturacliente` (`id`, `_numero_factura`, `_fecha_emision`, `_precio_total`, `_cliente_id`, `_empleado_id`, `_medio_de_pago_id`, `_tipo_factura_id`, `_pagado`) VALUES
-(10, '1', '2024-10-17 22:45:28.566665', 1.00, NULL, 1, 3, 1, 0);
+(10, '1', '2024-10-17 22:45:28.566665', 1.00, NULL, 1, 3, 1, 0),
+(13, '2', '2024-10-19 00:11:04.579885', 17000.00, NULL, 1, 3, 1, 0),
+(34, '3', '2024-11-01 06:13:30.340287', 5000.00, 9, NULL, 3, 1, 1),
+(29, '1', '2024-11-01 02:16:50.430510', 6000.00, 9, NULL, 3, 1, 1),
+(33, '2', '2024-11-01 06:07:35.442705', 15000.00, 9, NULL, 3, 1, 1),
+(45, '7', '2024-11-01 14:38:34.138531', 8000.00, 9, NULL, 3, 1, 1),
+(44, '6', '2024-11-01 14:35:58.593103', 10000.00, 9, NULL, 3, 1, 1),
+(43, '5', '2024-11-01 14:33:46.699576', 5000.00, 9, NULL, 3, 1, 1),
+(42, '4', '2024-11-01 14:30:55.505569', 2000.00, 9, NULL, 3, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -19049,14 +19371,21 @@ CREATE TABLE IF NOT EXISTS `modulo_ventas_transaccionpago` (
   `_qr_image` longblob,
   PRIMARY KEY (`id`),
   UNIQUE KEY `modulo_ventas_transaccionpago__factura_id_f5cd777c_uniq` (`_factura_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `modulo_ventas_transaccionpago`
 --
 
 INSERT INTO `modulo_ventas_transaccionpago` (`id`, `_fecha_creacion`, `_factura_id`, `_qr_url`, `_qr_image`) VALUES
-(8, '2024-10-17 22:45:35.892853', 10, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-d8c7e55b-d60b-450c-a826-ab27e27c5f50', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe010000000055145188000003ec49444154789ced9d416ee3300c453f47dedbc01ca047516e56cc91e606f6517a036519400667215196920cba288316c9f7c28815e7c1060852fca414517ce9d87f7dedf7000104104000010410400001041040c027804dea512f1700dbb28b9cb08b9cce13446482c8b2db9d8bef1310f0e200a8aaaaaeb3aaaa66d84915983374455044cd404c80ae73befac5f7bf0201cf05d89b9b0b0a6017c48f09c09c8b8bd41541e5041407fa802720e0a501d3edd05ec6747b53086640811d82f92288ebeefd04041000dcb5440098130498b2e22c40fcbb94e13b32f8f7bf02014f01b89927aeed9b980044b5c9621953ce13097808c0ecaa5dae73fee4540f5a22019e806a89e38198427fc29ca19a00c4eb5b698904f800ba585b759a321c2cfe260bcc98554dd4a12512e00d309f98501c5e1d3523544dd53a6b740650c7189d09f004b4e85c45ed9aa7240098556bc632db54329a8ba44f24c017d0f9c4c3266b79a539c615804d1683d6b4853e91004f40b3c456d453cb8e8b6344b3441cb94b505a2201be805ec589e3c45093ddb27615e87e52494b24c00dd02cd1a26e27e034a13b96f43ab70e08466702bc014dc5c99d77bc1270ea58b9b94e20698904f802c6e88c3e27a95974a89975b945abeecddc99005f40576331d9c634eeeb09a45ab52f323a13e00e1894ed74afc632d4a29b77a4b24d802fa07585852c40c812d36f9371ce02dd4e284d8ac0790280a0fd2d3fe11508780a40af27b64b6bfeca37524e55c033551c029c0143b7a1f5dd1ccd379636f742a3f5e7d012097004743ed17c5dbeee8a3077d89ac400fa44021e03d8de2e826d3133db44444e7306709e20ef1f1344de2eb68eca5659793e01012f0ee86b2cb517c742742ccd0fe3a929e0d413097005f4bd384db6b1c9625bf45ce7841693a96c13e00e18fa1353cb4e5a1653a5ec768931c7a12512e00bd896a072425079d70c396117e02c5255c4f249a4f8c96d01e43df93e01012f0e18a3b395f26a7f586875bf0c7475175565ee4c802fa05771565c252b8780686d385d14677426c013d0afed3b1ab2e3e1f552e8668c4352434b24c01130aea85245bf5c00d75d61bdbc4d4b24c0133076ca0e8ba96ab21caa758e7b95303a13e00bb8d903a2353a1c69cba17b1f264a9f48c04300c79eb2f16342adfbcd97b2a72ca2b6425f9177a6b6f2efe7bc0201cf01a81eceeac9a5b27c94a127c809557204e68be89fc5f90908786d40374fbcca9dfbb5a509634737d88b438033e0c6128f5ec46e6d5f3777acc90a2d91005fc01d9f082b34a3f5675bcb43dd308cbb9110e00ef8cf7f0fb495f747a7f671c414e813097006dcee298b56e89bc7fd63930566809648803740f85fa604104000010410400001041040c08f05fc03e3474077f857db730000000049454e44ae426082);
+(8, '2024-10-17 22:45:35.892853', 10, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-d8c7e55b-d60b-450c-a826-ab27e27c5f50', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe010000000055145188000003ec49444154789ced9d416ee3300c453f47dedbc01ca047516e56cc91e606f6517a036519400667215196920cba288316c9f7c28815e7c1060852fca414517ce9d87f7dedf7000104104000010410400001041040c027804dea512f1700dbb28b9cb08b9cce13446482c8b2db9d8bef1310f0e200a8aaaaaeb3aaaa66d84915983374455044cd404c80ae73befac5f7bf0201cf05d89b9b0b0a6017c48f09c09c8b8bd41541e5041407fa802720e0a501d3edd05ec6747b53086640811d82f92288ebeefd04041000dcb5440098130498b2e22c40fcbb94e13b32f8f7bf02014f01b89927aeed9b980044b5c9621953ce13097808c0ecaa5dae73fee4540f5a22019e806a89e38198427fc29ca19a00c4eb5b698904f800ba585b759a321c2cfe260bcc98554dd4a12512e00d309f98501c5e1d3523544dd53a6b740650c7189d09f004b4e85c45ed9aa7240098556bc632db54329a8ba44f24c017d0f9c4c3266b79a539c615804d1683d6b4853e91004f40b3c456d453cb8e8b6344b3441cb94b505a2201be805ec589e3c45093ddb27615e87e52494b24c00dd02cd1a26e27e034a13b96f43ab70e08466702bc014dc5c99d77bc1270ea58b9b94e20698904f802c6e88c3e27a95974a89975b945abeecddc99005f40576331d9c634eeeb09a45ab52f323a13e00e1894ed74afc632d4a29b77a4b24d802fa07585852c40c812d36f9371ce02dd4e284d8ac0790280a0fd2d3fe11508780a40af27b64b6bfeca37524e55c033551c029c0143b7a1f5dd1ccd379636f742a3f5e7d012097004743ed17c5dbeee8a3077d89ac400fa44021e03d8de2e826d3133db44444e7306709e20ef1f1344de2eb68eca5659793e01012f0ee86b2cb517c742742ccd0fe3a929e0d413097005f4bd384db6b1c9625bf45ce7841693a96c13e00e18fa1353cb4e5a1653a5ec768931c7a12512e00bd896a072425079d70c396117e02c5255c4f249a4f8c96d01e43df93e01012f0e18a3b395f26a7f586875bf0c7475175565ee4c802fa05771565c252b8780686d385d14677426c013d0afed3b1ab2e3e1f552e8668c4352434b24c01130aea85245bf5c00d75d61bdbc4d4b24c0133076ca0e8ba96ab21caa758e7b95303a13e00bb8d903a2353a1c69cba17b1f264a9f48c04300c79eb2f16342adfbcd97b2a72ca2b6425f9177a6b6f2efe7bc0201cf01a81eceeac9a5b27c94a127c809557204e68be89fc5f90908786d40374fbcca9dfbb5a509634737d88b438033e0c6128f5ec46e6d5f3777acc90a2d91005fc01d9f082b34a3f5675bcb43dd308cbb9110e00ef8cf7f0fb495f747a7f671c414e813097006dcee298b56e89bc7fd63930566809648803740f85fa604104000010410400001041040c08f05fc03e3474077f857db730000000049454e44ae426082),
+(11, '2024-10-19 00:11:28.414863', 13, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-7d690773-959b-4c8f-bb50-02456423eb76', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000042049444154789ced9d4d6edb301085df5406bca4801c2047916fd0231539526f201da50708402d0d48982e86c31f3b5985ae53fb796184b6fc41021ee69f8c28bef4da7f7cedf7000104104000010410400001041040c0a72f5555d5b92c23a01a07c5a4aa9862f962504cbaf995415555b7fb3f02010f017025265d99e0fc0dd0396cf666d29bc376f18bfb3f02010f01c8bada0098ea5c93f619065b0241355d02804a24e0d680f50039ad07fbcbe4b8c8516da9f11fdc0101cf08385c7fb40b9671d8000c9b20ec074cba8b2e3fdf0508efbdef800002005cc78933004f56861c18ba9f669c48c08d01ab88881c6091e0dbb88bbebd9ec5be5c4640e79096222222a7de7740c0730392779e2edacfeb51050190e9cf0198e20e0083ca147171e5fd1f8180870034b973596248de397b6cabec5c5c47ef4c402f409654d19fab4e758355b62793e3e0e6b0aef6dcff11087808802b31c21393b059c6625a9b01541d98d98a8a6a1d182a91806e803a13ce0974499b912adbae3f5bc621db512a91803e80aaefeca66fc8824372ccb903982c61649c48406f40e59d910d9e058bb31b410b0c4bd8682fc68904f404b4c932cc317bdae21310aa5aa532c94ed22612d013d0642c71c8e1a0cf38cc790262d234016162a54d24e01680e55515c02ec09a5bd1ab88496f91a36211119dd7a302e12cd94f7f9b4720e0ff063493b2b96c938c60534f3417ed1d68da4402fa02b2771e6a11dab403ca671e27cefe05eb8904f405d4194bae582773a89e3bbbea4ca71e3b52890474045436b1d40eebdd2b5566ed356e6bfed13b13d013504dcaea32461584b328d6c1261d6c0e6cd25d14485361ba8cef10844e77400001003e8813637abb0a0cad03985b7ef4ce04f40434fed72b86ee849b0012412b4d327726a02fa09a0af3f82fef28f5a276da5150b69ffa563f2a91806e807a52d6d2e67634b14c8025b35976b450890474045453612ebd4693b96253965ee8a11209e8086877de6b331f1b4a077acb43b23ebdc88c8580ae80ba9e08dfa4e28d3e8f13353609b48d90d13b13d013d04cca2671a119b929d9493e8d24db4e2a91805e80ca3ba73c3994a527d0e5d49c3c3d46ef4c405f40adc419b58b2e594c5db689a9dacd8c8580be80aadb27693ef1a800f68300025d5e15c0faa282559aeb7add0101040068f63b57f51ccd9b4923d0c4895af55d681309e806b83e53b6115c9559e76a631545528904f406e4b4396d1210915f7af6cd04e59c4f0c6a0e7c193bdf0101cf0dc871e27e288723ca1447ff3c6c90e9f7cba68b00c8c162bf3b208000e0c3933c918ea9b3314400b099c51021537cd9649ac1f944023a033e3b675bab11eed481694f68629c48c06d00f9f891b88bc808d8218a27ec22a77096fab0770c2aa7ee7740c05303ae72e7dccaabce200180ea8408da4402fa0384ffcb9400020820800002082080000208f8b680bfd5a51b68c44d1c920000000049454e44ae426082),
+(32, '2024-11-01 14:35:58.596791', 44, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-3b48513d-880d-4297-acee-cef5e93c3ba8', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000043c49444154789ced9d4d8ae34810465f8c045ecad007e8a3a46fd0471afa487d03eb283e40416ad92011b3c85fbb68665159b8717d5e1829851f29082232be884c9bf3a1cff1cfc77e0f020820800002082080000208208000ff03582d7f58cfc07a3ef22ddb4c19eb1f989dc7ce4000010058dcdd7d27995e88e01ec12ecbef6c8e00f66f047777f7ebe81908f0b50173b9386658de8025c2fa23bab1ecb3b37d7383c39275aee737582f50c59fe7bf82002f01981f07c26dde2ddce6ddd94e0e1ce6eb65da61fbb67fc60c041000a8b176d98165c7af4c29f4a6b1e03beebe93c27128577ecdf1fcf9af20c04b00aa25e675a2b7cf7571f72b931773cc167bff8be7bf82002f05d8cccc6c4ed971fa82c360f96dfef30c650c52ea7c193d0301be3620af1343cd40c2edddd291703bb9b14c0e4c0f85eae7bf82002f01e8626d1e5876caede4841a93af644b2c8b4a4567010602eac27087108be9790428064770f7f6b48dc912051806e8529474df27cb53b149264fceb225dab2440186026ac5a486de647f93132224c798fd643647429c943b0b3018d059629668629612b3635cdcdbdab1888a8ace028c063c0a887911d879bdb6442cf2368bf444014603b264b3fe881858ad271fe62182c1b43b1bc07626098ae197a9ee2cc06040f189b18885c91da607a502d8929a50169035e57efe2b08f01280fb2a5e9572625b2cde098d1ea76293b244014602ba6ec364665db202394f4edeb1f39893cb270a3016d029dbbdc1a5480cf9cb4b3f5853765463116028a08fce9d4e13a1d453eeac135abb982c518081807b15a796f76229af24eda633c71d652c027c02a034de6c676099dcd8e624db188b6330b9857800cb9b0193b37edf5bbfcef35f41809700742a4e1f98ab949de51d6a386e89b67ca20003017d0776dfa4ed7d0530d5535a661d953b0b301ad02bdb3931aea28e97e25ff70577dd63b244010601fafec4d61aeb2563e94db46cb5928a23c02700fa75626bbe09b1df29d0d50281ec136589020c053cea8969ac2e16cbee01ef6e4b2d509628c04040d951759bb1108fd9b39e13d3b8c331136eb5f9266dbf9f7663193403010400ee4eb9c97a76db79df772a96d68849fb5804f80c4095a8a79df58c117e1de630a52349489b9e695740b81eb3afe7386606020800bcdfc792131868add99d63ccfb08a46c0b301a701f9de9d396bad534298be929794cb9b30063017d0784777972dd6abfd4869c226f37dd5b9628c030c0c3b99cb49ed9d67253049c7a9cd8d20c579628c058408eb5e92a9f240bf94c6338cc7fdaa9ac27b719bb8c9e81005f1bf0fefcc4e5ae0387ceffddef68914f14e09301939b7dff6d650b15d86533333b1f565269aab3fc3b5f41801700847898fbed94fc9f5d362bf6773b79fe2b023bf99f011f9e81005f12f0fe4cd972fc4d973b87c7f47a57dd5980c180f7b973936d289b9eeb11c7e4f313953b0b301a60fa2f5301041040000104104000010410e0af05fc072730f0a42598faa80000000049454e44ae426082),
+(25, '2024-11-01 06:07:35.442705', 33, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-7cba72bd-8507-44a8-a8cb-37b55f54db78', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe010000000055145188000003f349444154789ced9d418edb300c453f2b035dcac01c608ee2dca0472a7a33fb283dc000ca720019ec42a244271974310a324dbf1681c7933cc400418a9fa4228a4fadfddbe73e0f1040000104104000010410400001047cb8545555d7fe670aaa9a820231038b6660494101d8bdb2a2aaaae6c73f02014f01304bac760555cdc0a2aad5d6ba4d2640d7982f3ef1f84720e02900cdae328098a19a005d11144b42b1c96a7f6693ba02a025123016305ddd8979126017dd5e15b2cd6f13960415c477c1b2eea3bf01010400b72c114105f16d1260ca8af377159c5fcaf6f0860cfef84720e0290057fbc4b5fda746e75c8375b9a7dc27127017c055eebcc6fc9797ba6889048c04544b3cae22dbf49796ca9404c62f5a220163002ed6569da6dc0e167f93056644d59a54d31209180e38aa38aac5f53529d1449d16b601137a189d09180968fbc4604608d4640551b5662cd1b6928bb948fa4402c602ba49b9ab2a6037c7b802b0cd62505768a12512300ae0ed6f4940bfb2d59d65cf5d82327726e02e804d2694708cb389ddd51c77e9353e8bcebb3463fd328f40c0bf0df0fbc4355af3436bbe71da4d8dc9d624419f48c05080cb9d2f6db28463b41425013d81a125123016e06b2c759fa856d94bf61627e098c764c642c05880abb154d9260155c5b6dc19254eab55fb164667028603cc12137c2f6ced4f0c4e6874fbc41554b609180d685d61210b10b2945e4400bacd102c6916dd7ee4c992eaa0b2a497d607f1051e8180a700349fe86b275d59ec52a2356e37c991fb440246027c2fceda67a6dc1c010ed566c0444546670246027cdf6b6f43747bc7aef1f42631803e9180c180cbbab33569c30f98d67cbacf9b02f489048c051cfa13fba480595d15bafb4b6b83a09e48c05080e5ce6701ca30157629b7b6d70c417c13454cc0a2a5da7c3155f5f84720e029002e77eea3ce177b47db2caaf6420bf54402ee02d85e3344e65042b49cb00b7016a92a62b912011014db0cc8cf34f61b10f09f035cddb95751fa16d1de62f7fa16913e9180a180839e18f5383dd53a7012e75808b833c0e7ce70c72f1daefcf94d263452c5216028e04a4facfdb1a10d9db6361ce0206fd312091809383ac1dceef9be1b6b48f46795303a133016707506448bc4f50c9cd44ef7ecf3a6913ddb04dc09b0495d5812aa9e030072b286085b7b5576385145c05d00cd136ef32e587e57ed50d7f35426ffe484a0722ab5c077d15ff3e06f40c0ff0db879a6ac0d4e1d664b973e830fb0178780c1802b4bece3027d84a54fb4b47c9a9648c058c0473eb129dbbdbca296a7ac0098b110301670f3b707aaff53dfb8ed5609d6f489048c045c9f298be0cad075c55a59b182202d9180d100e16f9912400001041040000104104000015f16f007f89d5b26388673520000000049454e44ae426082),
+(22, '2024-11-01 02:16:50.453308', 29, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-b5e5c93e-601c-4339-b302-f0e54940e994', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe010000000055145188000003dc49444154789ced9d4b6ee3300c867f8e03ccd2067a801e45bd59afe61ca5379097056c701612252a6e318bb24891fe5e18f1eb830d10e29b11c597b6e3cfd79e070820800002082080000208208000023edd545555d77e9801a43cd57349f77208605260deedce595555f7fb7f02010f013049ac725524515577009854d7267f2903bacefbcd13f7ff04021e02d0e46a0750c4aceeca4a58d6c422a255267505404924201670399f9a543067c5f57907ae4b560100c1fc2e48eb11fd060410007c2889473927c065576c02605bcaa50fc2e0f7ff04021e0270b213d776256554c55c8c45d821ed4402e20127df799df7ffecea4649242012502571dcaab3d276c595c900d2edad94440262004ed7d6384d393d99fecda698316b0dea244a2201df073804d7a54bdd0ea4b74bb950c33638a41e6e22b82ed16f40c0af0638ed5c5c1400d559c1ac5a3d96d94cc9644b24d7440262015e1281496b7a6536f9d396f7abc6e254c3e089924840246058135b7a05804571f2a4c55969796713474a2201f180eb7208d0c386b9df7148cff199763e445e73ec1b10f0cb012d9ed8b5ee3e9ed3ea2cf7a06255e05c13090804b80a08277f5a4289e37d19e80e0c2591805880cfb1a4dceb13e1d4b1b634608f7bd37726201630f8ceb34faf783fb98ba32970ae8904c4024c12337c2dec6813568b116887ac4f24201ad0aac2a65d806997940f00db5f959263d99e1449eb2d002695949f5a1dc40ff804021e02d0d6c4963bc935b36c2d2c00609eb5eb2d60649b8050404fdba1d7dd542330c33431aa2be3838ad4ce0444027c55d80af878622f035b2db3e284956b2201df01b82e87149d5c0e45445ee61dc07681bcbe5d20f2fc2eee41d6e210100a7076622f4db4b6d2c9122d7dd722e08c2712100af05d29a50c3603dd58f45539dd4f61649b807080f358ba39e8a5b3d984edd05da52412100cb82e9322bdfd2d5dcef28243804d04d82eb05f227633202fc16f40c02f07f835516dde43cff6d92d369ca46df49d0988058c519c31bc9d878208afc099ed23201ae07bfbda5c1c1b89d3cdc1c1442c25dc9444022201a376b6829cb283ad8e7d569def81a624121008182b656b3355ed6d9efb20125fa4581ea376262014709a01b1daac44b3132da8ddad43d66c13100f38cf94755e74ebf7cbad02a2ad93f49d0908059c6785cd43bf732b927595daabcfbbdcff13087808c079a66c465d0e6f7a4bfdd41cb016878060c049125b6f9f45b6fbac26b4060346b60988067cbe26f6c695decc6703c3007a2c04c402ceff3da0ad2ab6392bebf8488f7b53120988029c67cab63ebedbf9b1d91433e83b13100e10fe972901041040000104104000010410f06301ff0065316edc769816890000000049454e44ae426082),
+(26, '2024-11-01 06:13:30.355879', 34, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-08dbf7c0-c5d5-43bb-835a-3c65990b9499', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe010000000055145188000003fc49444154789ced9d416edc300c453f6b035d6a801ea047516ed023f54cbd817d941ca08066594006bb9048d199145d546d26d3ef85617bec8718f810c54fca11c51f6dc7873f7b1e208000020820800002082080000208f8e5a6aaaaba8dd302e8864591557b3a93cba200160552b53b93aaaad6b77f05021e0ad075d54ee4ab566017912ed1f44390cbd14ecfdabd9f5720e05d03563b3856207d6fc7ba5f4a3b92ac80ec97ef505c972a4800f627c0cd9fb77f05021e14905481ab886e4915fb05502d8b8a7cae402effe02f20e07f04acb7978e15480502ac557115207ffbd4e2f62b36f8dbbf02010f01b0599fcd1347eed2c6bfdcae2d96bb687df1c4dbbf02010f01b8c99db7547fb3eb1b9548c04c4057e2796bb6cdd821d566ef20bfbc954a24600e20c45ae4028fce8bc5df6281194975188d54220173015189c049755a1635a3dbc336baf9cde84cc05f021ca25a0e6927f95944e473853ca50a737656c8d7b2a8c805c3cfb9a35720e03d037c4cf414b949af6244672bb454f4d354c1e84cc05c40c858cca23919d8d94234bceedce78e8cce04fc05c07e39044d6bd715d82fe38e43fa1009782fc4218cce04cc05b89fd8a32eb2568c369c9e54abf9debee39848c05c409c27ba265b4cf6a376632ee84a6c89369548c04c40acb174ada98e706c6d601e9dcdf766c642c05c40cc5860917894577a2a339c450fe01c1309980a302516c06a2cd69feda97470b6e3299548c0448077852d5580a54a5640f72f05ba0b20c0a292f55881ebc72651c9e593f741dcc12b10f010001f13bb816d15e8c592e562f76dd606d12d47ce130998097859778e8971f192336205ba7b3c8cce04cc048cb2dd793ae873c7e1f194b3a9c33191809980a0c49e3107c7c6af15a015a48712392612301510c6bfb0d4d955d78b2f63e76d10f41309980a083516b312016bc8718f3bf9b0e9e90d9548c054405c1fb5b52b26b376cd243a4ec3af5422019301f9790dd9893ce110e02ad25a73fa91f43edad8a9733faf40c0fb06dcac32ed9f24191d106e20fab4316e1c130998033839db6362e822dc002b030e67bbb0da47c06cc0c9d9f6ca72f30e55f55c63f61505005d1c02e602a2b3adea0bfc92c6aec496b614e0b4069a4a246022e0dc29db1753757bbbe5d34b2c436ffe18a33301530137df80f0e960f40e437fe208e5542201f301bbf4ad05e1fdd2174eb56fd521fd107be0e8ce0e5754113015f0cab7c26c12382a7b9b35ce861f189d09980a88d53ea4d8811856e3f76405619ec85e1c02e6026e94d87b11fbaedd12e68e257e0f9e4a24601ae0d531315889a3bcd23c1ecfa799b1103015f06ab5cf9c6d0bd6dbf9915c382612301b70fb4d598c152de7efc7165be502466702a60384ffcb9400020820800002082080000208b85bc04f3db543efe0a464c10000000049454e44ae426082),
+(31, '2024-11-01 14:33:46.711342', 43, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-afe5acbb-a157-45db-9f8e-239728698183', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000043f49444154789ced9d4d6edc3810855f8d04f4920de400390a758339929123e506d251728000d4d2808497058b3fb2339885693871bf5e18929afd81020a55acaa47da88377dce7fdef67b400001041040000104104000010410e07f009bf907d8670038cd169c6666336cd9fd8bf2ccccec3e7606023c38002449ae812479804c00100ef86dfef60010fceafa8b8f7f05013e17e07437b7dd81e21827dab2cfb0a7e4836c01b2037d871908f0d080f9b74fe30a605b006e5f0f70b38986dd40e01c3d03010400fecb123703084c87219c33224fe3f66f8221fc1c3d030104b80026fa12110022497b4a0057f81f5bf6395f21927c0d78f30c041000c06e394fcec9cab7fb69fcf6f5d99783db1de01afc36a7cecbe81908f0d8008fcef145fb79bfd110008b3f6620a61300265a4c7831f2e35f41804f01b8d469da2d2622a6c92b3b2b00324dafc6a98a23c028403529924c131153b13af200620210b3394ec51d8603aa270a3016502c31211b1c108e9c93645b5be1194b1ebc061208641e224b146014a00bc7add19203b347e2298fc8f6e739f654dda82c5180c180d3901b2d7663df6809cfb9e54ce6dcc507db327c06023c34a0a51e40f37f79b198af26b636b4077000b90d2d9f28c028c03559465d227ab242a6629379709a9813184567018602ba8c259b19503a2b4d9ae3a90cb311163f294b146020e0a2f14af569499bdd45a299e854cc513e518091801a9d81a640f48a617ee6abc3169801c8270a301a50a3f3c4d24a01e0b98bd7b3bbd561aef664c7284b146020a0cf58ba8a7502da9ab0141a79b14e59a20023019d4f2c41b839c6dfb5a159bca3a2b300230157a56cae1de6670480ac038b3c8d80abc25cc21d06cd40000100f45a9ce60e3d3a275c1686254e038ace020c07f4d1f9ba7baf2fe004966f4bb2a2dc5980b1804e1556d45e7547699740c373972c7e48802c5180b180beb25d2b366cd2c4964fb7a2367ae1cec7bf82009f02d029204a53c51b28be30ec5411659d18297da200a301177d62ed9daca8aad87c755c44b2d2270a301c70592702bd63f4207c94cd0469bad6bd6589020c04f4559c2a8328559ca214f3a4bab9486a9d28c060c0a59ed83acb5d028d4e24dbd4638ace028c055c7c62dbbd873e12bb7096750129058400c3015db7cff26696f07346fc7e3760ff72585c8fd9801bcb593975dca81908200080eb7ee7eaf56a65079d77e4a5d1a2cab600430117a52cca9a10b50d5d73e76e6f553bce539628c06840284e309fc6b4cfb02590883f6ef4ada6e1d9dc1dee7523ea9ff40a02fcd580ba4e3c67f8e188132da63b089c33110e58fcfe25af1381dd5e003efe1504f8a4807df6238eb7bb9f50577c22694fa5c668cbfbcd408047045ccf746f5a6c56097769afa0abf1e8ac3001de0d50d45e3195b3dfb1df680b4eb325fbc4727edd1a485b86cf40808706bcca9d6b2baf3b83044039bfae3b9c443e51808100d3ff321540000104104000010410400001fe58c02f935ccab567b403e60000000049454e44ae426082),
+(33, '2024-11-01 14:38:34.142530', 45, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-9803271e-8fc8-4906-9f5f-927d15a92782', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041749444154789ced9d4b8ae3481445cf6b093c94a117904b917796d4ceaca5780109a16181c4eb417cad2ca8418571b57d351029a57508c125de3742e6fcd1b1fff367cf830002082080000208208000020820c06f008ba583e50cb08ed86535837524de4ba73dfff2dc7704020800c0e4eeee1bb09ad965fa69fee33cb85da68d284700fb0ce0eeee7eed3d0201de1b30e63ff611a62f60fa1a9df58ccd0eb0febb01bb3107f0e5fc05cb054af2e7f9af20c04b00c6e38df9767298b6284767dd0d8074d97f040208f04bc072de8dc546583e3c5a67777767390f6e9fe1f12310e02d01d9ebcb7ea2d7e33ab9fb95c199cb3faed37678e2f9af20c04b015633331bf39c78de0dd80d62ec02f91ec4d0f9d27b0402bc3720f98973f100e7db37d791f97672631a1c180ebee2f35f4180970034b636dd9836f2e5e0ccc5265f494af4ebb451f23ecf7f05015e02501cc30de28437b9bb07802c386677670e4998598452a2001d01ed9c3807c8d1499a049326a344bf872d52a200bd008db888e6380cee1e86244ca68d68a23d2439a69f488902f40434d6d93d904ed1312ca9c4d993ef186b7cb3b2380274071c1388a498e4dbbd244720fa8952a2005d01c7d8394e82c526c76af3b5e46ea22b19404a14a02f20cf896168a7be469d8d892e017440118b009d01f7e1700a47987da36ab2c62eee395849518c9428402740d36d186596a2e814b6a4e8044899c530784aef488902f404dcc5ce9e53d9295903d51cc7a36676546311a02ba0b5ce6df38dfb21c79dca2bdc4d9652a200bd00f7599cad8d8e3d402def51e219452c023c00901b6f6243f6e006e0acc3664c8ec13e325f01a62f030667f9d86abfcef35f4180970094882597f2802680cee91d8a3976452c023c0250f28929595d5b6ea2e0aa0359226b6f0f2951803e80a39fd82675aa8b584f908b2f52a2003d01adf41aab1b524358db95c350328b9baa7d02740634d6395e56135d560a34b5c0da3826250ad015d058e7dc9a08774945cf7db45e9a69833a2004e80d6895582a2bb9f9216aadf95d2eb90cae1a8b007d016dcff69c5dc4c312965f8950118b007d014d3e31356407689710d4fe9c00343db39a1305e809b8cb6c972554b521ac2e5ca9ed8a5a5125407f40bb07ddd1450cdc2d6609e519f5e208d01d705f31f16315a569122be9ed9af7961205e80da87bcab29e9cb8250ebbf9751dd30e25694edcada9b6741c81000200878c4d3c161bb1cfdc3deb3fcc2cf993eb885d7a8f4080f706dcadbccfe1485e2400794555e9e86eeec93a0bf070c0f2f1d3d2269e01ecb29edcec9c03e8f976f2b433fcdffb0a02fcdf01b121fb768a9ea05dd631cf93b791e653048f1b81006f09f8bea76caeb1e4eed9b6d0d284d7ca6c0bd01570f8a60535819d2feb8aaab48953b357899428402f80e95ba602082080000208208000020820c05f0bf80f3fe9088bdceed2350000000049454e44ae426082);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
