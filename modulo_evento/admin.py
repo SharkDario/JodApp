@@ -34,7 +34,7 @@ class FiestaAdmin(ModelAdmin):
     change_form_template = 'admin/fiesta/change_form.html'
     compressed_fields = True
     warn_unsaved_form = True
-    list_display = ('nombre', 'descripcion', 'edad_minima', 'edad_maxima', 'fecha')
+    list_display = ('_nombre', '_descripcion', '_edad_minima', '_edad_maxima', '_fecha')
     search_fields = ('_nombre', '_descripcion', '_categoria', '_vestimenta')
     
     inlines = [EntradaInline, MesaInline]
@@ -74,7 +74,7 @@ class MesaAdmin(ModelAdmin):
     form = MesaForm
     compressed_fields = True
     warn_unsaved_form = True
-    list_display = ('fiesta', 'numero', 'categoria', 'capacidad', 'precio', 'disponibilidad')
+    list_display = ('_fiesta', 'numero', '_categoria', '_capacidad', '_precio', '_disponibilidad')
     search_fields = ('_fiesta___nombre', '_categoria', '_capacidad', '_precio')
     inlines = [MesaTieneArticuloInline]
 
@@ -82,7 +82,7 @@ class MesaAdmin(ModelAdmin):
 class MovimientoFiestaAdmin(ModelAdmin):
     compressed_fields = True
     warn_unsaved_form = True
-    list_display = ('administrador', 'descripcion', 'fiesta', 'fecha')
+    list_display = ('_administrador', '_descripcion', '_fiesta', '_fecha')
     search_fields = ('_administrador___nombre', '_fiesta___nombre', '_fecha', '_descripcion')
     
     # Deshabilitar la opción de agregar nuevos registros

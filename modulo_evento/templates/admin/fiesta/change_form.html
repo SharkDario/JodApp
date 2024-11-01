@@ -1,4 +1,13 @@
 {% extends "admin/change_form.html" %}
+{% load static %}
+
+{% block extrahead %}
+    {{ block.super }}
+    <style>
+      
+  </style>
+{% endblock %}
+
 
 {% block after_related_objects %}
     {{ block.super }}
@@ -67,19 +76,42 @@
     </script>
      
     <div id="container" class="border bg-white max-w-4xl" style="position: relative; height: 730px; background: url('/static/images/plano_evento.png') no-repeat center center; background-size: contain;">
-        {% for mesa in mesas %}
-        <div class="mesa-card" 
-             id="mesa-{{ mesa.id }}" 
-             style="width: 40px; height: 40px; background-color: {{ mesa.color }}; 
-                    border-radius: 50px; position: absolute; top: {{ mesa.top }}px; 
-                    left: {{ mesa.left }}px; border: 3px solid {% if mesa.categoria == 'VIP' %} gold {% else %} black {% endif %};
-                     display: flex; justify-content: center; align-items: center; 
-                    color: {% if mesa.categoria == 'VIP' %} gold {% else %} black {% endif %}; 
-                    font-size: 20px; box-shadow: 0 0 10px {{ mesa.color }}, 0 0 20px {{ mesa.color }};" 
-             data-id="{{ mesa.id }}">
-             {{mesa.numero}}
-        </div>
-        {% endfor %}
-    </div>
+      {% for mesa in mesas %}
+      <div class="mesa-card" 
+           id="mesa-{{ mesa.id }}" 
+           style="width: 40px; height: 40px; background-color: {{ mesa.color }}; 
+                  border-radius: 50px; position: absolute; top: {{ mesa.top }}px; 
+                  left: {{ mesa.left }}px; border: 3px solid {% if mesa.categoria == 'VIP' %} gold {% else %} black {% endif %};
+                   display: flex; justify-content: center; align-items: center; 
+                  color: {% if mesa.categoria == 'VIP' %} gold {% else %} black {% endif %}; 
+                  font-size: 20px; box-shadow: 0 0 10px {{ mesa.color }}, 0 0 20px {{ mesa.color }};" 
+           data-id="{{ mesa.id }}">
+           {{mesa.numero}}
+      </div>
+      {% endfor %}
+  </div>
     
 {% endblock %}
+
+<!--
+<script>
+      // Ensure mesa-card elements adjust dynamically on resize
+      window.addEventListener('resize', () => {
+          const container = document.getElementById('container');
+          const mesas = document.querySelectorAll('.mesa-card');
+
+          mesas.forEach(mesa => {
+              const originalWidth = 40; // Original width in px
+              const originalHeight = 40; // Original height in px
+              const scaleFactor = container.clientWidth / 800; // Assuming 800px is original design width
+
+              mesa.style.width = originalWidth * scaleFactor + 'px';
+              mesa.style.height = originalHeight * scaleFactor + 'px';
+              mesa.style.fontSize = (1.2 * scaleFactor) + 'rem';
+          });
+      });
+  </script>
+
+
+   
+  -->
