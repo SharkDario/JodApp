@@ -1,0 +1,11 @@
+{% extends "admin/login.html" %}
+
+{% block content %}
+    <div class="custom-login">
+        <h2>Iniciar sesión en tu cuenta</h2>
+        
+        <img src="{% static 'image.png' %}" alt="Imagen personalizada">
+
+        {{ block.super }}  <!-- Esto mantiene el formulario de login original -->
+    </div>
+{% endblock %}
