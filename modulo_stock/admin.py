@@ -9,7 +9,7 @@ from .forms import TragoAdminForm
 class ProveedorAdmin(ModelAdmin):
     compressed_fields = True
     warn_unsaved_form = True
-    list_display = ('nombre', 'condicion_iva', 'dni', 'cuil')
+    list_display = ('_nombre', '_condicion_iva', '_dni', '_cuil')
     search_fields = ('_nombre', '_dni', '_cuil')
 
 class DetalleRemitoProveedorInline(TabularInline):
@@ -21,7 +21,7 @@ class RemitoProveedorAdmin(ModelAdmin):
     #form = RemitoAdminForm
     compressed_fields = True
     warn_unsaved_form = True
-    list_display = ('numero_remito', 'fecha_emision_remito', 'proveedor', 'empleado')
+    list_display = ('_numero_remito', '_fecha_emision_remito', '_proveedor', '_empleado')
     search_fields = ('_numero_remito', '_proveedor___nombre')
     inlines = [DetalleRemitoProveedorInline]
 
@@ -36,7 +36,7 @@ class RemitoProveedorAdmin(ModelAdmin):
 class ProductoAdmin(ModelAdmin):
     compressed_fields = True
     warn_unsaved_form = True
-    list_display = ('nombre', 'marca', 'precio_unitario', 'stock')
+    list_display = ('_nombre', '_marca', '_precio_unitario', '_stock')
     search_fields = ('_nombre', '_marca')
     def save_model(self, request, obj, form, change):
         #Sobreescribir el método save_model para registrar los cambios de stock realizados por un empleado.
@@ -65,14 +65,14 @@ class ProductoAdmin(ModelAdmin):
 class EstadoProductoAdmin(ModelAdmin):
     compressed_fields = True
     warn_unsaved_form = True
-    list_display = ('descripcion',)
+    list_display = ('_descripcion',)
     search_fields = ('_descripcion',)
 
 @admin.register(Marca, site=admin_site)
 class MarcaAdmin(ModelAdmin):
     compressed_fields = True
     warn_unsaved_form = True
-    list_display = ('nombre',)
+    list_display = ('_nombre',)
     search_fields = ('nombre',)
 
 class FabricacionInline(TabularInline):
@@ -84,7 +84,7 @@ class TragoAdmin(ModelAdmin):
     form = TragoAdminForm
     compressed_fields = True
     warn_unsaved_form = True
-    list_display = ('nombre', 'precio_unitario', 'stock', 'volumen')
+    list_display = ('_nombre', '_precio_unitario', '_stock', '_volumen')
     search_fields = ('_nombre',)
     inlines = [FabricacionInline]
 
@@ -92,7 +92,7 @@ class TragoAdmin(ModelAdmin):
 class MovimientoStockAdmin(ModelAdmin):
     compressed_fields = True
     warn_unsaved_form = True
-    list_display = ('empleado', 'producto', 'cantidad', 'fecha_movimiento')
+    list_display = ('_empleado', '_producto', '_cantidad', '_fecha_movimiento')
     search_fields = ('_empleado__nombre', '_producto__nombre')
     
     # Deshabilitar la opción de agregar nuevos registros
