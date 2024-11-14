@@ -55,7 +55,7 @@ UNFOLD = {
         "300": "245 185 227",  
         "400": "240 145 210",  
         "500": "227 97 185",   # Brighter main violet
-        "600": "180 56 146",   
+        "600": "#a1067d",   
         "700": "150 34 117",   # Darker violet
         "800": "120 15 90",    # Darker
         "900": "95 5 70",      # Near black
@@ -111,6 +111,7 @@ INSTALLED_APPS = [
     #'jazzmin', 'unfold',
     #THEONE:'admin_soft.apps.AdminSoftDashboardConfig',
     'cities_light',
+    'rangefilter',
     "unfold",
     "unfold.contrib.filters",  # optional, if special filters are needed
     "unfold.contrib.forms",  # optional, if special form elements are needed
@@ -133,6 +134,7 @@ INSTALLED_APPS = [
     'modulo_evento',
     'modulo_ventas',
     'modulo_clientes',
+    'modulo_analisis',
     'rest_framework',  # Para usar Django REST Framework
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
