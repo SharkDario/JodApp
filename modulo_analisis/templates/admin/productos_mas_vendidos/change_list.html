@@ -1,0 +1,180 @@
+{% extends "admin/change_list.html" %}
+{% load static %}
+
+{% block content %}
+{{ block.super }}
+
+    <!-- Control Panel -->
+    <div class="chart-controls">
+        <h2>Panel de Control</h2>
+    </div>
+
+    <!-- Filter Controls -->
+    <div class="chart-controls">
+        <form method="get" class="filter-form">
+            <label for="num_products">Número de Productos:</label>
+            <input 
+                type="number"
+                id="num_products"
+                name="num_products"
+                value="{{ num_products }}"
+                min="1"
+                max="50"
+            >
+            <button type="submit" class="update-button">
+                Actualizar
+            </button>
+            {% for key, value in request.GET.items %}
+                {% if key != 'num_products' %}
+                    <input type="hidden" name="{{ key }}" value="{{ value }}">
+                {% endif %}
+            {% endfor %}
+        </form>
+    </div>
+
+    <!-- Charts Container -->
+    <div class="charts-container">
+        <!-- Bar Chart -->
+        <div class="chart-container">
+            <h3>Top Productos Más Vendidos</h3>
+            <div class="chart-wrapper">
+                {{ bar_chart|safe }}
+            </div>
+        </div>
+
+        <!-- Pie Chart -->
+        <div class="chart-container">
+            <h3>Distribución de Ventas</h3>
+            <div class="chart-wrapper">
+                {{ pie_chart|safe }}
+            </div>
+        </div>
+
+        <!-- Line Chart -->
+        <div class="chart-container" style="background-color: rgb(17, 24, 39); border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.3); padding: 20px;">
+            <h3 style="color: white; text-align: center; margin-bottom: 15px; font-size: 1.5rem;">Gráfico de Líneas</h3>
+            <div style="width: 100%;">
+                {{ line_chart|safe }}
+            </div>
+        </div>
+
+        <!-- Heat Map -->
+        <div class="chart-container" style="background-color: rgb(17, 24, 39); border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.3); padding: 20px;">
+            <h3 style="color: white; text-align: center; margin-bottom: 15px; font-size: 1.5rem;">Tendencia de Ventas</h3>
+            <div style="width: 100%;">
+                {{ heatmap|safe }}
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Control Panel Styles */
+        .chart-controls {
+            margin: 20px;
+            padding: 20px;
+            background-color: #1F2937;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .chart-controls h2 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        /* Filter Form Styles */
+        .filter-form {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filter-form label {
+            color: white;
+            font-size: 1rem;
+        }
+
+        .filter-form input[type="number"] {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #A1067D;
+            background-color: #111827;
+            color: white;
+            width: 80px;
+        }
+
+        .update-button {
+            padding: 8px 16px;
+            background-color: #A1067D;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .update-button:hover {
+            background-color: #FF00FF;
+        }
+
+        /* Charts Container Styles */
+        .charts-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin: 20px;
+            padding: 20px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .chart-container {
+            background-color: #111827;
+            border-radius: 8px;
+            padding: 0px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            min-height: 400px;
+        }
+
+        .chart-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .chart-container h3 {
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.25rem;
+        }
+
+        .chart-wrapper {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .filter-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .filter-form input[type="number"] {
+                width: 100%;
+            }
+
+            .update-button {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .chart-container {
+                padding: 15px;
+            }
+        }
+    </style>
+{% endblock %}
