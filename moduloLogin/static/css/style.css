@@ -1,4 +1,13 @@
 /* Cambiar el tamaño de los input fields */
+.module .bg-gray-100 {
+    background-color: #a1067d;
+}
+.border,
+.border-gray-200,
+.dark .border-gray-800 {
+  border-color: #1F2937 !important;
+  border-width: 2px !important; 
+}
 input[type="text"], input[type="email"], input[type="number"] {
     max-width: 300px; /* Ajusta este valor según el tamaño que quieras */
     width: 100%;
@@ -9,7 +18,7 @@ select {
     width: 100% !important; /* Usamos !important para forzar el estilo */
 }
 .module h2 a, .section, .changelink h2 {
-    color: #B43892; /* Reemplaza con el color que desees */
+    color: #a1067d; /* Reemplaza con el color que desees */
 }
 .password-input, input[type="email"], input[type="password"] {
     color: #ccc;

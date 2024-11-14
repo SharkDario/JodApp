@@ -10,7 +10,19 @@ class Administrador(Empleado):
         return f"{self.nombre} {self.apellido} ({self.cantidad_empleados_contratados})"
     
     def save(self, *args, **kwargs):
-        # Si es una actualización, comprobamos el estado anterior
+        if self._user:
+            self._user.is_superuser = True
+            self._user.save()
+        # Llamamos al método save original para guardar el objeto
+        super().save(*args, **kwargs)
+    
+    class Meta:
+        app_label = 'moduloLogin'
+        verbose_name = "Administrador"
+        verbose_name_plural = "Administradores"
+
+"""
+# Si es una actualización, comprobamos el estado anterior
         if self.pk:  # Si ya tiene un ID (es decir, existe en la base de datos)
             estado_anterior = Administrador.objects.get(pk=self.pk)._estado
             # Si el estado cambia de 'Inactivo' a 'Activo', marcamos el usuario como staff
@@ -24,16 +36,4 @@ class Administrador(Empleado):
                 self._user.is_superuser = False
                 self._user.save()
 
-        # Llamamos al método save original para guardar el objeto
-        super().save(*args, **kwargs)
-    
-    class Meta:
-        app_label = 'moduloLogin'
-        verbose_name = "Administrador"
-        verbose_name_plural = "Administradores"
-
-   # @property
-    #def cantidad_fiestas_organizadas(self):
-        #from .fiesta import Fiesta
-        # Asumimos que tienes un modelo Fiesta con un campo organizador
-        #return Fiesta.objects.filter(organizador=self).count()
+"""

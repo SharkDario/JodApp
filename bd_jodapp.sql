@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 01-11-2024 a las 22:06:03
+-- Tiempo de generación: 14-11-2024 a las 00:59:39
 -- Versión del servidor: 8.3.0
 -- Versión de PHP: 8.2.18
 
@@ -331,21 +331,35 @@ CREATE TABLE IF NOT EXISTS `auth_user` (
   `date_joined` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `auth_user`
 --
 
 INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
-(1, 'pbkdf2_sha256$870000$wQWQKYhcHTeY5xEiprkTIv$PkIKRQr3QIoE2tqptq6o+xsqFva6/U6XBnmNaFVtHAU=', '2024-10-30 14:06:38.726424', 1, 'Dario07', 'Miguel Dario', 'Coronel', 'mdarioc1998@gmail.com', 1, 1, '2024-09-26 02:46:02.218933'),
+(1, 'pbkdf2_sha256$870000$wQWQKYhcHTeY5xEiprkTIv$PkIKRQr3QIoE2tqptq6o+xsqFva6/U6XBnmNaFVtHAU=', '2024-11-14 00:02:11.378796', 1, 'Dario07', 'Miguel Dario', 'Coronel', 'mdarioc1998@gmail.com', 1, 1, '2024-09-26 02:46:02.218933'),
 (2, 'pbkdf2_sha256$870000$4rxLjFM3rSDHFaMxYCPHmu$3+RHiVoM7jXJDbzKSXcwFibdEhnOHTP+1K3HUb8C4c0=', NULL, 0, 'Azul07', 'Azul Yanel', 'Coronel', 'azul44@gmail.com', 1, 1, '2024-09-28 14:45:07.000000'),
 (3, 'pbkdf2_sha256$870000$T6n3Dd6IozUO5b64yFTi0I$mAQb7CRe94p2x1uBWaOqn3rtZVDOZNty9c0l/cuGZK0=', NULL, 0, 'Franco07', '', '', '', 0, 1, '2024-10-06 22:19:24.640759'),
 (15, 'pbkdf2_sha256$870000$2gVPyvDw7bZawLTh231qVy$wJ9ViqR4sAvkkxKQ74TAcZqk8YHXKuqUzaTgEIEwq5Q=', NULL, 0, 'Dario08', '', '', 'www.dariocoronel@live.com.ar', 0, 1, '2024-10-26 16:47:54.776218'),
 (16, 'pbkdf2_sha256$870000$OawlZBm72AKpU3oDLDkse2$RkZrgUAPaiXkwMNH6pE9Irj9IWlhxxM0hUAtA4m+oT0=', NULL, 0, 'Azul14', '', '', 'coronelazul144@gmail.com', 0, 1, '2024-10-31 00:29:38.188213'),
 (17, 'pbkdf2_sha256$870000$1CEv7ybVRGeHwvNN2NpQEe$+QaysjotK12jVMGGw3en4xjepAWqT9i5Cdq59OnhciQ=', NULL, 0, 'Diana07', '', '', 'diana07@gmail.com', 0, 1, '2024-10-31 22:46:48.331764'),
-(18, 'pbkdf2_sha256$870000$m13JamWkQTcaixMHxk05u9$mjeiUaSIGkSdf2I/nDXJbkJLaTbtjT73WnGXWDicd0k=', NULL, 0, 'Maiten07', '', '', 'maiten07@gmail.com', 0, 1, '2024-10-31 22:50:19.703618'),
-(19, 'pbkdf2_sha256$870000$wb1oZhSOzYiSC8Y7lvuIzL$fTSPBbGwSdS6qLCPa5Zq3KCmGCIZEJtcG9l3mfPKppk=', NULL, 0, 'Damian07', '', '', 'damian07@gmail.com', 0, 1, '2024-10-31 22:58:00.359828');
+(18, 'pbkdf2_sha256$870000$CON5i6t7ErdM09NTjSaGHq$uZ1kpSjHUp2FGa/PVLLjqaTt3+HEMur9DsisixsaxmY=', NULL, 0, 'Maiten07', '', '', 'maiten07@gmail.com', 0, 1, '2024-10-31 22:50:19.703618'),
+(19, 'pbkdf2_sha256$870000$wb1oZhSOzYiSC8Y7lvuIzL$fTSPBbGwSdS6qLCPa5Zq3KCmGCIZEJtcG9l3mfPKppk=', NULL, 0, 'Damian07', '', '', 'damian07@gmail.com', 0, 1, '2024-10-31 22:58:00.359828'),
+(20, 'pbkdf2_sha256$870000$W3c5jg8KCguAFu9gyKtEqP$kSYqDOxF2pSXIKqnn2lt06NNLrpd3FZERNoGE/kPce8=', '2024-11-06 18:22:01.000000', 1, 'Isabel7', 'Isabel Reina', 'Villalba', 'isa@gmail.com', 1, 1, '2024-11-06 18:19:41.000000'),
+(21, 'pbkdf2_sha256$870000$tqaUHXjUVxckRmtssdOjc1$F9u7t/V+Zdp6wXq5Hpgi2D53Ofzbr0MeVKvqVLdukSs=', NULL, 0, 'Jim07', '', '', 'jim@gmail.com', 0, 1, '2024-11-07 03:23:19.290285'),
+(22, 'pbkdf2_sha256$870000$UNbCg1m4dFHHY2C9kAPgY1$rMi7fPhf1rJlvEqI7EegZYGlZ+k792C70R2LjLqEo10=', NULL, 0, 'Kevin07', '', '', 'kevin@gmail.com', 0, 1, '2024-11-07 03:24:21.538061'),
+(23, 'pbkdf2_sha256$870000$3J9GryKC2wVgFUkY6VPeN3$vg8AP9QO8k4QBDz+x3Hvvg7gUV5sZB0QVS5CK0Ds3k4=', NULL, 0, 'Dio07', '', '', 'dio@gmail.com', 0, 1, '2024-11-07 03:26:21.740946'),
+(24, 'pbkdf2_sha256$870000$vU1Kh9zIdfx8Zhl5xZYl9m$cxOTGJCw5mYVTVsnLlgTKWd4jQ+4TIk7o7AWDBwIz6o=', NULL, 0, 'Angela07', '', '', 'angela@gmail.com', 0, 1, '2024-11-07 03:28:28.896661'),
+(25, 'pbkdf2_sha256$870000$pRpryejSwqdsgaYODqokjS$GAlWcWBBS7h4KLLT6xdhvVCIR9ZR7QElgqxCZEwB4N4=', NULL, 0, 'Toby07', '', '', 'toby@gmail.com', 0, 1, '2024-11-07 03:29:55.326962'),
+(26, 'pbkdf2_sha256$870000$EAB7YyTJznHRrT7vLQL0Ji$DranfL3ne/OXrGBrWzzh8F+FoK0l0N8N4+T9TP+CsTg=', NULL, 0, 'Pam07', '', '', 'pam@gmail.com', 0, 1, '2024-11-07 03:32:07.933161'),
+(27, 'pbkdf2_sha256$870000$PZEdZwGDQwKBkGugRYYv70$lqocrdOFG4QBFlgJGUFkIzCchRgAnEDjIcFebBYaOLI=', NULL, 0, 'David07', '', '', 'david@gmail.com', 0, 1, '2024-11-07 04:30:48.256754'),
+(28, 'pbkdf2_sha256$870000$ybPKgyDSNLwtJZ5WFIDCVO$QD/6Rfj/cj8RIxk99bsYfexg2seNSHSk5+BYqnUp9Bw=', '2024-11-13 13:47:44.123217', 0, 'John7', 'John', 'Lennon', 'john@gmail.com', 1, 1, '2024-11-11 15:55:23.039859'),
+(29, 'pbkdf2_sha256$870000$rZrXCYh1kDByTq8zFJzYeB$uA81QaSqk6RHd3RMI1m+ydF6jiWRXShFSRJCyqM9kCI=', '2024-11-13 13:47:08.344494', 0, 'Marlene07', 'Marlene', 'Lopez', 'marlene@gmail.com', 1, 1, '2024-11-13 12:38:55.000000'),
+(30, 'pbkdf2_sha256$870000$wJjviKoNDjE3Ao8QBlsohv$VHwdDMWzKy8YqW40UM/KLoiqc1+hAXdk4Lt7Punfy7k=', '2024-11-13 13:10:00.016218', 0, 'joaquin07', 'Joaquin', 'Delgado', 'joa@gmail.com', 1, 1, '2024-11-13 12:49:15.371525'),
+(31, 'pbkdf2_sha256$870000$2oWCR5kfozqovpmQwCON2r$nNLLXidI/LIHbRuY6VUkX5GRTYW2nhnL1bugGkP9sRc=', '2024-11-13 13:48:43.881221', 0, 'Mauro07', 'Mauro', 'Coronel', 'mauro@gmail.com', 1, 1, '2024-11-13 12:53:32.134597'),
+(32, 'pbkdf2_sha256$870000$aW1oSrtKFjjtP9Rb3D23Qr$ArKUWN0x1BGapkMkA8VXiIAtnkD84QtzXTx6XC4j/tQ=', '2024-11-13 13:51:06.977986', 0, 'Yanel07', 'Yanel', 'Lopez', 'yanel@gmail.com', 1, 1, '2024-11-13 12:55:53.815187'),
+(33, 'pbkdf2_sha256$870000$Be6G9BxYNGtZx8QdJMKggy$DD5+SrB6iPkUSFGaCwjtk0vJNp5/znwobjL5QQbgpWw=', '2024-11-13 13:51:37.067980', 0, 'Rafael07', 'Rafael', 'Rodriguez', 'rafa@gmail.com', 1, 1, '2024-11-13 12:58:39.347209');
 
 -- --------------------------------------------------------
 
@@ -379,7 +393,239 @@ CREATE TABLE IF NOT EXISTS `auth_user_user_permissions` (
   UNIQUE KEY `auth_user_user_permissions_user_id_permission_id_14a6b632_uniq` (`user_id`,`permission_id`),
   KEY `auth_user_user_permissions_user_id_a95ead1b` (`user_id`),
   KEY `auth_user_user_permissions_permission_id_1fbb5f2c` (`permission_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=231 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `auth_user_user_permissions`
+--
+
+INSERT INTO `auth_user_user_permissions` (`id`, `user_id`, `permission_id`) VALUES
+(1, 28, 189),
+(2, 28, 190),
+(3, 28, 191),
+(4, 28, 192),
+(5, 28, 185),
+(6, 28, 186),
+(7, 28, 187),
+(8, 28, 188),
+(9, 28, 177),
+(10, 28, 178),
+(11, 28, 179),
+(12, 28, 180),
+(13, 28, 193),
+(14, 28, 194),
+(15, 28, 195),
+(16, 28, 196),
+(17, 28, 169),
+(18, 28, 170),
+(19, 28, 171),
+(20, 28, 172),
+(21, 28, 181),
+(22, 28, 182),
+(23, 28, 183),
+(24, 28, 184),
+(25, 28, 173),
+(26, 28, 174),
+(27, 28, 175),
+(28, 28, 176),
+(29, 28, 197),
+(30, 28, 198),
+(31, 28, 199),
+(32, 28, 200),
+(33, 28, 101),
+(34, 28, 102),
+(35, 28, 103),
+(36, 28, 104),
+(37, 28, 129),
+(38, 28, 130),
+(39, 28, 131),
+(40, 28, 132),
+(41, 28, 105),
+(42, 28, 106),
+(43, 28, 107),
+(44, 28, 108),
+(45, 28, 133),
+(46, 28, 134),
+(47, 28, 135),
+(48, 28, 136),
+(49, 28, 137),
+(50, 28, 138),
+(51, 28, 139),
+(52, 28, 140),
+(53, 28, 125),
+(54, 28, 126),
+(55, 28, 127),
+(56, 28, 128),
+(57, 28, 113),
+(58, 28, 114),
+(59, 28, 115),
+(60, 28, 116),
+(61, 28, 109),
+(62, 28, 110),
+(63, 28, 111),
+(64, 28, 112),
+(65, 28, 121),
+(66, 28, 122),
+(67, 28, 123),
+(68, 28, 124),
+(69, 28, 117),
+(70, 28, 118),
+(71, 28, 119),
+(72, 28, 120),
+(73, 28, 204),
+(74, 28, 218),
+(75, 28, 220),
+(76, 28, 214),
+(77, 28, 216),
+(78, 29, 192),
+(79, 29, 188),
+(80, 29, 180),
+(81, 29, 196),
+(116, 30, 104),
+(113, 30, 101),
+(114, 30, 102),
+(85, 29, 200),
+(86, 29, 60),
+(87, 29, 64),
+(88, 29, 68),
+(89, 29, 72),
+(115, 30, 103),
+(91, 29, 96),
+(92, 29, 56),
+(93, 29, 88),
+(94, 29, 76),
+(95, 29, 48),
+(96, 29, 80),
+(97, 29, 84),
+(98, 29, 100),
+(99, 29, 52),
+(100, 29, 204),
+(101, 29, 220),
+(102, 29, 216),
+(103, 29, 104),
+(104, 29, 132),
+(105, 29, 108),
+(106, 29, 136),
+(107, 29, 140),
+(108, 29, 128),
+(109, 29, 116),
+(110, 29, 112),
+(111, 29, 124),
+(112, 29, 120),
+(117, 30, 129),
+(118, 30, 130),
+(119, 30, 131),
+(120, 30, 132),
+(121, 30, 105),
+(122, 30, 106),
+(123, 30, 107),
+(124, 30, 108),
+(125, 30, 133),
+(126, 30, 134),
+(127, 30, 135),
+(128, 30, 136),
+(129, 30, 137),
+(130, 30, 138),
+(131, 30, 139),
+(132, 30, 140),
+(133, 30, 125),
+(134, 30, 126),
+(135, 30, 127),
+(136, 30, 128),
+(137, 30, 113),
+(138, 30, 114),
+(139, 30, 115),
+(140, 30, 116),
+(141, 30, 109),
+(142, 30, 110),
+(143, 30, 111),
+(144, 30, 112),
+(145, 30, 121),
+(146, 30, 122),
+(147, 30, 123),
+(148, 30, 124),
+(149, 30, 117),
+(150, 30, 118),
+(151, 30, 119),
+(152, 30, 120),
+(153, 30, 204),
+(154, 30, 218),
+(155, 30, 220),
+(156, 30, 214),
+(157, 30, 216),
+(158, 31, 204),
+(159, 31, 220),
+(160, 31, 216),
+(161, 32, 101),
+(162, 32, 102),
+(163, 32, 103),
+(164, 32, 104),
+(165, 32, 129),
+(166, 32, 130),
+(167, 32, 131),
+(168, 32, 132),
+(169, 32, 105),
+(170, 32, 106),
+(171, 32, 107),
+(172, 32, 108),
+(173, 32, 133),
+(174, 32, 134),
+(175, 32, 135),
+(176, 32, 136),
+(177, 32, 137),
+(178, 32, 138),
+(179, 32, 139),
+(180, 32, 140),
+(181, 32, 125),
+(182, 32, 126),
+(183, 32, 127),
+(184, 32, 128),
+(185, 32, 113),
+(186, 32, 114),
+(187, 32, 115),
+(188, 32, 116),
+(189, 32, 109),
+(190, 32, 110),
+(191, 32, 111),
+(192, 32, 112),
+(193, 32, 121),
+(194, 32, 122),
+(195, 32, 123),
+(196, 32, 124),
+(197, 32, 117),
+(198, 32, 118),
+(199, 32, 119),
+(200, 32, 120),
+(201, 32, 204),
+(202, 32, 218),
+(203, 32, 220),
+(204, 32, 214),
+(205, 32, 216),
+(206, 33, 104),
+(207, 33, 132),
+(208, 33, 108),
+(209, 33, 136),
+(210, 33, 140),
+(211, 33, 128),
+(212, 33, 116),
+(213, 33, 112),
+(214, 33, 124),
+(215, 33, 120),
+(216, 33, 102),
+(217, 33, 130),
+(218, 33, 106),
+(219, 33, 134),
+(220, 33, 138),
+(221, 33, 126),
+(222, 33, 114),
+(223, 33, 110),
+(224, 33, 122),
+(225, 33, 118),
+(226, 33, 204),
+(227, 33, 218),
+(228, 33, 220),
+(229, 33, 214),
+(230, 33, 216);
 
 -- --------------------------------------------------------
 
@@ -17955,7 +18201,192 @@ INSERT INTO `django_admin_log` (`id`, `action_time`, `object_id`, `object_repr`,
 (246, '2024-11-01 14:27:23.587106', '38', 'Factura B N°5 (2024-11-01 14:22:33.840392+00:00)', 3, '', 43, 1),
 (247, '2024-11-01 14:27:23.587106', '37', 'Factura B N°4 (2024-11-01 14:20:16.095079+00:00)', 3, '', 43, 1),
 (248, '2024-11-01 14:27:33.552260', '9', 'Dario Villalba (Cliente)', 2, '[{\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Dario Villalba (Cliente) tiene 3 entradas (Entrada [Popular] [Roxo (2024-11-01)]) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Dario Villalba (Cliente) tiene 2 entradas (Entrada [Popular] [Sweet (2024-11-02)]) para canjear\"}}]', 51, 1),
-(249, '2024-11-01 14:40:28.899315', '9', 'Dario Villalba (Cliente)', 2, '[{\"changed\": {\"name\": \"Ticket Bebida\", \"object\": \"Dario Villalba (Cliente) tiene 2 bebidas (Vodka (1000.00ml)) para canjear\", \"fields\": [\"Cantidad\"]}}]', 51, 1);
+(249, '2024-11-01 14:40:28.899315', '9', 'Dario Villalba (Cliente)', 2, '[{\"changed\": {\"name\": \"Ticket Bebida\", \"object\": \"Dario Villalba (Cliente) tiene 2 bebidas (Vodka (1000.00ml)) para canjear\", \"fields\": [\"Cantidad\"]}}]', 51, 1),
+(250, '2024-11-02 00:17:51.572371', '17', 'Sweet (2024-11-02)', 2, '[{\"changed\": {\"name\": \"Entrada\", \"object\": \"Entrada [Popular] [Sweet (2024-11-02)]\", \"fields\": [\"Precio Unitario\"]}}, {\"changed\": {\"name\": \"Entrada\", \"object\": \"Entrada [VIP] [Sweet (2024-11-02)]\", \"fields\": [\"Precio Unitario\"]}}]', 37, 1),
+(251, '2024-11-02 00:20:39.630617', '6', 'Gaseosa Cola (Coca-Cola)', 2, '[{\"changed\": {\"fields\": [\"Volumen\"]}}]', 29, 1),
+(252, '2024-11-02 00:33:41.250537', '49', 'Factura B N°6 (2024-11-02 00:33:41.245582+00:00)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Detalle de Entrada\", \"object\": \"DetalleEntrada object (56)\"}}]', 43, 1),
+(253, '2024-11-06 18:19:41.507290', '20', 'Isabel7', 1, '[{\"added\": {}}]', 8, 1),
+(254, '2024-11-06 18:20:57.118108', '14', 'Isabel Reina Villalba (0)', 1, '[{\"added\": {}}]', 15, 1),
+(255, '2024-11-06 18:21:26.101785', '3', 'Miguel Dario Coronel (3) contrató a Isabel Reina Villalba (Empleado) el 2024-11-06', 1, '[{\"added\": {}}]', 23, 1),
+(256, '2024-11-06 18:24:57.653944', '20', 'Isabel7', 2, '[{\"changed\": {\"fields\": [\"Superuser status\"]}}]', 8, 1),
+(257, '2024-11-06 19:04:33.683351', '9', 'Dario Villalba (Cliente)', 2, '[{\"changed\": {\"name\": \"Ticket Bebida\", \"object\": \"Dario Villalba (Cliente) tiene 8 bebidas (Vodka + Redbull (500.00ml)) para canjear\", \"fields\": [\"Cantidad\"]}}]', 51, 1),
+(258, '2024-11-06 19:10:38.829039', '9', 'Dario Villalba (Cliente)', 2, '[{\"changed\": {\"name\": \"Ticket Bebida\", \"object\": \"Dario Villalba (Cliente) tiene 9 bebidas (Vodka + Redbull (500.00ml)) para canjear\", \"fields\": [\"Cantidad\"]}}]', 51, 1),
+(259, '2024-11-06 19:14:16.627738', '9', 'Dario Villalba (Cliente)', 2, '[{\"changed\": {\"name\": \"Ticket Bebida\", \"object\": \"Dario Villalba (Cliente) tiene 10 bebidas (Vodka + Redbull (500.00ml)) para canjear\", \"fields\": [\"Cantidad\"]}}]', 51, 1),
+(260, '2024-11-06 21:32:17.307107', '5', 'Cerveza (Budweiser)', 2, '[{\"changed\": {\"fields\": [\"Stock\"]}}]', 29, 1),
+(261, '2024-11-06 21:32:23.557585', '5', 'Cerveza (Budweiser)', 2, '[{\"changed\": {\"fields\": [\"Stock\"]}}]', 29, 1),
+(262, '2024-11-07 18:25:16.437110', '6', 'Gaseosa Cola (Coca-Cola)', 2, '[{\"changed\": {\"fields\": [\"Volumen\"]}}]', 29, 1),
+(263, '2024-11-07 20:27:15.521705', '1', 'Miguel Dario Coronel (3)', 2, '[{\"changed\": {\"fields\": [\"Correo Electr\\u00f3nico\"]}}]', 15, 1),
+(264, '2024-11-07 20:27:43.089292', '1', 'Miguel Dario Coronel (3)', 2, '[{\"changed\": {\"fields\": [\"Correo Electr\\u00f3nico\"]}}]', 15, 1),
+(265, '2024-11-08 02:38:06.957986', '51', 'Factura B N°123 (2024-11-08 02:38:06.954008+00:00)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Detalle de Entrada\", \"object\": \"Detalle\"}}]', 43, 1),
+(266, '2024-11-08 02:38:20.597251', '51', 'Factura B N°123 (2024-11-08 02:38:06.954008+00:00)', 2, '[{\"changed\": {\"fields\": [\"Estado del pago\"]}}]', 43, 1),
+(267, '2024-11-08 02:38:31.850924', '51', 'Factura B N°123 (2024-11-08 02:38:06.954008+00:00)', 2, '[{\"changed\": {\"fields\": [\"Estado del pago\"]}}]', 43, 1),
+(268, '2024-11-08 02:42:05.880815', '51', 'Factura B N°123 (2024-11-08 02:38:06.954008+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}, {\"added\": {\"name\": \"Detalle de Reservaci\\u00f3n\", \"object\": \"Detalle\"}}]', 43, 1),
+(269, '2024-11-08 02:42:26.414869', '51', 'Factura B N°123 (2024-11-08 02:38:06.954008+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}, {\"added\": {\"name\": \"Detalle de Reservaci\\u00f3n\", \"object\": \"Detalle\"}}]', 43, 1),
+(270, '2024-11-08 02:42:51.321703', '15', 'Fiestacha (2024-11-02)', 2, '[{\"changed\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [3] [Fiestacha (2024-11-02)]\", \"fields\": [\"Disponibilidad\"]}}, {\"changed\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [2] [Fiestacha (2024-11-02)]\", \"fields\": [\"Disponibilidad\"]}}]', 37, 1),
+(271, '2024-11-08 03:02:06.658080', '51', 'Factura B N°123 (2024-11-08 02:38:06.954008+00:00)', 2, '[{\"changed\": {\"fields\": [\"Cliente\"]}}, {\"changed\": {\"name\": \"Detalle de Reservaci\\u00f3n\", \"object\": \"Detalle\", \"fields\": [\"Reservaci\\u00f3n\"]}}, {\"changed\": {\"name\": \"Detalle de Reservaci\\u00f3n\", \"object\": \"Detalle\", \"fields\": [\"Reservaci\\u00f3n\"]}}]', 43, 1),
+(272, '2024-11-08 03:03:36.483364', '51', 'Factura B N°123 (2024-11-08 02:38:06.954008+00:00)', 2, '[{\"deleted\": {\"name\": \"Detalle de Reservaci\\u00f3n\", \"object\": \"Detalle\"}}]', 43, 1),
+(273, '2024-11-08 03:04:40.914030', '16', 'Roxo (2024-11-01)', 2, '[{\"changed\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [1] [Roxo (2024-11-01)]\", \"fields\": [\"Disponibilidad\"]}}, {\"changed\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [2] [Roxo (2024-11-01)]\", \"fields\": [\"Disponibilidad\"]}}]', 37, 1),
+(274, '2024-11-08 03:05:05.363059', '51', 'Factura B N°123 (2024-11-08 02:38:06.954008+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}, {\"changed\": {\"name\": \"Detalle de Reservaci\\u00f3n\", \"object\": \"Detalle\", \"fields\": [\"Reservaci\\u00f3n\", \"Precio Unitario\"]}}]', 43, 1),
+(275, '2024-11-08 03:07:20.985381', '16', 'Roxo (2024-11-01)', 2, '[{\"changed\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [1] [Roxo (2024-11-01)]\", \"fields\": [\"Disponibilidad\"]}}, {\"changed\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [2] [Roxo (2024-11-01)]\", \"fields\": [\"Disponibilidad\"]}}]', 37, 1),
+(276, '2024-11-08 03:07:33.081725', '51', 'Factura B N°123 (2024-11-08 02:38:06.954008+00:00)', 2, '[{\"changed\": {\"fields\": [\"Precio Total\"]}}, {\"changed\": {\"name\": \"Detalle de Reservaci\\u00f3n\", \"object\": \"Detalle\", \"fields\": [\"Reservaci\\u00f3n\", \"Precio Unitario\"]}}]', 43, 1),
+(277, '2024-11-08 03:07:42.875667', '16', 'Roxo (2024-11-01)', 2, '[{\"changed\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [2] [Roxo (2024-11-01)]\", \"fields\": [\"Disponibilidad\"]}}]', 37, 1),
+(278, '2024-11-10 02:24:02.628297', '17', 'Sweet (2024-11-02)', 2, '[{\"changed\": {\"name\": \"Entrada\", \"object\": \"Entrada [Popular] [Sweet (2024-11-02)]\", \"fields\": [\"Precio Unitario\"]}}, {\"changed\": {\"name\": \"Entrada\", \"object\": \"Entrada [VIP] [Sweet (2024-11-02)]\", \"fields\": [\"Precio Unitario\"]}}]', 37, 1),
+(279, '2024-11-10 02:36:56.026820', '18', 'Break (2024-11-08)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada [Popular] [Break (2024-11-08)]\"}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada [VIP] [Break (2024-11-08)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [1] [Break (2024-11-08)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [2] [Break (2024-11-08)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [3] [Break (2024-11-08)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [4] [Break (2024-11-08)]\"}}]', 37, 1),
+(280, '2024-11-10 02:37:23.287461', '18', 'Break (2024-11-08)', 2, '[]', 37, 1),
+(281, '2024-11-10 02:39:46.450663', '19', 'Next Date (2024-11-09)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada [Popular] [Next Date (2024-11-09)]\"}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada [VIP] [Next Date (2024-11-09)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [1] [Next Date (2024-11-09)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [2] [Next Date (2024-11-09)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [3] [Next Date (2024-11-09)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [4] [Next Date (2024-11-09)]\"}}]', 37, 1),
+(282, '2024-11-10 03:02:06.629037', '19', 'Next Date (2024-11-09)', 2, '[]', 37, 1),
+(283, '2024-11-07 03:08:28.040626', '54', 'Factura B N°10 (2024-11-07 03:08:05.413636+00:00)', 2, '[{\"changed\": {\"fields\": [\"Estado del pago\"]}}]', 43, 1),
+(284, '2024-11-07 03:08:33.261813', '53', 'Factura B N°10 (2024-11-07 03:08:00.911011+00:00)', 2, '[{\"changed\": {\"fields\": [\"Estado del pago\"]}}]', 43, 1),
+(285, '2024-11-07 03:10:05.669773', '57', 'Factura B N°10 (2024-11-07 03:09:55.481793+00:00)', 2, '[{\"changed\": {\"fields\": [\"Estado del pago\"]}}]', 43, 1),
+(286, '2024-11-07 03:10:11.689926', '56', 'Factura B N°10 (2024-11-07 03:09:47.597385+00:00)', 2, '[{\"changed\": {\"fields\": [\"Estado del pago\"]}}]', 43, 1),
+(287, '2024-11-07 03:12:18.560745', '60', 'Factura B N°10 (2024-11-07 03:12:05.539663+00:00)', 2, '[{\"changed\": {\"fields\": [\"Estado del pago\"]}}]', 43, 1),
+(288, '2024-11-07 03:13:45.646832', '61', 'Factura B N°10 (2024-11-07 03:13:26.075926+00:00)', 2, '[{\"changed\": {\"fields\": [\"Estado del pago\"]}}]', 43, 1),
+(289, '2024-11-07 03:17:27.312993', '64', 'Factura B N°10 (2024-11-07 03:17:06.048959+00:00)', 2, '[{\"changed\": {\"fields\": [\"Estado del pago\"]}}]', 43, 1),
+(290, '2024-11-07 03:35:08.671613', '67', 'Factura B N°10 (2024-11-07 03:34:47.976045+00:00)', 2, '[{\"changed\": {\"fields\": [\"Estado del pago\"]}}]', 43, 1),
+(291, '2024-11-07 03:40:15.518768', '68', 'Factura B N°10 (2024-11-07 03:39:26.572184+00:00)', 2, '[{\"changed\": {\"fields\": [\"Estado del pago\"]}}]', 43, 1),
+(292, '2024-11-07 03:41:22.372144', '69', 'Factura B N°10 (2024-11-07 03:40:36.285418+00:00)', 2, '[{\"changed\": {\"fields\": [\"Estado del pago\"]}}]', 43, 1),
+(293, '2024-11-07 03:41:54.492654', '70', 'Factura B N°10 (2024-11-07 03:41:34.505788+00:00)', 2, '[{\"changed\": {\"fields\": [\"Estado del pago\"]}}]', 43, 1),
+(294, '2024-11-07 03:50:38.037062', '76', 'Factura B N°10 (2024-11-07 03:49:57.869995+00:00)', 2, '[{\"changed\": {\"fields\": [\"Estado del pago\"]}}]', 43, 1),
+(295, '2024-11-07 03:51:09.415183', '50', 'Factura B N°11 (2024-11-02 00:45:56.041845+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(296, '2024-11-07 03:51:25.829422', '52', 'Factura B N°12 (2024-11-07 03:07:54.818298+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1);
+INSERT INTO `django_admin_log` (`id`, `action_time`, `object_id`, `object_repr`, `action_flag`, `change_message`, `content_type_id`, `user_id`) VALUES
+(297, '2024-11-07 03:52:42.009771', '53', 'Factura B N°13 (2024-11-07 03:08:00.911011+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(298, '2024-11-07 03:52:50.915649', '54', 'Factura B N°14 (2024-11-07 03:08:05.413636+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(299, '2024-11-07 03:52:58.933002', '55', 'Factura B N°15 (2024-11-07 03:08:56.936641+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}, {\"changed\": {\"name\": \"Detalle de Reservaci\\u00f3n\", \"object\": \"Detalle\", \"fields\": [\"Reservaci\\u00f3n\"]}}]', 43, 1),
+(300, '2024-11-07 03:53:08.629426', '56', 'Factura B N°16 (2024-11-07 03:09:47.597385+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(301, '2024-11-07 03:53:47.032710', '57', 'Factura B N°17 (2024-11-07 03:09:55.481793+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(302, '2024-11-07 03:54:07.227351', '58', 'Factura B N°18 (2024-11-07 03:10:30.247341+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(303, '2024-11-07 03:54:14.215151', '59', 'Factura B N°19 (2024-11-07 03:10:49.441178+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}, {\"changed\": {\"name\": \"Detalle de Reservaci\\u00f3n\", \"object\": \"Detalle\", \"fields\": [\"Reservaci\\u00f3n\"]}}]', 43, 1),
+(304, '2024-11-07 03:54:22.192409', '60', 'Factura B N°20 (2024-11-07 03:12:05.539663+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(305, '2024-11-07 03:54:28.782934', '61', 'Factura B N°21 (2024-11-07 03:13:26.075926+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(306, '2024-11-07 03:54:35.898421', '62', 'Factura B N°22 (2024-11-07 03:15:21.382036+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}, {\"changed\": {\"name\": \"Detalle de Reservaci\\u00f3n\", \"object\": \"Detalle\", \"fields\": [\"Reservaci\\u00f3n\"]}}]', 43, 1),
+(307, '2024-11-07 03:54:44.220078', '63', 'Factura B N°23 (2024-11-07 03:15:55.559736+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(308, '2024-11-07 03:54:51.654246', '64', 'Factura B N°24 (2024-11-07 03:17:06.048959+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(309, '2024-11-07 03:54:59.727684', '65', 'Factura B N°25 (2024-11-07 03:17:35.244959+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}, {\"changed\": {\"name\": \"Detalle de Reservaci\\u00f3n\", \"object\": \"Detalle\", \"fields\": [\"Reservaci\\u00f3n\"]}}]', 43, 1),
+(310, '2024-11-07 03:55:06.543879', '66', 'Factura B N°26 (2024-11-07 03:18:05.063641+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(311, '2024-11-07 03:55:13.419979', '67', 'Factura B N°27 (2024-11-07 03:34:47.976045+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(312, '2024-11-07 03:55:19.247196', '68', 'Factura B N°28 (2024-11-07 03:39:26.572184+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(313, '2024-11-07 03:55:28.369971', '69', 'Factura B N°29 (2024-11-07 03:40:36.285418+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(314, '2024-11-07 03:55:36.657505', '70', 'Factura B N°30 (2024-11-07 03:41:34.505788+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(315, '2024-11-07 03:55:44.824665', '71', 'Factura B N°31 (2024-11-07 03:46:46.318772+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(316, '2024-11-07 03:55:51.116942', '72', 'Factura B N°32 (2024-11-07 03:46:55.358380+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(317, '2024-11-07 03:55:56.424591', '73', 'Factura B N°33 (2024-11-07 03:47:19.082005+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}, {\"changed\": {\"name\": \"Detalle de Reservaci\\u00f3n\", \"object\": \"Detalle\", \"fields\": [\"Reservaci\\u00f3n\"]}}]', 43, 1),
+(318, '2024-11-07 03:56:00.821540', '74', 'Factura B N°34 (2024-11-07 03:47:37.964224+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(319, '2024-11-07 03:56:08.758347', '75', 'Factura B N°35 (2024-11-07 03:48:26.498399+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(320, '2024-11-07 03:56:16.721807', '76', 'Factura B N°36 (2024-11-07 03:49:57.869995+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(321, '2024-11-07 04:03:35.670019', '77', 'Factura B N°37 (2024-11-07 04:03:04.458351+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}, {\"changed\": {\"name\": \"Detalle de Reservaci\\u00f3n\", \"object\": \"Detalle\", \"fields\": [\"Reservaci\\u00f3n\"]}}]', 43, 1),
+(322, '2024-11-07 04:09:29.484745', '78', 'Factura B N°38 (2024-11-07 04:08:59.706381+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(323, '2024-11-07 04:09:34.536817', '79', 'Factura B N°39 (2024-11-07 04:09:16.795447+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(324, '2024-11-07 04:14:37.921143', '80', 'Factura B N°40 (2024-11-07 04:14:11.365426+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(325, '2024-11-10 18:26:32.981761', '19', 'Next Date (2024-11-09)', 2, '[]', 37, 1),
+(326, '2024-11-10 18:27:13.579817', '19', 'Next Date (2024-11-09)', 2, '[]', 37, 1),
+(327, '2024-11-10 18:30:14.234043', '19', 'Next Date (2024-11-09)', 2, '[]', 37, 1),
+(328, '2024-11-10 18:55:37.669628', '18', 'Break (2024-11-08)', 2, '[]', 37, 1),
+(329, '2024-11-10 18:55:48.326957', '17', 'Sweet (2024-11-02)', 2, '[]', 37, 1),
+(330, '2024-11-10 18:55:58.155688', '16', 'Roxo (2024-11-01)', 2, '[]', 37, 1),
+(331, '2024-11-10 18:56:16.430478', '15', 'Fiestacha (2024-11-02)', 2, '[]', 37, 1),
+(332, '2024-11-06 19:01:53.728291', '18', 'Break (2024-11-08)', 2, '[]', 37, 1),
+(333, '2024-11-06 19:02:08.109845', '18', 'Break (2024-11-08)', 2, '[]', 37, 1),
+(334, '2024-11-06 19:03:18.665466', '18', 'Break (2024-11-08)', 2, '[]', 37, 1),
+(335, '2024-11-06 19:03:31.626418', '18', 'Break (2024-11-08)', 2, '[]', 37, 1),
+(336, '2024-11-06 19:04:08.437617', '18', 'Break (2024-11-08)', 2, '[]', 37, 1),
+(337, '2024-11-06 19:04:25.468644', '18', 'Break (2024-11-08)', 2, '[]', 37, 1),
+(338, '2024-11-06 19:11:10.946022', '18', 'Break (2024-11-08)', 2, '[]', 37, 1),
+(339, '2024-11-06 19:11:32.768598', '18', 'Break (2024-11-08)', 2, '[]', 37, 1),
+(340, '2024-11-11 15:55:23.502348', '28', 'John7', 1, '[{\"added\": {}}]', 8, 1),
+(341, '2024-11-11 15:56:40.642479', '22', 'John Lennon (Cajero)', 1, '[{\"added\": {}}]', 18, 1),
+(342, '2024-11-11 16:14:28.117906', '4', 'Miguel Dario Coronel (4) contrató a John Lennon (Empleado) el 2024-11-11', 1, '[{\"added\": {}}]', 23, 1),
+(343, '2024-11-13 03:35:40.106065', '21', 'David Wallace (Cliente)', 2, '[{\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"David Wallace (Cliente) tiene 10 entradas (Entrada [VIP] [Next Date (2024-11-09)]) para canjear\"}}]', 51, 1),
+(344, '2024-11-13 03:35:45.562265', '20', 'Pam Beasley (Cliente)', 2, '[{\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Pam Beasley (Cliente) tiene 4 entradas (Entrada [VIP] [Next Date (2024-11-09)]) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Pam Beasley (Cliente) tiene 3 entradas (Entrada [Popular] [Break (2024-11-08)]) para canjear\"}}]', 51, 1),
+(345, '2024-11-13 03:35:53.917765', '19', 'Toby Flenderson (Cliente)', 2, '[{\"deleted\": {\"name\": \"Ticket Bebida\", \"object\": \"Toby Flenderson (Cliente) tiene 5 bebidas (Vodka (1000.00ml)) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Bebida\", \"object\": \"Toby Flenderson (Cliente) tiene 20 bebidas (Energizante (500.00ml)) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Bebida\", \"object\": \"Toby Flenderson (Cliente) tiene 30 bebidas (Cerveza (1000.00ml)) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Bebida\", \"object\": \"Toby Flenderson (Cliente) tiene 2 bebidas (Fernet (1000.00ml)) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Bebida\", \"object\": \"Toby Flenderson (Cliente) tiene 50 bebidas (Gaseosa Cola (500.00ml)) para canjear\"}}]', 51, 1),
+(346, '2024-11-13 03:36:16.879711', '18', 'Angela Benitez (Cliente)', 2, '[{\"deleted\": {\"name\": \"Ticket Bebida\", \"object\": \"Angela Benitez (Cliente) tiene 10 bebidas (Vodka + Redbull (500.00ml)) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Bebida\", \"object\": \"Angela Benitez (Cliente) tiene 2 bebidas (Fernet (1000.00ml)) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Bebida\", \"object\": \"Angela Benitez (Cliente) tiene 20 bebidas (Gaseosa Cola (500.00ml)) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Angela Benitez (Cliente) tiene 3 entradas (Entrada [VIP] [Next Date (2024-11-09)]) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Angela Benitez (Cliente) tiene 3 entradas (Entrada [Popular] [Break (2024-11-08)]) para canjear\"}}]', 51, 1),
+(347, '2024-11-13 03:36:26.434486', '17', 'Dionela Coronel (Cliente)', 2, '[{\"deleted\": {\"name\": \"Ticket Bebida\", \"object\": \"Dionela Coronel (Cliente) tiene 7 bebidas (Vodka + Redbull (500.00ml)) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Bebida\", \"object\": \"Dionela Coronel (Cliente) tiene 1 bebidas (Fernet (1000.00ml)) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Bebida\", \"object\": \"Dionela Coronel (Cliente) tiene 7 bebidas (Gaseosa Cola (500.00ml)) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Dionela Coronel (Cliente) tiene 6 entradas (Entrada [VIP] [Next Date (2024-11-09)]) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Dionela Coronel (Cliente) tiene 2 entradas (Entrada [VIP] [Break (2024-11-08)]) para canjear\"}}]', 51, 1),
+(348, '2024-11-13 03:36:32.545352', '16', 'Kevin Ferreira (Cliente)', 2, '[{\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Kevin Ferreira (Cliente) tiene 5 entradas (Entrada [Popular] [Break (2024-11-08)]) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Kevin Ferreira (Cliente) tiene 5 entradas (Entrada [VIP] [Next Date (2024-11-09)]) para canjear\"}}]', 51, 1),
+(349, '2024-11-13 03:36:43.054201', '15', 'Jim Halpert (Cliente)', 2, '[{\"deleted\": {\"name\": \"Ticket Bebida\", \"object\": \"Jim Halpert (Cliente) tiene 10 bebidas (Cerveza (1000.00ml)) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Bebida\", \"object\": \"Jim Halpert (Cliente) tiene 8 bebidas (Vodka + Redbull (500.00ml)) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Jim Halpert (Cliente) tiene 5 entradas (Entrada [Popular] [Break (2024-11-08)]) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Jim Halpert (Cliente) tiene 5 entradas (Entrada [VIP] [Next Date (2024-11-09)]) para canjear\"}}]', 51, 1),
+(350, '2024-11-13 03:36:52.522749', '13', 'Damian Alejo Coronel (Cliente)', 2, '[{\"deleted\": {\"name\": \"Ticket Bebida\", \"object\": \"Damian Alejo Coronel (Cliente) tiene 2 bebidas (Vodka (1000.00ml)) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Bebida\", \"object\": \"Damian Alejo Coronel (Cliente) tiene 5 bebidas (Energizante (500.00ml)) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Bebida\", \"object\": \"Damian Alejo Coronel (Cliente) tiene 2 bebidas (Fernet (1000.00ml)) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Bebida\", \"object\": \"Damian Alejo Coronel (Cliente) tiene 2 bebidas (Gaseosa Cola (500.00ml)) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Damian Alejo Coronel (Cliente) tiene 1 entradas (Entrada [VIP] [Next Date (2024-11-09)]) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Damian Alejo Coronel (Cliente) tiene 2 entradas (Entrada [VIP] [Break (2024-11-08)]) para canjear\"}}]', 51, 1),
+(351, '2024-11-13 03:37:04.198816', '12', 'Maiten Avalos (Cliente)', 2, '[{\"deleted\": {\"name\": \"Ticket Bebida\", \"object\": \"Maiten Avalos (Cliente) tiene 10 bebidas (Vodka + Redbull (500.00ml)) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Bebida\", \"object\": \"Maiten Avalos (Cliente) tiene 5 bebidas (Gaseosa Cola (500.00ml)) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Bebida\", \"object\": \"Maiten Avalos (Cliente) tiene 2 bebidas (Cerveza (1000.00ml)) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Maiten Avalos (Cliente) tiene 3 entradas (Entrada [VIP] [Next Date (2024-11-09)]) para canjear\"}}]', 51, 1),
+(352, '2024-11-13 03:37:16.325837', '11', 'Diana Coronel (Cliente)', 2, '[{\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Diana Coronel (Cliente) tiene 10 entradas (Entrada [Popular] [Break (2024-11-08)]) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Diana Coronel (Cliente) tiene 5 entradas (Entrada [VIP] [Next Date (2024-11-09)]) para canjear\"}}]', 51, 1),
+(353, '2024-11-13 03:37:23.280099', '10', 'Azul  Coronel  (Cliente)', 2, '[{\"deleted\": {\"name\": \"Ticket Bebida\", \"object\": \"Azul  Coronel  (Cliente) tiene 1 bebidas (Vodka + Redbull (500.00ml)) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Bebida\", \"object\": \"Azul  Coronel  (Cliente) tiene 2 bebidas (Cerveza (1000.00ml)) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Azul  Coronel  (Cliente) tiene 2 entradas (Entrada [VIP] [Sweet (2024-11-02)]) para canjear\"}}]', 51, 1),
+(354, '2024-11-13 03:37:36.800686', '9', 'Dario Villalba (Cliente)', 2, '[{\"deleted\": {\"name\": \"Ticket Bebida\", \"object\": \"Dario Villalba (Cliente) tiene 10 bebidas (Vodka + Redbull (500.00ml)) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Bebida\", \"object\": \"Dario Villalba (Cliente) tiene 2 bebidas (Vodka (1000.00ml)) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Bebida\", \"object\": \"Dario Villalba (Cliente) tiene 6 bebidas (Gaseosa Cola (500.00ml)) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Bebida\", \"object\": \"Dario Villalba (Cliente) tiene 1 bebidas (Fernet (1000.00ml)) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Dario Villalba (Cliente) tiene 1 entradas (Entrada [Popular] [Roxo (2024-11-01)]) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Dario Villalba (Cliente) tiene 1 entradas (Entrada [Popular] [Sweet (2024-11-02)]) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Dario Villalba (Cliente) tiene 6 entradas (Entrada [VIP] [Next Date (2024-11-09)]) para canjear\"}}, {\"deleted\": {\"name\": \"Ticket Entrada\", \"object\": \"Dario Villalba (Cliente) tiene 6 entradas (Entrada [Popular] [Break (2024-11-08)]) para canjear\"}}]', 51, 1),
+(355, '2024-11-13 03:52:44.278172', '22', 'John Lennon (Cajero)', 3, '', 18, 1),
+(356, '2024-11-13 03:55:03.302115', '23', 'John Lennon (Cajero)', 1, '[{\"added\": {}}]', 18, 1),
+(357, '2024-11-13 03:55:27.050439', '5', 'Miguel Dario Coronel (4) contrató a John Lennon (Empleado) el 2024-11-13', 1, '[{\"added\": {}}]', 23, 1),
+(358, '2024-11-13 12:38:55.434253', '29', 'Marlene07', 1, '[{\"added\": {}}]', 8, 1),
+(359, '2024-11-13 12:40:08.256477', '24', 'Marlene Lopez (Auditor)', 1, '[{\"added\": {}}]', 16, 1),
+(360, '2024-11-13 12:40:32.101248', '6', 'Miguel Dario Coronel (5) contrató a Marlene Lopez (Empleado) el 2024-11-13', 1, '[{\"added\": {}}]', 23, 1),
+(361, '2024-11-13 12:45:24.709317', '29', 'Marlene07', 2, '[{\"changed\": {\"fields\": [\"User permissions\"]}}]', 8, 1),
+(362, '2024-11-13 12:47:04.132796', '29', 'Marlene07', 2, '[{\"changed\": {\"fields\": [\"User permissions\"]}}]', 8, 1),
+(363, '2024-11-13 12:48:11.856453', '29', 'Marlene07', 2, '[{\"changed\": {\"fields\": [\"User permissions\"]}}]', 8, 1),
+(364, '2024-11-13 12:49:15.617951', '30', 'joaquin07', 1, '[{\"added\": {}}]', 8, 1),
+(365, '2024-11-13 12:50:06.706017', '25', 'Joaquin Delgado (Supervisor)', 1, '[{\"added\": {}}]', 21, 1),
+(366, '2024-11-13 12:50:50.783197', '7', 'Miguel Dario Coronel (6) contrató a Joaquin Delgado (Empleado) el 2024-11-13', 1, '[{\"added\": {}}]', 23, 1),
+(367, '2024-11-13 12:51:15.145310', '6', 'Gaseosa Cola (Coca-Cola)', 2, '[{\"changed\": {\"fields\": [\"Stock\"]}}]', 29, 30),
+(368, '2024-11-13 12:52:15.532460', '6', 'Gaseosa Cola (Coca-Cola)', 2, '[{\"changed\": {\"fields\": [\"Stock\"]}}]', 29, 28),
+(369, '2024-11-13 12:53:32.387673', '31', 'Mauro07', 1, '[{\"added\": {}}]', 8, 1),
+(370, '2024-11-13 12:54:36.870732', '26', 'Mauro Coronel (Seguridad)', 1, '[{\"added\": {}}]', 20, 1),
+(371, '2024-11-13 12:54:51.275439', '8', 'Miguel Dario Coronel (7) contrató a Mauro Coronel (Empleado) el 2024-11-13', 1, '[{\"added\": {}}]', 23, 1),
+(372, '2024-11-13 12:55:54.059461', '32', 'Yanel07', 1, '[{\"added\": {}}]', 8, 1),
+(373, '2024-11-13 12:57:06.105854', '27', 'Yanel Lopez (Bartender)', 1, '[{\"added\": {}}]', 17, 1),
+(374, '2024-11-13 12:57:19.115039', '9', 'Miguel Dario Coronel (8) contrató a Yanel Lopez (Empleado) el 2024-11-13', 1, '[{\"added\": {}}]', 23, 1),
+(375, '2024-11-13 12:58:39.589847', '33', 'Rafael07', 1, '[{\"added\": {}}]', 8, 1),
+(376, '2024-11-13 12:59:35.673101', '28', 'Rafael Rodriguez (Mozo)', 1, '[{\"added\": {}}]', 19, 1),
+(377, '2024-11-13 12:59:53.812316', '10', 'Miguel Dario Coronel (9) contrató a Rafael Rodriguez (Empleado) el 2024-11-13', 1, '[{\"added\": {}}]', 23, 1),
+(378, '2024-10-05 02:06:22.293928', '20', 'Emerge (2024-10-05)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada [Popular] [Emerge (2024-10-05)]\"}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada [VIP] [Emerge (2024-10-05)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [1] [Emerge (2024-10-05)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [2] [Emerge (2024-10-05)]\"}}]', 37, 1),
+(379, '2024-10-05 02:06:38.116308', '20', 'Emerge (2024-10-05)', 2, '[]', 37, 1),
+(380, '2024-10-05 02:07:52.614423', '21', 'Nexus (2024-10-05)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada [Popular] [Nexus (2024-10-05)]\"}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada [VIP] [Nexus (2024-10-05)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [1] [Nexus (2024-10-05)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [2] [Nexus (2024-10-05)]\"}}]', 37, 1),
+(381, '2024-10-05 02:08:02.425955', '20', 'Emerge (2024-10-04)', 2, '[{\"changed\": {\"fields\": [\"Fecha\"]}}]', 37, 1),
+(382, '2024-10-05 02:14:03.406240', '21', 'Nexus (2024-10-05)', 2, '[]', 37, 1),
+(383, '2024-10-05 02:15:26.339949', '91', 'Factura B N°51 (2024-10-05 02:14:15.518730+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\", \"Precio Total\"]}}]', 43, 1),
+(384, '2024-10-05 02:19:26.120145', '92', 'Factura B N°51 (2024-10-05 02:15:44.774469+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}, {\"changed\": {\"name\": \"Detalle de Reservaci\\u00f3n\", \"object\": \"Detalle\", \"fields\": [\"Reservaci\\u00f3n\"]}}]', 43, 1),
+(385, '2024-10-05 02:24:18.095372', '8', 'Fernet + Cola (Cóctel)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Ingrediente\", \"object\": \"Fernet + Cola (C\\u00f3ctel) - Fernet (Branca) (200ml)\"}}, {\"added\": {\"name\": \"Ingrediente\", \"object\": \"Fernet + Cola (C\\u00f3ctel) - Gaseosa Cola (Coca-Cola) (500ml)\"}}]', 30, 1),
+(386, '2024-10-05 02:26:05.320707', '9', 'Corralejo', 1, '[{\"added\": {}}]', 35, 1),
+(387, '2024-10-05 02:26:25.712761', '9', 'Tequila (Corralejo)', 1, '[{\"added\": {}}]', 29, 1),
+(388, '2024-10-05 02:27:39.901126', '10', 'Evian', 1, '[{\"added\": {}}]', 35, 1),
+(389, '2024-10-05 02:27:47.726459', '10', 'Water (Evian)', 1, '[{\"added\": {}}]', 29, 1),
+(390, '2024-10-05 02:28:19.763313', '10', 'Agua (Evian)', 2, '[{\"changed\": {\"fields\": [\"Nombre\"]}}]', 29, 1),
+(391, '2024-10-05 02:29:02.381545', '6', 'Gaseosa Cola (Coca-Cola)', 2, '[{\"changed\": {\"fields\": [\"Stock\"]}}]', 29, 1),
+(392, '2024-10-05 02:31:00.481428', '11', 'Shot de Tequila (Shot)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Ingrediente\", \"object\": \"Shot de Tequila (Shot) - Tequila (Corralejo) (50ml)\"}}]', 30, 1),
+(393, '2024-10-05 02:31:07.078568', '9', 'Tequila (Corralejo)', 2, '[{\"changed\": {\"fields\": [\"Stock\"]}}]', 29, 1),
+(394, '2024-10-05 03:39:11.728054', '11', 'Brighton', 1, '[{\"added\": {}}]', 35, 1),
+(395, '2024-10-05 03:39:16.545011', '12', 'Gin Tonic (Brighton)', 1, '[{\"added\": {}}]', 29, 1),
+(396, '2024-10-05 03:42:54.977075', '12', 'Jack Daniels', 1, '[{\"added\": {}}]', 35, 1),
+(397, '2024-10-05 03:42:59.893036', '13', 'Whisky (Jack Daniels)', 1, '[{\"added\": {}}]', 29, 1),
+(398, '2024-10-05 03:43:37.302210', '14', 'Shot de Whisky (Shot)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Ingrediente\", \"object\": \"Shot de Whisky (Shot) - Whisky (Jack Daniels) (50ml)\"}}]', 30, 1),
+(399, '2024-10-05 03:43:54.772366', '13', 'Whisky (Jack Daniels)', 2, '[{\"changed\": {\"fields\": [\"Stock\"]}}]', 29, 1),
+(400, '2024-10-05 03:47:57.021386', '13', 'Havanna', 1, '[{\"added\": {}}]', 35, 1),
+(401, '2024-10-05 03:48:11.235989', '15', 'Ron (Havanna)', 1, '[{\"added\": {}}]', 29, 1),
+(402, '2024-10-05 03:49:09.050254', '16', 'Daiquiri (Cóctel)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Ingrediente\", \"object\": \"Daiquiri (C\\u00f3ctel) - Ron (Havanna) (500ml)\"}}]', 30, 1),
+(403, '2024-10-05 03:50:09.618588', '17', 'Mojito (Cóctel)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Ingrediente\", \"object\": \"Mojito (C\\u00f3ctel) - Ron (Havanna) (500ml)\"}}]', 30, 1),
+(404, '2024-10-05 03:50:32.846095', '18', 'Margarita (Cóctel)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Ingrediente\", \"object\": \"Margarita (C\\u00f3ctel) - Tequila (Corralejo) (500ml)\"}}]', 30, 1),
+(405, '2024-10-05 03:50:41.349355', '15', 'Ron (Havanna)', 2, '[{\"changed\": {\"fields\": [\"Stock\"]}}]', 29, 1),
+(406, '2024-10-05 03:51:01.800643', '9', 'Tequila (Corralejo)', 2, '[{\"changed\": {\"fields\": [\"Stock\"]}}]', 29, 1),
+(407, '2024-10-05 03:54:41.199738', '91', 'Factura B N°552 (2024-10-05 02:14:15.518730+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(408, '2024-10-05 03:54:50.251455', '91', 'Factura B N°0n (2024-10-05 02:14:15.518730+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(409, '2024-10-05 03:56:22.195921', '93', 'Factura B N°52 (2024-10-05 03:56:02.440346+00:00)', 2, '[{\"changed\": {\"fields\": [\"N\\u00famero de Factura\"]}}]', 43, 1),
+(410, '2024-10-11 23:12:27.917390', '22', 'Zenit (2024-10-11)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada [Popular] [Zenit (2024-10-11)]\"}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada [VIP] [Zenit (2024-10-11)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [1] [Zenit (2024-10-11)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [2] [Zenit (2024-10-11)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [3] [Zenit (2024-10-11)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [4] [Zenit (2024-10-11)]\"}}]', 37, 1),
+(411, '2024-10-11 23:13:28.639703', '23', 'Aura (2024-10-12)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada [Popular] [Aura (2024-10-12)]\"}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada [VIP] [Aura (2024-10-12)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [1] [Aura (2024-10-12)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [2] [Aura (2024-10-12)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [3] [Aura (2024-10-12)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [4] [Aura (2024-10-12)]\"}}]', 37, 1),
+(412, '2024-10-11 23:13:49.991455', '22', 'Zenit (2024-10-11)', 2, '[]', 37, 1),
+(413, '2024-10-11 23:14:04.458647', '23', 'Aura (2024-10-12)', 2, '[]', 37, 1),
+(414, '2024-10-18 23:56:37.841130', '24', 'Eclipse (2024-10-18)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada [Popular] [Eclipse (2024-10-18)]\"}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada [VIP] [Eclipse (2024-10-18)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [1] [Eclipse (2024-10-18)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [2] [Eclipse (2024-10-18)]\"}}]', 37, 1),
+(415, '2024-10-18 23:57:44.094765', '25', 'Solsticio (2024-10-19)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada [Popular] [Solsticio (2024-10-19)]\"}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada [VIP] [Solsticio (2024-10-19)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [1] [Solsticio (2024-10-19)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [2] [Solsticio (2024-10-19)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [3] [Solsticio (2024-10-19)]\"}}]', 37, 1),
+(416, '2024-10-18 23:57:56.970300', '24', 'Eclipse (2024-10-18)', 2, '[]', 37, 1),
+(417, '2024-10-18 23:58:15.550466', '25', 'Solsticio (2024-10-19)', 2, '[]', 37, 1),
+(418, '2024-10-26 00:07:13.982020', '26', 'Enigma (2024-10-25)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada [Popular] [Enigma (2024-10-25)]\"}}]', 37, 1),
+(419, '2024-10-26 00:07:58.938678', '26', 'Enigma (2024-10-25)', 2, '[{\"changed\": {\"fields\": [\"Latitud\", \"Longitud\"]}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada [VIP] [Enigma (2024-10-25)]\"}}, {\"changed\": {\"name\": \"Entrada\", \"object\": \"Entrada [Popular] [Enigma (2024-10-25)]\", \"fields\": [\"Precio Unitario\"]}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [1] [Enigma (2024-10-25)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [2] [Enigma (2024-10-25)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [3] [Enigma (2024-10-25)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [4] [Enigma (2024-10-25)]\"}}]', 37, 1),
+(420, '2024-10-26 00:09:11.895542', '27', 'Oasis (2024-10-26)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada [Popular] [Oasis (2024-10-26)]\"}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada [VIP] [Oasis (2024-10-26)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [1] [Oasis (2024-10-26)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [2] [Oasis (2024-10-26)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [3] [Oasis (2024-10-26)]\"}}]', 37, 1),
+(421, '2024-10-26 00:09:25.646196', '26', 'Enigma (2024-10-25)', 2, '[]', 37, 1),
+(422, '2024-10-26 00:09:40.420528', '27', 'Oasis (2024-10-26)', 2, '[]', 37, 1),
+(423, '2024-11-13 18:52:50.576551', '28', 'Rediscover (2024-11-15)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada [Popular] [Rediscover (2024-11-15)]\"}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada [VIP] [Rediscover (2024-11-15)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [1] [Rediscover (2024-11-15)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [2] [Rediscover (2024-11-15)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [3] [Rediscover (2024-11-15)]\"}}]', 37, 1),
+(424, '2024-11-13 18:54:14.957814', '29', 'Fascination (2024-11-16)', 1, '[{\"added\": {}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada [Popular] [Fascination (2024-11-16)]\"}}, {\"added\": {\"name\": \"Entrada\", \"object\": \"Entrada [VIP] [Fascination (2024-11-16)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [1] [Fascination (2024-11-16)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [2] [Fascination (2024-11-16)]\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Mesas\", \"object\": \"Mesa [3] [Fascination (2024-11-16)]\"}}]', 37, 1),
+(425, '2024-11-13 18:54:29.430426', '28', 'Rediscover (2024-11-15)', 2, '[]', 37, 1),
+(426, '2024-11-13 18:55:05.274407', '29', 'Fascination (2024-11-16)', 2, '[]', 37, 1),
+(427, '2024-11-14 00:05:33.042214', '47', 'Mesa [2] [Rediscover (2024-11-15)]', 2, '[{\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa [2] [Rediscover (2024-11-15)] tiene (10) Shot de Tequila (50.00ml)\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa [2] [Rediscover (2024-11-15)] tiene (1) Fernet (1000.00ml)\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa [2] [Rediscover (2024-11-15)] tiene (10) Gaseosa Cola (500.00ml)\"}}]', 40, 1),
+(428, '2024-11-14 00:05:55.848217', '46', 'Mesa [1] [Rediscover (2024-11-15)]', 2, '[{\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa [1] [Rediscover (2024-11-15)] tiene (10) Vodka + Redbull (500.00ml)\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa [1] [Rediscover (2024-11-15)] tiene (10) Daiquiri (500.00ml)\"}}]', 40, 1),
+(429, '2024-11-14 00:06:28.898109', '51', 'Mesa [3] [Fascination (2024-11-16)]', 2, '[{\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa [3] [Fascination (2024-11-16)] tiene (2) Tequila (1000.00ml)\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa [3] [Fascination (2024-11-16)] tiene (10) Shot de Whisky (50.00ml)\"}}]', 40, 1),
+(430, '2024-11-14 00:06:55.859331', '48', 'Mesa [3] [Rediscover (2024-11-15)]', 2, '[{\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa [3] [Rediscover (2024-11-15)] tiene (10) Agua (500.00ml)\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa [3] [Rediscover (2024-11-15)] tiene (2) Ron (1000.00ml)\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa [3] [Rediscover (2024-11-15)] tiene (10) Gaseosa Cola (500.00ml)\"}}]', 40, 1),
+(431, '2024-11-14 00:07:56.374453', '50', 'Mesa [2] [Fascination (2024-11-16)]', 2, '[{\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa [2] [Fascination (2024-11-16)] tiene (10) Margarita (500.00ml)\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa [2] [Fascination (2024-11-16)] tiene (2) Vodka (1000.00ml)\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa [2] [Fascination (2024-11-16)] tiene (1) Gin Tonic (1000.00ml)\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa [2] [Fascination (2024-11-16)] tiene (10) Agua (500.00ml)\"}}]', 40, 1),
+(432, '2024-11-14 00:09:44.660834', '49', 'Mesa [1] [Fascination (2024-11-16)]', 2, '[{\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa [1] [Fascination (2024-11-16)] tiene (10) Cerveza (1000.00ml)\"}}, {\"added\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa [1] [Fascination (2024-11-16)] tiene (10) Agua (500.00ml)\"}}]', 40, 1),
+(433, '2024-11-14 00:10:05.775914', '49', 'Mesa [1] [Fascination (2024-11-16)]', 2, '[{\"changed\": {\"name\": \"Gesti\\u00f3n de Bebidas\", \"object\": \"Mesa [1] [Fascination (2024-11-16)] tiene (5) Cerveza (1000.00ml)\", \"fields\": [\"Cantidad\"]}}]', 40, 1);
 
 -- --------------------------------------------------------
 
@@ -17970,7 +18401,7 @@ CREATE TABLE IF NOT EXISTS `django_content_type` (
   `model` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `django_content_type_app_label_model_76bd3d3b_uniq` (`app_label`,`model`)
-) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `django_content_type`
@@ -18031,7 +18462,12 @@ INSERT INTO `django_content_type` (`id`, `app_label`, `model`) VALUES
 (52, 'authtoken', 'token'),
 (53, 'authtoken', 'tokenproxy'),
 (54, 'modulo_clientes', 'ticketentrada'),
-(55, 'modulo_clientes', 'ticketarticulo');
+(55, 'modulo_clientes', 'ticketarticulo'),
+(56, 'modulo_analisis', 'reservacionesfiesta'),
+(57, 'modulo_analisis', 'productosmasvendidos'),
+(58, 'modulo_analisis', 'entradasfiesta'),
+(59, 'modulo_analisis', 'mejoresclientes'),
+(60, 'modulo_clientes', 'rachaclientes');
 
 -- --------------------------------------------------------
 
@@ -18176,15 +18612,32 @@ CREATE TABLE IF NOT EXISTS `django_session` (
 INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
 ('ae0mdfkkb3usbpmx2ho96dv383wdwy3h', '.eJxVjEEOgyAQRe_CuiEBlBGX3fcMZBgGtTWSAK6a3r2auGi3_73_3sLj3ma_Vy5-iWIUStx-t4D04u0E8YnblCXlrZUlyFORF63ykSOv98v9C8xY5-MdqOtIBeKOtVJOJVLaDdYY6xJQSoAWnKEIRrvegkFIARzC0OveMuMRbXmaVvZ1iRywiLGVnT9fBz8_5w:1suaVc:WX8sumebuekkhouEAu7kA-1NGPRW0XU2DQeaob_PoI0', '2024-10-12 16:41:28.882656'),
 ('ykyzpte2kpaq1mtfxh05kd2cg0m4jeoa', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1sudOR:f5GhEvbunFNZk2Cjy_6WqEtk68E1zWQr6YAvJIMzzls', '2024-10-12 19:46:15.584150'),
-('ivjf5mzq4dwfoswfxqeum0cx0dgb6elq', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t4rs1:5JkcAEs8vk3dt0_Fe3UL5x2Fxox1ZEYt5enRJcr7x3o', '2024-11-10 01:15:05.409390'),
+('adg5d274siu1vqr631rbsnunlo65c9zz', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1tAX58:pSdR7VWihq-Os3s01AmTd9Lf_y8uBouYk092QlAB-mU', '2024-11-25 16:16:02.597525'),
 ('79txmi83uwo2v7eskd64a5lpy67nlqos', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t0u8l:dkDzu0lmPgrYLqGSi5ECbQNKm_0E3R5gaN3daZjaOmQ', '2024-10-30 02:51:59.045114'),
 ('eu8nvq9vlz1zfrt8oxhc4pgyp4q291kw', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t0uO9:x_-lg4Jh_L71cj2GKTD8YptK9cSPBJjP-Ss5SByGIqs', '2024-10-30 03:07:53.911425'),
 ('rx0s5h0annqre58agz3hrdlraeorp0ot', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t48EM:QvrDb3s4WZig7DjyrGuHcXE0z5zZz7dGQLhMnq6g0II', '2024-11-08 00:31:06.690336'),
 ('isl9mvw52jf38n6mkn7mevwbwbr8hpar', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t5y7q:8d6eQz_vt87g0Mj6r4S3p3IGPgBoLcpNLDtQNBlESKM', '2024-11-13 02:07:58.956412'),
-('6a3y9gomxd8owliag8bayg64ci9xwqdd', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t69D0:oFm4rh8hKuY88fSo9Y2cZKSHX-qdnmqg1xosGrrPaT0', '2024-11-13 13:58:02.148874'),
 ('hx3fv8p84j3u6amxj6ncdngma8ic6h52', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t69EG:B2c5sWcHV0E9j6TG2tL43Xk6xnzF3dV-gFrQ7U2-QRg', '2024-11-13 13:59:20.532752'),
 ('oa6ulr6m0eq813g8nhxe8afvtp6t3og3', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t69I0:KsDjzsmkp10J-1EutQ-oWAiKi1gqKqXGIrwnkKWzJ2M', '2024-11-13 14:03:12.916337'),
-('k2jhvdkyvh3wdf1fi2o3uabj1o903whn', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t69LK:u1HTt3BmuzFsnICnHtRkQqgIlXVy9vbz0kzFWNJ9nDw', '2024-11-13 14:06:38.727433');
+('k2jhvdkyvh3wdf1fi2o3uabj1o903whn', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t69LK:u1HTt3BmuzFsnICnHtRkQqgIlXVy9vbz0kzFWNJ9nDw', '2024-11-13 14:06:38.727433'),
+('opflxqxqt8gvulwziqq35apfa0xn2jm7', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t94Fc:zjj09JantI2ilDm04dwyZG6dEGB1Mmg97T_7x34KpCI', '2024-11-21 15:16:48.163583'),
+('qgjdo9xddqsuyif20b89iyr4jvmdgt3l', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t94RQ:r2qBWPS3Jy7V2rHJHWC4WtpzPs9GSavNrkWA9ZEqvFo', '2024-11-21 15:29:00.260368'),
+('6ma0e9f8vuqqievq7rthpdsxvf39hs5r', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t94Ur:t-yw7s3B8Lwt7tBRHVVWDlWys60_z1RHoRtIV4SLxCA', '2024-11-21 15:32:33.251670'),
+('q7hbqwiclvj8gjpibgar44qk3jtn54o3', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t95e4:8msItS-KBcREOLHIwOwIlZR-rPsXKxnkiISQjYjmV8g', '2024-11-21 16:46:08.689522'),
+('zzdwnfrmwbqx8zqld068v9nhyydm3qme', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t96uf:kj5iG073ekpzWyFx1AkFdCGFOpA9xfj9tyjvNcHML3U', '2024-11-21 18:07:21.686010'),
+('wcnl51b0jzqcckzn67ydlth3z5v6jyss', '.eJxVjEEOgyAQRe_CuiEBlBGX3fcMZBgGtTWSAK6a3r2auGi3_73_3sLj3ma_Vy5-iWIUStx-t4D04u0E8YnblCXlrZUlyFORF63ykSOv98v9C8xY5-MdqOtIBeKOtVJOJVLaDdYY6xJQSoAWnKEIRrvegkFIARzC0OveMuMRbXmaVvZ1iRywiLGVnT9fBz8_5w:1t97SL:BeyycbSaKsS2xNKXz5ZriP44goh64PpnVGouzVbepEU', '2024-11-21 18:42:09.377746'),
+('069cxo7lb8y87tub08dd4t7zkbl5mcgn', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t9pYq:J-vjOlsdZFvv9uknPH9k28mCE-twmAg7uDu_X2nK3O0', '2024-11-23 17:47:48.979027'),
+('0dpaln4zg1jlynxixd4te2s27i9u8pe0', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t9qmW:ZC9naWiosvCbNibtBqtXZ2YSn0n0c27RbiMe8nUEeUU', '2024-11-23 19:06:00.477799'),
+('xl6mjbkfyuty9itymnvo0zut5f544gk8', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t9qs6:NVjIZUQVQ8Lf-caayCR6UfaJWpBbvJfaFeJfF3T-LDo', '2024-11-23 19:11:46.417462'),
+('zy3cqquqcebg5pkmdjpobsw8c8ii1xs0', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t9qxY:RIwCDr6sxxlk0F2QOsn5Pl4CeN8xjXahz0sZVLxrlU8', '2024-11-23 19:17:24.820963'),
+('br8guenelcd4yfkdtjptkfumm416agh6', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t9rPy:AZY_j-qirs4-mUKilJqMVJFCYJhJFNNX-_6CErvAk9c', '2024-11-23 19:46:46.978276'),
+('3umjd7mn3rjec0906ffmlzn5sdmph0ad', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t9rra:uix4NfDlMPT5_Ip97_SyShXEDWkCHj6MEfEZLYDZD7U', '2024-11-23 20:15:18.666496'),
+('23ej4n9mqlzzts63lisdvr1n35p5v8cl', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t8uNP:ANMx8Nx_ac7pUgBvwu8A-G82zKI4uuYMWeGa03W2uZg', '2024-11-21 04:44:11.559265'),
+('8xt2b5n130k6wtdvwyfnbhc47lafq8yz', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t8liV:93BJ93FAB_unYQJgOJHVUXCJbAYIu4NJFooez3LDLwc', '2024-11-20 19:29:23.974412'),
+('yvpd5t4k3yg3cpwdaut6l1psl52h6ts6', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1t8lmm:Nw9Cjxy6UvkeC8y-K8xyeZKkTC3-sga9-y8bDFRCMso', '2024-11-20 19:33:48.730597'),
+('ptwmayibbrxtb4mlv7arp9s0ff2jd6xy', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1tADpv:TMdGvhzztqAJ4feXtPor8PoMobsvdhL2_sEe_VfnJH8', '2024-11-24 19:43:03.870843'),
+('5w4d1tur050rrtgcquqiihw5tusxj39z', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1tBDvq:Q14q5-0huxKZ010e5C5FlrZDj5aCMUh1XeZ7qDURkf4', '2024-11-27 14:01:18.491754'),
+('c5q1i8qr6irr3xs7ymr5jjabn9l4dx1w', '.eJxVjDsOwjAQBe_iGlnyd2NKes5grddrHEC2FCcV4u4QKQW0b2beS0Tc1hq3wUucszgLJU6_W0J6cNtBvmO7dUm9rcuc5K7Igw557Zmfl8P9O6g46rdOZC2pRGxZKxVUIaXD5I3xoQCVAughGMpgdHAeDEJJEBAmp51nRvH-AOQFN8I:1tBNJL:pSkUAcg7CnnXL4Ztho3CKNCyNJSDHpKmGKf1Ir2JE1M', '2024-11-28 00:02:11.382725');
 
 -- --------------------------------------------------------
 
@@ -18225,7 +18678,8 @@ CREATE TABLE IF NOT EXISTS `modulologin_administrador` (
 --
 
 INSERT INTO `modulologin_administrador` (`empleado_ptr_id`) VALUES
-(1);
+(1),
+(14);
 
 -- --------------------------------------------------------
 
@@ -18245,7 +18699,8 @@ CREATE TABLE IF NOT EXISTS `modulologin_auditor` (
 --
 
 INSERT INTO `modulologin_auditor` (`empleado_ptr_id`, `_frecuencia`) VALUES
-(2, 7);
+(2, 7),
+(24, 10);
 
 -- --------------------------------------------------------
 
@@ -18260,6 +18715,13 @@ CREATE TABLE IF NOT EXISTS `modulologin_bartender` (
   PRIMARY KEY (`empleado_ptr_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Volcado de datos para la tabla `modulologin_bartender`
+--
+
+INSERT INTO `modulologin_bartender` (`empleado_ptr_id`, `_barra_asignada`) VALUES
+(27, 'Barra 1');
+
 -- --------------------------------------------------------
 
 --
@@ -18272,6 +18734,13 @@ CREATE TABLE IF NOT EXISTS `modulologin_cajero` (
   `_caja_asignada` varchar(100) NOT NULL,
   PRIMARY KEY (`empleado_ptr_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `modulologin_cajero`
+--
+
+INSERT INTO `modulologin_cajero` (`empleado_ptr_id`, `_caja_asignada`) VALUES
+(23, 'Número 2');
 
 -- --------------------------------------------------------
 
@@ -18289,7 +18758,7 @@ CREATE TABLE IF NOT EXISTS `modulologin_contratacion` (
   PRIMARY KEY (`id`),
   KEY `moduloLogin_contratacion__empleado_id_368f756f` (`_empleado_id`),
   KEY `moduloLogin_contratacion__administrador_id_4522022d` (`_administrador_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `modulologin_contratacion`
@@ -18297,7 +18766,14 @@ CREATE TABLE IF NOT EXISTS `modulologin_contratacion` (
 
 INSERT INTO `modulologin_contratacion` (`id`, `_fecha_contratacion`, `_empleado_id`, `_administrador_id`, `_tipo`) VALUES
 (1, '2024-09-28', 2, 1, 'Contratacion'),
-(2, '2024-09-28', 1, 1, 'Contratacion');
+(2, '2024-09-28', 1, 1, 'Contratacion'),
+(3, '2024-11-06', 14, 1, 'Contratacion'),
+(5, '2024-11-13', 23, 1, 'Contratacion'),
+(6, '2024-11-13', 24, 1, 'Contratacion'),
+(7, '2024-11-13', 25, 1, 'Contratacion'),
+(8, '2024-11-13', 26, 1, 'Contratacion'),
+(9, '2024-11-13', 27, 1, 'Contratacion'),
+(10, '2024-11-13', 28, 1, 'Contratacion');
 
 -- --------------------------------------------------------
 
@@ -18349,7 +18825,14 @@ CREATE TABLE IF NOT EXISTS `modulologin_empleado` (
 
 INSERT INTO `modulologin_empleado` (`persona_ptr_id`, `_zona_asignada`, `_sueldo`, `_estado`, `_fecha_inicio`, `_seniority`, `_annos_experiencia`) VALUES
 (1, 'Planta baja', 500000.00, 'Activo', '2024-09-25', 'Trainee', 1),
-(2, 'Planta baja', 500000.00, 'Activo', '2024-09-28', 'Junior', 1);
+(2, 'Planta baja', 500000.00, 'Activo', '2024-09-28', 'Junior', 1),
+(14, 'Planta baja', 500000.00, 'Activo', '2024-11-06', 'Junior', 5),
+(23, 'Planta baja', 500000.00, 'Activo', '2024-11-13', 'Senior', 5),
+(24, 'Primer piso', 800000.00, 'Activo', '2024-11-13', 'Senior', 5),
+(25, 'Planta baja', 500000.00, 'Activo', '2024-11-13', 'Trainee', 2),
+(26, 'Primer piso', 400000.00, 'Activo', '2024-11-13', 'Senior', 7),
+(27, 'Planta baja', 400000.00, 'Activo', '2024-11-13', 'Junior', 2),
+(28, 'Planta baja', 300000.00, 'Activo', '2024-11-13', 'Senior', 7);
 
 -- --------------------------------------------------------
 
@@ -18387,6 +18870,13 @@ CREATE TABLE IF NOT EXISTS `modulologin_mozo` (
   PRIMARY KEY (`empleado_ptr_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Volcado de datos para la tabla `modulologin_mozo`
+--
+
+INSERT INTO `modulologin_mozo` (`empleado_ptr_id`) VALUES
+(28);
+
 -- --------------------------------------------------------
 
 --
@@ -18406,7 +18896,7 @@ CREATE TABLE IF NOT EXISTS `modulologin_persona` (
   UNIQUE KEY `_dni` (`_dni`),
   UNIQUE KEY `_cuil` (`_cuil`),
   UNIQUE KEY `_user_id` (`_user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `modulologin_persona`
@@ -18417,10 +18907,24 @@ INSERT INTO `modulologin_persona` (`id`, `_dni`, `_cuil`, `_nombre`, `_apellido`
 (2, '78787878', '20787878788', 'Azul Yanel', 'Coronel', '2003-08-14', 2),
 (3, '59595958', '20595959588', 'Franco', 'Gimenez', '1999-02-19', 3),
 (9, '58585857', '20585858578', 'Dario', 'Villalba', '1998-08-08', 15),
-(10, '44982213', '27449822132', 'Azul Yanel', 'Coronel ', '2003-08-15', 16),
+(10, '44982213', '27449822132', 'Azul ', 'Coronel ', '2003-08-15', 16),
 (11, '63636363', '20636363638', 'Diana', 'Coronel', '1996-10-12', 17),
 (12, '63636261', '20636362618', 'Maiten', 'Avalos', '2000-10-07', 18),
-(13, '42434241', '20424342418', 'Damian Alejo', 'Coronel', '2005-10-13', 19);
+(13, '42434241', '20424342418', 'Damian Alejo', 'Coronel', '2005-10-13', 19),
+(14, '51515252', '20515152528', 'Isabel Reina', 'Villalba', '1966-06-19', 20),
+(15, '25252563', '20252525638', 'Jim', 'Halpert', '1995-11-10', 21),
+(16, '67676763', '20676767638', 'Kevin', 'Ferreira', '1992-12-15', 22),
+(17, '48482323', '20484823238', 'Dionela', 'Coronel', '1993-07-17', 23),
+(18, '46454645', '20464546458', 'Angela', 'Benitez', '1996-05-14', 24),
+(19, '48324832', '20483248328', 'Toby', 'Flenderson', '1993-04-15', 25),
+(20, '46254625', '20462546258', 'Pam', 'Beasley', '2002-09-19', 26),
+(21, '41415555', '20414155558', 'David', 'Wallace', '1986-11-13', 27),
+(23, '23453838', '20234538388', 'John', 'Lennon', '1965-11-12', 28),
+(24, '45456586', '20454565868', 'Marlene', 'Lopez', '1981-11-11', 29),
+(25, '42425858', '20424258588', 'Joaquin', 'Delgado', '1999-11-13', 30),
+(26, '52527575', '20525275758', 'Mauro', 'Coronel', '1980-11-13', 31),
+(27, '45244254', '20452442548', 'Yanel', 'Lopez', '1998-11-13', 32),
+(28, '74757574', '20747575748', 'Rafael', 'Rodriguez', '1985-11-13', 33);
 
 -- --------------------------------------------------------
 
@@ -18435,6 +18939,13 @@ CREATE TABLE IF NOT EXISTS `modulologin_seguridad` (
   PRIMARY KEY (`empleado_ptr_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Volcado de datos para la tabla `modulologin_seguridad`
+--
+
+INSERT INTO `modulologin_seguridad` (`empleado_ptr_id`, `_entrada_asignada`) VALUES
+(26, 'Principal');
+
 -- --------------------------------------------------------
 
 --
@@ -18447,6 +18958,13 @@ CREATE TABLE IF NOT EXISTS `modulologin_supervisor` (
   `_frecuencia` int UNSIGNED NOT NULL,
   PRIMARY KEY (`empleado_ptr_id`)
 ) ;
+
+--
+-- Volcado de datos para la tabla `modulologin_supervisor`
+--
+
+INSERT INTO `modulologin_supervisor` (`empleado_ptr_id`, `_frecuencia`) VALUES
+(25, 5);
 
 -- --------------------------------------------------------
 
@@ -18514,7 +19032,14 @@ INSERT INTO `modulo_clientes_cliente` (`persona_ptr_id`, `_embedding`, `_foto`) 
 (10, NULL, ''),
 (11, NULL, ''),
 (12, NULL, ''),
-(13, NULL, '');
+(13, NULL, ''),
+(15, NULL, ''),
+(16, NULL, ''),
+(17, NULL, ''),
+(18, NULL, ''),
+(19, NULL, ''),
+(20, NULL, ''),
+(21, NULL, '');
 
 -- --------------------------------------------------------
 
@@ -18534,15 +19059,6 @@ CREATE TABLE IF NOT EXISTS `modulo_clientes_ticketarticulo` (
   KEY `modulo_clientes_ticketarticulo__cliente_id_54d1abe9` (`_cliente_id`)
 ) ;
 
---
--- Volcado de datos para la tabla `modulo_clientes_ticketarticulo`
---
-
-INSERT INTO `modulo_clientes_ticketarticulo` (`id`, `_cantidad`, `_fecha_limite`, `_articulo_id`, `_cliente_id`) VALUES
-(1, 7, '2024-11-01 02:16:50.450011', 3, 9),
-(2, 2, '2024-11-01 06:13:30.355879', 1, 9),
-(3, 1, '2024-11-01 14:38:34.140535', 6, 9);
-
 -- --------------------------------------------------------
 
 --
@@ -18560,14 +19076,6 @@ CREATE TABLE IF NOT EXISTS `modulo_clientes_ticketentrada` (
   KEY `modulo_clientes_ticketentrada__entrada_id_1a97af9c` (`_entrada_id`)
 ) ;
 
---
--- Volcado de datos para la tabla `modulo_clientes_ticketentrada`
---
-
-INSERT INTO `modulo_clientes_ticketentrada` (`id`, `_cantidad`, `_cliente_id`, `_entrada_id`) VALUES
-(9, 1, 9, 5),
-(8, 1, 9, 3);
-
 -- --------------------------------------------------------
 
 --
@@ -18582,7 +19090,7 @@ CREATE TABLE IF NOT EXISTS `modulo_evento_entrada` (
   `_precio_unitario` decimal(10,2) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `modulo_evento_entrada__fiesta_id_f5bf39de` (`_fiesta_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `modulo_evento_entrada`
@@ -18593,8 +19101,32 @@ INSERT INTO `modulo_evento_entrada` (`id`, `_categoria`, `_fiesta_id`, `_precio_
 (2, 'VIP', 15, 5000.00),
 (3, 'Popular', 16, 2000.00),
 (4, 'VIP', 16, 5000.00),
-(5, 'Popular', 17, 5000.00),
-(6, 'VIP', 17, 10000.00);
+(5, 'Popular', 17, 2000.00),
+(6, 'VIP', 17, 3000.00),
+(7, 'Popular', 18, 2000.00),
+(8, 'VIP', 18, 4000.00),
+(9, 'Popular', 19, 3000.00),
+(10, 'VIP', 19, 7000.00),
+(11, 'Popular', 20, 3000.00),
+(12, 'VIP', 20, 5000.00),
+(13, 'Popular', 21, 4000.00),
+(14, 'VIP', 21, 7000.00),
+(15, 'Popular', 22, 5000.00),
+(16, 'VIP', 22, 7000.00),
+(17, 'Popular', 23, 4000.00),
+(18, 'VIP', 23, 8000.00),
+(19, 'Popular', 24, 5000.00),
+(20, 'VIP', 24, 7000.00),
+(21, 'Popular', 25, 4500.00),
+(22, 'VIP', 25, 7500.00),
+(23, 'Popular', 26, 5000.00),
+(24, 'VIP', 26, 7000.00),
+(25, 'Popular', 27, 4200.00),
+(26, 'VIP', 27, 5000.00),
+(27, 'Popular', 28, 5000.00),
+(28, 'VIP', 28, 8000.00),
+(29, 'Popular', 29, 6000.00),
+(30, 'VIP', 29, 7000.00);
 
 -- --------------------------------------------------------
 
@@ -18620,9 +19152,21 @@ CREATE TABLE IF NOT EXISTS `modulo_evento_evento` (
 --
 
 INSERT INTO `modulo_evento_evento` (`id`, `_nombre`, `_descripcion`, `_edad_minima`, `_edad_maxima`, `latitud`, `longitud`, `_fecha`) VALUES
+(20, 'Emerge', 'DJ JuaniMalich', 18, 40, -26.1780, -58.1792, '2024-10-04'),
+(19, 'Next Date', 'DJ Mica', 18, 40, -26.1832, -58.1866, '2024-11-09'),
+(18, 'Break', 'Ritmo', 18, 40, -26.1835, -58.1836, '2024-11-08'),
 (17, 'Sweet', 'DJ Agostina', 18, 40, -26.3481, -58.4360, '2024-11-02'),
 (15, 'Fiestacha', 'DJ Pablo', 18, 40, -26.1615, -58.1844, '2024-11-02'),
-(16, 'Roxo', 'DJ Agustín', 18, 40, -26.1781, -58.1761, '2024-11-01');
+(16, 'Roxo', 'DJ Agustín', 18, 40, -26.1781, -58.1761, '2024-11-01'),
+(21, 'Nexus', 'DJ Seba Fernandez', 18, 40, -26.1802, -58.1780, '2024-10-05'),
+(22, 'Zenit', 'DJ Agustín', 18, 40, -26.1827, -58.1801, '2024-10-11'),
+(23, 'Aura', 'DJ JuaniMalich', 18, 40, -26.1746, -58.1856, '2024-10-12'),
+(24, 'Eclipse', 'DJ Ferreira', 18, 40, -26.1828, -58.1772, '2024-10-18'),
+(25, 'Solsticio', 'DJ Agostina', 18, 40, -26.1808, -58.1783, '2024-10-19'),
+(26, 'Enigma', 'DJ Agustín', 18, 40, -26.1799, -58.1803, '2024-10-25'),
+(27, 'Oasis', 'DJ Mica', 18, 40, -26.1798, -58.1784, '2024-10-26'),
+(28, 'Rediscover', 'DJ Seba', 18, 40, -26.1749, -58.1805, '2024-11-15'),
+(29, 'Fascination', 'DJ Santi', 18, 40, -26.1749, -58.1800, '2024-11-16');
 
 --
 -- Disparadores `modulo_evento_evento`
@@ -18710,9 +19254,21 @@ CREATE TABLE IF NOT EXISTS `modulo_evento_fiesta` (
 --
 
 INSERT INTO `modulo_evento_fiesta` (`evento_ptr_id`, `_vestimenta`, `_categoria`, `_cantidad_entrada_popular`, `_cantidad_entrada_vip`) VALUES
-(17, 'Formal', 'Fiesta Retro', 99, 45),
+(17, 'Formal', 'Fiesta Retro', 99, 43),
 (16, 'Disfraz Tematico', 'Electronica', 88, 47),
-(15, 'Streetwear', 'Reggaeton', 59, 50);
+(15, 'Streetwear', 'Reggaeton', 59, 50),
+(18, 'Casual', 'Electronica', 82, 48),
+(19, 'Streetwear', 'Reggaeton', 70, 9),
+(20, 'Streetwear', 'Latino', 100, 100),
+(21, 'Disfraz Tematico', 'Fiesta Retro', 70, 70),
+(22, 'Streetwear', 'Electronica', 100, 50),
+(23, 'Casual', 'Reggaeton', 70, 30),
+(24, 'Streetwear', 'Electronica', 80, 40),
+(25, 'Streetwear', 'Electronica', 50, 20),
+(26, 'Streetwear', 'Reggaeton', 100, 60),
+(27, 'Formal', 'Pop & Hits', 50, 20),
+(28, 'Streetwear', 'Reggaeton', 70, 50),
+(29, 'Streetwear', 'Reggaeton', 70, 50);
 
 --
 -- Disparadores `modulo_evento_fiesta`
@@ -18833,12 +19389,50 @@ CREATE TABLE IF NOT EXISTS `modulo_evento_mesa` (
 --
 
 INSERT INTO `modulo_evento_mesa` (`id`, `_capacidad`, `_categoria`, `_fiesta_id`, `_disponibilidad`, `_left`, `_top`, `_precio`) VALUES
-(7, 8, 'VIP', 15, 1, 827, 267, 20000.00),
-(6, 8, 'Popular', 15, 1, 349, 230, 10000.00),
-(13, 10, 'VIP', 17, 0, 256, 144, 20000.00),
-(5, 8, 'Popular', 15, 0, 28, 206, 10000.00),
-(9, 10, 'Popular', 16, 0, 256, 143, 10000.00),
-(11, 7, 'VIP', 16, 1, 596, 143, 20000.00);
+(7, 8, 'VIP', 15, 0, 737, 240, 20000.00),
+(6, 8, 'Popular', 15, 0, 310, 241, 10000.00),
+(13, 10, 'VIP', 17, 0, 451, 250, 20000.00),
+(5, 8, 'Popular', 15, 0, 23, 216, 10000.00),
+(9, 10, 'Popular', 16, 0, 228, 162, 10000.00),
+(11, 7, 'VIP', 16, 0, 525, 163, 20000.00),
+(14, 8, 'Popular', 18, 0, 230, 170, 20000.00),
+(15, 8, 'Popular', 18, 0, 311, 242, 20000.00),
+(16, 8, 'VIP', 18, 0, 452, 250, 40000.00),
+(17, 8, 'VIP', 18, 0, 735, 238, 40000.00),
+(18, 8, 'Popular', 19, 0, 23, 213, 10000.00),
+(19, 8, 'VIP', 19, 0, 452, 247, 30000.00),
+(20, 8, 'VIP', 19, 0, 740, 275, 30000.00),
+(21, 8, 'VIP', 19, 0, 534, 163, 30000.00),
+(22, 8, 'Popular', 20, 0, 309, 239, 10000.00),
+(23, 8, 'VIP', 20, 0, 453, 220, 20000.00),
+(24, 8, 'Popular', 21, 0, 227, 165, 12000.00),
+(25, 12, 'VIP', 21, 0, 454, 204, 34000.00),
+(26, 8, 'Popular', 22, 0, 309, 242, 10000.00),
+(27, 8, 'Popular', 22, 0, 21, 253, 10000.00),
+(28, 8, 'VIP', 22, 0, 737, 239, 20000.00),
+(29, 8, 'VIP', 22, 0, 454, 248, 20000.00),
+(30, 8, 'Popular', 23, 0, 17, 256, 10000.00),
+(31, 8, 'Popular', 23, 0, 307, 239, 10000.00),
+(32, 8, 'VIP', 23, 0, 743, 240, 15000.00),
+(33, 8, 'VIP', 23, 0, 446, 252, 15000.00),
+(34, 8, 'Popular', 24, 0, 25, 256, 12000.00),
+(35, 8, 'VIP', 24, 0, 454, 207, 17000.00),
+(36, 8, 'Popular', 25, 0, 23, 248, 10000.00),
+(37, 8, 'VIP', 25, 0, 740, 238, 18000.00),
+(38, 8, 'VIP', 25, 0, 450, 218, 17000.00),
+(39, 8, 'Popular', 26, 0, 25, 328, 14000.00),
+(40, 8, 'Popular', 26, 1, 23, 255, 15000.00),
+(41, 8, 'Popular', 26, 0, 309, 231, 16000.00),
+(42, 10, 'VIP', 26, 0, 447, 258, 17000.00),
+(43, 8, 'Popular', 27, 1, 26, 277, 10000.00),
+(44, 10, 'VIP', 27, 0, 657, 177, 12000.00),
+(45, 10, 'VIP', 27, 1, 457, 218, 14000.00),
+(46, 8, 'Popular', 28, 1, 20, 251, 10000.00),
+(47, 8, 'Popular', 28, 1, 303, 242, 10000.00),
+(48, 8, 'VIP', 28, 1, 455, 245, 15000.00),
+(49, 8, 'Popular', 29, 1, 308, 240, 10000.00),
+(50, 10, 'VIP', 29, 1, 736, 237, 17000.00),
+(51, 14, 'VIP', 29, 1, 456, 255, 18000.00);
 
 -- --------------------------------------------------------
 
@@ -18868,11 +19462,27 @@ INSERT INTO `modulo_evento_mesatienearticulo` (`id`, `_cantidad`, `_articulo_id`
 (5, 10, 2, 6),
 (6, 6, 1, 7),
 (7, 20, 2, 7),
+(18, 10, 11, 47),
 (14, 7, 3, 5),
 (10, 3, 1, 9),
 (11, 10, 2, 9),
 (17, 5, 1, 13),
-(15, 7, 3, 9);
+(15, 7, 3, 9),
+(19, 1, 4, 47),
+(20, 10, 6, 47),
+(21, 10, 3, 46),
+(22, 10, 16, 46),
+(23, 2, 9, 51),
+(24, 10, 14, 51),
+(25, 10, 10, 48),
+(26, 2, 15, 48),
+(27, 10, 6, 48),
+(28, 10, 18, 50),
+(29, 2, 1, 50),
+(30, 1, 12, 50),
+(31, 10, 10, 50),
+(32, 5, 5, 49),
+(33, 10, 10, 49);
 
 -- --------------------------------------------------------
 
@@ -18890,7 +19500,7 @@ CREATE TABLE IF NOT EXISTS `modulo_evento_movimientofiesta` (
   PRIMARY KEY (`id`),
   KEY `modulo_evento_movimientofiesta__administrador_id_665d6e63` (`_administrador_id`),
   KEY `modulo_evento_movimientofiesta__fiesta_id_55aa0df9` (`_fiesta_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=54 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `modulo_evento_movimientofiesta`
@@ -18929,7 +19539,20 @@ INSERT INTO `modulo_evento_movimientofiesta` (`id`, `_fecha`, `_descripcion`, `_
 (37, '2024-11-01', 'Cantidad de entradas populares cambió de 96 a 95; ', 0, 16),
 (38, '2024-11-01', 'Cantidad de entradas populares cambió de 92 a 91; ', 0, 16),
 (39, '2024-11-01', 'Cantidad de entradas populares cambió de 91 a 90; ', 0, 16),
-(40, '2024-11-01', 'Cantidad de entradas populares cambió de 89 a 88; ', 0, 16);
+(40, '2024-11-01', 'Cantidad de entradas populares cambió de 89 a 88; ', 0, 16),
+(41, '2024-11-09', 'registró', 1, 18),
+(42, '2024-11-09', 'registró', 1, 19),
+(43, '2024-10-04', 'registró', 1, 20),
+(44, '2024-10-04', 'registró', 1, 21),
+(45, '2024-10-04', 'La fecha cambió de 2024-10-05 a 2024-10-04; ', 1, 20),
+(46, '2024-10-11', 'registró', 1, 22),
+(47, '2024-10-11', 'registró', 1, 23),
+(48, '2024-10-18', 'registró', 1, 24),
+(49, '2024-10-18', 'registró', 1, 25),
+(50, '2024-10-25', 'registró', 1, 26),
+(51, '2024-10-25', 'registró', 1, 27),
+(52, '2024-11-13', 'registró', 1, 28),
+(53, '2024-11-13', 'registró', 1, 29);
 
 -- --------------------------------------------------------
 
@@ -18958,7 +19581,18 @@ INSERT INTO `modulo_stock_articulo` (`id`, `_nombre`, `_volumen`, `_precio_unita
 (3, 'Vodka + Redbull', 500.00, 3000.00, 80, 50),
 (4, 'Fernet', 1000.00, 17000.00, 30, 50),
 (5, 'Cerveza', 1000.00, 10000.00, 100, 100),
-(6, 'Gaseosa Cola', 1000.00, 8000.00, 100, 100);
+(6, 'Gaseosa Cola', 500.00, 8000.00, 101, 100),
+(8, 'Fernet + Cola', 700.00, 5000.00, 101, 50),
+(9, 'Tequila', 1000.00, 10000.00, 205, 50),
+(10, 'Agua', 500.00, 5000.00, 500, 200),
+(11, 'Shot de Tequila', 50.00, 4000.00, 4100, 100),
+(12, 'Gin Tonic', 1000.00, 10000.00, 100, 50),
+(13, 'Whisky', 1000.00, 20000.00, 110, 50),
+(14, 'Shot de Whisky', 50.00, 5000.00, 2200, 100),
+(15, 'Ron', 1000.00, 20000.00, 105, 50),
+(16, 'Daiquiri', 500.00, 7000.00, 210, 100),
+(17, 'Mojito', 500.00, 7500.00, 210, 100),
+(18, 'Margarita', 500.00, 7800.00, 410, 100);
 
 -- --------------------------------------------------------
 
@@ -19015,7 +19649,7 @@ CREATE TABLE IF NOT EXISTS `modulo_stock_fabricacion` (
   PRIMARY KEY (`id`),
   KEY `modulo_stock_fabricacion__id_producto_id_8d8342ea` (`_producto_id`),
   KEY `modulo_stock_fabricacion__id_trago_id_6d3cbe64` (`_trago_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `modulo_stock_fabricacion`
@@ -19023,7 +19657,14 @@ CREATE TABLE IF NOT EXISTS `modulo_stock_fabricacion` (
 
 INSERT INTO `modulo_stock_fabricacion` (`id`, `_cantidad_producto`, `_producto_id`, `_trago_id`) VALUES
 (1, 200.00, 1, 3),
-(2, 300.00, 2, 3);
+(2, 300.00, 2, 3),
+(3, 200.00, 4, 8),
+(4, 500.00, 6, 8),
+(5, 50.00, 9, 11),
+(6, 50.00, 13, 14),
+(7, 500.00, 15, 16),
+(8, 500.00, 15, 17),
+(9, 500.00, 9, 18);
 
 -- --------------------------------------------------------
 
@@ -19036,7 +19677,7 @@ CREATE TABLE IF NOT EXISTS `modulo_stock_marca` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `_nombre` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `modulo_stock_marca`
@@ -19050,7 +19691,12 @@ INSERT INTO `modulo_stock_marca` (`id`, `_nombre`) VALUES
 (5, 'Budweiser'),
 (6, 'Coca-Cola'),
 (7, 'Villavicencio'),
-(8, 'King');
+(8, 'King'),
+(9, 'Corralejo'),
+(10, 'Evian'),
+(11, 'Brighton'),
+(12, 'Jack Daniels'),
+(13, 'Havanna');
 
 -- --------------------------------------------------------
 
@@ -19068,7 +19714,7 @@ CREATE TABLE IF NOT EXISTS `modulo_stock_movimientostock` (
   PRIMARY KEY (`id`),
   KEY `modulo_stock_movimientostock__id_empleado_id_0dd6b6b2` (`_empleado_id`),
   KEY `modulo_stock_movimientostock__id_producto_id_b821bb45` (`_producto_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `modulo_stock_movimientostock`
@@ -19084,7 +19730,16 @@ INSERT INTO `modulo_stock_movimientostock` (`id`, `_cantidad`, `_fecha_movimient
 (7, -2, '2024-10-30', 1, 1),
 (8, -70, '2024-10-30', 1, 4),
 (9, -1, '2024-10-31', 1, 1),
-(10, 1, '2024-10-31', 1, 1);
+(10, 1, '2024-10-31', 1, 1),
+(11, -1, '2024-11-06', 1, 5),
+(12, 1, '2024-11-06', 1, 5),
+(13, 1, '2024-11-13', 25, 6),
+(14, -1, '2024-11-13', 23, 6),
+(15, 1, '2024-10-04', 1, 6),
+(16, 1, '2024-10-04', 1, 9),
+(17, 10, '2024-10-05', 1, 13),
+(18, 5, '2024-10-05', 1, 15),
+(19, 4, '2024-10-05', 1, 9);
 
 -- --------------------------------------------------------
 
@@ -19109,7 +19764,12 @@ INSERT INTO `modulo_stock_producto` (`articulo_ptr_id`, `_marca_id`) VALUES
 (2, 2),
 (4, 3),
 (5, 5),
-(6, 6);
+(6, 6),
+(9, 9),
+(10, 10),
+(12, 11),
+(13, 12),
+(15, 13);
 
 -- --------------------------------------------------------
 
@@ -19168,7 +19828,13 @@ CREATE TABLE IF NOT EXISTS `modulo_stock_trago` (
 --
 
 INSERT INTO `modulo_stock_trago` (`articulo_ptr_id`, `_tipo`) VALUES
-(3, 'Cóctel');
+(3, 'Cóctel'),
+(8, 'Cóctel'),
+(11, 'Shot'),
+(14, 'Shot'),
+(16, 'Cóctel'),
+(17, 'Cóctel'),
+(18, 'Cóctel');
 
 -- --------------------------------------------------------
 
@@ -19194,7 +19860,75 @@ INSERT INTO `modulo_ventas_detallearticulo` (`detallefactura_ptr_id`, `_articulo
 (36, 3),
 (40, 3),
 (19, 2),
-(52, 6);
+(57, 5),
+(55, 3),
+(52, 6),
+(67, 1),
+(68, 2),
+(69, 4),
+(70, 6),
+(75, 3),
+(76, 6),
+(77, 5),
+(80, 4),
+(81, 6),
+(89, 5),
+(90, 3),
+(94, 3),
+(95, 4),
+(96, 6),
+(99, 3),
+(103, 3),
+(104, 4),
+(105, 6),
+(107, 1),
+(108, 2),
+(109, 5),
+(110, 4),
+(111, 6),
+(116, 11),
+(117, 10),
+(120, 8),
+(121, 10),
+(124, 12),
+(126, 3),
+(127, 17),
+(128, 18),
+(131, 14),
+(138, 8),
+(139, 11),
+(140, 10),
+(142, 14),
+(143, 16),
+(144, 18),
+(148, 4),
+(149, 6),
+(150, 9),
+(152, 5),
+(154, 16),
+(155, 17),
+(157, 18),
+(158, 10),
+(161, 10),
+(162, 8),
+(164, 18),
+(169, 18),
+(172, 14),
+(173, 11),
+(175, 4),
+(178, 1),
+(182, 8),
+(183, 3),
+(185, 15),
+(186, 13),
+(187, 10),
+(188, 9),
+(190, 10),
+(191, 15),
+(192, 17),
+(194, 4),
+(197, 16),
+(199, 11);
 
 -- --------------------------------------------------------
 
@@ -19216,8 +19950,59 @@ CREATE TABLE IF NOT EXISTS `modulo_ventas_detalleentrada` (
 
 INSERT INTO `modulo_ventas_detalleentrada` (`detallefactura_ptr_id`, `_entrada_id`) VALUES
 (20, 2),
+(54, 6),
+(56, 3),
+(53, 6),
 (50, 5),
-(49, 3);
+(49, 3),
+(58, 2),
+(61, 7),
+(62, 7),
+(63, 10),
+(65, 10),
+(66, 8),
+(72, 10),
+(73, 10),
+(78, 10),
+(82, 10),
+(83, 7),
+(84, 10),
+(85, 7),
+(86, 7),
+(87, 10),
+(91, 7),
+(92, 10),
+(97, 10),
+(98, 8),
+(100, 10),
+(101, 7),
+(112, 10),
+(113, 7),
+(114, 11),
+(118, 14),
+(119, 13),
+(122, 11),
+(125, 11),
+(130, 11),
+(132, 12),
+(134, 11),
+(135, 14),
+(136, 15),
+(137, 18),
+(145, 15),
+(146, 15),
+(147, 18),
+(159, 15),
+(167, 19),
+(170, 22),
+(174, 20),
+(176, 21),
+(181, 19),
+(184, 21),
+(195, 26),
+(200, 23),
+(201, 25),
+(202, 24);
 
 -- --------------------------------------------------------
 
@@ -19242,6 +20027,7 @@ CREATE TABLE IF NOT EXISTS `modulo_ventas_detallefactura` (
 
 INSERT INTO `modulo_ventas_detallefactura` (`id`, `_cantidad`, `_precio_unitario`, `_subtotal`, `_factura_id`) VALUES
 (16, 1, 1.00, 1.00, 10),
+(53, 1, 1.00, 1.00, 46),
 (40, 5, 3000.00, 15000.00, 33),
 (36, 2, 3000.00, 6000.00, 29),
 (20, 1, 5000.00, 5000.00, 13),
@@ -19251,7 +20037,155 @@ INSERT INTO `modulo_ventas_detallefactura` (`id`, `_cantidad`, `_precio_unitario
 (51, 1, 10000.00, 10000.00, 44),
 (52, 1, 8000.00, 8000.00, 45),
 (41, 1, 5000.00, 5000.00, 34),
-(49, 1, 2000.00, 2000.00, 42);
+(49, 1, 2000.00, 2000.00, 42),
+(54, 1, 1.00, 1.00, 47),
+(55, 1, 3000.00, 3000.00, 48),
+(56, 1, 2000.00, 2000.00, 49),
+(57, 2, 10000.00, 20000.00, 50),
+(58, 3, 5000.00, 15000.00, 51),
+(59, 1, 20000.00, 20000.00, 51),
+(61, 5, 2000.00, 10000.00, 52),
+(62, 5, 2000.00, 10000.00, 53),
+(63, 5, 7000.00, 35000.00, 54),
+(64, 1, 20000.00, 20000.00, 55),
+(65, 1, 7000.00, 7000.00, 56),
+(66, 2, 4000.00, 8000.00, 57),
+(67, 2, 5000.00, 10000.00, 58),
+(68, 5, 2000.00, 10000.00, 58),
+(69, 2, 17000.00, 34000.00, 58),
+(70, 2, 8000.00, 16000.00, 58),
+(71, 1, 30000.00, 30000.00, 59),
+(72, 1, 7000.00, 7000.00, 60),
+(73, 2, 7000.00, 14000.00, 61),
+(74, 1, 30000.00, 30000.00, 62),
+(75, 10, 3000.00, 30000.00, 63),
+(76, 5, 8000.00, 40000.00, 63),
+(77, 2, 10000.00, 20000.00, 63),
+(78, 6, 7000.00, 42000.00, 64),
+(79, 1, 30000.00, 30000.00, 65),
+(80, 1, 17000.00, 17000.00, 66),
+(81, 5, 8000.00, 40000.00, 66),
+(82, 1, 7000.00, 7000.00, 67),
+(83, 2, 2000.00, 4000.00, 68),
+(84, 3, 7000.00, 21000.00, 69),
+(85, 1, 2000.00, 2000.00, 70),
+(86, 5, 2000.00, 10000.00, 71),
+(87, 5, 7000.00, 35000.00, 72),
+(88, 1, 10000.00, 10000.00, 73),
+(89, 10, 10000.00, 100000.00, 74),
+(90, 8, 3000.00, 24000.00, 74),
+(91, 5, 2000.00, 10000.00, 75),
+(92, 5, 7000.00, 35000.00, 76),
+(93, 1, 40000.00, 40000.00, 77),
+(94, 5, 3000.00, 15000.00, 78),
+(95, 1, 17000.00, 17000.00, 78),
+(96, 7, 8000.00, 56000.00, 78),
+(97, 6, 7000.00, 42000.00, 79),
+(98, 2, 4000.00, 8000.00, 80),
+(99, 2, 3000.00, 6000.00, 81),
+(100, 3, 7000.00, 21000.00, 82),
+(101, 3, 2000.00, 6000.00, 83),
+(102, 1, 20000.00, 20000.00, 84),
+(103, 10, 3000.00, 30000.00, 85),
+(104, 2, 17000.00, 34000.00, 85),
+(105, 20, 8000.00, 160000.00, 85),
+(106, 1, 40000.00, 40000.00, 86),
+(107, 5, 5000.00, 25000.00, 87),
+(108, 20, 2000.00, 40000.00, 87),
+(109, 30, 10000.00, 300000.00, 87),
+(110, 2, 17000.00, 34000.00, 87),
+(111, 50, 8000.00, 400000.00, 87),
+(112, 10, 7000.00, 70000.00, 88),
+(113, 6, 2000.00, 12000.00, 89),
+(114, 2, 3000.00, 6000.00, 90),
+(115, 1, 34000.00, 34000.00, 92),
+(116, 2, 4000.00, 8000.00, 93),
+(117, 2, 5000.00, 10000.00, 93),
+(118, 1, 7000.00, 7000.00, 94),
+(119, 2, 4000.00, 8000.00, 95),
+(120, 5, 5000.00, 25000.00, 96),
+(121, 2, 5000.00, 10000.00, 96),
+(122, 3, 3000.00, 9000.00, 97),
+(123, 1, 12000.00, 12000.00, 98),
+(124, 1, 10000.00, 10000.00, 99),
+(125, 2, 3000.00, 6000.00, 100),
+(126, 2, 3000.00, 6000.00, 101),
+(127, 2, 7500.00, 15000.00, 101),
+(128, 2, 7800.00, 15600.00, 101),
+(129, 1, 10000.00, 10000.00, 102),
+(130, 5, 3000.00, 15000.00, 103),
+(131, 10, 5000.00, 50000.00, 104),
+(132, 5, 5000.00, 25000.00, 105),
+(133, 1, 20000.00, 20000.00, 106),
+(134, 20, 3000.00, 60000.00, 107),
+(135, 38, 7000.00, 266000.00, 108),
+(136, 5, 5000.00, 25000.00, 109),
+(137, 5, 8000.00, 40000.00, 110),
+(138, 4, 5000.00, 20000.00, 111),
+(139, 5, 4000.00, 20000.00, 111),
+(140, 5, 5000.00, 25000.00, 111),
+(141, 1, 15000.00, 15000.00, 112),
+(142, 5, 5000.00, 25000.00, 113),
+(143, 10, 7000.00, 70000.00, 113),
+(144, 2, 7800.00, 15600.00, 113),
+(145, 5, 5000.00, 25000.00, 114),
+(146, 5, 5000.00, 25000.00, 115),
+(147, 5, 8000.00, 40000.00, 116),
+(148, 1, 17000.00, 17000.00, 117),
+(149, 5, 8000.00, 40000.00, 117),
+(150, 1, 10000.00, 10000.00, 117),
+(151, 1, 15000.00, 15000.00, 118),
+(152, 10, 10000.00, 100000.00, 119),
+(153, 1, 20000.00, 20000.00, 120),
+(154, 10, 7000.00, 70000.00, 121),
+(155, 10, 7500.00, 75000.00, 121),
+(156, 1, 10000.00, 10000.00, 122),
+(157, 2, 7800.00, 15600.00, 123),
+(158, 5, 5000.00, 25000.00, 123),
+(159, 5, 5000.00, 25000.00, 124),
+(160, 1, 10000.00, 10000.00, 125),
+(161, 10, 5000.00, 50000.00, 126),
+(162, 5, 5000.00, 25000.00, 126),
+(163, 1, 10000.00, 10000.00, 127),
+(164, 2, 7800.00, 15600.00, 128),
+(165, 1, 20000.00, 20000.00, 129),
+(166, 1, 10000.00, 10000.00, 130),
+(167, 5, 5000.00, 25000.00, 131),
+(168, 1, 12000.00, 12000.00, 132),
+(169, 7, 7800.00, 54600.00, 133),
+(170, 7, 7500.00, 52500.00, 134),
+(171, 1, 17000.00, 17000.00, 135),
+(172, 10, 5000.00, 50000.00, 136),
+(173, 10, 4000.00, 40000.00, 136),
+(174, 5, 7000.00, 35000.00, 137),
+(175, 1, 17000.00, 17000.00, 138),
+(176, 5, 4500.00, 22500.00, 139),
+(177, 1, 17000.00, 17000.00, 140),
+(178, 5, 5000.00, 25000.00, 141),
+(179, 1, 18000.00, 18000.00, 142),
+(180, 1, 10000.00, 10000.00, 143),
+(181, 10, 5000.00, 50000.00, 144),
+(182, 5, 5000.00, 25000.00, 145),
+(183, 5, 3000.00, 15000.00, 145),
+(184, 20, 4500.00, 90000.00, 146),
+(185, 2, 20000.00, 40000.00, 147),
+(186, 1, 20000.00, 20000.00, 147),
+(187, 10, 5000.00, 50000.00, 147),
+(188, 1, 10000.00, 10000.00, 147),
+(189, 1, 14000.00, 14000.00, 148),
+(190, 30, 5000.00, 150000.00, 149),
+(191, 2, 20000.00, 40000.00, 149),
+(192, 2, 7500.00, 15000.00, 149),
+(193, 1, 17000.00, 17000.00, 150),
+(194, 3, 17000.00, 51000.00, 151),
+(195, 10, 5000.00, 50000.00, 152),
+(196, 1, 16000.00, 16000.00, 153),
+(197, 20, 7000.00, 140000.00, 154),
+(198, 1, 12000.00, 12000.00, 155),
+(199, 10, 4000.00, 40000.00, 156),
+(200, 10, 5000.00, 50000.00, 157),
+(201, 10, 4200.00, 42000.00, 158),
+(202, 10, 7000.00, 70000.00, 159);
 
 -- --------------------------------------------------------
 
@@ -19273,7 +20207,37 @@ CREATE TABLE IF NOT EXISTS `modulo_ventas_detallereservacion` (
 
 INSERT INTO `modulo_ventas_detallereservacion` (`detallefactura_ptr_id`, `_reservacion_id`) VALUES
 (21, 6),
-(51, 9);
+(51, 9),
+(59, 11),
+(64, 14),
+(71, 15),
+(74, 16),
+(79, 17),
+(88, 18),
+(93, 19),
+(102, 20),
+(106, 21),
+(115, 22),
+(123, 24),
+(129, 22),
+(133, 23),
+(141, 32),
+(151, 33),
+(153, 29),
+(156, 27),
+(160, 26),
+(163, 31),
+(165, 28),
+(166, 30),
+(168, 34),
+(171, 38),
+(177, 35),
+(179, 37),
+(180, 36),
+(189, 39),
+(193, 42),
+(196, 41),
+(198, 44);
 
 -- --------------------------------------------------------
 
@@ -19298,7 +20262,7 @@ CREATE TABLE IF NOT EXISTS `modulo_ventas_facturacliente` (
   KEY `modulo_ventas_facturacliente__empleado_id_8092f424` (`_empleado_id`),
   KEY `modulo_ventas_facturacliente__medio_de_pago_id_735fd784` (`_medio_de_pago_id`),
   KEY `modulo_ventas_facturacliente__tipo_factura_id_80dc92f6` (`_tipo_factura_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=160 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `modulo_ventas_facturacliente`
@@ -19313,7 +20277,121 @@ INSERT INTO `modulo_ventas_facturacliente` (`id`, `_numero_factura`, `_fecha_emi
 (45, '7', '2024-11-01 14:38:34.138531', 8000.00, 9, NULL, 3, 1, 1),
 (44, '6', '2024-11-01 14:35:58.593103', 10000.00, 9, NULL, 3, 1, 1),
 (43, '5', '2024-11-01 14:33:46.699576', 5000.00, 9, NULL, 3, 1, 1),
-(42, '4', '2024-11-01 14:30:55.505569', 2000.00, 9, NULL, 3, 1, 0);
+(42, '4', '2024-11-01 14:30:55.505569', 2000.00, 9, NULL, 3, 1, 0),
+(46, '8', '2024-11-02 00:18:54.886988', 1.00, 10, NULL, 3, 1, 0),
+(47, '9', '2024-11-02 00:19:04.640773', 1.00, 10, NULL, 3, 1, 0),
+(48, '10', '2024-11-02 00:19:20.425328', 3000.00, 10, NULL, 3, 1, 1),
+(49, '6', '2024-11-02 00:33:41.245582', 26000.00, 10, 1, 3, 1, 0),
+(50, '11', '2024-11-02 00:45:56.041845', 20000.00, 10, NULL, 3, 1, 1),
+(51, '123', '2024-11-08 02:38:06.954008', 35000.00, 10, 2, 1, 1, 1),
+(52, '12', '2024-11-07 03:07:54.818298', 10000.00, 11, NULL, 3, 1, 0),
+(53, '13', '2024-11-07 03:08:00.911011', 10000.00, 11, NULL, 3, 1, 1),
+(54, '14', '2024-11-07 03:08:05.413636', 35000.00, 11, NULL, 3, 1, 1),
+(55, '15', '2024-11-07 03:08:56.936641', 20000.00, 11, NULL, 3, 1, 1),
+(56, '16', '2024-11-07 03:09:47.597385', 7000.00, 13, NULL, 3, 1, 1),
+(57, '17', '2024-11-07 03:09:55.481793', 8000.00, 13, NULL, 3, 1, 1),
+(58, '18', '2024-11-07 03:10:30.247341', 70000.00, 13, NULL, 3, 1, 1),
+(59, '19', '2024-11-07 03:10:49.441178', 30000.00, 13, NULL, 3, 1, 1),
+(60, '20', '2024-11-07 03:12:05.539663', 7000.00, 12, NULL, 3, 1, 1),
+(61, '21', '2024-11-07 03:13:26.075926', 14000.00, 12, NULL, 3, 1, 1),
+(62, '22', '2024-11-07 03:15:21.382036', 30000.00, 12, NULL, 3, 1, 1),
+(63, '23', '2024-11-07 03:15:55.559736', 90000.00, 12, NULL, 3, 1, 1),
+(64, '24', '2024-11-07 03:17:06.048959', 42000.00, 9, NULL, 3, 1, 1),
+(65, '25', '2024-11-07 03:17:35.244959', 30000.00, 9, NULL, 3, 1, 1),
+(66, '26', '2024-11-07 03:18:05.063641', 57000.00, 9, NULL, 3, 1, 1),
+(67, '27', '2024-11-07 03:34:47.976045', 7000.00, 20, NULL, 3, 1, 1),
+(68, '28', '2024-11-07 03:39:26.572184', 4000.00, 20, NULL, 3, 1, 1),
+(69, '29', '2024-11-07 03:40:36.285418', 21000.00, 20, NULL, 3, 1, 1),
+(70, '30', '2024-11-07 03:41:34.505788', 2000.00, 20, NULL, 3, 1, 1),
+(71, '31', '2024-11-07 03:46:46.318772', 10000.00, 15, NULL, 3, 1, 1),
+(72, '32', '2024-11-07 03:46:55.358380', 35000.00, 15, NULL, 3, 1, 1),
+(73, '33', '2024-11-07 03:47:19.082005', 10000.00, 15, NULL, 3, 1, 1),
+(74, '34', '2024-11-07 03:47:37.964224', 124000.00, 15, NULL, 3, 1, 1),
+(75, '35', '2024-11-07 03:48:26.498399', 10000.00, 16, NULL, 3, 1, 1),
+(76, '36', '2024-11-07 03:49:57.869995', 35000.00, 16, NULL, 3, 1, 1),
+(77, '37', '2024-11-07 04:03:04.458351', 40000.00, 17, NULL, 3, 1, 1),
+(78, '38', '2024-11-07 04:08:59.706381', 88000.00, 17, NULL, 3, 1, 1),
+(79, '39', '2024-11-07 04:09:16.795447', 42000.00, 17, NULL, 3, 1, 1),
+(80, '40', '2024-11-07 04:14:11.365426', 8000.00, 17, NULL, 3, 1, 1),
+(81, '41', '2024-11-07 04:16:23.880816', 6000.00, 17, NULL, 3, 1, 1),
+(82, '42', '2024-11-07 04:17:37.339245', 21000.00, 18, NULL, 3, 1, 1),
+(83, '43', '2024-11-07 04:17:46.061230', 6000.00, 18, NULL, 3, 1, 1),
+(84, '44', '2024-11-07 04:17:54.252204', 20000.00, 18, NULL, 3, 1, 1),
+(85, '45', '2024-11-07 04:18:11.358786', 224000.00, 18, NULL, 3, 1, 1),
+(86, '46', '2024-11-07 04:18:52.297145', 40000.00, 19, NULL, 3, 1, 1),
+(87, '47', '2024-11-07 04:19:23.735114', 799000.00, 19, NULL, 3, 1, 1),
+(88, '48', '2024-11-07 04:31:03.684264', 70000.00, 21, NULL, 3, 1, 1),
+(89, '49', '2024-11-07 04:46:43.650535', 12000.00, 9, NULL, 3, 1, 1),
+(90, '50', '2024-10-05 02:13:05.726106', 6000.00, 9, NULL, 3, 1, 1),
+(91, '0n', '2024-10-05 02:14:15.518730', 0.00, 9, NULL, 3, 1, 0),
+(92, '51', '2024-10-05 02:15:44.774469', 34000.00, 9, NULL, 3, 1, 1),
+(93, '52', '2024-10-05 03:56:02.440346', 18000.00, 9, NULL, 3, 1, 1),
+(94, '53', '2024-10-05 03:57:27.947829', 7000.00, 9, NULL, 3, 1, 1),
+(95, '54', '2024-10-05 03:58:44.880793', 8000.00, 11, NULL, 3, 1, 1),
+(96, '55', '2024-10-05 03:59:08.704685', 35000.00, 11, NULL, 3, 1, 1),
+(97, '56', '2024-10-04 23:00:15.577558', 9000.00, 12, NULL, 3, 1, 1),
+(98, '57', '2024-10-04 23:00:23.483911', 12000.00, 12, NULL, 3, 1, 1),
+(99, '58', '2024-10-04 23:01:12.286438', 10000.00, 12, NULL, 3, 1, 1),
+(100, '59', '2024-10-04 23:01:43.562838', 6000.00, 13, NULL, 3, 1, 1),
+(101, '60', '2024-10-04 23:02:03.471992', 36600.00, 13, NULL, 3, 1, 1),
+(102, '61', '2024-10-04 23:02:32.601623', 10000.00, 15, NULL, 3, 1, 1),
+(103, '62', '2024-10-04 23:03:11.806707', 15000.00, 16, NULL, 3, 1, 1),
+(104, '63', '2024-10-04 23:03:25.544719', 50000.00, 16, NULL, 3, 1, 1),
+(105, '64', '2024-10-04 23:03:52.177050', 25000.00, 17, NULL, 3, 1, 1),
+(106, '65', '2024-10-04 23:03:58.562101', 20000.00, 17, NULL, 3, 1, 1),
+(107, '66', '2024-10-04 23:05:23.353833', 60000.00, 18, NULL, 3, 1, 1),
+(108, '67', '2024-10-04 23:05:31.315484', 266000.00, 18, NULL, 3, 1, 1),
+(109, '68', '2024-10-11 23:34:26.849280', 25000.00, 21, NULL, 3, 1, 1),
+(110, '69', '2024-10-11 23:34:34.157599', 40000.00, 21, NULL, 3, 1, 1),
+(111, '70', '2024-10-11 23:34:55.125832', 65000.00, 21, NULL, 3, 1, 1),
+(112, '71', '2024-10-11 23:36:53.830674', 15000.00, 20, NULL, 3, 1, 1),
+(113, '72', '2024-10-11 23:37:15.188966', 110600.00, 20, NULL, 3, 1, 1),
+(114, '73', '2024-10-11 23:37:25.980146', 25000.00, 20, NULL, 3, 1, 1),
+(115, '74', '2024-10-11 23:37:50.095729', 25000.00, 17, NULL, 3, 1, 1),
+(116, '75', '2024-10-11 23:37:56.089490', 40000.00, 17, NULL, 3, 1, 1),
+(117, '76', '2024-10-11 23:38:30.044882', 67000.00, 17, NULL, 3, 1, 1),
+(118, '77', '2024-10-11 23:38:57.484466', 15000.00, 16, NULL, 3, 1, 1),
+(119, '78', '2024-10-11 23:39:12.089974', 100000.00, 16, NULL, 3, 1, 1),
+(120, '79', '2024-10-11 23:41:22.169353', 20000.00, 15, NULL, 3, 1, 1),
+(121, '80', '2024-10-11 23:41:44.740735', 145000.00, 15, NULL, 3, 1, 1),
+(122, '81', '2024-10-11 23:42:19.135087', 10000.00, 13, NULL, 3, 1, 1),
+(123, '82', '2024-10-11 23:42:38.300154', 40600.00, 13, NULL, 3, 1, 1),
+(124, '83', '2024-10-11 23:43:06.101522', 25000.00, 12, NULL, 3, 1, 1),
+(125, '84', '2024-10-11 23:43:12.643753', 10000.00, 12, NULL, 3, 1, 1),
+(126, '85', '2024-10-11 23:43:41.602583', 75000.00, 12, NULL, 3, 1, 1),
+(127, '86', '2024-10-11 23:44:28.356931', 10000.00, 11, NULL, 3, 1, 1),
+(128, '87', '2024-10-11 23:44:39.364602', 15600.00, 11, NULL, 3, 1, 1),
+(129, '88', '2024-10-11 23:46:12.208528', 20000.00, 21, NULL, 3, 1, 1),
+(130, '89', '2024-10-11 23:46:34.826726', 10000.00, 17, NULL, 3, 1, 1),
+(131, '90', '2024-10-18 23:59:11.261371', 25000.00, 9, NULL, 3, 1, 1),
+(132, '91', '2024-10-18 23:59:18.161334', 12000.00, 9, NULL, 3, 1, 1),
+(133, '92', '2024-10-18 23:59:30.360509', 54600.00, 9, NULL, 3, 1, 1),
+(134, '93', '2024-10-18 23:59:52.388362', 52500.00, 21, NULL, 3, 1, 1),
+(135, '94', '2024-10-19 00:00:00.592329', 17000.00, 21, NULL, 3, 1, 1),
+(136, '95', '2024-10-19 00:00:15.540064', 90000.00, 21, NULL, 3, 1, 1),
+(137, '96', '2024-10-19 00:00:38.171237', 35000.00, 20, NULL, 3, 1, 1),
+(138, '97', '2024-10-19 00:00:48.274195', 17000.00, 20, NULL, 3, 1, 1),
+(139, '98', '2024-10-19 00:01:21.843190', 22500.00, 17, NULL, 3, 1, 1),
+(140, '99', '2024-10-19 00:01:29.522081', 17000.00, 17, NULL, 3, 1, 1),
+(141, '100', '2024-10-19 00:01:44.988373', 25000.00, 17, NULL, 3, 1, 1),
+(142, '101', '2024-10-19 00:02:18.796873', 18000.00, 16, NULL, 3, 1, 1),
+(143, '102', '2024-10-19 00:02:48.850053', 10000.00, 12, NULL, 3, 1, 1),
+(144, '103', '2024-10-19 00:02:58.060471', 50000.00, 12, NULL, 3, 1, 1),
+(145, '104', '2024-10-19 00:03:15.215235', 40000.00, 12, NULL, 3, 1, 1),
+(146, '105', '2024-10-19 00:04:03.038300', 90000.00, 13, NULL, 3, 1, 1),
+(147, '106', '2024-10-19 00:04:38.380292', 120000.00, 13, NULL, 3, 1, 1),
+(148, '107', '2024-10-26 00:10:18.242714', 14000.00, 18, NULL, 3, 1, 1),
+(149, '108', '2024-10-26 00:10:58.981578', 205000.00, 18, NULL, 3, 1, 1),
+(150, '109', '2024-10-26 00:11:54.572155', 17000.00, 17, NULL, 3, 1, 1),
+(151, '110', '2024-10-26 00:12:11.677180', 51000.00, 17, NULL, 3, 1, 1),
+(152, '111', '2024-10-26 00:12:40.659746', 50000.00, 13, NULL, 3, 1, 1),
+(153, '112', '2024-10-26 00:12:46.021672', 16000.00, 13, NULL, 3, 1, 1),
+(154, '113', '2024-10-26 00:13:20.600980', 140000.00, 13, NULL, 3, 1, 1),
+(155, '114', '2024-10-26 00:13:53.783534', 12000.00, 12, NULL, 3, 1, 1),
+(156, '115', '2024-10-26 00:14:16.795159', 40000.00, 12, NULL, 3, 1, 1),
+(157, '116', '2024-10-26 00:15:04.206007', 50000.00, 16, NULL, 3, 1, 1),
+(158, '117', '2024-10-26 00:15:16.794569', 42000.00, 16, NULL, 3, 1, 1),
+(159, '118', '2024-10-26 00:16:02.289266', 70000.00, 16, NULL, 3, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -19371,7 +20449,7 @@ CREATE TABLE IF NOT EXISTS `modulo_ventas_transaccionpago` (
   `_qr_image` longblob,
   PRIMARY KEY (`id`),
   UNIQUE KEY `modulo_ventas_transaccionpago__factura_id_f5cd777c_uniq` (`_factura_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=131 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `modulo_ventas_transaccionpago`
@@ -19385,7 +20463,322 @@ INSERT INTO `modulo_ventas_transaccionpago` (`id`, `_fecha_creacion`, `_factura_
 (22, '2024-11-01 02:16:50.453308', 29, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-b5e5c93e-601c-4339-b302-f0e54940e994', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe010000000055145188000003dc49444154789ced9d4b6ee3300c867f8e03ccd2067a801e45bd59afe61ca5379097056c701612252a6e318bb24891fe5e18f1eb830d10e29b11c597b6e3cfd79e070820800002082080000208208000023edd545555d77e9801a43cd57349f77208605260deedce595555f7fb7f02010f013049ac725524515577009854d7267f2903bacefbcd13f7ff04021e02d0e46a0750c4aceeca4a58d6c422a255267505404924201670399f9a543067c5f57907ae4b560100c1fc2e48eb11fd060410007c2889473927c065576c02605bcaa50fc2e0f7ff04021e0270b213d776256554c55c8c45d821ed4402e20127df799df7ffecea4649242012502571dcaab3d276c595c900d2edad94440262004ed7d6384d393d99fecda698316b0dea244a2201df073804d7a54bdd0ea4b74bb950c33638a41e6e22b82ed16f40c0af0638ed5c5c1400d559c1ac5a3d96d94cc9644b24d7440262015e1281496b7a6536f9d396f7abc6e254c3e089924840246058135b7a05804571f2a4c55969796713474a2201f180eb7208d0c386b9df7148cff199763e445e73ec1b10f0cb012d9ed8b5ee3e9ed3ea2cf7a06255e05c13090804b80a08277f5a4289e37d19e80e0c2591805880cfb1a4dceb13e1d4b1b634608f7bd37726201630f8ceb34faf783fb98ba32970ae8904c4024c12337c2dec6813568b116887ac4f24201ad0aac2a65d806997940f00db5f959263d99e1449eb2d002695949f5a1dc40ff804021e02d0d6c4963bc935b36c2d2c00609eb5eb2d60649b8050404fdba1d7dd542330c33431aa2be3838ad4ce0444027c55d80af878622f035b2db3e284956b2201df01b82e87149d5c0e45445ee61dc07681bcbe5d20f2fc2eee41d6e210100a7076622f4db4b6d2c9122d7dd722e08c2712100af05d29a50c3603dd58f45539dd4f61649b807080f358ba39e8a5b3d984edd05da52412100cb82e9322bdfd2d5dcef28243804d04d82eb05f227633202fc16f40c02f07f835516dde43cff6d92d369ca46df49d0988058c519c31bc9d878208afc099ed23201ae07bfbda5c1c1b89d3cdc1c1442c25dc9444022201a376b6829cb283ad8e7d569def81a624121008182b656b3355ed6d9efb20125fa4581ea376262014709a01b1daac44b3132da8ddad43d66c13100f38cf94755e74ebf7cbad02a2ad93f49d0908059c6785cd43bf732b927595daabcfbbdcff13087808c079a66c465d0e6f7a4bfdd41cb016878060c049125b6f9f45b6fbac26b4060346b60988067cbe26f6c695decc6703c3007a2c04c402ceff3da0ad2ab6392bebf8488f7b53120988029c67cab63ebedbf9b1d91433e83b13100e10fe972901041040000104104000010410f06301ff0065316edc769816890000000049454e44ae426082),
 (26, '2024-11-01 06:13:30.355879', 34, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-08dbf7c0-c5d5-43bb-835a-3c65990b9499', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe010000000055145188000003fc49444154789ced9d416edc300c453f6b035d6a801ea047516ed023f54cbd817d941ca08066594006bb9048d199145d546d26d3ef85617bec8718f810c54fca11c51f6dc7873f7b1e208000020820800002082080000208f8e5a6aaaaba8dd302e8864591557b3a93cba200160552b53b93aaaad6b77f05021e0ad075d54ee4ab566017912ed1f44390cbd14ecfdabd9f5720e05d03563b3856207d6fc7ba5f4a3b92ac80ec97ef505c972a4800f627c0cd9fb77f05021e14905481ab886e4915fb05502d8b8a7cae402effe02f20e07f04acb7978e15480502ac557115207ffbd4e2f62b36f8dbbf02010f01b0599fcd1347eed2c6bfdcae2d96bb687df1c4dbbf02010f01b8c99db7547fb3eb1b9548c04c4057e2796bb6cdd821d566ef20bfbc954a24600e20c45ae4028fce8bc5df6281194975188d54220173015189c049755a1635a3dbc336baf9cde84cc05f021ca25a0e6927f95944e473853ca50a737656c8d7b2a8c805c3cfb9a35720e03d037c4cf414b949af6244672bb454f4d354c1e84cc05c40c858cca23919d8d94234bceedce78e8cce04fc05c07e39044d6bd715d82fe38e43fa1009782fc4218cce04cc05b89fd8a32eb2568c369c9e54abf9debee39848c05c409c27ba265b4cf6a376632ee84a6c89369548c04c40acb174ada98e706c6d601e9dcdf766c642c05c40cc5860917894577a2a339c450fe01c1309980a302516c06a2cd69feda97470b6e3299548c0448077852d5580a54a5640f72f05ba0b20c0a292f55881ebc72651c9e593f741dcc12b10f010001f13bb816d15e8c592e562f76dd606d12d47ce130998097859778e8971f192336205ba7b3c8cce04cc048cb2dd793ae873c7e1f194b3a9c33191809980a0c49e3107c7c6af15a015a48712392612301510c6bfb0d4d955d78b2f63e76d10f41309980a083516b312016bc8718f3bf9b0e9e90d9548c054405c1fb5b52b26b376cd243a4ec3af5422019301f9790dd9893ce110e02ad25a73fa91f43edad8a9733faf40c0fb06dcac32ed9f24191d106e20fab4316e1c130998033839db6362e822dc002b030e67bbb0da47c06cc0c9d9f6ca72f30e55f55c63f61505005d1c02e602a2b3adea0bfc92c6aec496b614e0b4069a4a246022e0dc29db1753757bbbe5d34b2c436ffe18a33301530137df80f0e960f40e437fe208e5542201f301bbf4ad05e1fdd2174eb56fd521fd107be0e8ce0e5754113015f0cab7c26c12382a7b9b35ce861f189d09980a88d53ea4d8811856e3f76405619ec85e1c02e6026e94d87b11fbaedd12e68e257e0f9e4a24601ae0d531315889a3bcd23c1ecfa799b1103015f06ab5cf9c6d0bd6dbf9915c382612301b70fb4d598c152de7efc7165be502466702a60384ffcb9400020820800002082080000208b85bc04f3db543efe0a464c10000000049454e44ae426082),
 (31, '2024-11-01 14:33:46.711342', 43, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-afe5acbb-a157-45db-9f8e-239728698183', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000043f49444154789ced9d4d6edc3810855f8d04f4920de400390a758339929123e506d251728000d4d2808497058b3fb2339885693871bf5e18929afd81020a55acaa47da88377dce7fdef67b400001041040000104104000010410e07f009bf907d8670038cd169c6666336cd9fd8bf2ccccec3e7606023c38002449ae812479804c00100ef86dfef60010fceafa8b8f7f05013e17e07437b7dd81e21827dab2cfb0a7e4836c01b2037d871908f0d080f9b74fe30a605b006e5f0f70b38986dd40e01c3d03010400fecb123703084c87219c33224fe3f66f8221fc1c3d030104b80026fa12110022497b4a0057f81f5bf6395f21927c0d78f30c041000c06e394fcec9cab7fb69fcf6f5d99783db1de01afc36a7cecbe81908f0d8008fcef145fb79bfd110008b3f6620a61300265a4c7831f2e35f41804f01b8d469da2d2622a6c92b3b2b00324dafc6a98a23c028403529924c131153b13af200620210b3394ec51d8603aa270a3016502c31211b1c108e9c93645b5be1194b1ebc061208641e224b146014a00bc7add19203b347e2298fc8f6e739f654dda82c5180c180d3901b2d7663df6809cfb9e54ce6dcc507db327c06023c34a0a51e40f37f79b198af26b636b4077000b90d2d9f28c028c03559465d227ab242a6629379709a9813184567018602ba8c259b19503a2b4d9ae3a90cb311163f294b146020e0a2f14af569499bdd45a299e854cc513e518091801a9d81a640f48a617ee6abc3169801c8270a301a50a3f3c4d24a01e0b98bd7b3bbd561aef664c7284b146020a0cf58ba8a7502da9ab0141a79b14e59a20023019d4f2c41b839c6dfb5a159bca3a2b300230157a56cae1de6670480ac038b3c8d80abc25cc21d06cd40000100f45a9ce60e3d3a275c1686254e038ace020c07f4d1f9ba7baf2fe004966f4bb2a2dc5980b1804e1556d45e7547699740c373972c7e48802c5180b180beb25d2b366cd2c4964fb7a2367ae1cec7bf82009f02d029204a53c51b28be30ec5411659d18297da200a301177d62ed9daca8aad87c755c44b2d2270a301c70592702bd63f4207c94cd0469bad6bd6589020c04f4559c2a8328559ca214f3a4bab9486a9d28c060c0a59ed83acb5d028d4e24dbd4638ace028c055c7c62dbbd873e12bb7096750129058400c3015db7cff26696f07346fc7e3760ff72585c8fd9801bcb593975dca81908200080eb7ee7eaf56a65079d77e4a5d1a2cab600430117a52cca9a10b50d5d73e76e6f553bce539628c06840284e309fc6b4cfb02590883f6ef4ada6e1d9dc1dee7523ea9ff40a02fcd580ba4e3c67f8e188132da63b089c33110e58fcfe25af1381dd5e003efe1504f8a4807df6238eb7bb9f50577c22694fa5c668cbfbcd408047045ccf746f5a6c56097769afa0abf1e8ac3001de0d50d45e3195b3dfb1df680b4eb325fbc4727edd1a485b86cf40808706bcca9d6b2baf3b83044039bfae3b9c443e51808100d3ff321540000104104000010410400001fe58c02f935ccab567b403e60000000049454e44ae426082),
-(33, '2024-11-01 14:38:34.142530', 45, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-9803271e-8fc8-4906-9f5f-927d15a92782', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041749444154789ced9d4b8ae3481445cf6b093c94a117904b917796d4ceaca5780109a16181c4eb417cad2ca8418571b57d351029a57508c125de3742e6fcd1b1fff367cf830002082080000208208000020820c06f008ba583e50cb08ed86535837524de4ba73dfff2dc7704020800c0e4eeee1bb09ad965fa69fee33cb85da68d284700fb0ce0eeee7eed3d0201de1b30e63ff611a62f60fa1a9df58ccd0eb0febb01bb3107f0e5fc05cb054af2e7f9af20c04b00c6e38df9767298b6284767dd0d8074d97f040208f04bc072de8dc546583e3c5a67777767390f6e9fe1f12310e02d01d9ebcb7ea2d7e33ab9fb95c199cb3faed37678e2f9af20c04b015633331bf39c78de0dd80d62ec02f91ec4d0f9d27b0402bc3720f98973f100e7db37d791f97672631a1c180ebee2f35f4180970034b636dd9836f2e5e0ccc5265f494af4ebb451f23ecf7f05015e02501cc30de28437b9bb07802c386677670e4998598452a2001d01ed9c3807c8d1499a049326a344bf872d52a200bd008db888e6380cee1e86244ca68d68a23d2439a69f488902f40434d6d93d904ed1312ca9c4d993ef186b7cb3b2380274071c1388a498e4dbbd244720fa8952a2005d01c7d8394e82c526c76af3b5e46ea22b19404a14a02f20cf896168a7be469d8d892e017440118b009d01f7e1700a47987da36ab2c62eee395849518c9428402740d36d186596a2e814b6a4e8044899c530784aef488902f404dcc5ce9e53d9295903d51cc7a36676546311a02ba0b5ce6df38dfb21c79dca2bdc4d9652a200bd00f7599cad8d8e3d402def51e219452c023c00901b6f6243f6e006e0acc3664c8ec13e325f01a62f030667f9d86abfcef35f4180970094882597f2802680cee91d8a3976452c023c0250f28929595d5b6ea2e0aa0359226b6f0f2951803e80a39fd82675aa8b584f908b2f52a2003d01adf41aab1b524358db95c350328b9baa7d02740634d6395e56135d560a34b5c0da3826250ad015d058e7dc9a08774945cf7db45e9a69833a2004e80d6895582a2bb9f9216aadf95d2eb90cae1a8b007d016dcff69c5dc4c312965f8950118b007d014d3e31356407689710d4fe9c00343db39a1305e809b8cb6c972554b521ac2e5ca9ed8a5a5125407f40bb07ddd1450cdc2d6609e519f5e208d01d705f31f16315a569122be9ed9af7961205e80da87bcab29e9cb8250ebbf9751dd30e25694edcada9b6741c81000200878c4d3c161bb1cfdc3deb3fcc2cf993eb885d7a8f4080f706dcadbccfe1485e2400794555e9e86eeec93a0bf070c0f2f1d3d2269e01ecb29edcec9c03e8f976f2b433fcdffb0a02fcdf01b121fb768a9ea05dd631cf93b791e653048f1b81006f09f8bea76caeb1e4eed9b6d0d284d7ca6c0bd01570f8a60535819d2feb8aaab48953b357899428402f80e95ba602082080000208208000020820c05f0bf80f3fe9088bdceed2350000000049454e44ae426082);
+(33, '2024-11-01 14:38:34.142530', 45, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-9803271e-8fc8-4906-9f5f-927d15a92782', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041749444154789ced9d4b8ae3481445cf6b093c94a117904b917796d4ceaca5780109a16181c4eb417cad2ca8418571b57d351029a57508c125de3742e6fcd1b1fff367cf830002082080000208208000020820c06f008ba583e50cb08ed86535837524de4ba73dfff2dc7704020800c0e4eeee1bb09ad965fa69fee33cb85da68d284700fb0ce0eeee7eed3d0201de1b30e63ff611a62f60fa1a9df58ccd0eb0febb01bb3107f0e5fc05cb054af2e7f9af20c04b00c6e38df9767298b6284767dd0d8074d97f040208f04bc072de8dc546583e3c5a67777767390f6e9fe1f12310e02d01d9ebcb7ea2d7e33ab9fb95c199cb3faed37678e2f9af20c04b015633331bf39c78de0dd80d62ec02f91ec4d0f9d27b0402bc3720f98973f100e7db37d791f97672631a1c180ebee2f35f4180970034b636dd9836f2e5e0ccc5265f494af4ebb451f23ecf7f05015e02501cc30de28437b9bb07802c386677670e4998598452a2001d01ed9c3807c8d1499a049326a344bf872d52a200bd008db888e6380cee1e86244ca68d68a23d2439a69f488902f40434d6d93d904ed1312ca9c4d993ef186b7cb3b2380274071c1388a498e4dbbd244720fa8952a2005d01c7d8394e82c526c76af3b5e46ea22b19404a14a02f20cf896168a7be469d8d892e017440118b009d01f7e1700a47987da36ab2c62eee395849518c9428402740d36d186596a2e814b6a4e8044899c530784aef488902f404dcc5ce9e53d9295903d51cc7a36676546311a02ba0b5ce6df38dfb21c79dca2bdc4d9652a200bd00f7599cad8d8e3d402def51e219452c023c00901b6f6243f6e006e0acc3664c8ec13e325f01a62f030667f9d86abfcef35f4180970094882597f2802680cee91d8a3976452c023c0250f28929595d5b6ea2e0aa0359226b6f0f2951803e80a39fd82675aa8b584f908b2f52a2003d01adf41aab1b524358db95c350328b9baa7d02740634d6395e56135d560a34b5c0da3826250ad015d058e7dc9a08774945cf7db45e9a69833a2004e80d6895582a2bb9f9216aadf95d2eb90cae1a8b007d016dcff69c5dc4c312965f8950118b007d014d3e31356407689710d4fe9c00343db39a1305e809b8cb6c972554b521ac2e5ca9ed8a5a5125407f40bb07ddd1450cdc2d6609e519f5e208d01d705f31f16315a569122be9ed9af7961205e80da87bcab29e9cb8250ebbf9751dd30e25694edcada9b6741c81000200878c4d3c161bb1cfdc3deb3fcc2cf993eb885d7a8f4080f706dcadbccfe1485e2400794555e9e86eeec93a0bf070c0f2f1d3d2269e01ecb29edcec9c03e8f976f2b433fcdffb0a02fcdf01b121fb768a9ea05dd631cf93b791e653048f1b81006f09f8bea76caeb1e4eed9b6d0d284d7ca6c0bd01570f8a60535819d2feb8aaab48953b357899428402f80e95ba602082080000208208000020820c05f0bf80f3fe9088bdceed2350000000049454e44ae426082),
+(34, '2024-11-02 00:19:20.442088', 48, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-eabc5a6c-2c32-4927-839b-1ca212d17028', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe010000000055145188000003ed49444154789ced9d4d6edb3010851f4b015932400ed0a3d037ebd5e4a3e40001a865010ad30539e4c84a5699d481f3b4106cd9fa60010ff34f3a083e75ecbf3e773f400001041040000104104000010410f0e1212222b2ceb7059035d57642960ae4120540142055fd661211917aff4720e02100aac4aeaba6c426b31551f46d057251891eeeb8ff2310f01080455fec0b90de00a4ba08b02f02ec0148820000822dd68004e07a0146f1e7fe8f40c00303aee149c22549d75b2e5142f8dd0de37ff90504fc34c072be1425201500db52055b00b0bdb4f0f09d32f8fd1f818087009ce2c4757c920b5ac6222ba25a47619c48c097004eb9f3489b3f3cf5834a24c013d095783c5ad9669e9034a9ceb75fa51209f001185fdbeb34ed7254ff5bd4318fcace418e5422013e80a1c40a6024cb5011f6423786dbc62c7e5389043802d43b17c0642cad5893447ac6923494cc6a22691309f005582536c135eba8fa9312359f69c16214cd5da844021c0123778e32cb36fd553b8d961f66ee1259c521c019a095edf4d63a7bc0f6dcae083600c01e04a92e72bd00c82b04c01e46b7e5fe8f40c043008c4d34c337d3fead007ada3c8a8a223dbda14d24c00d607267a3c9a635007320e7302e26422512e00bb03d965c547037d746010759ebdecc9d09f005981e8b29dbcc7e4a6f398fcae274e0b4890478024c15477b2c1a31b64fcb28346a88a8856e2a910047c0980a8b3500b1862c00f2eb93e07a894d8fa18dd06e4fcd3a865c5ec61cc4377804021e02306c622f604fc7ac7e5a9b2aab8e41b47c26334e24c01370c89d4b1f6fd0bef370d6b01d689dcfa112097004189ba83dbe7a881d6f74aa22a44d24e04b00d767d8d1ec6b08215c5205b02d087f5e1784f0fb6fe8376d21e0faecfb0b08f8e100533b34a6af2f2b55c76c4ea3efcc7a2201ae009bb14c9f8c39ae68e76e344f2991de990067c061665b5bcef39a96b2e75b5b06a7120970076c0b80b634a0225cb087160eb60fdaabd0e3440d117d7f01013f1b708813318a851a22f65ef4b8763a681309f001d8b57d2b6cb262165899318851de66b78f0057808d13e762d291b198d11c91b9a200609c48802fc0caac6522a65883d177d13e733e94b7a94402dc00c749595d4c65866f0a8091ca1cf68aa0120970049cf68098ebed87f46cdf594b39b48904f802ded953361a17ad5b32cd3c45376ccacc9d09f0049cf70a4b9a4567d195022b46b098d495d33b13e00a38ee4632271087e08053510700e7130970069c946817f34d3fadb59b5e59e4541801de80776da22ea63ab557a67766c642802fe0fcdf03524d15d14c6acf237316870077c0794f59e88a96dbfd638b3a66307726c01d10f85fa604104000010410400001041040c0b705fc0354186bb35190f95b0000000049454e44ae426082),
+(35, '2024-11-02 00:33:52.284982', 49, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-44710e9d-abfe-4968-9d3a-9b4e2ad32fa9', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000042e49444154789ced9d5b6ae43a1086bf3a36e4d18659c02c45ded9304b3a3bb097920504e4c7804dcd832e5677060e9c51934cf2fbc16dd9dd1f3214a5baaacdf9a3e3fce7cf7e0f020820800002082080000208208000ff01d82c1f6cf3992f97dd0cf611b6997a2a4f6dee3b03010400607277f7238f421c9c6d1edc1620892380fd88e0eeeebef69e810002007056353738dbf75723f8ab01a711e26949087fce2405fa80190820407b84781a2102ec4f4e12cc197cdd1bf97be40c04f89280f1fec6b6806f561423d301c1816d190e0bf1ec3d03010400aad557ec44bf8e7572f795c109f5c13a1d77bf78ff5710e053017633331b93779c4e701a4caf96adc3740fb267dd7b06027c6d405e9d434d3f87e7370b36e1f9c98d69c86663df19082000d0aecef9c67450868313ea9abc9225d1d7e9a0c67ddeff1504f814806218462029bca90e8bc011dc3dc518837bf98a4b1205e808682431792cd927c94af04644dfba2d9244017a015a4f38b9c37148a71c544c519cfc200fe3209d284067c0a5dcb226f4c88d624cab73be4a39be768996240ad007701f404c12765db95fbecb41ce365f0a549228405fc036832dbb997baca144c016201b8bfb982a2008cfca3b0bd01b503d96122cac4620c1af604d3525c906a4ec4401fa026edde183cb26bc727cadefd2c8a92451808e809250d94760ffe66c7374d80ddf0c2cace0db0cc0e06951de96e1a89996f77f05013e05e0de774e475a7f63be6a8e4b3bca7716e01180dc1ad0a6f2ccbe7b8967d7f44aaa54844b443fcc2b08f077036ea338398a9d4dc40857de991aca91c722c00300d54efc765888389b0d87b3cf189363708ea4fad8e9c5a825dcfd66208000c0adef1cc9ab6eae76280b3350527e359e239d28405740edd41b4ab54dacb560a502ac4948afc56c94240ad017d0f68c2623b00c53d890e9f60434c22a4914a017a0ad4f0cf1aa4fcc05616d550e43e972bef4a42451804e8076750668aa626ba740930bbc1282924401ba02ee6bb6735558691c28519cab709b1ade96240ad01150dba786c3c2bfb365cd38c5f4e9708e80e1d7f7d297d74e33104000e0d663697de252fc506e349e75ed6d914e14a01ba0b1131b079a26a8431dd62b97c722406fc0adc7525b581a13b1cd3b7bdb74254914a023e07675cee50d4d83f37d9122a05a1c011e00682b20bc2ac15cf240ed9e2a9dcfa98505554008d01b70b72f6793d9cb436873d16d505b9228c0030079ad25edd5b44caf769541a4a73fe7d3b23db98fd8d27b06027c6d408d279e234c2fc0f4323aa49e0183e92505153df8391a1830bd98ba070478386070b379705b4aa5982dfb53ba97b32d116a91e2877c05013e0120c4d3dccbd675b6ec637660d27676e9af089aadeb3ee02b08f03702deee297b3926dce553eedc6b792c027404fcd677ce611bde4416c9fb27ca7716a037e0723dfedfa1ff3215400001041040000104104000011e07f8051c02aa5475bb22fe0000000049454e44ae426082),
+(36, '2024-11-02 00:45:56.046808', 50, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-560b75f2-3947-40e6-8b23-441d94f677d3', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000042749444154789ced9d4b6ae4481086bf1825d4520573803e8aea063ed2e09b4947f1010ca9a541227a910fa5aa0cbde834f6d8bf16a6f4fa48411091f1b4397f75ecfffcddfb208000020820800002082080000208f007c062f900c0ec9a6fdb8dbddc5843735a1ff9329f20c0ff1b80bbbbfb3cbabbfb86bb6f30f90630b87b1cdce77103464fbfce6f7cfe2708f02d0055ae3660dcf019f09921c95a7a2609e6e8de3e224914a027203c5c195f834dbe9bb386cd97a7088b0d6eac86c3de7b05020800ef49e27a715bd27e713718f7c0e4bbf9f21431c6d7de2b104000e0719f38034ceece54b68869ef0883f689027c38603533b340da093e5f77f3e75f6f4935b25cc1e7f1ad78d66666b7de2b10e06703b2759eeed2cfebc58d116c7a0930c51d60709b22774f7efe2708f02d0027dff93865c8d6b95aec369e539f937516a017a011bdf4c76391ba14598ca4284e92ce748c9ba23802740614e51601c612d49eaa4f3243f662204711536471924e14a02720ef1397a7a4ef8ad65bffdd803d00c3c6e4608c1183b0a54063b7150820400b58434a3eb3d8c559aee51ae35b4a39bb27df05805d7967013a034ed699c1cbb611b2118e43cef1b509e97c57d659806e80b3b34cf64e3ce6d3bb0c74bee19b7c67013a031a9d98c48cea40e7884d09e5b8e70a88a22725890274049c7277114af15795ceaa2221abc8c6bd96240ad00b50ad336421ac41edaa13f33eb118e6724d9228404740b5ce8397540a40527d259e589d9523022e9d28405f40ebb16467b9cd00e6bc4b96ba6cac4fd73eff1304f8168056271e8e490dd61ca257d2d0f9aeb27d02f4059cb37d5ef67f91e22c73846d8a74ceda270ad01d70aa80380a6d22b4f1c4c68ba9c22aeb2c404f007e77d4aaece2b1940d64e359bb4b270ad019d0ec13f385a3a3b406b56720ef13e3d0987249a200dd0027dfb936381fa5894705d811d4a664002589027403dcd76c9722c5da5145f598631b4a543c5180be8056120f099ba955b1e40c74396d7d1749a200dd00a5df790d007bf0c580c9f760d34bd87c797a0db05e1cd6b0c11871d6dd4aa5e217f80401be05e0319f1221bb2d4da59857135d069148270ad015d04aa2fbd6d8e473d8b0e69d8f7e2b49a2001d01f73a315d3c327bf7931f384ac324890274043473712c0fc2891865de439ad034bd5cdc20375ce5e77aad40000180f7722c654f584b730e3bdd245a14d916a02be054294b1df500754c626da68a509aeed5c722406fc0fbb3c26a975ff3eba8059b956311e0e300b58539f54ced06ece6ee1b765b03fe6c813453ecf6312b104080d3b15e9ce53aa4f6fb3cec7d7c3318ddedbfd27e6ab78f5b81003f11f03867bb7a27b5f3f9683fbd7f4dd65980ee80925e9962b5d3ebc5edc66e764b3ab11df66eb7ee2b10e047031e7ce79aca6b669000657e5d339c443a51808e00d3ff321540000104104000010410400001be2ce03736d6fa124cdd0c070000000049454e44ae426082),
+(37, '2024-11-07 03:08:56.939817', 55, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-678807ad-3e05-4004-ad7a-58444267f046', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000040749444154789ced9d518adb301086ffa90dfb28430fd0a328372b7ba4bd817d941c20a03c2e584c1fa491c6d942a1ab3425fbfbc1c476f221c320cdff6ba488e25347fef6b9df030410400001041040000104104000017f006c520f6c4b167789eb0c6c0bda29dba3656c0b0820000010545575078049014caa6bd821a7f02e88e7b97c4b7e26405555751ddd0202be3660b60f7906c2a57e8a9a4563ca00ae0b24be65414c806ecb05d84e40337f1eff0a043c0560bebd111354804925be2d505c01dd164071fdbedfa305041000a08db561071076e80ad829a822eaee87e3a8bb7baaaafbe35f8180a700b448ac79a2f6630daaba623a8463d86f7ef1f85720e0a9005711119951b5f39205401620bc8bbe2e80dd038a743e8d6e01015f1b50f3c4d81448d3c9ee88e71715842aaa07b780000200f8d1b9de083bec7252c43626af077ba7f93e8f7f05029e02e0134397ff2500b080435455c45403b3df632412300cd022b16ae7d227aad64eb0c62426b50726b41989040c05348b66b2be2e4daa9a26454c4089ce1275a98663e91d393a133014e0ccc272d204d4c4d03ac1ea22866e2ad2c5216034e06020a2a9e3f0f15e33b5cb534622014301b7daf9d0276a19a2abbd9d807e6224123016607d626a5d9f258196221e27552c816c42e7f1af40c053008eb3782647aa63e33bc6aa9dd3a4963b3212091808f08a45d3647587e12627b4c2c558be3229fb4402c6029c9fa8ad52d68fc4ae7a1670ce0e5d1c028602fce8bc9a26aef1d75d9c3ebd82aa67383a133016e05c9cdad701307b1b70c962b372a85808b803c06967532736c7e2a69cb54be92e6f1889040c04b8d93ed3ce80d3ced5de411b8e198904dc05d0fa440045acf45a30ab00eb02e610848c440206026ef344eb22eb03f3b8db09401fb11989040c031c57a5b4c3148bafcac1d16d0c8c440206027c7d624911d56c9be622bab940005559331209180a38ac32b55eaf278bbd02cc2e7dc43212091806f01510c5274cb6d4b94ff43503f1302bcd48246020e0b0acbe973724c0248a371a5da50e239180a100ef27ae804b020178b1e23f29150b01a30187752cbec6065e4f1f6a16e96c13704f4016c49405db0288c88bd67d21962c75a2ef5cb753941300ee9f48c058c0c7f5ce7d9cd6839fddecedee7bb34f246034c06d221bde454e41555f17405764a9de4dd9a6248b8fceffe81508780e40307b1b401b8945dcf4caeb92a5e69336440f6d01015f1bf09b3d65eb21e5142e5020cf1a35cf526e878b704f5902fe0560fbd10a221220a7eb8b8a2cdd5944dd00fe7e2d20e0cb03ca7c4adbe2fd749d6db9c07986fd15c1c43c9180c1808f7bcadaf6377eaf9c1b79cd5a1c0286036efed3a24d39efed726f0511c7957f7471081809e8d2e3ef0efe972901041040000104104000010410703fc02fa74505b2e8f3448e0000000049454e44ae426082),
+(38, '2024-11-07 03:10:30.286830', 58, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-75320a02-2eaf-4a80-a7c1-0f9668ead4f5', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000043249444154789ced9d4d6ae34c10869f1a09bc6cc377801c45bac11c69c8cda4a3e40003d2322051b3e81fb5ec8159a44df2c5af1606c9ed871614f5df65733e74ed3f3ef67b104000010410400001041040000104f80760b674c1dac75b006c5ceb2f6c64cf2baf6d7720c093037077779f82bbbb6fb82fc070f3cc3720b8fb14b69b5f7cfe2b08f0bd007b5273f38b7bbcfdb5ec06eba5caf3d80895c66cbb03019e1ad0df3fda7b67fdcf99ad73e69f1bcc63e7c6da6f0e7beb1d082000fc4d12d78b1b600ebb41d87b06dfcde79fbf0dc2efd63b104000e0de4f9c20fa890c4b571cc30da0939f28c0c3013144ee81b0e1afd7ddfcf5e53db983f3157c0ae93686ce63eb1d08f0dc80649d879bf2f37a7123800d6f3d0ccb0ed0b90d0b372b3fff1504f81680626bb7d32d5db2cec562bb67635dad937516a015208bd4d2c58ff42c0b21c3020c511cbbac0e434e2f4a12056805a8e28f7cbbd599ed0952140390d6052f97245180e6009fe8dc462096fc60371be93c86d204771bd71ef7b7feaf800fef408027061c0e1fd927ec1ce83cd6fd081b95ed1ea229979f28406b402589c9ea1e714a4849c5248ec56d8c97fc44015a02cec13251d6dcfd701bcf5e64548c9b74a2008d012576ce624648114bd48413c4d83919e6a8183b974e14a02de054bb5beebf9db2c54eb7249d5804f3f35f41806f0128d619520762491b2681dbc87ea2272104e944015a03eaccf6c4914f4c5174fc2842783c934e14a02da08e5808771d3875eea6647b8a744a12056806a874e21113a798044a8e913aa81e728e4792284033c0b953b673232c38eb6e0e60b10327892506e0f375899d3a4d76208000c04d66bb34da2c2425583986d16c7baec0c83a0bf000c06c3d3ead971c1d87546806c0c6b0c1fcb2110bd2c3023a652a405bc0a9eebc40ea40ccf99c939f988acf5e9506a513056804a86a2c70343f1c35e6e029763e92daca270ad01e5074a297d83957fba26378e413979b54a22451808680533eb1e8ba89d2154bb2d84793aceace023c00709644ea968762a77305e6d4b83848270ad012509da83ada20f2c1a9e3e0cac980c76305d28902b404d49298fa638f28ba123872f7f671de4a9228c08300b35ddc463acf639a80e1ad4f27ef4b6b18f335cf6a6abd03019e175055fb2c0ec259fbcd88753dc3091b36bcc55939a775ad76208000409dc5396297e813961a4be527562d8cf2130568093875ca924bce703ec7b74075b6ea18d3244914a035a00426f34b923fe66b59158e632d9dc7e99ef9dbaff30a027c0fc05e4667ef6623bbb92fbb41d888e7ed5fad27ce141b1fb3030104385d6b0a9663886c767108ef06e1ddecd7924ea3daf8b81d08f08c80d3acb023bd5db2d8f5e8a67a4293fc44011e042855bca5d8e9f5e236b29b8d5127e6f975d5fc9c2ff50a02fc9f0177b173a9ac543348803cbfae1a4e229d28404380e9bf4c05104000010410400001041040802f0bf803a8c5b39690baaf740000000049454e44ae426082),
+(39, '2024-11-07 03:10:49.447182', 59, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-4a0d1f46-817d-45c9-8ccf-ada74a5857db', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041e49444154789ced9d4b6ee33a10454f3d19c89006b2805e8abc835e5396f476202de52dc000356c8046bd013fa2ecf4a819a4615f0d92c8a60e28e0a28af52163ce1f5db77ffeec79104000010410400001041040000104f8ede5eeeebeecb77172e608cceee5afee0b4f75647077f7f4fdaf20c053004ee5778800b713848483636cefc9d9c0e1763242c2d7f3951c6daf3f07cd4000010e809b999d81d54ec076024282f53c39ebb90cb20bc06a665f3003015e1a707af824446c5e12beda94205ccdb33037c3e1367a060208009f29713b25b208b91984c96d7660fd1931c275f40c04100068114b893fc8b14b095626f72524dc739cb2df764f7cff2b08f05480cdcccccaead03fce37f38f1fbfca72703d832fa1dc9a99995d46cf4080d70614ef3cdf959fb7373702d8fcdf09e6780398dce6c8ddc8ef7f05019e02d07c6d3adc3215efdc3cb67b75d6dd387967014601ba555f915eacaa734fd41c7722ab335f21a175a20063010f36710929472c596b0bd0556096e00ec13d0f9112051805a86e36bb5e6f9670f7c4531e90f5976fe3549db39428c02040afc496ac21676c80ec89f3b771ea1cb86ca20063014d89509b1abc343ab4a4629163fe4c1d10027c09e0182cc39d087d69de798e94b065f6a4d85980c180ce2666ff5b56822576e9a4775c45ca260a301670a8dd45680a2bdfee722cd7d4f96e295180618043a76ca8f99cb9ad09e7d8dc71d7292b9b28c068c0218b536f736b62d65a4defece9edeab1a544010602fa8885b087cd8943652ff53f5a1423250a300cd0d9c4ea84a1ee5ea9825b805a86f6bb00e6fb5f4180a7007436b1c62e458e7bd8d23c717962d13a5180e1000e56af7d16cb6dbf306c2bc6fd31295180c1801c13b7d839d798abeaec1212ac3f1279abd51c27cfdbaf06ce40801707d0fbe42cc7a649fafec45a726ef56979670146021e6267aafe8ab30eb503ac555b283b5aa4440106020e114b846c1367ffaceebc6716d59f28c068400b3ddcbbbec385d6154b2bf9b5b563a9bb4889020c04744aac5514288bc57d5b69eb4f2c7517d03a5180b1007a23b8bb68a825e70835a86ead61f5564a146018e03e76dee3e4e27f235d50ddedf2533e5180a1805e8977c5e7be03a2b4c61eda65a544010602eef7f6952bf4e792d416da7e979f9428c058c02176def339354f5306851ad4b494b7221601c6021ecf947d3482de27ba4bbb98d689027c0da058b87a9267feace9af19c16c0eb7b7fd74cfbfe71504780e403d53967a24d89ec0b1cb66e61ff9b0d9ee98b0c13310e0a5019f9ce4f9e60698afe72b4594c1817035e6f89e6cfef71d230c9a81000200c7d8b93b79c9bb7d54fbf6d3f24c1da275a200e301ed9491d8fcf4f6e676e1667609bfaccb6c2fd4b3df87ce408097063cc4cead94d79d4102d4f3ebbac349641305180830fd2f5301041040000104104000010410e0af05fc0fc84ff8c13092616e0000000049454e44ae426082),
+(40, '2024-11-07 03:15:21.382036', 62, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-f1b17e79-552f-4f24-9677-a8a956cf20b0', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000040949444154789ced9d4d8ae3481085bf1809bc946e3047916e50471aea66d651e6000dd2b240226691ff760fbde8345d543d2d0c76a53fd2f0888817f953e6fcd673fdf57bdf070104104000010410400001041040805f00368b0f7019db7c99d90cb61e23b61e66708cd8ca9546ce7d6720c03707e0eeee7e9fdcddfd24beec83fb7d3af17b18720293c7cf9a6ffcf99f20c0d702c420c8360fce365f0680ad00db1c07c5b72176f69e8100df1a303e7d72182c7e8d70dc9ced6d078e31fcc1e1ea3d030104809f2991e1b4cd06072e83e91a591cd8de768ce947ef19082000f05c27de01167767c9c562a8131954270af072c061666623309df8fb7c99bffffd11cbc16d06bf4ff16db0ce6bef1908f0bd01313b2f0fcbcfc7cd8d096cf9778465bf0006b765e761e49fff09027c0940ceb567f3962166e79cb14b67a71aa7ec2c402f4096943b8bbbbbef4975ee272c3bb004390e291c4e27aa1305e80ba89498ccca191c4bd0da1da28b0182fe60cab2951205e804a012210c0ed349b1cdc0102326937b7cbb0f59bd52a2007d004d4f6607821c83e02064e220bd7d6812b89428404f4091149480774ffa63d9639caccac6f0a84e14a027a035cba43ab1d25ff2336170088ca762a2009d0149527b92199448d82cb4040333159d4a89027404fc5f9d48c8c4c12c07e9416ce5147b2d250ad00bd078e729e6e9aa8b1d0ac35236a67a52315180be809c9d072f4b297179658792984b7b3b05462951808e80dab1900457edcfcee9b878ec1836a544017a02aa985845bdca2ce785be658f83e3386567017a029eebc42925eb28c73a26866fe4253f2951806e8066dd391813c24bf4cea5300c2ec6db46a39428401fc0e35e9c2afe2d6d01999db5fa8902bc00d0aef645b35cf773ca8982b4f8ece5d0a99428402fc09327cefa4badc4263ae67ea21c8b007d01cfde793a9b1355d94a973a7171ed4f14a037a0393d3065ef42b6c834ed6d20e5692951809e805a89d12cc3c376d9b402536f5c941205e80be021089635be609173b198fc74d99523250ad01150c5c4e293cbf1fbc62c976ea3b2b300bd01b5121f7a87eecf7562ee76cbb108d01750dd8b63e1229cc3f0eded1a9d634ec7ec8f9b1b18becd795caf19082000d0acf679d5362c87f9a8cc72b5d0a2ceb600af00943b65ab33535c56ce0cd87a8ce133983e2c6df0fe3c3f4180af0188112eddc6447c89171b87211f16c3e171f37cbbe7e7f909027c0dc055aecec656206d483cb1f530f3770bd779966bc23acf4000019e9ecdccd86630b35be5a7ed9fd463b4f5b53310e0bb01dad5beb2173bef0fcbd73f94437fda9f28c00b01e9fa9165cf79fab8b9ad5c66ebf46151a7c47ea2addd6720c0b706b43734512de555779000e9febac7cb21141305e80330fd2f5301041040000104104000010410e0d302fe0330c20372ea8926840000000049454e44ae426082),
+(41, '2024-11-07 03:15:55.574584', 63, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-21ead6ed-f482-4a91-bba2-0b664d3e1257', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000044749444154789ced9d4b6ee3381086bf1a09c8920672001f85be419fa98f3437908e320730202d0348a85ef021ca99593533493bbf1706a4d01f48a050ef62ccf9adcffed7effd1e041040000104104000010410400001fef3e3eeee3e1d8f0b101720fa0630387101f765f0f20e20b8bbfbf6f94710e029004512b35c2581735fc027ca97fb4612bd296c0fbff8fc2308f05c80ddcc2ec07cdd30bb6ead4e9c2f7991dd006633fb801d0820c0bb4f5c0667b611086f06eb8bc33a66dbfd7fec4080ef0618dfbd59c78dd9c061d88c30b845dfcde71f778370efbd03010400defb8913407477e23254c730db69f989027c346035334be678c37f5e76f39fd7b7ec0ece17f029e4473333b35bef1d08f0bd01d93ac787f2f3fae246008bff8c10971d60708b0b0f2b3fff08023c05a0dadaedf498b2884363b1537ae7619dacb300bd00874891e42fbd2b4278e4b88fbf26032e3f5180ae802289cbe0104a1631d6986422a7b7d3e229b843704f4b248902f402643f71be61c409cf31cafaba01fb080c1bd1c1080b06e3e6ac63adf97d812308f014806a9ddd4bda7a7052c606489638570087a20917f98902f406f020848ddbe825a998c5b1ba8de9233f51809e8073b04c236bad9f183c37e4a475454e2589027403343ab1842d25a993046e81b3e851f4a4245180fe80f9ea0eec96bf4acb43ced8ac2f6e6666ccf6e2a92ba2e8ce2f730401fe6cc0a953b6aac39c312c5d6184ea36faf14e3a51808e80269f584a2914210cc56c9ffdc4e22c4a1205e80868239626639d2a7b9ef23955ffa5003a89a3221601ba02da1a4b2aea851a9370b2ddb90ced759d2451808e80a653d6e7cb92e58f753707482597dca993bbc27cbedc3142a71d08200070f2138f39aa3ae0d73a8687c50ed5384b270ad017305fdf8cf952da2028020780ddc29646ad5266272e90c6af3aee40806f0e68bbc252c9af86cd3930a91305a5f85cd649270ad01170aab1782b7f39775de3e95ae8234fb4481205e80868e6a3dad8d9eb441535625eda54a2f28902f405b49278442213b52b969ce86e9b64557716a03be02c89c527241c46b8f4274eb57151fd8902f4073413556d88521e0f67f131a92d3f5180ae8056128f39bea9c62453518c87c62cf3569244013a021e75627e7bf2189b29ab9cfc56078400bd014db5cf526b62b88fe571d820dc47677d759bedbcaed70e041000384f54d57ce2441d3a6de2e4125ed7c61de94401ba01fee54ed95a45399abf96237629f18cfc44013e0490355cbec9f316b2ef986fed6c2296c1d36c41b9ddf3eb1c41803f1a50fdc47dcc9723ae86b3be6e16977df4e8fb68f1efd7cd671b1c567b007cfe1104780ac0fb9b3c1936032cb72132b811decc0977232eaf9bc509f5270ad01970ba2bacb979a964b18feb1f38dfd0243f51808f019438252ee5ee77d617b71bbbd92dbc5993d99e18dc6edd7720c0b706bc8b9d6b29afb9830428f7d72dedd0a974a200dd00a6ff652a800002082080000208208000027c59c02f9d08ce7145478bbe0000000049454e44ae426082),
+(42, '2024-11-07 03:17:35.251484', 65, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-76256d1b-0a95-4acd-b21b-c4356ad85a90', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000042049444154789ced9d4b6ae3401086bf1a19bc6c430e90a3c837c89972a4b98174941c20202f0d12358b7ecac9acd226afdf0b83a4f6470b8a7a57db9c0f7db63f1ffb3d082080000208208000020820800002fcf7e3eeee3ed5cb6588b7187dddad5b86ddbde0eeeeebe7bf82003f0a90e40a082b76ce8f7d0a6bfc327b5cf1e7d3adec7e9d5710e05b03b25c85248451c2c665f0249d551306f7bac427e944017a020e6fee84d783c38acf67c3e7a7abf96c0097c3eab0f5de810002c07b9278396030acc0b01a61701b1d989f5e0dc26bef1d08200050ad73f21393757677c66588663b3990d4cbe6179fff0a02fc28c0c5cccc0e444ff0f9b4993f3f5e2d3e9c4fe0534897666666e7de3b10e0770392751e6fcacf97a31b016c7c39c0b86c0083dbb870b3f2f35f41801f01d8c5cef5922159e762b163a2f1669dacb300bd0045a4b263e84b4d6faf302ec018c571c8ea30e618258902740454e5960393b0c68825cada04341598292615dde31249a200bd00591263023be5ae6bd80ce4e25fcc6c33782d084a1205e80668ac73d67f4363a7a3618ea29785353f90240ad011d058678afe8bcee2949560740cabdb183ff21305e809d807cb545db72f2f7b7c5acbd0b2ce02f405d028415faafeabdd0e39951325367b91d28902dc05303fba039b01839b9dc0fd25955c62a2dbcc0c2e478770b562a7bfcc2b08f0bd01bb6ec350ec74b91705aee8c931fb93d28902f40534599c5a4a018a3b58c3e62545d68db04a1205e80568239698b15e489e60a31873de3b8732ca270ad01bb0cf6c17315bc8d5e652e88bb17336d1aaf609d017503a6537f3e4ff2d00c3cae860b103c73773700cc0e7d32b46e8b403010400763a91da68b3c01bc73056004bc94fd65980bb0036737f3996d9aa5a68063b8715e6c715b81ca2db6876eabd03017e35a08958bc6dc8d9dd9b805c8bce0569657104e80a68fb1353ecbc6b4dac1d601383f28902dc0db0cfe2a429fb76a2aa748595cb9c4a94240ad011d0d49d6b4c529b1fe29229376957b5a9ccb6007d01bbe98166ca743f56aafe4401ee0d68eace35446906578ab3b85391ae7967013a039a6e2fafa5bc628e53bb581e7069a6fce4270ad015d04a629ddeab9a30656c6a1453060c248902f404dcce3ba70eb0dc9a931dc3211be6f23b49a2005d01ed4455cde794f980b428e4a0a6b6302a9f284057c03b67ca96afd89f98fdc4da335b8f6992240ad01b90341ccca7c1ed9c1f9b9d8676c02faac3cbd1994f9d7720c0ef06d4aeb0433d1cd1b9808d13f138261bff3eacf9384febbd03010480f74ef24c63552bb10d11807035272cd8b83cac36fe7d507fa2009d016fcfd92ed1c9cd1c0bf58426f5270a703f40397e64d92c351f5e8e6e6736b373b8daeeb0f7e6ef09bed02b08f09d016f62e752ca6bce20016846ad50ec2c407780e9bf4c05104000010410400001041040802f0bf807e49601cb5d264aa20000000049454e44ae426082),
+(43, '2024-11-07 03:18:05.084792', 66, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-a28a139f-3f03-47ec-8f06-6051043b1ffa', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041849444154789ced9d4b8ea3481445cf6b903c0ca45a402d05efac953b83a5d4025a0a8696b05e0fe243e0ca1a55b8322b7d3d4983e12890aede9f48737eeb73ffe7f7ee070104104000010410400001041040805f7edcdddd97e330423e0cfbe9ba3838b3d773c1ddddf78f7f0401be1420eb8ae670d92eee0b83fb1276ccbeeff8dbf4a8ddcff30802fcd580a2abb00361277d9b7dc7ddf76c0993750ceef912c017d944019e0c181cb61156bb78b284cb7671d8ccdce39f58810002009b19eb34387037e06ef6afdfcc97e06e36fd811508f08a80ea9d739c98e2bfd9dd99630e114b00791c36777cfc2308f0a5009b99998da448f06dba9bbf7dbf59fa719dc097900fcdccccaebd5720c06b03c6f4677e683f6f173702d8fc638439de0106b739f270e5c73f82005f0270ca9d8f4386ec9dabc7762fcebab94ede59805e8026ea4bd1613a5744c81cc9459d85a198c354ed911205e80868ead44d7632d79c24fd502f5e525131cb564a14a01b602c5f86dd08d5ea6ddf76e03e02c3ceec608488c1b83bdbb8b34eb1cf0a0410a005841d5f363356bb6439a664c56f06db887bca5d00b81f35eecff30802fcd580927a4428cde7da54ae9e98c66d6b024280a700cec932e48c39421e7e604857309773a52b2d250ad011d0d8c43ced50a5972c616db4e4f47a4f62954d14a02fe0d4bb8bd04c25262318ea400ead4d54ee2c405fc069da30b49accf361652aec34292b9b28406f40f5ce831fad9423262ce768cadbc5304a89027404b4190b3512cc562fdbc46652c7ab1c95b108d015d0dac44666b14d9b4f6de82c5675fb04e80b382bb1c82ca5d2b576585f264877d4969f9428403740e39dbd8e3ce4c030720a0c8b9f6e2ae052a200bd006d3db1cab158c753009932eb92acc8260ad017d078e75227cceff135c25ca0365f7207464a14a02fa0ad27cea7dc254f3b849375543d518027011ee71373edc6eb1b554ddfb9c489f311264a89027402d0a8ca6bed70a1a6c894965f4e561e6b8c1fff08027c09c0cf7b400087133eface6d6725a2beb3009d0127ef4c19083b3622a9c16272d1503622914d14a02ba0b189479e7cd46eda04e6fc969fe244019e0658ede2760dadeaec9ab62401a8eff6ad13d8f5192b10e075018fef3bc351bba67a628ef9c4f2519c284057c02977ae7e7a815aca81a36cd3345a544f14a02be09d3d654f69cb5293956366f6d8a6494a14a037205b3858a7bb95cde90667fe61254e0c37cbe670bb38ebd47905020800c0597fb1262b61c7aedb88bfd948da53ecfa9c1508f0d280f1ddb3eb34ecacd37f180c6e849b39216273fcb6dbbc80113aad40000180f7f6d9ae8161296f1faf9f3edea6385180ee8032ed35c7eaa7b78bdb95bbd935dcec61b377bb765f81002f0df82977aeadbc660f1280638788f2836ca2001d01a6ff652a800002082080000208208000027c5ac0ff05e8fc98fec34aec0000000049454e44ae426082),
+(44, '2024-11-07 03:46:46.323234', 71, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-7a6038a3-5cf8-4ea2-aea6-d80bbf069dbc', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000040149444154789ced9d4d6ea34010855f0d485eb6a539408e02378b72a4b9011c25071809969640358baaea6eecc52cd21e67ecd70bc736f813484ff5db4544f1a5b5fff8daef01020820800002082080000208208080bf0066f105009071ed81f90cc8b8e6036b0f19b1c799e7b65740c08b03a0aaaa3a255555dda0ba001834563e0024559dd276f58bc7df0201cf05d8ddcccde74e81b5b7ef307cba750400c8089801bdc3151040c0ed4a17119193627ebb880b73eddd62fe932b20800000b39c5427ec22233a957773c797121ddefd0a087835c04d9c380116276258ba1c186e00d0314e24e0ee004b917b0069837e9c77d18fb78b8783f319d029f9474b9dc7d65740c06b037afb335cb59fd7930a1220c3670f0ccb0e009dcab0e0eaccc7df02014f01c8be763b7c44e7de397b6cd570d6d579f4ce04b40284a4167fe7df8508312c0006936317e6304579914a24a015a05262286cf3caf69454cd1c4ef9e429a98608a944021a02ae6d6258c2e2893b75639954fda31da51209b80320a95aef64965338e1b50706bd0866e9a1fad99b9f06b08bbc2f8daf8080d7061cbc7318bc720040a7162796b0d1166d22012d01c76419ee98cd592f8095b2a7a476d474eac2a41209680838c489610eddf4250d1359e41851246d22016d0187dedd0294cd5f51c0098b09c04b392647da44025a02b277065c84c8d631aad8c51d47c6429b48406b40f6ce5d1661ad4ed592ac44793b0c2395484043409db12022c13a31598aeabcda687264c6424053406d13f3f440e42e21c2ba0d1d6265659b80a6803a77f656de56f79d01a0aa270291b6304e24a029a0b28951a2418c552d380486d1e373b1d23b13d0125067276eeb4a9e7c08203db3768f4d9b48405b40b5efa134558aea2245416ebe7807864a24a02de0a6ef9cf5571a2d75dac27a2201f701d4956dcf89b7c34455de1556e2c44351e7f1b740c053006e76255661638a2ddc651b8499c885f544025a03eadcb9b4f79037c99a087302edbb2238c742406b00ae8c603c1727b757eca366171de7b1b24d40534035db57f2e47a5ca5cc11a4c3941f6d22014d01b5128fd37b6604b38b76c3b894ad615422010d01d7f3ce313855f66ce72812f5941f9548405b404e3d62797612732c3eb8520ff8b1ef4cc01d00879db240de8b587b62d7a46a9e2360df99807b01dcc2c503eb56119137d53c4c6acbcde17ad2fc74cfef730b04fcd7803edeec3d907edb7b197e010aecbd021b64f8f573d359ba0d58e50af0f85b20e08901f3d95ffc61efe9622ff26ebbc72e7c6a1d018d0187dc3995bdd8f51c41b585db569cc2389180f680d8ed352cf1ec77ac279511bbc8683631d7bd11cf7e6f7a0504bc34e02677ceadbc286fe711820579e89eb93301ad01c2ff654a000104104000010410400001047c5bc01f40c9106e34c6f9500000000049454e44ae426082),
+(45, '2024-11-07 03:46:55.361001', 72, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-676ff499-7f6e-4342-b8fc-e0c26a9e53f2', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041449444154789ced9d4d6ee3300c851f4706b2946fd0a328371bcc91e606f6517a8001e46500199c85fea8a45d8d820e9a978551c5ce071920283e925245f14f9ff3c7bffd1e208000020820800002082080000208f8f4a3aaaabaf561740a782d9710871b41537dd2abaa6afafa5720e05b00aa2516bbca43004e5523a09b4f50d5846c7a65687ef1f5af40c0f7029c22b202d84504219e527ce2fb45e55a1fca7fed22f2841910f0d280e5a32f15874b02b824f037d15d00e0589202e7ec191040c02700a7222ba01b4ec9c39f7939be15b7f9f41910f082808738710380a0aa08d1a98d13e1182712f074c02122220b009fa0bfd653f4d7dbad8483fb0ae8e6cb504444e43a7b0604bc36a0c489e1aefc7c5c54e00109ef0b10e209004e2544dc3df9f5af40c0b700b4b5360d43b8b23ab7155bb52ed6e639aece04cc0298a80fc8f657ad4e352167b643364757dda14f609c48c05cc06889c85687d034c906c05460b65e7ca14f24602660b0c47c49e8b219b9daa2ed6e2ebe9482202d9180d980104fd10da7e8765cea227c2c00fc4d8063816ad62e00805354e3dc1910f0e2802a3d2250dc9cd12945b6e4c030878dec8020e03980512ca3c6891128e658d54979b836e4503b133017607c6289ff005427584db40dab9d324e24603660a8dd45a02896ba0897f25e35d1e23b9bbca62512300b3074cafaf6571e76ff37f844803e9180d980b63abb923bcc0617515239bdb21262f189d531d21209980818c341ad722436c502a04a94d4be7355b0d012099804303ed16ae238dc6dcaba2fd1acf6113017d07ab66b576cd8ce450197254bee030b7a8a029a87ba8bcb9d3a536640000100862c4ed1c9c89787c030478c6a040c7d2201d300c3faab3aeae421802ccabad75d6889044c043cfac4bea314b63fd148e9fe082d91805900e3136b027b684dec1d603da9cd7c2201f3012de06b8ad9a7614755eb0a6bc39a4aa42512301160d33621bae6ff60fb1e4c1b84e95ea42512301160f7b1b43370eeda654b74d8d7eec87d2c04cc06184bec6d10bd5dbb078bd927f6a4367d22015301d6125b43629523f6862d034656fb08980d187c225cdde0a78ffd897683153b2008980d302734492ef9f908e05821e1f70a85ff239a37e243f2aefbf2dcac1910400080318b6364b32db4f40d2ea6d0c27c220153011f9e295b2f36262c496d9f8c9dd21209980e281e2e9fc684fd2d41e42d4164352b710d258f8be6e766ce8080d706f4aeb005f07f00f80809efe5d44e05ce25478cbb38050eb9037cfd2b10f04d01c702eceb29d85740442ead17e726f233961ca35c9f3703025e11309c15664e5eeafb086c79a5fe88f944029e0628120521d6b3df715c54ae3845aefe26c54e5194b55ca7cf808097063c68e756ca3367900040dfefc79e6d029e0010fe2f5302082080000208208000020820e0bf05fc051a6af90d53f7e6370000000049454e44ae426082),
+(46, '2024-11-07 03:47:19.082005', 73, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-f9a49e7f-b5cd-4b65-9fc7-223cc6755221', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000044249444154789ced9d4d6ee33810855f0d057849037d801c85ba411fa9919b4947c90106a0960624bc59f04794dcbd0a3d713b4f2b29a23f5040a158f5aac818f1a96bfbe773bf07041040000104104000010410400001fe78912439ed8f1100fc0a4e7e050047840890d111816b19e94992ebd77f82002f01289698ed0a245720c4f2b6be48a637f9f5f48bafff04015e0250ed6a45f68428f6977d228a77f4e479882c51805e80e1b77f0d11306000e79f11065c68580c04b6de331040803f02cccc8c131c6dc46608bc19274f9a5dff9f1908f07d018e3959018040d27e45949518808dcb90ee1048de033e3d03010400b09899d9801409be5f37e3fbdbcdd2cbf90a70f2f9d1cccc6cec3d0301be3720c789e1547e5e2e3478c0c2c70084b80180a38588d3c8afff04015e0270c89df7c7a422baacec4cc87ae2799c7267017a018a49c5aa5d97bb46590cc91c5d718745d491250ad00dd0f8c4ecfab8a69c248b8ac8194b1a3c255191944f14a02fa0ea898e06b8d5e0ff05b0fc58016c0300b7221030f80803869558865af37b824f10e025007bc057151b4700aed4a27d5e984bddb92ee5f28902f4043471625e75f760914c694b8a138f0569c58902f4051c936520991e90bd63768745cacee3b8ca270ad01970973ba3f642d415bb348915b52719ab7ca2000f00cc6f24802d5551382d0330a7920b497e5c68e362062c1702fe66759d7e9a4f10e0ef061c3a657dd16ef6aed864707e3d76caca270ad01b5057e79c2c37a934636e4d6ca2c31a3be62c5a96284027409bb1c0b3a423f164848d948d3d8b91250ad00dd0f8c456acd9abcd4d665db2e8f456abb3003d018dad3566c6d86a378d8902a7929f2c51803e801a18b2d9b89784ee1071080c532f4e5116b53a0bf008c07c0580e5c2c3eea96c7536fa1598df5600cb90f4c4ba8fe0693e4180bf1bd0ee199d0064c7e8f715bbc8db294eaced625a9d05e80aa8bd38dbc0d46db3fc20806d408857037ca4050298af0e16a69b0170c4fcb3d30c041000c0316389c83e31902530dc5399d84a89d21305e80b38e7cee5b1a6c8a8caa2afa9b4eace0274079cf7b1a42b17fa1c7779bb695cccbe5396284047005a27883d1da985e608ec359646d496b22d405740bb8fa596f2da17287b5bb275a2d1bd6589023c0430db8536fa9b25d926698cc8da215955c4f90ad8f8881908f07d01bf8f13511a62f77c260d9eea08c58902740534d5be83d51d4eeddce3c42a792b7716a02fe0fe4c59e6e364dbbb98ebcefb61b38a1305780c207bb8bc67204447cc5747848f7c6a13900248c7b4852047914ff40902bc0660b3d2d4e0581a1d36b3d193e9c0ba77bb309d29363e6606020870bc3633bb6e96bcde6c66690b15fccdec57d1186d7ce00c04f88680fb73b6fd41c566e9c0019a139af6044771a2009d01b58a17eb3abd5cd2e9c636269fb81f58229f28406fc05dee5c4b79fbf6fb74352744287716a03bc0f4bf4c0510400001041040000104104080a705fc0748abbea45356d6280000000049454e44ae426082);
+INSERT INTO `modulo_ventas_transaccionpago` (`id`, `_fecha_creacion`, `_factura_id`, `_qr_url`, `_qr_image`) VALUES
+(47, '2024-11-07 03:47:37.979647', 74, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-f247ffaf-d4c8-4367-91a6-6d778639ae7f', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041b49444154789ced9d4d6ee33810855f8d047829df2047916e30476ae466d251fa000350cb00345e2fc8e28fddb30ad36e384f8bc094a80f145028d61f2b467ceabafdf3b9f701010410400001041040000104104080ffbd4892dcbb21d600606504b0447f1026e67b00808524199fff0902bc04c02531cb551e9211e9de8e89dc9788247afb12efde78fe2708f01280225759ffa55f2b23b0924c9a102e89790a0049a2005f0e98089c33f86e6638de22b89f1702a71919fec40a04f88680f9e1ce69c07105004cd1b0dc66acbc198f7f030ccb7fa3572080001d6062a3f05692f623c0776200b69d73fa8595e423e0d32b10400000a79999cd4896e0fbf5667c7ffbb0f4f0b802dc973c343333db46af4080ef0dc8bbf37a977e3e2f342c80ad3f67600d370098686bc0ddcce77f82002f01e87ce73ac444ac61f2780e723cf17e9e7c67014601bac8f692edbf247564448d7127e94c57092f4a120518056875e21a802c7f2576bd237b2c69f29e828aa474a2006301fdeeec51ecb5d989a734c335e644cffb491205180840556f29959737610feaac8cbe5987623b06d989028c0634896634fa0f6527763de9dbb62a2004f81240ef2cc3bd93c535e18eb63e27cf6b2b259eff0902bc04c0452a78dd57d27521fb2eb516cc9d956c454a270a3016d0d57805bfb737e2c86c22a607ae13e5b1083016701f4f6c238b4bb509635f292b9d28c06840a3f53c9592555f0d6f7bdd43f6ac5d314a12051808683d162c640ddbd400a24b1d8b604e75f8fc4f10e02500ad4e648d1df602b7032503c3c68191240a300cd0fa242b5b9d4896d861d189e98d36e5274914600ca03b4205b713537a25a0330c5306b01449687716e00b00875d9a7c8afbce59ea6c5b2270bc4500e79c2bbaed3a7605027c73409fed039a92af6c2716df39147f3a00da9d05180b687c670fe574a589d99f269ba03630e9bcb30083015db68ff5bc33dd302c551165e89e8d2451808180ae52b6440977d45a1ce48288bbbcb3245180a1803e8ad3e653007431c6be7051beb3006301b853822e7aa53407403d2ed004b565270a3014d0ecce6e27fa21812c705e249bcb20ea792b49a2000301ad24d6fd7707502b156b19587a431510028c07347d710cb819b00400982270ced1d63dce3c6ca21d06f0d8cabc512b10400000dd89aa6231168507f4b53835e4adc8b60063018f3d6503e06d121b73b06931dbb4f394240a301ae06e73eac694adc38fd48c09680cc889c079a137b6fb8b3e4180d700dc2c17352ca46d7e9724991ad6bddb8cd4536cfb2de0d32b104080ee3acd5269ce71cd1dea80e523fdb11f2902fea1ae75020c06fca6cf7617c5aeed1f808740b7ec4401c6034afb9150f6e9f342db7033db924e2ccdde01d8367c05027c6bc083ef5c52794d0f1200debf2ed4e624d289020c0498fe97a900020820800002082080000208f0d7027e01899720851670ecaf0000000049454e44ae426082),
+(48, '2024-11-07 03:48:26.498399', 75, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-edb4fdae-41e3-4c90-ad4d-7dfcb7a9f517', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041349444154789ced9d4b8edb381445cf6b19f050067a015e0abd835e532da977202d250b28801a1a90f07ac0af9c043d08ab934e5d8f4c7d0e68e0e27d49da9c1ffa1c7ffcd8fb208000020820800002082080000208f02f80d5f2270f6fc07a3bcccc2ed8633383ed823d38ca93b7b13310e093037077775f667777dfd31098bcbbb1cc3b50be9ddff8f93f4180df025075b503f38e2fb37bfbe61ea724516837002951808f066c66ee5fae0e9b19eb7d87d5ae0edb05f7f81fcc4080cf08b87ceba201e630edc67c5c087e98af7fbd1bccefa367208000c0d771e20210dc9d10a71a18ee0093e244013e1cb059ca935324f8763bccdfeecf2e95f665cec3943a3f46cf4080cf0dc8de39bcb49fb7ab1b3358f87281100f80c92d445e9efcf93f4180df0270ca9ddb90297be7eab15316fdf29cbcb300a3009df492fed2b55abb091108498e533187b5bc28250a300ad0dbc4e0253b09ada80d398b016ab5d15d365180b1009aa88afe765ada4cedb6e4ca3653ad764b89020c04744a2ca6af8688114a5325eb2f89d523d96c4a89028c02142546804e707b5754ecdd76ac2f2a4e146024e09c2c4316616c9de5eabb634e658a30a5440106023a9b9864c6bcd78a4d0e0ccfc9728a22651305f810c07a77070e83edeaacf7a7e5b510bee3cb561744d8d5617e5af5d3bfcc4f10e0ff0da8de19f20a44aa392c55ece68e93efce76523651808180ea9da75c3b4c46b028310d73b25cb2e814542a4e146024a0cf5898bdf6f8bcaf6c7b9fa294a28e9428c048406713b3d59b6b8f856a228126d1f29c9428c04040ef9d9bccda90de13e73716c589020c07bcf658caba1b4a51b10586a7ca8ebcb30063017d8f259ccad6c5459700b266d6a9f9229b28c05040bf17a02ec8e9ea39af7162d790961205180838672cdead8fcdb5ebf9641d6b3d51198b0063017d65bbeb3b574dd68a4d1be6bb8a1305180938d50967efab88393b215576babe4b88aa6c0b301ad029b11df0d004e75d293b4e75a5acf6b108301ad0ed1e68294abad136ae8492d474456dc589020c05f44a6cfbf816fa00b2dbe5926e68f78000c301af36315fad2dbfb6843b956d6231968a1305180ae8cec5b1b43e718ee4a31fb61b84e569bedae4c666a7e746cd4000018053b7cf4b38e8e793148bfd3b355a54d9166028e0b45296d34e959a317bdd035d0e56d43e16013e0a502c21eb7dc7df6e79f78ad9ed30d2226d0ecbe670bb7a3a0079e40c04f8dc801a271e977c38e276d909f1b810e27171000b7fdff0d5801a2c8e9b810002c0f74ff29c9cf5f65e7297d949a94c887fee161630e64133104000e0dbe76ca7eca45b335bda2bafaf294e146038a0acf60af1287f71b15ddd1e1c668ff9692f87bddb63f80c04f8d480af72e7daca6b7bfbd227add4699bf3651305180930fd97a900020820800002082080000208f0cb02fe01a72435576a76c1180000000049454e44ae426082),
+(49, '2024-11-07 04:03:04.458351', 77, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-0df1df22-a13b-4f34-ad21-14177e25e38b', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000044a49444154789ced9d5f8ae3381087bf5a1bf268c31c2047716ed0475afa487303fb287d8006fbd16053f3a03f963bb32c6c2b3b339d9f1e4ce2c81f321492aaea578a399f6afb5f9f7b1e041040000104104000010410400001fe0530596c4cd6028b19530f4c3dd80db0dbd2c2d4efa9675f7704023c39007777f7b17377f78d7019cf5d469ad0852174299ef8f5af20c0970064bbda806ec37d265c421be6c6a1db6098895d46409628405d40fbf1c6f4e2185d0a334ed70d86ef1737baad75d86b8f400001fe01b01bb09b99b530bc255b9dfaff6d04023c33a0f1724d7e6bc3126d37768bcbf17271bb010cee7e0ff8f40804786a409af1162b6efa74dd5aa697d58a4f74efe653ff4eecd9551a81000200c963395a7091e7a6bc645786e16377792c02d401943199e0408788cd86fbdc8445f8649de42eb244012a02ca28cee047c470237c0a3f049b6c42c811681c6489023c04d0b8bf9a99bff68d33f58dfbb8b4c07271603706df82039dccb1f60804786a40194f1ce66fc9c49676039acd6037a6ab632c7d78c0a0d97c7aa93402010400ca7de291ca0bf35ff8754e93e030371ef27ef2580478186098c15ffbc6a3b261b9849d20d3d5ddcc2e0edd6ad0ad51fc9002ddbfcd2b08f035004b8bddd88de1cd62c030fac910f2ced07808798f210d537904020840507bf94874560829bf25eac382e94d66c6747587e5e2f6f75c7704023c3920ed13212ed11e527929f9177687498113033d73a37da2009501e7c8b67b34c7992cfe4af1c4215b6c9086299e28404d409e1363d83ac920b29f9c8c30dd236b16658902d4070c33d86db9b8ddd2c408402a12d8e36631cb70b2acfbb7790501fe6c408a6c77ab39ac06cbb7cd61b543f8e553ff1ee2de064d88349ab438025405642d4ece3bcf14e1ed23a87d7c55f580000f00244b4cb6469037006127384251cc92443ab244016a034ebe33d93be9caed609c22e7ec4fa77eb24401aa014ef1c4c27706f2ec18e7bfc3639ea54f14a036a0d8271e65cdc1d662bde9591f0bc4e49f2c51809a80b3259ea439b9b6392ed6799f187f95250a501170aa633955d91f31eed3b29d42de5a9d05a80a28aa070a2d2239bd12bbe47b1f9b2c5180ba80e5e2667de366d6c63539570ac41a7cdf88821c9dd0244075c0dd3e7184c28b2e5d94b430a3da3e01ea034a4b743f0461d14f4eb1c3ac0a2b6aa06589025404945a9c91bc272c6a4bb93fc9aed33e5180da809f9c017144168f799278fc43aed0d7ea2cc04300c799b24581f39ceb08bae8acd8ad2c61a93a02019e1c707fa6ec7c249a8fa48a977e4a596aaa3951803a80bb33654772a22f4b7372f9736ccaf609f078c0e0ab995d3d543ebbfb6a47f9732c75796ba5d916a032e0ee74e3a22d1787a587a96f6018f716683787ed78ecd7bf82005f0b709c299b3f75abd92dec0ed750feec2360379a78ba6cd51108f0d480529f08f91f2f4805a6a175ee87521ba49415a03aa0289cfa4f4dff652a800002082080000208208000023c0ef0038deb6f26e8a264780000000049454e44ae426082),
+(50, '2024-11-07 04:08:59.722338', 78, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-8fd89cfc-813b-4888-b036-3adfce41f0ef', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe010000000055145188000003f749444154789ced9d5b8ae43810458fc686fa94a117d04b71ee609634d4ceeca5d4020ae4cf0227311f7a67350c4c2b3bbbb3ae3f4cfa75b0218850dc50289df153dbf5af9f7b1e041040000104104000010410400001fe03b0bbb4b13be7e0e87ec55b16605faef9ce65ec1b08200000decccccef88b7d990cfc8973cb64ec6e8e77b97f029899996da3df4080af0dc876e54fc09fd8c664794b87ac0158f37db601b625db7dfc2708f09c80355c9dbb1cceb9cbf1128dd05e17b0ed987fcd1b08f025013ff6891b10cfadc5416e00abc9270a701740b1c41c8eebb679b3149dcb85cd9f374f3cfe1304782ac0e19c736e8ed971dcc1d581ff70f6ba403e073175be8c7e0301be36208dfdd6527e5edf3e0f07d7b71773f8c980e9a650fdf84f10e029004dac4d27fc493e9caccb989325e641a5a2b30003015dc6524ccf024036385633630de96a3d274b146018e053c6927292a22c0620c664dfa62db24401c6024ac5240f02d7309959c87a36d5ea4232c7e81d159d05180ae8d49940ded959766675ec98454593250a3018d009889d638cb6b6f93a444ca276bd204b146018e036778e03c3e8f52046e26ca2902ad0413516014603b24f0cd51d421e225af48429772e6e730dd595ca12051803e8ab7827b795bd5e684cf98c49c51160342017548e1938be19fb12cc0118c78cc383c17586e3255e60bf4c67a9b43cfe1304780a400db3c9275235ee5073977ca12a3bca9d05180ab88dc4291c1715b116fa563bd31352b605180f68549cea0ed3483014fbf3c90853021394b108301ad074a564ed304b39c5316673b47642842c5180a180ae3faababe22652779877ef676d3eaf2f84f10e02900454f8456542c0657079016f2a10559a200a301ed0c8858cff33958a7b163bf03eafc3059a200c3004d8d258d13cb61f59351bbc9ad56527104b803a09f1506293129713aded21c76f3236489028c0694f9d91c2eb550d592f3fefd2c871fb1d54a6b40083016d0ce80e8c5c23cf9abead9d6d75de41305180868559c56a7819ca264a1bb0fccca5804180b68c689759587ba1a444d56da5f25c796250a300a70dbc71233e6ad0e1bb394987b066ad3952c518081802e3a8732bd2140b3108e592e036e80541c01ee0068fb588a4d368d53c513362e7243332004180db85997b3f3893130d3ccc069bafc648902dc0590626d77ed70aece8a488b2832191c33ee32fa0d04f8da80b21cd37506ff0e3099c39f73ea14f8fb1d4b19f37576e000ffeed43d20c0af00ec0bd47681b8c4ac5b4a69fa6dceb7fcbe9f20c01f06f8b4a6acd55989be2bb9f49dcfd21305180bf8bca66c36c264754d3da5a4d75ecab600a3013fc89d6b474b4aa5bb8eaac9943b0b7007404d3dfedfa6ff321540000104104000010410400001ee07f817d67c03a5c5bc1d740000000049454e44ae426082),
+(51, '2024-11-07 04:09:16.795447', 79, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-378e9199-a28a-4fb9-80cc-f4d2bf15b31f', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041449444154789ced9d4d6edb301085df5402bc94811e2047916ed02315b9997d94dc805a1a90f0ba180e4939ed2a7492264f0b4796e40f14f0309c3f3246bce9d87fbcedf7800002082080000208208000020820c03f0f92242fcdd70d000662268939951b692066bf0b00134972fbf85710e04b00428959572053561d2f00ea0d97de65daee7ef1f1af20c0d702ec667606703dc715b7892f236c894b7e7635b3078c4000018ec7405b00179cd9d3cdf86c2380d58c4cef31020104c847368c03010cb4df311dbbd97c8f1108f0dd00affcc40b1013731a8a6398a318f989023c1ab09a99d90860dac0e7f36e7c7eba6577f07a067899f2573333b3a5f70804f8de80d1ffcc77e5e7f544c304d8fc320273da0160a0cd09774f7efc2b08f0250065aedd0e5f31e4d9b9ccd839b3737c4eb3b300bd008df4fca3e613c90d9ed99e5d8e4398c36983fc4401fa029af8039836f8c75c62920b80a602939fa35760a44401ba01c638d947e4b4cd0e60fdb9956b1b66028629c1807123d671c3f59cfa8c4000010e808164dacdcc4e79129e5f4600d3cd70b511e4cb88a83bef560ad29fe81504f89f01117a24002ec7086072d8427adf43e336fa213f51809e8063b08c62f506771b2362a6dbc950e7a6d85980ce80c6267adf1700649b38e5424bd624a32b275f931205e80838d4ee12e081b107d0293459240a844d54ec2c405fc0a153b6a66ddc2656fbb71d3b65651305e80d28b373b4c6e676d9d05fb68968d2db3594911205e80668239692b16eab28ad4f8828fe458c2d250ad00bd0da449759515d155c89acc992d451b54f80ae80d77e62c9ddb0ac9e2a691bff85b741488902f40434d99976815f42c4ced531ac99c5a94cce52a2009d007fc9136e65123e389039b21ea87ca2000f00b4f9c466a540a8ae3196deae58a76d2951809e80b6eeec6173e82fd798a783752cf944452c02f40534b173dbe8c0b2a22a02e8c64f9ca9fe44017a038ed5be9ab6295db13894a101c43c2d250ad01370bf8ec58f3a0997924b9be34e50dd5980ce804689b50d824dc90f40241af3864d11de4889027404b44a3cc6c911a7d454f661ff26cdce0274051c6c62f4c7b637504c248b4d54078400dd01633d3560f75d1e78fd959097554d7e46f31be7f6b92e2310400000b5c612c70577fd89402def35851665b605e80a78bda76c42dbfc75a9896e86b358b769921205e80dc8160eb89e07dab28eb065ba19e6b41b80a15d5185f5c4b2e3e7e7790501be0620f694456c094626c09689b46535e3b39de87b8a2d8f198100021c0e377843b67abe93f14402d3cdec7754056d79dc0804f88e80438da5d979a9acb7afe515b40bfce4270af020c01055bc54e6e9f5445bb09b7b8cae53e4c8da96ee2310e05b035ec5cea594173db3650941c27d33ad6ca200dd00a6ff652a800002082080000208208000027c5ac01f883efaae7418c1ed0000000049454e44ae426082),
+(52, '2024-11-07 04:14:11.365426', 80, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-75b9cd64-f29a-4e81-bcb0-d63cfd032fd0', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000040649444154789ced9d498ee34610455f9804b4a4803e808f42deacd047f20dc8a3f4010c2497024884173952b5f0a2532ea3f4b95089d3430af8888c29b3ccf9ade3fce3f7de070104104000010410400001041040807f016c960ee034b33bb0ddc1967dc496dd0cf6115b38f393f7be2310e0cd01b8bbbbaf93bbbb1fc48f7572670e43730d26775fa7e3e98dafff09027c2f40b58483db4700981e6666b726cf630b4403fa82110820c0e5d8477cdd47d8ece6be4e0f63b331ddf0f01f8c400001d26176075f39cd1606b78f381d3faa77f8ea1108f076804f7ee20a307bf613936378000cf213057839603733b311980efce7fd34fff9e723b983db1de23c0d1043e7a5f70804786fc018ffcc4fe5e7fde6c60436ff1a610e27c0e036079e9efcfa9f20c0b70094b9f6b89c32b4599c1570cf9375f39c6667017a01aaa4600e833387acba740d98a31c876c0ea79472941205e80628469064fad6e988114bd45ab9111f5e277798dce32352a200bd0063fe321cc614f2d9fee300ce11180e6607630a188c87b38f07db3df4198100020065760e94b475711103cdc4ec1e866c09e30dd944013a021a2502433ca99e205198a5f83c87f2a2fc44017a02aec132d108427116cb114399b511a694284047c075761eb2110c4970f15b2bcc7a4d4a14a023e052bb0bf5da11ddc67c232570aa4d949f28405f4093c5491d88cd8de218e66a739abb914d14a037a0ccce43ca1da64ed962f542abc9184527c328250ad011d0462c29637d3415c0abeab24e738c2d250ad00dd0dac4aab5a6dadc44d639c733bbaa7d02f4065c6267f7ecffd553a0c927422e08ca4f14a02ba0899d733d25575b9e1dc3d88b93b2dd9a9d05e80b686d62bbc02ff73854073245d639db289b284057405bedabe595a2baea31e65a746e17931205e80ab82ab1d55f4e255eac63c9272a6211a02fe09ab169fb13936358ba22aa9f38bbfa1305e80d687ab66b1b6cd6a4e71adf745c9a64e5270ad01d70cd6cd755a69765a535808e6173d03a16017a03aeab074a7a3b40db909375d724b5e5270ad015d0fa89b5b2b27e0ea0537a3bd4f55652a2001d019f6acc503ac0a6d41f5b7b7152de511d100274078cf5abc119f74f8429c0fc6b3c1c8ed1e342fce7e73a8d400001801a7ae4a35d5bffd48b7829b4287616a02be0d2294bdbf7d084cda50c9d975a691d8b00af02240b079b8d54c398f7f4bc9ac3fde66cf7ce2310e0bd01c54f3c4798fe06382d6ec934871387039bfffa71f866c301bb3d01befe2708f08d019b25ab9776819f1ef1c33e728ed196d78e408077035cf60a6b765e2aeb0872070e25bd83fa13057821a0062679ef77f69bdbc269b6449bd8e6bd6de93e0201de1af029762ea5bc9ccf4eb14bda21222fc4974d14a02fc0f4bf4c0510400001041040000104104080ff2de01fd71e0258cfa84c0f0000000049454e44ae426082),
+(53, '2024-11-07 04:16:23.880816', 81, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-883ce73d-eb1e-46a1-8211-897ba79e3f82', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000044649444154789ced9d4d6ee33810465f8d047829013e408e42df6c9023f50da4a3f40102504b03126a162425ca9e5e8541d2c9a7856149f4030914ea9fb439efbab67fdef77b104000010410400001041040000104f8e3e5eeee3e55b72b3e0dee045f4fe362777a36b8bbfbfaf94b10e05b01b25c014b9f1fcd76719fe8dca761c5ec65c55fc747d9fd3a4b10e07b0036331b8179ec9c1081e077b37fe366c768bb01cc66f60c78f70c04f8d180fef9d166ce725d7d36f0f9c531b8b8b1180e5beb190820c01f009d9b8d9ba56f373623f8dd7c1adc93dafcf01908f00301c5eb2b7e62f2ff82bb13627611b303c9715bfde2f39720c0b7022c6666d603c38abf8e9bf9ebcb3dbb83f3083e0df9d6ccccecd67a0602fc6c40f613c343f979b9b8318085df3d84b801746e21f230f2f39720c0b700ecb6763dddd265ebbc5b6cf762acab71b2ce02b4029c25b1f34aeadc574a3e67254967ba869cfc96240ad00c5049620956d614b124599b80aa02330dee902a309244011a02aa7ca23144728cb25c5760eb816e25f8f1b65f9da55f99c7d8660602085003968bbbc7cdfcd52ec5082f7d2ab4305b8f7b8a5d00d8ac7cfb424b10e0af0694d02302d0796e7488f90590fb1eb2dba80e08013e06700e9629214a8a93bdfa4883a74a302589023404543a31a94306af3a70b2111e4a1493e3e9324e9228402bc0a97617018e640d90cb7bb17bd4898a9d05680b38751b56e6b8b8836117c2ba53563a5180d680dd3a1f49ed3d584909ecba853b9beda4182589023404d4114bca582727f0e8c081aa53c7777154c422405340ad1393ac457257d8fe1638657682abda27406b40e5277a75c5acf5d2983d6d937eb197fc2489023403d499ed5236e1b8ad1dc39263045967019a03785282a52b3bb741ec0ee49e68543e51800f00d4599ca40487952abd5ded28885de54f4a1205680ba87a717c1ebb15968b035b4f88a3c110dd8203f3d86161bae7ad56cd66208000c043b50f8eca5e760c8b4f58f989a10a6da413056803a87bb643ec76ef700f91a14e6f03c54e4b12056809a82296524581a4188f6da547009dbcc3a87d2c02b406d4f9c46489e3fe221ee792f86ea24bc945996d019a02ea7d2c5529efb0d359e0c865688efd569244011a02ce3baa3a3f3ddbd33b471b583c5ac324890234049c7654b119d5b62afa1586b7de59ae6ee9c0a6db3eaed50c04100038579b93c7d815d5b7e773f6f25e556851665b80a680e73365cf273fd4f944a87a16e5270af021803d30995fd674245349e56c963f0e5772b9781ef2959620c05f0dd8fdc4ad87e10d58fa95f0bbc742dc20f8d65bf87575660358ec01f0f94b10e05b00fee74c5952c4e2f3f886a51af3703767885888d7d5c2af2bc6d068060208009c4f68aa4e5e2aadd95e3a70a837fd299f28c087014a7925c472f63bcb259d6e6cb7e16e55667b1a56ecd67c0602fc68c053ec5c1dfa70da56751c0e7134d34a270ad00c60fa2f5301041040000104104000010410e0cb02fe0330a5c689ce8c842d0000000049454e44ae426082),
+(54, '2024-11-07 04:17:37.341568', 82, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-d154d24d-eee3-40e9-9668-eece0d2f36f7', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000042249444154789ced9d4b6edb4a10454f8504346c0159409642ede02d29c892b20372296f0102c8a10112f506fda56c8fd282f3eccb81a1a6a883267051bfae6e9bf347d7f1edcf7e0f020820800002082080000208208000ef5eeeeeeef369c8b40e0e613f3db70ecee4e55e7077f7fde35f41804f01c84a4cba4ac32247f775885f44e9cd617ff8c5c7bf82009f0b7098d91558ae87b1981984176389f7d2437603d2b7dd6720c097068cafee6c2336f931b2d8e010eee66c23b0190e47ef190820c03b80c159ece23e7398dd18dc7e66771ccde6d36720c01704bc8a136780a9c4892930dc0106c589023c1db09999d908841dff753dcc7ffd7849e1e072059f431a9a9999dd7acf4080af0d4871e2f4b0fcbc5ddc0860d3bf234ceb0130b84d2b0f4f7efc2b08f02900c5d7eea72143aee2648f1deb390fcfc93b0bd00bd02831698dac3af71da61598a21c876c0e432e2f4a8902f402bc6113f798b1c49c64069a159839b867114a8902740454371bad5eb684d5130f69c985e09e86eb20250ad019d07ae7223d92e020a6d29ed7fdf20aa0e244017a031a9b98bc6e6e7e889eb8f44264b7ad0e08019e023827cbd066cc254ef458e826a52d53d32921250ad0079025b5e6be2f20afb1e4dcb9c9624a14299b28405fc069ed6e05629c18721571ce1e3b27d0b94971924d14a027e0d4291b723d672a959d69859ab6e43851365180de80e29d87534c9863c7e8b6933a73a127058b52a2001d016dc642a8d1e1506c624e604a8e9deb8e52a2001d01ad4d4c82dbc911e3c977a7dc2589555d6102f4059cbc73687397a83aa0642769580da8942840374063f5524c983fd50262d39a13d79de59d05e80ec8fb58c27d34826384fb48fa944ca21156587eecc036ee4c73bed76306020800bcaa27a6c5e75072e7baa3a06e3a5d41de5980be80b62b6cf2ea7a6b29b12deaa89e28c0b3006d07c4d4fc293baa4a575819d604464a14a01ba05d77ae329b295db1248f5d93955c63941205e80838550c9b96afb6bcdd24d09c6a3c52a200dd00a74ed9d21f1b43c4da2956ea89b1b253eb8e52a2009d00a71d5565e354cc5d1afb57d79deb7e2b2951808e80479b48e90aab1b576a0b77de60a50e08017a039a139a0c0e83b0c683989c6ddc7df9e76ebedc2e6e6071d77d7aaed70c041000a8a947be66e0a12ba75d770e7eca5d641305e80478f34cd9bc8fa0090769f656d5639aa444017a0342165c3cb533b7c6b258f1dfe1c59239dc2e5e4ef7fc7b5e4180ff35a0e8ec1821dcf368fbbe03c7e8931fc6f4fb8a2f06b0d903e0e35f41804f0178eb4cd9dd60c097eb1d83c153574e58b169fdbe5beac5e93403010400cee7e284da8b9d5bb3ebf10fd4139ad01a8b004f03d4e5957cf63bdbc5edc661760b2ff6b0f3d46edd6720c09706bcca9dcb525e730609403d21227f219b28404780e97f990a208000020820800002082080007f2de03fa80719a6f4f2555f0000000049454e44ae426082),
+(55, '2024-11-07 04:17:46.063640', 83, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-47d9dd47-07b9-4c86-8340-5e108ee74c3c', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000043049444154789ced9d4b6aeb4a1086bfba1278d8862c204b9177709674c9cea4a59c0518a46140a2eea09f720edcc1699390fc1e386e77fba305453dbb2be6fcd5ebf8e7ef7e0f020820800002082080000208208000ff03582cbd603363b111bb417edbcc601bb11b475e79edbb03017e38604c7fc30a70c4a14d7e186c579ced6577d84723ecf872bd13a3ede557a71d08200000eeeeee73d881b0e3339087ee3e333893a7e16989bbbbef9fff08027c0bc0f8e19b701f9956dcd80c27dccd171bf290a3f70e0410e0cf80ede26666e63383db8dc1ed5f7f379f837bf10e9fba03017e22a058e7686ba3e9657277a6758866dbdd77803a6c7ef1f98f20c0b7026c666636123dc1b7eb61fef6fa6e7172b982cf210d63e87cebbd03017e3620f989d343f979bbb811c0a6df234ceb0130b84d2b0f2b3fff1104f8168053ec5c870cc93a178bed9e8d75b34ed659805e802c522bc53bcc52e7bec3142776a274c657c9f1481205e805289298d28649fe4a4c32438a62206511b3104a1205e808a00a55cc5d4f5113564b3cb4b37118672589027404348e61567dd9459c2119e668aca3da4ca65c3a5180be802a5250f45f92c9ac046366a7ba8de45949a200dd00e76019aa3acc9a307b872594c9fea42451808e8026768e6256156363b6438a6262d83cad834b270ad01770aaddad904fe04055875944a1399a3349270ad01350ac3354214c87bf42710cc3de186692ef284914a023a0c927264d1815de4eb6d8f9b862496f67c5284914a023a08d58623e71adc1b237d2d9bccd8d2b294914a00fe0438da52abc2470e5a4d89a16a775b2ce02f404b49218fdc4500c73f109a7ac01e32fda929f2451803e80368b3343567d6bfed43886b9c6d7d86e49a200bd00e56e9f030c3bcbeb3e42702c7d0746586179dd816ddc9966dcd26dc02ff008027c0bc087c0e47cadefe427e6c30f35ef289d28402fc063ec5ce52fa712bd09606a3e51118b007d016d66bb9c8a6d6f54955361659866e5270ad01350ee3b0fbb45ef90c1590c7c79dd3138cc975ff7310dc3dd607bd9fbed40000180b6ee5c1b3c3c1c97cd1598723e62457567013a039a1b550f979edb4273c8f9c49ad4969f284057402b892576cea1f43980696ad1aaf609d01b70d289b5f85cc21638356c4a19709d8010a037a0e9d0647018708cbed8e0a96b1dc7c8f4fb123b349dd675da81000200edddbe36c79dcbd0b46711bd49392ab32d405fc0e9a42ca750ba54a04f89eeec4aca4f14e029801c36b35c733be3e5d59de55a965675b85deac4d7790401be07e0c8adb337b3ac040f637277bb6d17f7b7dc85db6ecfd981003f1af0b1a72c6040eca99d2293f06e4e58b1697dd96d9a0f83d06907020800fca1cff6398b5ddb3f503b34e9f68000cf03942ade5aedf4c5edc661760beff6d00fde6edd7720c08f067c889d4b29afe94102503b44e8ccb6004f0098fe97a900020820800002082080000208f06501ff010199eb09d4eed4810000000049454e44ae426082),
+(56, '2024-11-07 04:17:54.252204', 84, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-5daa0bc8-75a8-4bb4-9f0b-42f9054d5d52', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000044a49444154789ced9d4b6ee4361086bf8a0478c906e6003e8a7c831c299823cd0da4a3cc010c50cb06d8a82cf8ecb6b31a269ed8bf16b6d9527fa08042bd8b36e797aedb1fbff67d104000010410400001041040000104f8c7cbdddd7defcb0810dcd9dc9d2d2ece16c13d2ecee6a93e19dcdd3d7dfc2b08f029006bf91d22c06d85e0c0b96689f3e3b2e0c7735a8d90f0e3f24a8eb68f3f27ed40000180a613430242c27796a2090909b6b8b8bb27b29e2c8f80efd28902cc04ac6f3e0911e7043857fc784e70bc2c6e9c86c36df60e0410e07dc0b96276b999ef2c6e2fdcccfef2abf91edccd2effc10e04f88a80669db3adcda6b7072bbe8744b1cef4e5f08d8f7f05013e15e03433b395ec097ebfdcccbf3f5f2ddf3c2ee07b284b3333b397d93b10e06b038a9fb83d949fcf273702d8f673852dde0016b72df2f0e4c7bf82009f0270173bf7650da0bbc576afc67a784ed659805980bbcc76287f65a9734fb04560f39adec95728491d49a200d3008324e6f2cae629472c3926d981a102b3e7a4a2bb74a2007301433ed1b6dde1b8bc02e7b7442eb9b024360723440cd6e4ad023365070208300072c6e63483f3a91ae17385cdaf9673dcfe73a5d69d6f367d07027c71400f3d2856f7aed00794e5e036e64b7ea2003301f7c13255eb55d1f39d253ff1d090233f5180b9802a52b18a5956879ec8f5941db8abac3465299d28c04cc05ded2ed6cff6e16e29f4d51bb54971934e146026e0fd7ce24ecf6237733c74ca4a270a301bd0acf352938a3580e97ab2042bcd6d2c8a519228c044c018b1949981de1fdbe294e11aa31849a200d300a34ef41e13c7bbbb6319ba08abbac204980b18fdc4cdbd5add586ee4674adaa6363f8c253f49a200730077d6195adf0d398b3d3a86b917c773b65bd659807f05b0f9d5aab3d8a7a78a4eb49790e0784ed40a60a2cd11fc36af20c0ff1b30f8894351afe473c6fec4e227e61f20eb2cc05cc09d9f18c7fed852630ed577ec49ed32d12249146022e02e768e3d77d826aa86baf3984a543e5180b980c77a725791353aa975e7b6ecb18b2451806980a1ee3c1c7a331ae15487097adf43d41c8b00b3013c28416f95bd7e38530960422db9ec75294914601a60b0cede4b7983acb589bed206d1e7ad2489024c048c9238149f63537d304c59f56cb7221601e602c689aa3c9f72aec98fe7b4c269781ec93fbfb91d067e5cda73b376208000c043a34d4b1bc6bbba731b2bed296f65b605980b787ba66c6dc829cbd8a6575a19a60f13481205980d6861f3614f43169136db07a195a6cf27e7b84cde81005f1bd0fcc4db0ae1150811db76b07c2e53b81adb8f0b7e18c0690f808f7f05013e05e0ed99b2e79a28d1c92b068b5b3e7b3b446c8bdf926dfbcd204cda81000200ef9cb3dda293364755ca2bc3094d3dc0919f28c06440edf6dae2cd4af3e1f9544e377e09571b0f7b07ec65fa0e04f8d28037b1732baf8ced8a50cfaf1bfa18a51305980830fd2f5301041040000104104000010410e0b705fc0dba79e6afd73268a10000000049454e44ae426082),
+(57, '2024-11-07 04:18:11.373569', 85, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-73a14d4e-8176-470b-9ea0-9af8dffe65df', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000042449444154789ced9d4d6ae44810855fb404b594600ed04749dda08fd4f491e606d2517c8081d4d220f17a11f9277960169d8507d7d3a26c95531f2978c45f46a68df8a3ebfcf667cf03020820800002082080000208208000ff01d82c5dc03ec216fff634331b61cb5eff70e69173df1908f0e2009024b94e24c903640480e9003091640448e6db753a6e4f7cfe2b08f0b500673273db3c907c7bb808b1cd038bfd832d801bd027cc400001ee972dd3bb61b311c0f46e5cf70781dd2c59cce7cf408097038c1fbf3a0d9b0df4df300db4c0d3b8fd88304cfff49e81000200f81827ae00104822c4a1048607000c8a1305783a6037cf9381e9007fcda7f1d7f7f7140e6e33c0754ab79e3a2fbd6720c06b0392770eb7e5e7fd41c30458781b81104f00186821e236f2f35f41802f0128bef6b8dc6248deb9786c323beb669cbcb300bd006dd4e71fc8aa230f204400c1e5386473381d509c28405f40a344bf5da7c3339646986b19ece326d287488902f402e42ace3e1e0400c30400fb5f07807304301c08040c538401e3c132b8cb0c0410e00238cd6bd75ec50680f0962adbd86c04e9b94b1a6c4bf71908f0d2809a7a00c0c09a98b8270e71a0c7891e36f2c80f2a4e14a027e09a2ca3848825277161d2ff4a36c2941205e808c8928a5966c0d0e4243ea464316e13434c43a44401ba012e6b7711687ac156a075d1005229c7e5289b28404f40f1ce40ee40645336cc294aeb9851cca69428403740f1ce4353d4c6456b3ea496b7b361941205e8086833964bc51a296dc13d45497254c6224057406b13d3ee81d609b3e9148b497fc93aca3b0bd013d0e6ce6bb589114d5762b593fec4aa385180ee80a61727b5c146a46d5521e2121896ca627d4c4a14a017e062132f5dd9a9c65d0248cfacb389944d14a02fa051622adbd41da5ff1627fa0720250ad01750dc2cbd76736f4dacf9742d6aa71d2d52a2001d011f7ab69b95bd38b0566c9a383150fd8902f406dc7b71b2fd2b5db1009ad69cb4eea2cab600bd01172566c37871c247dec252f7b6444071a2007d01cdba737b384e69b929c1620a254bbb98e24401ba02da7a6259ca6bf4572a3b2ec2d23d564ce9e7bf82005f0eb0d983b6d4dcc57f9e663f23505bc3b0cdf9aca6de3310e07501f7dcd9bf2b8631571b6b7f62be94b108d015d0d413b3264b0171aa9d8a354ecc9545652c0274055c3a6571e97ba8bd3864d94c50d7a7651305780620a7cd7e6a6288a7f9914c9b3df2f975286d38fb83d8e6ce3310e0b501e5fcc47344391c91d891ce650a3c0de1ef19dc6c3880dd6e80cf7f0501be2a60a0d93cb8d533b347e9c57937fb996b8cb63c710602bc20e0923b37272fe5d66ce60e1ce07a4293e244019e03c8ab7821e6b3dfb13f680b4ef363b75da748c1a22ddd6720c04b033ee4ce65292f9bbeb2161d5136ddcb260ad01b60fa5fa602082080000208208000020820c0ff16f01b662adabf839023990000000049454e44ae426082),
+(58, '2024-11-07 04:18:52.297145', 86, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-70bd566e-5982-414a-9411-59bec39d86d1', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000044949444154789ced9d4d6ee33810465f8d0478490339408e42df60ce9423f50da4a3f4011a90960628d42c484a94d3b36a6692713e2f8248961e48e043fdb1489bf3479fedaf3f7b1f041040000104104000010410400001fef5e3eeee3e9d2e890bf81412c0502e7d199ce8a93e19dcdd3d7dfe1404780a405562d155169c4f14e9d56f13597a53480f6f7cfe1404782ec0666657607e4dd82d4bef6e6666763c6d3780b9bdf785a620c07301d611e2cf8b33db259b3e582f0eab99fbf21f8c4080ef0818dfdfda8cf98a396c06611b89be99cf7f2f18e157ef11082000f03e4e9c00624e5b863d302cb98be244013e1ab09a99d9088484bf5d37f3b7d77b0907e72bf814ca650e1e6fbd4720c0f70614ef1c1f969fd78b1b012cfe1c212e1bc0e016171e9efcfc2908f01480ddd7a6d365ae220e8dc72ee59df373f2ce02f402b451df14bca962e7e8302e40cc721caa390c09c58902f405b436317acd4ee2a14ea05981c9459de09e1f911205e805a8559c75c4e7eb52addefa92806d0486447430c282c1989c754c7bb4f8f95310e0290047c0478d096b883801c513337859775e062fe56d7967017a02aa1217a8e2f23d1c2c45c593db560784001f023827cb14adc5050e611eea2ccf7952ee2c4067406313b3ff25b8937bc1f2177b165dbd78b693b289027c04607e75272f34033eb159597779bd5bee8098cd8cd92e0ee16ec56c7ea12908f0ff069c3a65c351e31e1cc261ffd2b95356365180de80dd3beffdb19e38d5ae779f5c33eb1a2c4a89027404b419cb5eb12ea6afaeec9d53945ad4911205e809686d629659a846f0f876cfac73161d5dab7d02f406345a2bebce8d306b6571b789f98d635b8b9428402fc0ee75ab4f2e1d1094ff9ac070a9626d0b8d52a2007d00cdee01677d7123a41182638462128db0e4ad56b08e8938d57b3d46208000c0c93b973871df517adc03ea92b3d69d05f810c079574a9bbb1c4b7ea5498cb69ea88c4580be80b6b25da4974e3baa6ac5e6b8ac851e2951808e80b617271e873eb077c55292e5b64976513d5180de80773ddb13508bda755be943029ddb25a444017a021a25d686d852c5a9adb1ec6d38eecd32a0e24401ba025a259e97f24a76bc1ca5ecd44854365180be80479b98ef9d4b394716533758a9034280de80a6b26da53f71480623c41f8613169cf5e2361b79d7bded7d8c5d4620800040bbdaf790bbb45d39678fbd37eec8260ad01b305bf9e403eb584780cdfccd2eeeee09bbe5273783703fceaffb325310e03900c5c2c15ccf65aa61e366c79f726fbd38f3b5f30804f8de803d4edc46f2e188eb88431a2d4edbe8d1b7d1e28f2b3e1bc06a0f80cf9f82004f01f8cd499e4332189cf9fa0b83c14b574e58b0b8bc242bbd389d46208000c0f9acb0d3ee95d21f5b3b70e07c4293ea89027c0ca0767bc5a59efdce7a71bbb199ddc2ddeab9242580b45bf71108f0ad01ef7e8fe538bf8ee66063eaf975c7a653d944017a024cbf652a800002082080000208208000027c59c03ffb24dd25940ab5590000000049454e44ae426082),
+(59, '2024-11-07 04:19:23.750170', 87, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-c27f8d09-6ddb-4efb-9db4-10835631afa6', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041d49444154789ced9dcb6de3481445cf1b0ad0b20474000e85cc60421a74489d01194a0760805c1a20f166515fca1ecca24b70b775b93044a97850042edeaf5e95cdf9a5ebf8ebd79e07010410400001041040000104104080ff012c962ee030006c026cdaca0fdb059b38f2c85bdf1908f0e400dcdddde7e0eeee3bee2b30ae83fbcce0ee2bf81c7620b8fb1cf6bb273eff1504f812804bfe705c20bcc23281b31de68457730023a441f1531cd26b060208f03120b8db14dc61bb3acb8bbbcfdbd561338b16f3d13310e019019777df6c068b81c788311c17463fcc97bf578cf0da7b06020800bc8f136780d1dd53b01803c31d60509c28c0c3013145be0061c7bfdf0ef3ef2f6f318b66b981cf21ddc6d479ea3d03019e1b90bcf378b7fcbc5ddd0860e3cf0b8ceb0130b88d2b77233fff1504f81280e26bf7d32d43f2cec563bb6767dd8c937716a017a048ca1d823be39a55e7bec3b8026394e390cd61292f4a8902f40234f947bc1f7d8f194bcc496648590c401a17aa7ca54401fa00aa9ba5bae39a3603436b31e3ed3a7814ab9428402f40e39d6bb18658b181e498a3b3aefa5b15270ad01b9025b542f2bac530164dc6ca4e0d1be3a53851809e8073b20c3963497d0fb5945d53996427651305e809686c629459934037c63225cb299fc9e3a44401ba014e6b77ebe9bb6a18a3442195726a7a2d250ad00b50bc33e40ec452d409d5feed8d6326c58e52a2001d01c5fea564b989044bf3438a1373793b1b462951808e803663299160125ca83f34294afa55198b005d01ad4d8c320b55701f2d4317b1ca3b0bd013705f4f6c4bd9deae007aaa31e6b44571a2005d018dd56b1b6d565265b1090cd7c1b5ee2cc0a300e7d53e6f62c2d4065102484ad8a87aa200fd016d7f62e900abaaab11638a13eb5aa09428404fc07d2f0e64fda535e670b28eaa270af020c0c93baf90ead95e765495aeb01a278ecd2352a2007d001fd4133df7c706cf6b7c616f9a6415270af000405bc519739d26b53c9438d1d7f3cacaaafe44017a039a8ca5a62855896950289935c958aab22d405f40abc4f33ebebc9925ad40e792374ddd5b4a14e02180c5aef1481c9bf2d1758c3faf4d43583cab6eb9a533edbacf4080e70534e7e2583c0867bbecbedc00b61b4ed831b8ba01f8329571bd66208000c0bb3596d3598975ddb9c489a14db4e59d05e8063875cae6dbda245baf5863e4b4b7454a14a03b20593858ec92a2c3e5e5cd60b3e2890f4be670bb3ad181ff4eaf20c01f0d7877a62c80b3c5f313b171766cfcf16df7c5068fa72bf69d810002fc07e0b09a22b3981984b7f8c7fec97b0b6c7ae00c047842c0e9acb0507bb1cf3db3b935223da3385180c70186bce4b7669bc8768d95459ba24dcc75ef99c16dea3e03019e1af02e773eef32f5b267209f1071bfc1eaf35f41802f0130fd2f5301041040000104104000010410e0b705fc0bcf4809f970b60eff0000000049454e44ae426082),
+(60, '2024-11-07 04:31:03.684264', 88, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-cb077e1d-c85c-439b-8d14-38360f2a5dbb', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041649444154789ced9d4d8ee3380c461fc701b254803a401f45b9c19ca98f3437b08fd20768405e06b0c159e8c772aa7bd5cad4a0eaf3a26039ce83021014f9915299f347d7fed79f7d1f0410400001041040000104104000017e7bb9bbbbcfc73001840da26fa7f7d2e4fdb3e0eeeedbc7ff04013e05a05a62b1ab6c70f96e0eee3e33b9cf61239bde1cb6a76f7cfc4f10e073017633bb01cb0dec5e9f11d331ac778b99bd60060208f08b6b7258afcef2ed613eaf5787d5acacddffc90c04f85a80cbfb47bbb1d8b4e53bc2e4167d375ffe4e18e1e7e819082000f03e4e9c01a2bb13d3d402c30d60529c28c0cb01ab99995d80b0e1df6fbbf9f76f8f120e2e37f03994a19999d97df40c04f8da80b23ac7a7f2f37a752380c51f1788690798dc62e2e9cd8fff09027c0a405b6bb7d390a9acce6dc5cef2ced37b5a9d0518053829dbc1bd3cab46484c648d3b5b67be42551b6589028c029c2d71a396576a4e32035d05660eeed962a37ca20023014dc5993696fbd54b8eb2be6dc07ec91f440723240c2e9bb35e8e3ae0c7ff04013e2160af2a3600eb05a23f0cd60bee397729efb1dc5e320301be2aa0a61e096a53837b8e04f31d531b9ebb2214270a3012704e968198cadda903c2cbb3d690a3dc5980b180ce27663303e8ca2bd944bdf4e2e4bb9826974f14602ce054bb4b50a49cb0e54ec5c331e6970fc354ee2cc050c0b39e5856e2a6761f7a62df292b9f28c068405b9da7a21dba1f3121949687161de6b0313b4659a20003017dc6d214ebfaa755566aee5c8b7f534d586489020c02f43eb137b393c1f565e866a25a9d051809e8e2c4e6e6cac2ec4d3b8cbe75c3c381ca12051806e83396d8f5dd4011158fc030556511adce020c07344fe8fdd2ebde12e81640d2f41ce989028c07747a621e763b4abb8891a2761fed62b2440186024e75e72c609f5a138f0eb0aeda522b80b244018601bad5b99ade76da5145cb98532f254a4f14602ca0d3134fb24deb8aa5cadba54976e3c85d6489020c03f4fb584af3219c0cae9e50d2898a09d59d05180ce8f5c42345c985bed629f6d4b898bb22e413051809e87c62c993dbeebd62704dd40ea75d7e2e9f28c048406f89a7dac9b999bbb581a5a3354c9628c040c0f37e67b244c3c9f5751b4cdb254b146028e0b9c6d2c93634eb3c9a1f8e428b946d018602de9f29db1de2496bb9a99d622563d13e16015e05a8d121cb6d72e28f725693ddd7e35cbbdd8a3b5cafae5da6028c05343bdb2fe4c31157cb8730594c3b9e0f96fde76df3c5c89f0e9e810002c02f4ff20483095f6e3f3198dc080f7342c2627adb2cce60844133104000e09c3b77272fb5feb0da8103a7045a71a2002f02b42a5eaa67bfb35eddeeec66f7f0b04ed99e83bbdd87cf40802f0d78973bb7525e77060940774204ca9d05180e30fd2f5301041040000104104000010410e07f0bf8178eb1017365a6630b0000000049454e44ae426082),
+(61, '2024-11-07 04:46:43.665059', 89, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-645fdc79-81f2-44a3-974e-52e7a77aaa44', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000040c49444154789ced9dcd6ddc301085df8402f62875e052b81da4242325a503a9141710803a1a903039703822b501723037eb781f0fc64aa23e50c060fe498be24363fff6b1f701020820800002082080000208208080bf0016b10100109976fb755dfdc13a40aed8cbcca9ef0a08787200545555e751555537a8a6a0c0a8aaf3b8416784fcabbad7bcf1f84f20e06b01765373cb743c0c2a57ec8298ec865c81ac40efb0020208b819f16d00b08ae83caa62918be64b4dff6805043c1b60b8bdb50b96290040d804e33e20ea2eba7c4f108cbf7aaf8000021a40d04ae145dd20af09d019f647aeeb907f21aaea2de0c32b2080000039441e008c1bf4c7b48bfe787937777099009dc7f712598b885c7baf8080e70698758ea7f2f37a51c108487c1b80987600082a31e134f3f19f40c09700784e666b2e11143105cbeccc404eef9ce7318b43402f808b9e0b572a52a7ba212770a25a66d1def1f4222591805e802a4f9d252cea9663929cbb9e61114b9e6cf3d4072591803e80c3ccbafc6dc886d92c71c8cf8151d52e53a02412d019503986d9309b112e491d37ccb90c987dc7fc809248404740e51d565677064a051a41b3389adadcca8bf41309e80968836564c36c9678f4b0b9a4b26d9e6e8c9d09e80c3847ccaeeb60dd360945138eaa16cfd4f31eff09047c0940d3e395cacda89a55a4b581a570d689f41309e80ba8f2894d07a2e773b2fe2be2687e22752201bd016e9d83a7b73754799adc2e5b128dd6389b15232591808e803a62714fb0aaec1d359612a294a40e2591809e804a27d602979aa71e59e7283a1ef10c2591804e80dbba73639df31c17d1fcc64c3f9180ee809b5e9c1980e56e121ac7305bec9268a47526a02ba08e58b2d62b626665681c896ead8215ea4402fa026a9d68096cdf518aba3fb1949c7d97012591809e0037b36aa6d7fb636d6fe9d86847cf27326221a02fe09c4f3c0a28e6187a57d8e12746b7dd9444027a01ea1a4b4cc1f59f77c5a294fcecd262174a22017d019575ae5abebcd05727758ebe8704d04f24a02fa08a586eda20d2b171e5f0224d59d24f24a02fa09644eb052b1d107f6888a876f929ad33013d018d4e6c7287e6097a28ed86991d1004dc0170aeb11c1ba7cad3537f6219944402ba02ea7ce22193d1a398ba17b129b4306221a02ba0e994c5b185603b3744543db3f3c8ba3301f702988603969777514de510cfa59cda5436580505d68bfa899f9fe71308f8af017e7ee23e201f8eb80e00d6c94e628aba0f127f4ed04500c52a27c0e33f8180af0b109942d67a2272a9e269792d1db572bdeb0a08783a40133b1fe96d6df6111c7bf0f3a09f48c0fd007eca482a67bf63bd646751aee3bb541bf1e77c147cef1510f0d4809bd8d94b7945f5792d3aa1d9744a9d48404f80f07f9912400001041040000104104000019f16f01baff216cb048d2d080000000049454e44ae426082),
+(62, '2024-10-05 02:13:05.729437', 90, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-b5ca2049-7ee3-4542-bbad-901c4f0e6b6e', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000042249444154789ced9d4d8ae43810465f8c0db974421da08e62dface923cd0dd247e9030cd8cb049b988542b29c45338b96e9a1f3d3a65265f9a18420fea534e797c6fed7afbd0f020820800002082080000208208000ff01982d464cef7bfa64d3da63d36a066b8f4dec79e5bded0e04787300eeeeee8fc1dddd37dc97fcbff4294d376070f7c7b0bdbcf1fbbf82007f16600f3537df3b37bbef66f6b9a5e9b1da26480af4821d0820c0690ca11861ed81e169cc767358fbfce0e21d0820002477d0acc71f746e139ddb377f9a3f86e7e11d5eba0301de11f0c54f7c008ceeceb874c531dc003af989025c0e58cdccac2759e7eff7ddfcfbe7b384d2e08f21a629749e5aef4080f706f4e9cff8527e5e6f6e0c60e38f1ec66507e8dcc6859795bfff2b08f047008aaddd4e53bab0cec562bb67635dad937516a015a096c4f00eb3d4b96f302ec098c4b1e473869c5e94240ad00a5029c1148e14994c31c903228a01f0c7e09e855092284043405f4fd65bd67aebc706ec3dd06d8c0ec6b060d06fceda6fed76208000c0a1132969ebce49191b08c39c8cf5527cc7457ea200ad018748515bdd052832197517df9260c6909f28404bc0395886acf572d85cc611ca849e944e14a025e0dc77d3a57024495d8a4e8023584e3a71cceb24890234039c6a770b24a91b3d8430ca7b4b97a774591ca513056809a82296e84024d23691cf2942984c74ae404b270ad01650ac73e74729a58e987d0b3b9d2c760aaa3b974e14a02da08e58c245cc325919e61c3b8760d229b32d406340a513a3a89703934ae0ea32b457eb2489023403448d659e3a2057969df5c3193d8e5531fa6e0ed115e6b375a953a7c90e041000a833dbf511aa05be3886a917c7a30223eb2c4053c0ab9f78e4b3a30da23890115947b0a2d85980b6802f3af1515abec24f2c270a8ee2cb02924401da02aafec493e9cdad89515939d4a1f289025c02a82bcb515e397a663b3f02e8ca4f1c8f772489023402bcd69db3db58d79d6b8d39d432294914a019e014b194511a1d4208c9fd89c9762fea4f14a035a0ee942d214a7a50758a2557f294d4964e14a029a08e588e1af3d1335b49e770a41c954f14e04ac06c378f1bea807cf3c86ecc77a22b67be930ee2db74c50e041000b089dd22805e7663fc611649edf5e6c70d61b1ee821d08f0c6802a8b53c72e395953f98991e8a997c83a0bd00c70ea94a51cf02b879e8b4f9813dd5b6e17939f28c01580d070307f46c6f0ec0e124248978df5bdf10e04786f403979bff730fc03ac06ac1f9bc3dea75eb0f1ef8fcd67eb3c9e36dd810002fc1c30df236236b39ba78b65199e66df7247ad4dd7ee408077039cee0a1b8e5e6c3f1d66c9e595d7d7e4270ad01c90bbbdc625dffdce7a739bd8cda6a413378e82b44dcd7720c05b03bec4cea59457dd410270dc10911f48270ad01060fa2d5301041040000104104000010410e07f0bf8171c3cd083ead861130000000049454e44ae426082),
+(63, '2024-10-05 02:15:44.774469', 92, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-92f5d1cd-03ec-4c4f-8bd6-aba02bcd6fc2', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000042049444154789ced9d4b8adb401445cf8b041eca90057829a59d852c293b9096d20b6890860d122f03d54fee0e19a44c87f6d5c8b2e543192eef5f6573fee9dabffddbf7410001041040000104104000010410e02f80d9e205ec06808dec66663d36ae66b0f6f93d33b36bdb1508f0e400dcdddda7c1dddd37dc7d8b1f4c74f18369d880f4eafc8dcfff09027c2dc01ecddc6c1727f8060c6f663f5e7a6c4c0f1dafe6c376b65e81004f0de83f7ad359af185c9cf9f6663e8f3db01a0e7beb150820c01f0166d7ce7d62371be9dc7e24779ca3c347af4080a703bc8b132780e0ee84a5cb81e106d0294e14e0e180d58e3c19860dff79ddcd7fdede6238385fc1a721de1ea9f3d87a05023c3720c689e1aefdbc5edc18c0c24b0f61d9013ab7b070f7e4e7ff0401be0420fbdaed744b17bd73f6d8eec95957cfc93b0bd00a902475a8ce9db024d5b96f1016201c72ec9239cce54529518056802aff38ee836f47c6128bda10b31880f8dce0f99212056803a0882ae96fa3a4cd4032961c62ed3cf96929518086802a30745f000e27dc79aae76cc9592f5d14ab2f44b329250ad00a50520fc8f6cf7dc99e98ce8fca4e091b8f4b365180968073b24c1d2266891e9acca94cb493b28902b404e4dc39c98ca4ba3806913b2b31598951a46ca2006d01a7dedd02a94493ab88874e630127dace9c5e4b8902b40264ef0c710231bfca938a314e4c8e99183b4a89023404d495ede9b84d3631a72da9c6b3a5e95972162d250ad00850672c4788e8a5b298259a72e798c0941c5b4a14a011a08e0443de3d10bcb497938b0ea52198f269295180668053ee5caeac3a6a4f1cbf31294e14a039a09ec589fd14885d94855360987a7c20ef2cc0e3009d335f3b37bbc5419bd468061b870de6db06acfd2151ed3215a02da09ec50925441c3cf5a2cb8e82d47c4ee9b56ca2000d011fcc279e4613733e5d15b5c91ba1a544015a01aaca76953687acc95cb129b755a1474a14a015e0bec7521a2d657af6c3beb394284053403d15164aedd0eb71d9d481c97b5b16d47716a031a0aae29414255d69522c6f1788a311832b4e14a031a056629c45ac83c554f2beab36aa9e28406bc0bd4da41eb4291163a9ec94d130295180c7006c3c8e4edccda7b54f47820d1b84978bc36a767aaefd0a047862c0a9db9cac6399c539cd6797cc5a7d67015a034e551cea2d04f554c4527297184a2a4e14e03180219572e6db86fb4b1f1bcdc5455342c9f5e2ccd7c62b10e0b901f924cfbd87e135bfbfdb712e53f0bdb7f0eb8acfd639ac7607f8fc9f20c09700bc3f53f6d05ab7315f5f31e8dc181c185e8db07cdf2c4c600c8d56208000c0f9acb0617bb771a51cff4039a10914270af02840eee22de9ec77d68bdbc86e360e6f56ed3c9d06771b9baf4080a706bccb9d732baf3a830448e7d72de57012d944011a024cff652a80000208208000020820800002fcb780df1fd9051391fdf9900000000049454e44ae426082),
+(64, '2024-10-05 03:56:02.440346', 93, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-2b7018d1-c38a-48ac-b2ac-85fba5cb0545', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000040c49444154789ced9d4b6edb301086ff29057849013d408e22df2cc8917a03e9283940006a6980c274317cdae82a74dddabf36b124ea83040ce63d8c28be751c3fbef73c400001041040000104104000010410f0c743555575ada7a1bd81a59e06a75834e6955e5555e3e33f8180a70064494c726502a72b5cbe169ceaea234cf4561faf9e78fc2710f01480225711808f30ed689ad017659925b12ea12412707780cbf2b78b2471dc4f0aec5363bbeffa0604106087c89c4cb49c7188bceb4574f5171199ffce1b10f072801b3f710580c58215571cc30898b2a49f48c07d01bb88884c304ff0633e443fde2e6237b719d0d5a753111191f3e83720e0b50193fd59aecacffb49051e90e5730296700080535902ae563efe1308780a40173bd753b8649d8bc56ef339651dad3301a3008d24d61cb7499d6a4cf99cc5c4d16575e823b338040c0664e5d647274b894956004d0566b5a4a2aa2da12412300ad056fb4ab0dcfc029cad48996db822b6944402ee0170aa1ff321c07eca46789f00f88b609309aa16bb00000e91f730fa0d087869400d3d80a2ff5443ed80487d0fd96cb3038280bb00fa6019c530e744b7c5ce669891c29624989444020602d02ac1e04a8f43ab1ded9aa9484d5e2475220163015ded2e008069bdd49ad8684ca0d5898c9d09180be83a657df985a41ded283299fd44ea44024603ba7c224a52bb3a8b21671197907462568c94440206023afbeb4bb01c80e41ddaaf3e80a95e2425918041804627a69838a492b3ddae85bede4433b34dc05840173b5bec124bdd3915556adac69ea8632d9444024601aee758d2b500dc3886d977cc42484924e00e807d2a79c23a3d9594a09c7d04b6b798d77d4e287304ffce2710f05f039a7c62ba50274ad1f627a676c5d22e46eb4cc050409fd96efb63eba8696a12836bf2898c5808180bb8e9d9b6ae302d1355a52b6cc929c774977e220123016d16a714faea6cbd2d597d6d836863174a2201c300b73a11406d74484298fb6393260c60dd9980c180368b58cb7b4d2f4440334c604fd858017522012301fd4455bc9e59e97668eaa6fc984f246028a0d389706d5125f53df46d60a1b686511209180898ea4f010e01fc97c0fabef629eaf616a1d87faa6c02e8762eeb46bd01010400a8732cf928b18be5b8ebfe75aab9d0571a77a813091806b8dd53b6effb2a132d4da7581dd3a72412301a50046e936cb0b719c0f229d9125757723fa9dd1df90604bc36a0f889c704f8af74b2e821ba846352f838c9f26b866ee214d8e50af0f84f20e059014e6dffba6d0644e494bb72fc45e43d87d272bee31b10f08280db7db64b74525ab89b5a603a984f24e06e0097ab78e1c89b18efa7b4bbf1d95fa4dbec9d3a9180d1809bd8b994f2f2bc7d3b6a5a9b69a91309180b10fe2f5302082080000208208000020820e09f05fc0638ab081fc5cf090e0000000049454e44ae426082),
+(65, '2024-10-05 03:57:27.947829', 94, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-dbdb97d9-b899-47e9-99c4-9f6bb475c72b', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000042749444154789ced9d4b6ae45810454fb404397c09b5002f45da59e39d494ba90518a4618244d4e07d6517f4a05eb60bfb7ae24c4b7978094144dcf8c8e6fcd1cff9cf9f7d1e041040000104104000010410400001fe03b05afa01c0ec9e2edbbc8fd8bc9bc13e623367bef3def704027c7300eeeeee4b7077f703f76dc86fb7c1f3d50308e9d5f5139fff1504f812002eb676e04b7067f2032677f785c1215b62ba0590250af06c408ec4ac66964c6fbf39ec66eedbff70020104006070d6fb10dda1cd9c66fffac37c09ee35817cea0904f886800f79e202313033c58cf1c0dd0f804179a2004f07ec66663612c3f1ebfd347f7d794429cd7a075fc2232b6b33b3b9f70904f8de8031fe9adeb59ff79b1b016cfa39c2b49d0083dbb4f1eececfff0a027c09c0453bd7b70c293a97889dcb3b97fb149d05e805c826b50d9eea3464ab733f60da80299ae390dd61aef6c81205e806284e101a7532154d122f949b975854748fb7c81205e805487922e16d34b8b911de80fdc7019c23301c4c0e46d830180f671f8f7e27104000a049f8c849e0e0c0e0a98a1d52608e013ce68ef1827ca2001d01254f04a2fd6501534d2fe689296c176f284b14a027e02a962929e251744ace0ea78d245b9261ca1205e808687c6212d0409d80883eb14c40643d9d84b62c51806e804bef6e034a532f5fbd1670b24f947616a02fa0a9e2d409c4da72861cb653dae845d4c8270ad013d054b62fad941cb117686616a38a4ec9a22c51808e8056b15085c97502c75b89928b3ab244017a02da6e5f6dea159ddcc4ee18a2bd78474567017a022edad93de77fa5ef0c147592bbd24b2ba53fff2b08f0250025ea56ed0cf155758c753427f69d159d05781ee034d697ac9dd3f6547282368703d69783b8e032f981b64c05e80b68eb898d4e0949c5648902b9e5acbeb3004f01b4f5c4c9bd998f8dcdbf3a01561a7da4e2b72c51808e80a63a93dfb68dbe2aa09b3c315e559e28404fc0d512b3af5b2853b1e4f2621a9255df5980a7002edd3eca7c7669f9d55276297e27652d9f28404fc0657ba0ccc7be5b5ca9f5c4d48171e58902740634bb7dadff2b3b534554378fc4a98f6e92250ad00bd05ae2d509d6524e331abb50c76565890274048cf5a5c169c07018fb1de2e254d8f0d50637206edde7fb3a9d400001806bb7aff18eb9bd5c370aca4a74ab5de41305e804f8a09de3546236c2bc5b455ea60a47991993250af00440c845c5f5c51df65bae1dfe1cc91de852cad96fce7aef7c02010400e02c8fce3e8d694b99a0cdc1dde67dc45f6d243e536c7ece0904f8d680f1c35ff65b5227ebfd0d5603080f73c29b316d3f0e9b96d320743a81000200bf7fce76aa627b7e007c5a3f6d17fc94270af0244069af6c254eefb7f474e3393caca96c2fe1c0e6ee2710e05b033ef69d7367259a5eb342b0415dc4974f14a02fc0f4bf4c0510400001041040000104104080bf16f00bfc81f3fbf4d8915e0000000049454e44ae426082),
+(66, '2024-10-05 03:58:44.883160', 95, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-b8e6f03a-cf7a-4b26-bf9d-1baf9fb0538e', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041d49444154789ced9d4d8ea33010855f0d48591aa90f90a3c00de64c7333384a0e30122c2319bd59d8654c677e16ed4c4b9de7451a82f3c94825bbea55d96dc487dafeed63bf07041040000104104000010410400001fe01582c372cd603c06e36613760eb6113009bb61e5886dd7b0e6d4720c08b034092e41c489231dd625cfdf1489233bad405a37729bff8fc5710e04b008a5d450021825c3bfa158071ed92fd65eb0c119c01c812057832601976e3bc5d685320f9e31ac179bbd4d6f9e411082000002090368588e4318eb7ec276219fed70804786940479ff076c378332357c026ec9697e3ed429b80e43b3e610402bc34a0cf7f37abbee4728d3d96ef77abae107e1a97e12772cfd06804020800c02396a3a51079edea8f2a8079df5d118b006d00b5269302e8a4d894281a394e76c344e9224b14a02100f54cc843548c48dae11c629672922bc96cac802c518067003633ce29b3d211cbd091f3d603d82e448a62185300ede6d8780402bc36a052b67d89f6a44a599d8170cabb00dd31817efe2b08f0250055c4920313e6a45e7ebafa2438ae9d9b28294b14e07980a4185aaa80c8b31e962b69661702e16e40b8a7e207fe18da8f40000152c94db81bc63557e0541fd945ec88f1d68333767b007c780402bc36c0fd44b858037716d3d3d9451daf80c85ea4566701da022a4bc4b8669fb00a56c6356b37b90bb3b228655b80b680b3b2cd2aa9929e16b5db2b15815c1a263d518096803227fad477883a5ceb38d91766b8d02d4b14a025c0559c2ad18c5c0b9b2c71f515bb12705665fb04680d287ae229c757e6c9d425599da7fc34270af004c059d9e659bb3e6d6b19dd58ab848c2c51805680b23a977cca29c777720cdd08b96a1f8b00ad01b58a93d2cb3e3ba6a7b377a91c48e98902b4079c8365e07da10370f613fd4a73a2006d01fd71690804962b016c6f11d80623b6b768e3cd00a00397c90084bb958d2c9fff0a027c29c07621c69be57cf2728d30bbc6b4e914cb955e01015f9d9b8f4080d70654114bf60e3dc7ec5bfd3a8fa2fdf608afb53a0bd00c50c7ce334eb5883c84ee50be7bdf648902b4019c54ec5097cb7a60f2ae0c275bac946d01da02ea1ccb8c32ff1d35db3c56ec6347816267015a03ced9bee36c071770f22e67df4255ef8196250ad01050d7e2ccf0ba876347d5e127562dc84f14a035e037674094d899b16cba879fa4185c06d7ea2c4053c029db8732ff95e8a4de6aef472cca1205680f783c53b60a4c4a0bace314e98902b4073c9c295bca1b3c4ef1dbaa9569539628402bc0e3e9c6cc57d56da527865295234b14a025a0ffc3f71d2d1d89b30dc03274d1c679ef01f491d8ba2396fefc5710e06b018e3365cb55b8a7039b38877bda8dcf19804d21c2a6e62310e0a5018fb17351162b15319047a53674429300ed01c67ff7f95bd3ff3215400001041040000104104000019e07f80585c9ef58110336a60000000049454e44ae426082);
+INSERT INTO `modulo_ventas_transaccionpago` (`id`, `_fecha_creacion`, `_factura_id`, `_qr_url`, `_qr_image`) VALUES
+(67, '2024-10-05 03:59:08.708685', 96, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-65f01199-f9f2-4ebb-afd3-946c8b5afa66', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000042449444154789ced9d418edc380c453f47067a29037d80398aeb0639529023e506f651728000f6b200197f161225b992aca2420fba7e2dbadb55ae071920487e92521bf157aff39fbffb3e208000020820800002082080000208f0c71749926bbbdc0100815848ffb103e41e8885c9ef8c24c9f4f18f20c0a7004ce577dc01e0cc97c4311b8073e266211148932126709b7f22abededcba0150820c005709ad90c609b01bb4512d931eefddd760380cdcc9eb002015e1a30fdee4de2784fdc0c00e2ddb8dd020dc794089ca3572080007f00049acda70108d931da57de8d6bbc17b7f9f41508f08200572c457f206b97a25302b9c60432eb9476d97de3e31f41804f0538cccc6c021013f86d3e8ddffebd9774709b01aeb15c9a9999dd46af4080d706943c7179683f1f6f3444c0961f13b0ec270004dab2e3e1ce8f7f04013e05a0c6da74b9ccb23974119bf460dddda7e82cc028809bd41eaafdb9d59109b98ab364730cee0e63822adb028c05f43d966c844c59b1644db202e83a306b24dd086589020c043cfac41c7f972e12877c03e0d56ef798b244010602fa9acc1a5b100ecc1de885c983f55e7ad1a535ade82cc04840f5894031aebdf5f88a4de6ca4e4b1bf34b9628c048c0552ca30666b215b54b74463f90a3e82cc05840e713b39921b2d8daea89a1fbc4f20116bf4f9628c030c0a577b7fb9b750cd13f28059ce23babbc96250a300a709994f5b24d4907639f18763eb1f84959a2000301d72a4e99d96e62d933c61ab1512be0f289028c04f48a25a788bb07e19c1dfe22518a394ab1083014d0fbc4aec7ec11fba2acbdc65df58c2c518061808b76eeb44bedac005ede6e2a4679a200c301973cb10ddaec408bd39d4f2c7d67d51305180db84e60f35a3bbc24904559fbf653f944018602aa73a30f3fd047be8a30a93b0aaa9e56df5980f180c73cb1cdc77a51f1e21d6b3d518a4580b1003cb843ffabeea8aa53612d4f5c6aec96250a300ad0e5896e5cf4f9d8e8730f795ccc9345f59d057802a0cb13f3e50aa00bc2ad94dd755676ed63116034a08bce4da2f82bd47ae2d5582395270a3018d05b62f57fddb44db7a3204f6fb7fd56b2440106021e7d227a614cf667d5c54b575a8a4580a180ee8426034e03e20e5b7e18008484ed4b0271bcd37018b8cdf5be512b1040000097ca7617a7f7badf7407dab6d2aed122ed2cc050c06fce940d7d297145b3499f146bc734c91205180d281e0ed8e6d3807837fbcabbf5bbfce2dd8a3b3cde886d1ebc02015e1b50f3c47302e24f0008c970bcb79347265bbebf276e16081cf600f8f84710e0b3024ecb8e719b01337bcbeeb0f84997d2767be20a047841c0e5acb0d866b17d34bb1dffd00add9a4f14e089807afcc8ee67bfe378a3dd709addb24ff4bd052b02ed367c0502bc34e017eddc36f3b5334800a09d10219f28c01300a6ff652a80000208208000020820800002fc6f01ff0127e71a12d6b13afa0000000049454e44ae426082),
+(68, '2024-10-04 23:00:15.589299', 97, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-14f384b9-23f9-41a1-9be6-ee00df22c2c5', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041149444154789ced9d4d6edc300c851feb0166290339408e22dfacc8917a03fb283d40007919c006bb20f53749d145344891795e04f1c8fea00108928fa234a2f8d475fef8dcfb000104104000010410400001041040c03f009bf805e01459ec0f20cb7e812cbb08b05f600376cd636740c08303a0aaaaba0655553da09a004455f5d104e81a0e004155d770dcbcf1f55f8180ef0538ddcd6dcfaabaee224038200b26454cfe902c8039d03bcc808087065cfef2f97408f6ab627b7e13dd1600d8050a9ca3674000011f03761191f9145d2d599c547ee6705cb2c3bbce80804704bccb1357c0f3c498a692181e0030314f24e0ee805d44442e00c2017d994fd197e7374f07b719d035f8ad49e765f40c08786c80e789f166f979bfaa2000127f5f80984e00985462c2cd935fff1508f81680126b8feed614f3d4446cd51cac9be7189d091805a82665d9616375f6590210cd1ca7ec0e4b79919648c028406b8940ae62c7a24956c0558c8faa6623a425123010902d314df607d13c618dc4933d000455bfb5515a2201030125314453ac81556c0098945e51ecd42c16ee366989048c0274d139b877f4816c7a96277a2a79e417e913091809e8c5325ca2b826392c6db4ec3026b86c71c3a42512301050f2c4ec048156b6340b2d6519c6fc247d22014301ddda5d025c98142758f48c3d5c7c22f34402c6021ac5e21d8840ebffec0a071a656da2863e91809180b68ab3e6dbb6c6dd891553d1ee186989040c04b48ac56272b3b2e2034d078e1673a462216028a0ab6cbf2fd634b1db97a1dd5859d926602ca0d5ce6bf6892ea5d537b39448ec6faccc1309180e2851b7865ee46d55095d6298d7f85cc0303a133012d0e5895dd9bae689b5b253c50a7d220163015d7f62282962b6baea27f392735e77a625123014d05862f58e5a5b135d4f57775877b4d012091808e8154b758c65a1af7485955b1f659e48c04840af586a3a58ba6281b60dc29701a99d09180de8760fa4d29f1d0e34fb58b4b8436f1c03d79d09180c683b654b1b4436ccba71257b4c33d6a0cc1309180ce8154bdbfcd584ec924076fbad688904dc09b0c955ed983a99279505801f5867576ea6dde67c56d3e81910f0b880dbfdcef69975caa61ab16b7f62be982712301470ab9d9b96afb267a0c913eb420bb5330143015da72c3ab1121bfbac85eebcb7857922017701649d82cd8e697a137d9901602f272c867210c47e556cf3e01910f0d8806267e70508afcd88c4745e10d703127f3d29369914d8e506f0f55f81806f01f8f84cd94d00dde657fbcf5c24c2ab20a6a743e27a0a1006cd80000200bcebc5c9f5c4da339b8f7f403da189bb0708b81fa09c3292f2d9efd8af2af67b18e14d9acaf61a0ec8327c06043c34e09d762e4b79b9353b171afd8488893ddb04dc0320fc2d5302082080000208208000020820e0bf05fc01a81510eabfb398140000000049454e44ae426082),
+(69, '2024-10-04 23:00:23.483911', 98, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-5c8b42aa-04f0-4d47-ba3a-8d4f7ff3b717', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000040d49444154789ced9d4d6edb301085df5406bca4811c2047a16e56e466d251728002d4d28084e982e47068b7abd04d613f2d1251a13e50c060fec988e24bd7f1e36bef030410400001041040000104104000017fbd5455551737dca14bd881a87b372f4dea9f055555ddbfff1308780a4095c4225765a859e026d525ec28c3a036746f7cff2710f05c8043442e00d6cb2158e5ac45317e9e90ff00003203c02a220f5801010474d77656c47488cc9b08d6f71dba6c6705b61354d33f580101040030eda80b26951993ca4fbd8a2ee12a4d3b3e740504bc20e0ce4f5c0020aa2a62eafd44e736d24f24e051804d44444e00c20efdb81ca21fefd7e20eae1740975086222222f3e81510f0da8053fe156fcacfdb59050190f87902623a00605289093733bfff1308780a80d9dabd1b622ad6d92cb66a35d66e1ead3301a3005ef4b227882a75aa3b1013728ebb4e018050d38b9444024601aa724bf095956831c902c0556096a05a85909248c04080b7ce162cbb3b60ca3380a0456d96ba1f2591808100d3895ef450040ec8a17436d64dfe12fd440246039c75465378e609e6cc222ca91893bd483f918091803e5846751101387598bd4394ba4b0e60a81309180af0114baf0eb37718ad17ccb4637e469d48c0504057bb4b40b5c93baa3be813384d27326221602ca0eb940d4526abacd50026a632cf3da34e246028a08b9d81d2f715d51463f509b3382e39f9cd2c0e01a3015d8d25dc3b86a5e497a5ce196b462c048c05389dd8bcc392d946f313eb3333d1ec0a23602ce0d48d26150405b01da25101c91d38395e295d61baca943b7586ac80000200b462899636d805e62ca6de316c99c5c07c2201a3014e129b8b588d70e740e6c8ba062b8c9d09180bb8adb1a8db510adf9f58fcc4d40ad294440206027cc46275677535e6d06947cb27326221602ca0eb8008edf807db51655d61cd4f8c66bb2989048c02b86a5fa7ffac2b16a585b60e27f3272989040c0474d6b96e52a977cd4fb476316b5ca424123014e07ab6abc059d8621b57a2a9cd96d4a69f48c0508097443b26ac398b55ea76d476c5b6df8a9248c040c0ad4e741d882d6c6987882d68ad6194440206025cb54f8043eaa6fb1d8aed025ddf7700db9b0a80bcebbecc1bb502020800d055fbbcd6036a6b4eb9cba99c566861669b80a1803f9c296bc9426798ad71b67a91f41309780ca068b87c1a53fe81b003ab9c4b1611d60b81edac65cafff409043c07a09e296b0776ca8c43107587ccdb09fa2122f94cb1f9312b20e0a501a7fb47476d43bcfc42894cc255142141627adb252e00fb1309180be8ce0a0bad17bb6df0f3e595f24e9d423f9180f100abe2a566a7cf2a330e91395ca5c8294a642df3f01510f0d280bbd8d94a79ee0c1200f5fcba5a9fa64e24602c40f8bf4c0920800002082080000208208080ff16f01b2214148d134225850000000049454e44ae426082),
+(70, '2024-10-04 23:01:12.286438', 99, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-2cc1329f-8816-4a5c-b18a-dace91a93af9', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000042949444154789ced9d4b6ae4481086bf1809bccc021fa08f22ddacf191e606d251e60086d4d22011b3c88752e5865e74166e5c7f2d4c4995fa484110ef0c9bf3479fe39f3f7b1e0410400001041040000104104000017e03582d7f80c360cbdfcc6e60f36606db88cd1c65e5adef0e04787200eeeeee4b7077f71df738946fbee30bf91282bb2f61bf7be2eb5f4180ef05c8fa8ff5c787d90cd8cce04cf138f51f364352a00fd881004f0d187f7d7bbbe1ab0dbb111cd67904b67177387aef4000017e0dd85e9cf506248f91c3ec6732c71f8d767ce40e047846c0273f710198dc9d290ed531dc0106f989023c1cb09999d908841d7fbb1de66f3f3eb23bb8dec097902f53e83cf7de8100cf0dc87ee274577ede5edc0860d37f234cf10018dca6c8ddcaaf7f0501be05a0dadafd7299c2e6a1b1d829bd73b74ed659805e802a5259fedc234d5291290253c92ce667c28efc4401fa021a25d84427538d4916c8510c90e40f827b5a224914a017a0e413c3bb79f60edf81ed75078e111876260723440cc6ddd9c6bddf0e041000a8d63916c3dcb888916c98f3af43d1841152f14f3a51805e802a8900a9c65c0398e00e0c9e1cc3d36d4c1f49a2003d01d760194ead577cc72c9c69715ae7bb6267013a031a9d98ec6fbed72ac1338a614af706974e14a02fe052bb8bf56eb92c01f470af13153b0bd01750ad33e40ec4f20dc2259fe8552766df5192284047401b3b2fe532d9dfa944cc29809962f51d19944f14a033a08d5852c63ac2a76039ebbf6b1fb72451808e804b3ed1db1a4bf9b5768a451a13ad6a9f007d01ad9f98a3e353304b3e712a1a303d514b7e924401ba019a5e9c53ffe5f24abc3a8631a71741d65980ee80fb7c6231d1453b9e0e24359f936cb774a2003d0157ebbce73f55ea2e7e6209a5557716a03fe02289b1ed8f3dc3e6463bd67ca2221601fa02ceaeb09174982f7c18d332b8c1b0b3cee3ee0036c5577cb5c16d5ac04a2fc4d7bf8200df0270b63270763be4fed87006cbfba549362ab32d406f40934f2cc132a442df79ac341f2bb8342eca4f14a02b805609d610a5ed99a5394cd01c61919f284057c0e77c62383bc0da00ba1cab3ab33d9244013a025a495c6a7f76d3241b2177e55c74a7fc4401fa029a094d9607e10c6e931f96ee109c3c2bc748a7eecbba4e3b104000e072ded99bb4e1d91a06253ab9145a14b108d01570e994a59c14a01e57a91d60a5f8925d49f989023c0690351cacf6e2c061acb7c1ed673ccac4e3da0bd10eb6fb8b5e4180ef01a8a363cf3303f1305f82bbcddb88bf99a501dc363f6607023c35e0f34cd96ddc596fc3ce7a7b274726c18110b129beee36fdfb8a113aed40000180ebacb0d096fceec73f709dd0243f5180c700eaf89173c4fbf6e2367398cde1c34aa231e7136deebe03019e1af02976aea5bce65815507dc773388974a2001d01a6ff652a80000208208000020820800002fcb580ff01845dea471f813ce10000000049454e44ae426082),
+(71, '2024-10-04 23:01:43.565632', 100, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-fcb4bdd1-5316-4da8-b011-ef7e8dc9d20b', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041249444154789ced9d418ae33010457f8d0cbd942107e8a328371be666f651fa000df2322053b3904a9293cc6c5a214dfa7b61623b7ec450a8aabebe1c517c69db7f7ded7e800002082080000208208000020820e09f9baaaaead21d26e8e21374f15ada99109d02700af864dff4aaaa9a9eff0804bc04c022b1c4553e2c97bcaa6a0472fc858812a2873b9eff0804bc166017911900b609bac029c28708d6f7045d807c4ece00b08ac8037e01013f1a30dd3fed3f45d77785c00312e20e81bf08c2b28ffe05041000dc8b447f11c03b15604a8aed4d05db9cafdd91c19fff0804bc04e0a64e5cea951001847cce59efa2ac13097808e0a6772e6df37f766563241230125022f1b865d9a6ede01372171daebfca4824600ca0cbb545a7c9a79de5dfe87a512737d58c440286036c4c8caeec16002625baac271615c79b9e93cf313b13301250c7c452ffe5480c1100bc6ae958bc9592c186488e89048c05f41d4b88ce62d266fb0ee36442396c571989040c0274d9d9249a64024ede95140da00e87d151c521e03180f5fd22c8b1b615b15bffcc00805dca1009d4ecbc8bfc8e637f01013f1c50b3b325e65c22025d7762cd721931f3b0493d9180a180ae63e93fb5eab04daf44a035308c4402c6028e1d0b6cc0435f1df6028ee9deec9d09180be8e6588a6c531be89c9323801c9866a1456076266038a0f6cea85e582dfeec4e4a343d51ab4982bd33016301d515e692002e492e07975d80eda4c02650609f147009805309f1547d10dfe01108780940e74fd47586e82a2e211b12732b7d4a92bfe63f45b1cd50e022b5c77efe2310f01280439dd8d64c750db4edea0cb4f973989d091808b875ca563da7498955d96926b1aa313eff1108780940ef4fbc326e873cefe7d40c117698378e89048c04f4fe4400e847bd6376aed330c52ec631918091807eb6afe5e4522caaf6ae1c6d1a23239180d1806634ac62a185599112532d169ba8d8a5f2e73f02012f05d8de54642e7ab69cb10bb089146b4efe24c5aeb3ce00551c02c6028ebe87ab796733241647b72d30505565ef4cc05840bf8e65b1c2b09488305758f91ed7b110f038c0a177362911b85ec2d74ac9d6d4301209180f087117d5e85444261b096b75b8cebb88c804609b20e7ea591cf80b08f8e180a353d6cac1bcfc599b945d5d61f53666670286026ede0151d7f6e5abd7f3cebea5724622010301b7ef948d00ae3cdbad4e2cee6dc7de9980c1803bef0a3bac685e501d386a2321d73b13301e50fd89fb04f84f20e82e081f6f8ae28f0524c419c03643d7b3e4bb84ca3601430187b791f83adb179bb2dd7c0fb00506ccce040c07dc4462e74a844db9d4c57c2d3bb36321602ce0ce7f0f5457acda0ce072bc257b16392612301270fb4e5938eb534cca69ff877158f9c74824602040f85fa604104000010410400001041040c0b705fc05ea243f940d46f32b0000000049454e44ae426082),
+(72, '2024-10-04 23:02:03.471992', 101, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-7ea6da21-7abd-4c9b-b5e4-3d0022a2b732', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe010000000055145188000003fa49444154789ced9d498edb3010457f45067a29017d001f85be41ce949b4947c9010250cb062854166471b01d64d1d5b0e37c2d84a686070bf8a88945b6283e751cdf3ef73e400001041040000104104000010410f0c7435555756dc30800b3aa9d1210e2a400a632ccc7acaaaae9f19f40c04b018aae006052847808423c240b733b7f94e18a6bed3ecf2710f01a80434416c0acdea4baee6f2a17000811d01553196e22f205bf8080ff1a70ba77513701b226b725aa00930ae60f41580fef5f400001c05d251e2760fe7502f65352ec02607fcfe1e19d32f8e33f8180970058d4677162cb5d10228090af4d458341d3d51b8fff04025e0270933baf73facba91c5422019e80a2c4f1c8659b76c29c4a79275c3f4a2512e003e87cada5c80072ee3cabaa4673cc9855b39f0e542201ee00b3891140292502c5f5c629dfc855c4ec9dd117bfa94402dc00d5269aff058026c792b1cc164a86d872172a9100474067138b11d4841c1856ef5c3c7616eb64b2a51209f00454259a630e6ad9711e9a8b06ac946372a412097004f4559c6036b10b074304ec5a49a5872c9a4a24c007509558bcae8588256c34675d43494dfd352a91002fc090b1d85fe83d314c9da8d6712e3d635422016e80d13b17e9151399af598a9287aae6a2e99d09f00474732c56b629b51b2b6503006a0039277477a94402bc007d653bcfb1ccbd08adbc63e5ed96cf307726c01550bbc2a624c0942444a8601720c4a5dcdbbea7138029019854427caf7d104ff00904bc04a0ab279a11accd0f5a4ad9f9b975cca759c521c015d0f7e294f6861a04c696bbf433d0d69f432512e0081895584d5f8b1d5b8da73589750d395422013e8036818cebc6eda0b6c0b456bb5bbb226d2201be80be8a53279a9bea3aef5ca761b43fa844027c0063a76ceb8a2d56afefca69794aa47726c01b30d8446b7468eab452763fcc0fd33b13f0358043b0c95b368272c121c02e02ec27d85fb6de7e5bda2a8367fa0402fe6540df01d14de55960688fd46b7333a0b489043802862aceac63b272dba4984f91b37d0478037025c2ae8a5317f375e59d7c44bb4b2512e005e8eb893913c9f32975314144ad2c0e7381542201ae80b15336d56bb6acaa4aafddcd8fd03b13e00ab8d903621d6c621b76d1217bb609f007dcd953764856ba35f82dc7e6bc33015f06b09c04dbb94caf889c55117e8a605b0e910b0e914bdee2f843f4c7e2fc0b08f8bf01c33aaa2e304419ae40bff279adefd12612e00ab8d9c973bb40143ba0d8df548029613ba793620724c405ba5da654b7377efc2710f012803b361136d18cda9f6d71a2ad7c66c6428037e0664f59ad6b06429b4f195f09ecc521c01d70bba7ac2d75bed93f36c216dd337726c01d20fc5fa604104000010410400001041040c0d3027e03f06e4f64a3d1e41c0000000049454e44ae426082),
+(73, '2024-10-04 23:02:32.601623', 102, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-99589995-5f3d-474a-9f6e-abeba3dc7e38', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041e49444154789ced9d4b8ea4381086bf18907a09521fa08e02379833f5cde0287d8096605912287a61877166f66816e5545557fd5e205ef9c948a178db69ce9bc6f9cfdb7e0f020820800002082080000208208000ff03582d0fd6f134d87b58c7d36cdefbf486d948be97c6d87606027c7100eeeeeecbe0eeee07ee5be7796cc0940e9dfb321ce457ea5fbcff2708f0b900a785d60333eb81e18887c3abd94c518c66f684190820403da60d7c198e2493fe63ccf77d01929e7cf20c04f89280fee1cef06acede1f4cdb09939fbdb38f30fd7c7cb7c50c0410e006d065c7701dc1e6e135c216eb617dc92a321d26777f04bc7906020800ec66d93b245be2247fb5b398cf52e83cb79e81005f1b80ffe7580677263fb2dbc87024757833143b0bd006507232394593d3367e84111ef22104f3924e49a2000d017514b2ce9db3be1c294449aee0b49c3d70f680c13afeba8b5bdeff1304f81480d089749ed461528240dcebb2629c4263a67c8e74a2004d0155c504e83cd2865ddc0bc37c398bbed0a9c6224063401db12c4028c61ca784388663b844d812b18b24518036803a62c96ace939d76df1e9e425871e94401da02aaf8c3c0f0f5df0d87a3679dbbc3009cbd07f6fe004e73f6ae24193fc02708f0e900d3d6b9cde9bccb363937e4c4e542b4413c6506027c5d40f8895bb9dc72d89223e62d1a22aeb0d9239e967516a019a08a58224e2e217225895168aedb152589023404d49278d54e2ed1a3c429c53ae70ab42451809680629d2f83eb399f3d450b775282c58ae77bcae208d01270639d8190ba1cace42c761ca221a708a624518046803a6299aa1c77d6895707445cd65ea42451806680baee9cc6102d3744c47c3986591c51665b80d6807aa55ea9e7554bfd4a2f58f560917516a039a0eef19a7e5aee0563371c3a3706601d378ca173038369fbde7006020800dc7540dc7a87c96247571850e513153b0bd016f0d09f385dc91af7b8b741945cf2ca2bf98902b405d4fd8959ccba22891127fb4dd88cb238023c11701aeb4b6cf530d3b9d99893da66e3955924ad72b1b9f90c04f8d280e2271edc98de83fb8ccd12d5be9c06977516e00980d5beb9ff089d08fb37671dafa24aec1f069ddbcc69b902fd813e4180bf1b70af13c331bc8b9d4345965ab4fc4401da02ee63e758b897174edd5556f218649d057812a034845134a1cd802fb19367d595b8ec3db2ce02b40564395be77ced69a50a670fc3864d7e1aebf80b87d7f4e0f67f33deff1304f814803fec295b5289619dab6a7339937516a02da05a475a65b19325e6b17b368d086a2489023c11901cc3d36cbeb6a91bc99bd84dee0e7b8f767c17e0c98094454ce334d8cd98b6d372649d8295eb958ff80902fc8d80473fd1eb0af4d5a91dfd89ca270af01440c927c6653e2be5958858aeb57ddaa1498027004cff652a800002082080000208208000027c58c06fdf2185caa1da43440000000049454e44ae426082),
+(74, '2024-10-04 23:03:11.808957', 103, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-4e94a977-66b8-440c-baee-795dbe744989', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041a49444154789ced9d4b8ae33a1486bf736dc850815ac05d8ab2b3a6977477102fa517d0600f0b1cce1de8e954f7a815d224bf07a68c950f197e8ece4b2a73fee8bafdf367bf07010410400001041040000104104080df5eeeeeeed7f6b8b6dbe4c4b5bd989ce87b1919dcdd7d7ffe2708f01280a2c4acabf4084c0e61a7bd48d2bb86fdee17cfff04015e0b7033b333b0d84c16dc3ab95db6b91b6d1780c5cc1e30030104385c6187b8829999f9357c1a8b9d1cb6392ddb0f9f810002006c6659844c6e1726b76ffe993499cce6a36720c03b02bef8895780e8eec475aa8ee10e30c94f14e0e180640967529cf2fd7c33fffeef6776079733a4751af2b26d97d13310e0bd01391e8977e5e7ede446008b3f6688eb0d60728b2b77239fff0902bc04a0aeb5fbe19129afce75c5762f8b75374eabb300a3007d663b398614d5b9e7289a98e4381573184a7a514a146014a019b75259f13d452c2926b9025d05e61adc8b08a5440106024ade7a3b6330955adef6b103b7199876a28311560ce6ddd9e6dd08eb9819082000d03b86c5f4551771855cf263f25286ce2f641305180be856e7bceaae7dc93967167dafcbb63a20047808e0182c438998b3264bc4ec2958c9e34aa7849428c0304091d45afabe52ddb935df50a21842b68ec4344e4a146020e050bb5b018ac7986fa1584ce86d620aafa5440146010e9db2cd08ae2577d3f2895e3c4672f7a29428c040405d9da74e84556674f9c4b8669b580ca39428c040401fb1244fb0ec1928edb2d94fec6e29a923250a3012d0dbc424b350447685526de9cad025a9a3ae30018602b8575d2fcc9cbbe9f2897057f29312051803e894981a6de25a9cc57bc7b0651683f289028c06f4d5bedaf75516e1830349cde744974d146034a0ef4f8cad9e17aa3adb8e825a723984d7cfff04015e02d0d5585aececad353157569a396c3b5aa4440106027a3fb1e669fa1d55d488b9fa89b1aedd52a200a300bd4d6cf5e42b3544a66416f3638e5db43a0b3016d07785c56e97e9615ba9fa13057838a08b585a1b44f1136ba7581ae2fd5939f21305180ae895586b2ce9c59d3069c5bfd6c228250af000c06227b70b399f6d1780e55c77f4d5bd7dcbb99cd5347a0602bc2fa03b09cce066c06d76b899b3194ef869cef6e1c666f87269e306cd40000180167a94eb0a5fe3e49aca698516c5ce020c05fcf24cd95259de3914ff8ab3d88e69921205180d082595b39c2727fe38b959fa6b86bc1c975e08b693b39c07cf4080f706543ff13643f809d945044f1e63702cfef7e12c36edb0d91de0f99f20c0eb02f239c7e77c421d84cf74b36fe9d8f74f9d5a27c060c0e1acb0d0f76ce7fed8d28143cbe2e85c1c011e0828dd5e712d67bfb39ddc2edccc2ec926f61bacec327c0602bc35e04bec5c4b792d804e573d21423ddb023c0060fa5fa602082080000208208000020820c05f0bf81fbef3faea8e1571c30000000049454e44ae426082),
+(75, '2024-10-04 23:03:25.546288', 104, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-f740ba89-822e-4c81-9ac7-058b9078e954', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000042449444154789ced9d4d8adb4010855f45022d5b9003cc51a41be4482147ca0da4a3f800066969907859f4bf3d90c5b49964fcb4725bf2470b1ed5f5d3d536e243d7f9ed63bf07041040000104104000010410400001fe02582d5ce1ebbd87cd7b0f9b71c61bd5d06c6c3b03015e1c0092241747923cc2905b47c01d20b7cedf001cc9c51d77bff8fc5710e06b01ce60e6d6f134ac6f370b72c46936c787fca735dbce7fea1504f89f01fdbbdf4e9781416c8ec06a1d0dbb81c0d97a060208f03e601f6836025c106de24fde8c8b239377f8d41908f08a80073f7101808924a6ad4b8ee101009dfc44019e0ed8cdccac878f537e8da7f1d7db2dacd0eb08707161e843e7b9f50c04786d40f013a7bbf2f33ed0e0009b2e3d306d270074b469c3dd939fff0a027c09405a6b8f6a882eacce69c5f6f99cbbe7b43a0bd00a90a407ef1d921bca2ce2b40198bc1cbb680edd01f98902b40564e386a8b02368727141a25ea700bcfe004706d94a8902340294cb31bccc0ee4b01940e79f0877d1a50a8c9428c01300ee66e4c58ccb3e844578baf4fe06b0f7202fbd5fa7019ce697ed963310e0b501a9d00c0433b775f48ea1ff942bd0c96df4976ca2002d0175b08cb830a72cf682e41d22d65da6bc53424a14a011a0b08971cb43c7e20a0e64112c23da492951808680aa76b701c5120d20ea2f0fa34d54ec2c405b40994f0c3b109982e5e418bae436c60ab46ca2006d01c5d6d8504a49c29ce2eaecfdc494de8e86514a14a021e0219f98adde14251a5517fc442f47452c0234059436d1770f6cf06b72652273193a5947adce02b40454b133c91cb184218098b6899b1f52c94f4a14a01920250699f2d9a80d6357dac42042e51305680da877859569eb1cb1c48274b94ecb260ad01650b6957a23e8524729cafd89c14fac9b4ea544015a01ea8885c5fed8984aacac638aac15b108d0165045c7be7672541d55a8249a5289ca270ad01690fa9d4fa36f6b4647ac06707d3b60fec68f6b1f86ee6ac0fefd683703010400b212dd16556700e0aebd4d97fe2070f6c03e10d8fb237e3a0debb8b599810002002863e7224461da9f0800b9c65224b5e5270ad014502ab1e8e363d25aee237039dba86a9f00cf04ac36d06674b4797f382fa73091eb18cf6a6a3d03015e1770dfef9cb3d87e546c03ab2fc5ce02340514d5be98cf49d53e8666bec24fcc851665b605680aa876ca228ab0aa2cc766aaaa255a7ea200cf01040b174e63e265a0d9785ae531c6cc36f68158c7c63310e0b50139b3dd03ee0ac05d7b6ffa801304089b7e7f2756eb0e60b73bc0e7bf82005f14b00ff447bcaf6338a12eb4dfbb9bd9cfb853c2e6e7cd4080570454b173d14ccaa2fd3eb79fc61f299f28c0d3001de3fed878f63bf68136e3349bbd4dcc8df8076c6e3e03015e1af0103ba7525e71060900e41322b4675b8027004cff652a80000208208000020820800002fcb3803fafbddbb46375afe30000000049454e44ae426082),
+(76, '2024-10-04 23:03:52.177050', 105, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-8239fb1d-06b4-4c11-b5f4-89edf94764c8', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041449444154789ced9d4d6ee3480c85df1b09d0b27c831c45ba5923479a1b4847c90106282d0d48602feadfc6acbadc4eece745a2b2e50f1240907c244ba6e18f5ee73f7ff67d400001041040000104104000010410e07f5f6666666b597a007007ccec68cef383612eef3933333b9e7f0b02bc04205962b4abb88ce66866ab3b60ab3bea65f38de7df8200af0538495e006c17007066004e62fe9a8c4b3a291c6d241f7005020870ffda4700fb64d83e0ed8ba4f06ec638add7fe30a04787bc04e929793b6e224179ce42fbbd256778d6ef3d15720c03b02eef2c415006633c3ec879c181e0030284f14e0e1809d243922c8e6cfcb49fbfcb8c67470bb00b6bab8244972e97d0502bc37600cffe69bf6f33e19e100ce5f2330fb130006e3ec7173e6f36f41809700e4587b344b0c313ae7886d968275759ea2b300bd0055653bd85f782f1921660f600ee638247798cb8bb244017a015a2788607598b3265901541d98d599252394250ad01150296164755c647378cf2cda5f5cfac1e413057810e08c15c3659f5210de4700ee4a6c1c61f63522f59d4fe61af737ba05017e32a0480f4437e78714935d2c2a863cb1a48de1259f28404fc07d9ee89b027689ddb34fa2662e9312b244013a01aae19b92ff55da259e5289e560acf289023c04b07da4e19bf0c71d08230f41ca840908121b270bb9638ad3dfe61604f8d9806652d6c5385d4d25d68ed1f2a4ac7ca200bd01393a279d928549d359a9f3c4942cca1205e808a8154b4811abce4ab6bf94229aa56e8b148b007d01b54f0cb6e6a3c32b9f0249599710ada93001fa029ae81c7c6231cc688ea56c13be51b7fc6489023c0270324864e024979d0c91f893937149529a8b7a2c0274075405ec2c42502d4b029995758cddf28902f404b49678a01af98ac224ef28f0430adb1e90250ad017504fca86465fb2bf58bb768d77ccf544291601fa02aa0988e8ffdcd1eca8ca536179193f551547809e80dbf9c4e4ffb2440e474756cca9ef2c4b14a02ba0ce13813c9fed4a103eeace4a9c9405648902f4055479624cfd7cdde8ab3613645113b715284f14a027a0b6c4922702a9c757099876975f4a2f9f7f0b02bc04a0f18979c6664593279add784ce58902f406dcee7746d563f6c908c3082dea5d7eb24401fa02ea4d02594557ae0f45a758d36851655b80ae80fb67ca5a3bf7e05135ffc25373ea5d2eb24401fa02a28703368e4028e000202f43de5690fde43e597ce2e777ba05017e34604c07e708b8ffc2b101272d1e019cffbdc0360e07b0f306f0fc5b10e05501274946af47924cb33857f2978f7a86cb03af4080370434dab994b77315dbd2040e503da1a9081ce589027406e42e9e4fcf7ec73e85a9582eeeca68a788a51c2eddaf4080b706dc69e7dccabbfd5196fc8488f4817ca2001d01d46f990a20800002082080000208208000df16f01bba38ff636308c8440000000049454e44ae426082),
+(77, '2024-10-04 23:03:58.570123', 106, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-2a951c4e-0c80-4c47-b029-6e054edc79fb', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe010000000055145188000003de49444154789ced9d4d6edb3010851f2b015932400fd0a3d037e8917a35f94005a8a5011ad3053943d24ad04526b5e33e2d8448b13f44c0c3fc8f12041f3aaedf3ef67d800002082080000208208000020820e0dd434444649b2e91f2222219401211008b9e62d14f46111129f77f04029e0ad074a5b76341386111d9f61540bc04a47c0db2e156bb8ff308047c69c0aa3f5c5720fe06b0bf420040ceaf0b70fe79090000c1be948008e07c02acf873ff4720e04901b100e7104238c54b082700487991107e5c0252fe077f0101ff23603dde5a24206604ec2b04fb8b04ecdfabdf7ea30c7eff4720e029001af5699cd873976aff52bdb7340d262937dfb8ff2310f0148043eebcc5f297533ba844023c014d89f3819497f18458d08b3ad3412512e003187c2d528679e745fd6f56c78c2852fd74a212097007a84dcc68066f03d05caf96b76b15b17a6700ed1ebd33019e0053e2224852344fc90010455ac61255a2494d246d2201be80c126b610510a6a6068de59ed6441bbecbfa51209700258ee6c3671368cbd030d9839cc0bab38043803c62a4e32ebb801962c17885851711e8da0120970030c36b1160b93482bdbccf79a1c631326eb8904f802ac8a33f64e5ab29271db72e921229548802f60f2ce792a2fa2de53c3582fc5a617e99d09f0040c3d16b584bdc76ce5452c8377d6f49a4a24c0113055b6b3252b7566564d5f8d18f5175ae8a61209f80c40db0f08bfa400d85f6a9c184efbaa46b07fa477001fea1108f8ca80a1c732d66e7a24684d954dc720aac56415870057c0346d985b3838f653a0272b34f65e209548801b608c13db65394e45a8306ff3192a91002fc0943beb1ea9b65c0a744811a80b2e5d89b48904b802c638517a62a2aa1bbcb3b55cf4c35422018e807102a24d25026dc13e5adfafd93f6b4df771592a91001fc0bc3d305711a38c7d67bb6cae9cde9980cf00ec2bc2697fa95a0b275c03b08700ec2bf4a75077f0717e056cf3f9711e81802f0d98667130b7573459b935969315bdff2310f01480b9b2ddabd8d284b901e8721ccadbecf611e00a9867c1ca6422a31abe1e226e4352432512e008e8ab519a89f4f73d64683db1cf3da0ef405389043802e649596bf44d9e58dbd0e3bb4ae89d09f0051cde0131048b761a369f6377e55422018e8037df29ab4e18ba51d56d62b4dd2ae6ce0478028eef0ad3a96c5d21d0a43a895a42ee3b13e00f18e2c4fe22a621621cac639e17ac681309f0041c94b8a107868721595df0137a67029c016fdac4be4c55ada38d70ab7766c6428037e010278ad854ac583f65fe4ae22c0e01ee80e33b65ad037dfbfed88c218ba11209f00504fe2f5302082080000208208000020820e061017f006ddf84a1a90497550000000049454e44ae426082),
+(78, '2024-10-04 23:05:23.353833', 107, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-1b000927-d6f9-41b4-8d23-db3936be5ae2', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000042449444154789ced9d4b8ee3460c863f4606bc948139401f45be418e14f491e606d251e60001a4a50109cca29eb293c9624ad3ddf6af955efea0028822f9175936e7978eed8f5ffb3d082080000208208000020820800002fce7e1eeee3e96cbb973f71918dc9d61ae1f30f89adeecdddd7dfdf82108f014806489d1aef2e50af47797f16cff8b8f1f82004f017830bd31dceec2fd3827264b2cafc81205f81d8061de8cc94ef8fb9bbb8fcb0958cc82dbfe1d5f20c0ab014eff7a77ba00b019f4db89c181e9cf19a3ffbbf517082000f018278e9093952e07862b40a7385180c3018b99999d0891e0fb65337f7fbb5978385dc0c73e5e9a99995d5b7f8100af0d88de79b85b7e5ece6ef460c38f130cf306d0b90d33776f7efc1004780ac02e772e9774d13b678f1d84c6bbf7e49d05680548263543540cc9f2b6af04156708e6d8a5e930cb8bb244015a01ea49305eae21630939c908542b306310153d1fb24401da002846e52365262c9e3869dc41d9a6f3b0eea73951802300d36533e86fc664678f7ae27282c16f06cb09f790bb00b0158dfbd30c4180af0d28a9077baf9b3c319da715e8155540087014609f2c43ca9893b31e8b77a62ec8519c28405b40953b97f88f1c1d4673dc57e50c8a1305380a30bdb913169a17b3180e2e66d0afd87539bb9999c172f6104fa6c2c54f330401be36605729dba7592f4d78b59e5857ca6a4e14a035207be7ae12b5532da2d7151059de8e41a5e244015a0276ca76ef1ecb704a121d94c5944f7b3647652c023405d47362b6b5a86c439e09a992ea784fde59809680ca12b3c3cdebce494fcc0fc22f46c589023407d4ab7da1a36f86eaac0a0c939fae5aad6489021c0388eb29256301c0aefd0ad3db4a5c019c3b37bb1cf20502bc2a60a76ce73831d687d5f589314eccddd0f2ce0234053c94c6d6053950f2e9a4dd948e1659a2000d01559c189b99fb75d75155753ed752a2f44401da027635db394f1ec955b1e16cad8a64c3bab32c5180a680bd8a93f780e88b134ea24ea5ddccea6311a035a05a778ea1df9c541c72a5582e5c8cca4eef8a1305680ca8aabd629e9cbaf7ee12e8540641a57bcb1205380430d9d9edba9ca3809d37ac33bb448ddbae101af1c359eb2f10e07501d5be3816ea13c3b19d60f9b6423fe3a1111ff0e972f7de271882004f01d8adf6b9a7e930893af77162f6d852b605680b78dc53d64b33e9437d44911c15270a700c20ce703099998fa4d56696b86b13b0599c0e97dc88fa998620c09706e438713b113747ec5606df2c6e3dd2df8ce1fbb7d5270358ec0ef0f14310e0790161ffbae90266965aa8e8ddedafe0a76fdab54e80c680c77db68b8a5d6a66e72ef5e087437aa2008701f27f5fcc9bc5e2c3e5ec766533bb8639b16cf6be62d7e65f20c04b031e72e7bc9457ed410250768850cdb6000700ccffff9d9f1dfa2f5301041040000104104000010410e038c03f0726f80c00a2d06d0000000049454e44ae426082),
+(79, '2024-10-04 23:05:31.315484', 108, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-f2e6bc0e-8084-403b-92c4-bdd1e0071c39', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000042449444154789ced9dcd8de33810855fad04f491cea0439133d8900613d2662085d2010c401d0d48787b208b2ab9774f4daf67dd4f07c3faf1070a2814ebe79136e24bc7fec7d77e0f082080000208208000020820800002fceb4192e41c4e37602289891b000cc49401320fed1a002492e4f6fc5710e025006e89d5ae4066201a660638a70dc5f4e6b4ddfde2f9af20c06b017633bb0058de49fbe1b60600b0ab3f54be2d66f680110820c0e958cd8075acdf967792b39f92f93f188100df1130fee3d5e50223306c86b48f980860f933c3907ef51e81000200f81c27ce80672c79688161cd5d14270af068c06a66662380b4813f2fbbf1e7fbad8683cb05e09ceaa99999d9b5f70804f8de803a3b4f77ede7f58d8604d8f4310253de0160a04d19774f3eff15047809409b6bb7d369a9220e61c6267db20ecf697616a01720981e59a243b7ba52e3ce00a6628e83bbc3b44171a2007d018773f30ba9f6588aadcd3815ba4b8d3191e51159a2009d013527a17bbd750480ddec8aa1581d9048bbae23c88ff113e0cb2310400000983eaae901eb5b34c78937c3626e7f53863fd77904027c7380cfce19003c583c1acd280a086e4d1a210584000f019c9365c067e22d8874ee5219374c59a2001d01c127163303d054617ee3709153c9a707ca270ad01770eadd65a01a5c468909fd4635d1ea3b5dc2284b14a01be0a4944d1e224e2d262c294adace4a59f944017a03daec3cc49810ad953263e0e1094fa7b244013a0262c6122bd6f5283161bce6e6a88c4580ae80e013abd74b6d4ec669ee2eb933d99e93250ad01110ba2504061ad2406045d1dc940a7655eab09c72b9fc8221751a8100020038face355971dd0d3c773e02c3a2c5614b56e41305e80808aab05aacf1a2769541b400b264d6a736b42c51806e8058d92e3ef158518aa84fac72c5f201c81205e80b38f59d93d773184a8927efd8ea89ca5804e80b88fac42874682baa8284369612554f14a02f206ab68b3436d1f5b189dee3739136e0b98b2c5180be80584f0c47aa42872395896b5b32a0385180be8028fe0a9be39c36673aca3661098be24401ba024e559cd63b9901842d996a3e7d5ae5e7e1e5f35f41809700444b3c56efb58a21d04a39356d39a461b244013a02eed73bc7350319ee2771e813fd90250ad01510bb7de72cba4ab311b538a1d1a28c4580470016ab474d51563320ddcc37f6dccdaeab19cab23ebfd17304020800a079b8b2f2d9b7691a68d772db1bd2c51dae6faccffd4eaf20c0ff1ad05461fb886373c4298398f23e12d860d35f1770b181c06a7780e7bf8200af0b28f3f472f16f558b7333fb916b2a63d7878e40806f0738e5ce61e7259766d3153840d8a1e9487094b108d019e05dbc29fbdeef58df6857ec66d774b350d99e219f28406fc0a7ff6369ad3cd7cc7aa1b1ae818e625af94401ba014cff652a80000208208000020820800002fcb680bf013c69d2352e74418e0000000049454e44ae426082),
+(80, '2024-10-11 23:34:26.849280', 109, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-71e0db14-629d-4962-b1cb-78aaf72c4c33', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000040149444154789ced9d4d6ae43010855f8d0d59aa2107c851e49b851c696e601f250708c8cb0637350ba9a452f7c02ca29e84f4f36206b5e40f198afa97228a4f3d975f9f7b1f208000020820800002082080000208f8076093f200fb0c0017113901b2ec3364d9cb842cb8d8cad3d81d10f0e000a8aaaaae4155550fe47fd6a0aa2b005d43f90d08aa36746f7cfd2710f0b3004509623b4d39b123afaa8af8fea4d84e65912c4056a077d8010104dc3c31a108dcf67200d89f14d867a8a6ffb4030208d867888888ae9854165c445ef52cba8673f30eefba03021e1170e327ae00105515314deafd444cf41309b83b60171191194038a06fa78be8dbcbb9b883db09d03594610e9d97d13b20e0b10173fe2f5e959ff727150440e2fb0cc47401804925265cadfcfa4f20e04700aaad3dba21a6629dabc5563563edd6d13a13300a5045afc81a6232a9533d4a141db3384ea60e83a51c2989048c0298724b9322e604f69123169fdeae8bd7a00a04d5bc849248c0284033b3defe466789a73c9fe52f0fd3948794440286019c4e34d5575dc4046798cd76b7094a220103014e27a22abc566846164c2b4817030e803a9180b1803e58467511cd59d45496b450c604939248c04040b5ce2666a594e24b2eadb2927562a49f48c0704057bb4b004a8872e46e079b28099ca23bf5a09f48c06080cb27ba0ec492acb17c227a9d08502712301a701d3bfb8825cf16ed98fdc415933995d489048c04f8882567ac933986ab0d5bec6cbee364010b2591804180eb1a4b913f5575b335b26e269ad53e02c602babab3d62a5eaa9515002d6d93dfc8c5174a2201230137f9c4fc5bc2ad63984a7a07a07526e0ce80bebc128a1294251cb0132d7316519e3225602cc0c7ceae9e178a9ed49adeb692b31756ea440286017cdd39dbdfaa184b2ad17cc796d4eeca305fff0904fc08c06d8dc54ace9d60b6216c967e22012301eef480f5275a28bd061f2cfb2659d69d09180eb83ec7529eae5dd6f52796c6319e63216034c0e7139b89ae099cae53ac4b6ad34f246028a0b3ce59cc0e788173991debcfa9796f4a2201c3005e12fbd37bcd2774fd89406b0da324123010f0173fd11f57d17ad42a2f5eeb2a4a2201430135f4b06745d7a49d7b11bb037ead71879248c03040d7290b2b395fcde67c627516db354d94440246038a8603b697da151654b1c95cd75a2f047677bbe7f7f904027e06c0ee9485dda98d982e82a867916517d13799f3ac2cf7d901010f0d986f7f9a0ed94e10dd4e1f106052415000e14310d3f321f1f7330461d00e082000401f3bbb9b972c8badc99757ca3bb6847e2201e301f59691d4ecf453b9dd78096729728a92ca9165f80e087868c04dec5c4b7976b6d4128db9ee979b1f183b13301a20fc5ba604104000010410400001041040c0b705fc0167530d3e744add740000000049454e44ae426082),
+(81, '2024-10-11 23:34:34.160012', 110, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-d4f71fa1-5512-4311-96dc-564aa243a14d', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041949444154789ced9dcd8de3480c461f57027c94810ea0439133989826a4cd400a650368403a365002e750bfb267b187a99e9e6d7f75302cb9f42001048b1f8b94cdf9a571fcf56bd7830002082080000208208000020820c07f00564b03f611bbed633c6fb778587ee0c833af7def40802707e0eeeebe4ceeee1e70f7004ceebe4c015f18e2b7e6dce98acf7f0401be04a0d85500a640b2b06df034361aeb4c530059a200bf0160b729c4159bf5d59dd52e0ebb99fbf67bee4080a7038c0f67f631b01a380cc1988e91d90ff3f5db8631bdf5be030104001ee3c405607677e66d288161001814270af0e180ddcccc466224f8fd7a987f7f7db7f8e37a055fa67418a5f3adf71d08f0dc80b43acf77dbcffbc58d096cfe6784793b0006b779e36ee6e73f82005f0270d2cef59021adce65c58e7afa6e9e5667017a01ce591c77e62d5b9d7b807903664f99c5744dcdf6c81205e804284e906870f9236b9205928a8194454c162b9f28404f40cee24c6f23ec2f6eebf50dd85f02708cc010981d8c69c3600cce3e86122d7efe2308f0d500be70982ffbc559af00fb084cefc66a23ee51bb0070d887dc81004f0cc8d26383b8b31c85093449c518277a59bbe3509c28404fc0592c93d449d1c935951d27c7791ea49d05e80c687ca2fb367815c6ad8b9c1ad323fa49f94401ba024e7b771b404cd6a4253adbe970ef13a59d05e80b68b338b102311a61f28e694c69c5ce71a27ca200bd018dd7cb4ef0542e5bf3de25bd9d1da32c51808e8056b1943d96aa9881bce557e2c4688e522c027405b43e311adc46491b66832bca3aaae8e81db53a0bd013d0c48975256ef69d016ada265ed1286b59a2009d00cdeadc16da6c44c7d80686319fe349596b7516a02ba0cd139eabb253194409208bb28e9b2ff2890274053c760fd48ed222561620952bc60f90250ad017701f27d6fad8245ba693779c1bdf294b14a023e027fdcee1d4519563c27a987e559c28404f406b8935fe5b2812397eab7bd121afd3b244017a02ee6bb69bea6d9a38318588e9dca63e16017a03da2c62912d71ccb9eea1361334496dc5890274059cf2d94de354d6244b133b9ebafce41305e80a38f9c45a81d3c8164e05115b2d0d93250ad01170dfef0ca72c628e226b7d621eb24401ba028af4c863016a1631ce99f38fcd468b32db0274059c2a65495bce5ecbc016ea3674ed2d501f8b001f0528b2797d0dd80db01b87d59e1598de2db9c3da88fa273d8200ff6b40797fe231125f8eb85fa2764e2dcd53c0e6bf5f82af3638ec7607f8fc4710e04b001edfe499dbea7dbdbe91cdf1dd9ce9cd98b79760f302c6d4e90e041000f8b7f76c7bce62fbd66eafa46b14270af071805ced356f47fe8b8bfde276e330bb4defd6beec9dc1edd6fd0e04786ac083762e5b79d9f5d5cd3f5a012d9f28405780e9bf4c05104000010410400001041040803f16f0037696172a8587489a0000000049454e44ae426082),
+(82, '2024-10-11 23:34:55.142447', 111, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-b17d6756-880d-4b4c-be54-68736fe91cfc', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000043049444154789ced9d4d6ee4380c461fc706b294811ca08fa2bac11c699023f50dca47e90304b09705d8e02cf463b96ad18b5621e9e4f3a210a594071920287e24a598f347cffecf9ffd3d082080000208208000020820800002fc06305b7e601dc91f805dd6f60bbbb0979953df1508f0cd01b8bbbb5f83bbbb6fb82fe48f2be0d7b0e1ee1b10dccbb0f98b8f7f0501be1660cf6e6e9e0637fbb161ffb93bac2fce3ce5497681e4409fb0020104383de166c45f23fe66631eb2be38ac6372964f5f8100df11303efc667d719ba76103768330b845dfcde77fdf0dc27bef15082000f018275e01a2bb1397c1db38914171a2004f0724893c0261c3dfa6ddfcedc72d8783f3047e0d7998a4f3a5f70a04f8de80bc3bc7bbf2f3fae246008bbf4688cb0e30b8c585bb991fff0a027c0940dd6bb7d39021efce75c7762f9b75334fbbb300bd00c5a41680647fc5eadc37880b1093390ec51d860dc58902f40554e7561c63f42d2996646b57728e3b4dbe067708ee698a2c51805e809ac5d9478f0bce3cbd03ebeb06ec23306c4407232c188c9bb38e5bbf150820c023602f596c802456fc6639a99d865b9e57ea2e9fed1504f84b01f771622b60823b30780a0c8fb0313d8a1305e809388b65387db4a9ec2465d23cdfa49d05e80c687ca2fb3278f6750b59312767595d64d233c73c59a2009d00a7dadd02d42d3a7d9b7ce2329461f189d2ce02f405d4dd1972072243f90887ffab5b74a940cb270ad0175077e721e70e9330299b70f28957e088138b6394250ad011d02a9614092ed0c48427ff97ec3499a3148b005d01ad4f3c9b1939622c85be5c86ce26aa6a9f007d016d9c18dd1bedecb52bb1a46d4af3432df9c91205e80638edce40e980e031304c61e36184b244013a029a2cce432afb1c405665ad7ca2004f00b4d5be2c56ea89d2264e244be9a35d4c96284057c051b62b5d89e7d6c4a303ec486ae7132db244013a02da1acb15483e317addacab94aec3fcade244017a029a4ed9234f53ae7f3895fcea30c589b24401ba024ee758ca2195f2531530cb4940e7ae0859a2001d01dc39c1a6f926b9be342c6ef338c2a2385180ae80c627fa5d3de538c792c5f2717f93aa7d02f406b49698d3db553ba7f44e55ccd530d50121407f40732f8ea5732cece6ac133e1b244f38dbe0c66ae9d47d99d769050208009c4e997a491b36daf9384790e3c49259946211a02be0d4295b86a5e45ceef4f492402c8a45e758047816207b3898a7dd0eaf572f314e4ffea2bdddf3f3bc82007f35a039799f2f472ce79d2d2efb9802c3f8f375f3d9c059ed0ef0f1af20c097003cdee40918603e4fef64bb0b3773c282c5e575b3f8f31523745a810002000f359692b12eadd9b52b029a1b9a0e81a3385180ce8052c58b4bb9fb9df5c5edc26e760937cb764a963276e9be0201be35e0413bd7525e730709d0dc0b711c3a954f14a01bc0f4bf4c05104000010410400001041040804f0bf81f39abd1f2f81fcc7f0000000049454e44ae426082),
+(83, '2024-10-11 23:36:53.846320', 112, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-ed5b4856-209d-461f-ae43-bc2283fc5944', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041e49444154789ced9d4b6ae4481445cf6b093c8c845a8097a2dc412fa9a925f50ea4a5d4020a424383c4eb417c14caac1e5524e94a5f0d0cb2a583021eef7b236cce6f5dfb5fbff73e082080000208208000020820800002fcefe5eeee3e9f6e8121ff987c2b7f88ed2d047777df9ebf04015e02502c31db15ee91fc630e1b3e33b8cf612399de1cb69b379ebf04015e0bb09bd90558de3758dedded9f38e416cf14f343760558ccec015f20c097068c77bf59dfdca608be183821c2720558c7cd61effd05020800bfb24476231921c366847d647260f9fba741f8d9fb0b041000b8cf136780c9dd99e25013c30d60509e28c0c301ab99998d40d8f0ef97ddfcfbfb474e07970bf81cf2ad9999d9b5f71708f0b501393a4f37e3e7f5cd8d0036fd18618a3bc0e036456e9e7cfe12047809408db5dbe9962147e71ab1dde370f79ca2b300bd004dd6c7e4eea59f988d30357026cf9dc5fc4ed8509e28405f40716eb1b4b293fdd59a64069a09cc1cdce1305b59a2009d00a58b131c230c6ea94fb37edb807d04868dc9c10811837173d6b1cefc3ec11204783580fb0f339fd73767b900ac23103e0cd611f754bb00b06bc622406740139d8ba8c1fdc80499e2906f73d8960242808700cec532c9eb25dd4d6a6553b3435a418e6a6701fa02da8ac5abffabb54b2e56ca6405c246f193b24401fa0396777772fe57a489394fdcf0797d73332b5924e1c3aa3ee7d32c41803f1b7052ca861ca71b55e2740ac7254f944f14a037a046e792137aa4b4b24b01d36487d54ed54f14a02fa0ad5828c57229a5ab84bbb98a39aa6211a02ba0f58969f740da42905d64f18450c6d0ee278f294b14a00fa0c913f3782f1c86e9755b557687e98d635b8b2c51805e80263ae7e13335594cb735314c5a9c6c9d8ace02f4059c662cdcd4c9a704b256d6ea270af000c0c927fa46ea5d1ffd1cbfc913e3f19c2c51808e805b7d22549b4cbdeb70f28eb59fa88a4580be807317a7d527e6c4905a31d73c7172e91305e80d38a40c1c5a9c5bddc35ca53980e6ce023c027056851d92aff3b6d2782aa0f3184696284047c0a99f789428c7c839c2af848bca1305e80b68f6f6357572baaac125c33ceff22b41fdf94b10e02500ad25cec75975118e3174d3d9c9cd6f292004e80db8ddef5c740f75e4126a654dbbcb4f9628405fc0596853c331d4560ed5ea4e8316d5ce027405dc9f291b6fe36fddbde2e7bd05b244011e00c81eaeec2348c17a37162bdb05a09828c746d4cfb40401fe68403d3f711ff3e188ebb825190e0093efc6f4ef37cf672aae760378fe1204785d809999b15cc0ecf089a19c783cc572cef1c3be40802f0738d5cea1ddbd92f561458103cd094d4781a33c5180ce803ac58be5ec77d637b72bbbd935f9c4d2d99e914f14a037e0ae76aea3bc469a0394f3eb9ac349e41305e80830fd2f5301041040000104104000010410e0d302fe034791f6f0cb379f030000000049454e44ae426082),
+(84, '2024-10-11 23:37:15.188966', 113, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-f622f894-19d3-4306-a480-4c0f420d83e6', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000042749444154789ced9d4b6ae44a10454f3c096aa8825e402f45da99e925bd1d484bf1021a52438344f420bfb2fbf1069d851bd7ad81b12cd5210541c48d4fa6cdf9a3cff9cf9f7d1f041040000104104000010410400001fe07b059fa00a7d9926fdbb2971bfb882d9cf9c97bdf1508f0e400dcddddd7c9dddd0fdc033007f095f2633a80c9ddd7e978f78dcf7f0501be04a0d8d5014c07be3278b4baf80983337bb2c4fc08c81205e80b187ff74787730486c3980e7cb3c18d7d3c1ccede2b104080ff009c666637f79533c9c6177f335fa7b7aa0e1fbb02019e10f04127ae00b3bb3387a108c30360904e14e0e18098228f4425f8e37e9afff8fe66f1e676075fa7741953e7a5f70a04786e40d289f3bbf6f37e7363029b5f4798c30930b8cd81774f7efe2b08f0250097dcb95e32a4e85c22b67b0ed6cd738ace02f40264930a10eb3473c856e77ec4ca22b397f20e00a5bc284b14a017a0b1c4e4fafc88194bcc4956d28df8f01a8b8aa5da284b14a01320e9c46d190e6048b197fddb41292a323b1853c0603c9c7d3c0ae0f35f41802f01688461768c83132b36404ca563b00e453b06507416a02fe0a21319e2455482a5a898cc3186ede20d658902f4045c9365b2fd15b158aad8359589098c74a2005d016dc6e2210f3fd481883a0131576719ea90842c51803e804bef2e003144875ab1f1e632f9cec663ca1205e80328d119923be452ed9e03649d98c336c8270ad01b50a2f3d018618cbfad4e3c9af276768cb244013a02da8c25f658fc3a6d73b5492fe6a88c4580ae80d6277a9b13a7db7389dd3177ce215a536102f405bcd7893945c9560734f59cf88d553a5180ee80c612d3186ce0baadaa08c3388ba3beb3000f01b43d969c8494207c119029b34eb2513e5180be80220cddeb0458b5ba9ca2406e39abef2cc043006d744ee678194d4cf974758775478b2c51808e80b662b34e07b97658765495a98872995bd3b244013a022e53615ee560998a25a732295939729c96250ad013d0d413d3ae00a031b875ba7456c8738cf28902f4055cab38298bf6b2c1b94e8ae57c3a17b5a51305e80a68a61d529edc44e26c80b5ef5ca6c7149d05781c60b39bdbb28fd8cbab59acdd6c564fcec99362db1d6c79c40a04785e40734293110fc201b6fb70d8fc6a38d34f73f69bb319f8b65c9eebb102010400daca76ade7b4038997599ca6d1a2cab6005d01970908ca16827a0644ddd6e7e5fcc449fb58047814207938d8bee7f61ef598ba7838d369c91dee3767bb775e8100cf0d283af11c61fa197ff339dccd219ee969ccff7e8b3a11767b07f8fc5710e08b02f691e809b73b98d9cd934f9cdced256ff5b3e5712b10e019011fcfd9ce55c45c40ac5bfdca7e3f904e14e05180d2c50b675687fbcd6de1345ba24f6c0f7bb7a5fb0a04786ac087dcb9b4f29a3348807c7e5d7338897ca2001d01a6ff652a80000208208000020820800002fcb5805f7d3805e2779fb0370000000049454e44ae426082),
+(85, '2024-10-11 23:37:25.983469', 114, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-9b6679ae-9210-42e6-8531-c8c399eb75a6', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000040849444154789ced9d4d6ee3300c851fc706b2548039408ea2dc6cd023cd0deca3f40005e465011b9c85484b4ad25595a693be2c5a3b963fd800c17f2aa2f8d467fbf5b9fb010208208000020820800002082080800f3faaaaaa53394d00a2aa026185fdc9170645d4d5570655555d1fff0a043c05c025d1e4ca24114115318be8a03a6599d47cd4def1f85720e02900bb5c99fe2ba2972f98609a24fa12809248c057006202446404e693aa4ecb08601131c1fc82272080006c222207d5099bc8199bc81f37c722c7af7802027e20e0ca4f9c008b58622a767a05d09a6d5a6702ee025844b2394658a12fc74df4e5f42ef9e27c04740a762a222272eefd0404fc6cc098ffc58bf2f37250410024be8e404c1b000c2a31e162e5e35f8180a70034b17339c560d679b7d8aa69b85a47eb4c402fc02e52bb6308973ad53547d1886ae91dbb27accce210d01950941b5cc25658523b58f1a5aac04c39a9e8796f4a2201bd007b027b30c588b0a284cd00ca05553b4d83b2da47c05d00f3711360110196831be1650410de055846a8e6d80500b0891f7d9f5720e0ff0634d6d9f59f398bee3b66b39ddd46764010701f401b2cc30d33dcfeeea96c5bec0d398c9d09e80ba81a1ddcff6bbd43f877b1f122a91309e80b686a77094016bd1c98341a1380a572a27a784d4924a017a0e994f5b44d496abb3a5cdb4e59ea44027a03ea2cce84bae4a2eaf9ecca3bccdd8b5931521209e80868ecaf67ac617d37ee4016c1aca4939248404f40a513dd08631738a032c731ed991d65b58f80de803a76de4b7925580150a76df21dd53a4a22019d00b54e2c432a79c02fa1710c93596c80d69980ee80364fe36d6066841b07d222ebc15d49ea44027a022e6367730c5dea6a8f3159145d06512989047403d4c3a431d5fdb1d6e3101aedb807308c5808e80bb84e20ee95bdbd026dc63ad5a944e61309e80ba87a713c95a3de1f1b4ab0bc56a7ae3629890474045cceb1d8a76997752f72a8723cf41309e80ba8eace5ed94335e05c9c4537d1be1109fd4402ba026efa89add673c10ccd941fad33017703cc7250392f07c57cb2d859cecb21ef4162c96f200fe2cbf91e4f40c0cf058ce55080cd7679c803f6cb113a9f56681ec407f2d47d59d7e509082000403defec1e635368b6c1a97ac0af8e5d689d09e804f8604fd93dc73d0155f1af8c44d34f24a02fe0c65e619ebb69771e69a6f1596321a03760f713b711086f800d336f90983628b08d12ff1ea1b3008a452e008f7f05029e0230defc761640e7e31b0418541014404890987eaf122740103a3d01010400b8b1cf76c9627b05d013386587a612e0d03a13d019e0dd5e316d629b182f07953336917378977ab377309f48406fc055ecbc97f2aa3d4800a0ec10e117a81309e80810fe962901041040000104104000010410f06d01ff00436e2a850a5236220000000049454e44ae426082),
+(86, '2024-10-11 23:37:50.111080', 115, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-1d1273f7-561d-47d1-ab89-01750c7bef1a', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000040049444154789ced9d4b6ae4481445cfeb48c861087a01b5146907bda4c63b4b2da5176090860689d783f828226da84185bbaacb57036129958748b8bcbfc2e6fcd071fef163df07010410400001041040000104104080ef0056cb07ec37f209b0656f3fb085b33c398d5d81005f1c80bbbbfb23babbfb4139b9bb6f219f1ef100a2a7bffa6ffcfc9f20c0ef0538b3995b27928984f896efcd5b7ec816eaa7c357208000fd11dcfede82b3da0d7fc43763b5bbc37ec37dfb2f5620c01704dcdeddd90dd6290084c388c16df6d37cfdebd520be8e5e81000200efe3c407c0eceecc254474f70320284e14e0d3012945be01f1c05fa6d3fce5db5b0e07d789eca70152eabc8c5e81005f1b90bdf3fcd47edeef6e44b0f99f1bccdb0910dce68da7277ffe4f10e0b700545f7b749784ec9dabc76eeb39f53979670146016aed1098b7e0cc5b519dfb910b3873926328e6301e284e14602ca01ab76218673f52c692b4f6809cc500497f10ddd32352a200a3009d4dcce2e24a9b8190ee26fda5cb2da44b29518061802630bca447aad84076ccb5ef9763c74d71a200a30197a4e0b27fd5459384598b8ab31fe58bb289028c04f4c9328dd672b27c7967c869cb7c0d494889020c023471e215ff9538b1642c5eb3981a45ca260a3016d0f5ee3620bbe85cc069a3485a9ba8dc5980b180aa35682610db6e335ceeb8f86ed944014603daa9d807c51353e5980bd85984c53a06d51305180c6833965cb1eef5b7d15cba57392a63116028a0b189c5ea512adb55706d1bfa49ac52a20063005d15c7bdd40e373e88134b79a7b6fca444018601fa09084ac65cff6a02c352d90179670186039e7b2c5d9edc059029b32e9a944d14602ca051e2d568be54d77e505f3af5fa889428c0284097b16ced7c6c7eb73476d6b1d61395b1083016f03c9fe8b5b3f794403771e2ec9a4f146034e083fd1ebc74f6629d7b28356e88657a51198b004301fda46c5bb669de63a95339393adc349f28c06840d377ce9e78a351627e287a75d1a5e5a2385180a180e6ddbe2b4fbe82c52bb32ed3dbd7fb5652a2009f0458edeeb6103c6f8403d892f6aa032078debf69a2defbc57e8200ff5b40b32f8ec169a4537c3556035fbf1d38fb9f9e2edbe706ad40000180ae8a93fdb497ca62090c9b38f16ab4a8b22dc0504037290bf489719d99bd34d9de931205180e882531592780dd8c750a6e4bdae7f8b42c4282c37ecf11e3c81508200070ed290bc16d4905ecd3dcfdc096fdeefe6237d29e62cbe7ac400001fae3cc9bc8ae1398d9dd21be1944cf9bcdce9b7267014603babdc23e7871e5dafe01de15ba15270a301e50db2b5bf5d3fbdd6de1345b924d2c75ef07b289028c06bccb9d6b2bafd98304a813ddd7e624b289020c0498fe97a900020820800002082080000208f0cb02fe05435912b4e844dd430000000049454e44ae426082),
+(87, '2024-10-11 23:37:56.089490', 116, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-0d302603-3f93-49a7-a819-1684d44542d0', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000043649444154789ced9d416edc300c45ffaf0dcc520672801cc5be599123f506f651728000f272001bec82922ccfa0ab6a9a34f3bd6935e379900182e427298786bfbaf61f7ff77b400001041040000104104000010410e08f979999d97c2c23607330c3686618e3f14567186dcb77063333db3eff1104f85680645700d02539bd90b41980cd6103f9bac1de865bdbfd3a8f20c07f0dc87615360061839b5eba36f784c944835975cb2c9f28c06301610327ec2479312caf1bb0f062c0da7bec7ef80e04100000d68b61610f9bb1931376f2a75d6973b8921cfec10e0478464089ce391ccf00b258e93c6c1f09645e56bff8fc4710e05b015692640fcf04df869df6f67aa57fb90c80cd212d49929c5aef4080e706f4fecf78d37e5e2f460480e37b0f8c710780ce3846dcdcf9f98f20c0b7009cb4f3b14497a27389d8aea26fee537416a015a032bda34e58d56ec608607473cc85462fe5284f14a025203bb7980ad840d85cb1b8adcd00aa0eccec45c5d48191250ad00c5047e7f1f85f158993b34c956d74e67d3f75fb047804c04d0f3bbd9ee8d7da0308577a79d15cbb000076961af797790401fe6f40d5d943f17fa9d1978b8a9e277adaa80908011e03388b652475e2f11775dddb977e5fb65359a200cd00b56249f6978df0502cc91da60908f793f2890234059c7a77f1f838b9c86c8e5d51d1794851da5980a680d3b46148da39d95f38d5133d6d3c4618e51305680928d1b92b91d84e759a788c70a7f276768cb244011a026ac57254acd3f27e02c78a394ab108d014503bc1229b3d121fdf16657d846875fb04680be84fabcee89e707dd90c007c0e6cb49d06982f6d193e4084463b1040000047653b4b14ff2c02493b1f89a177004bcb4fd15980968073ed3a658739089f1248e47a4eae2cca12056808a8ab38de540ee91c5f1626e544414cc30fa9ee284b14a025e0ac586afbcb8679f28eaa270af02f002b09842b3921f5fd6c5e7bf789fc19017b635f5ad38fd881004f0ba8a27355cf9e51a662914668eb21d9ac5de413056806b87d07845f2508a7a276ec2aed9294b5b4b3002d01b54ff41431e6e19b32069173423b4d45c8270ad01250f9c4a493b313ac04cced5b73a2ea89023c12b0f0629cd019a770e5718eca2f9fde8ef083f89c1eb103019e175075fb083fc74218d601c03ac0102238be5f8c0b015ba6725fab1d0820008053b7afaa7197d7d4557962a5ac554f14a035e0fe9db2b9589833c6d286b6922c069d6311e05180e4e152b2c8211d66e174f49d914f0ff88bed86c63b10e0b901254fdc7b207c00081118e79d18e30e033670fcf5b2d94200587903f8fc4710e05b00fabb4f5602ae4e868f349f887065d22ef165e33843f389023406dcbf67fba8621f23dca7e3a7d5cf94270ad01c90a7bdc6b8e79718af17e3849d9cc295372f7be7d47c07023c35e04e3b97565e9e992dbde88872e85eda5980d600ea6f990a208000020820800002082080005f16f01baba3c8a26db5cd2f0000000049454e44ae426082);
+INSERT INTO `modulo_ventas_transaccionpago` (`id`, `_fecha_creacion`, `_factura_id`, `_qr_url`, `_qr_image`) VALUES
+(88, '2024-10-11 23:38:30.048292', 117, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-a9a5f970-861b-443e-b037-53fc935c9fb6', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041b49444154789ced9d4b8ea4461086bf3048b5a4a439c01c25b9da1cc93780a3f80023c1b2245078914faa2c793159ee71f7cf822e20f99448a17867b639bf749c7ffcdafb208000020820800002082080000208f02f80d5d2019cf16433904ebb19ec233673e691f7be3310e08b037077775f2677773fe22530b8fb36b82f0cf1014ceebe4cc7d31b1fff09027c2ec099d4dc6a63bc84e96136731aeb3d0db219a2027dc30c0410e0724c0f23f88199dda2eab379bf39ec23eedb7f3003010400d84758ede6be4467f134823fcc97e951bdc3b7ce4080af0878f1131780e0ee846d288ee10130c84f14e0ed80ddcccc46603af01ff7d3fcc7f7477207d73bf832a5cb183acfbd6720c0d7068cf14f782a3fef373726b0f0d708613b0106b7b0f134f2e33f41804f0128b6f6b85c3224eb5c2c764aea5cc7c93a0bd00b50440f7c99dc095b963af703c20684288e435687d381fc4401fa02b272db68a48e50629205521403595899dce31049a200bd008d754e3a316ac26a89074f7597a92dbec4928b2451805e805612bd31c283e77cce918df5567cc74d7ea200bd0155a4486a6e1b92622c4a303a86d16df423bf289d28404fc03558263a8bb1ef215aec6a9d490f929e944e14a027a08958aaff974f472e34976079999217299d28405fc0a576b70144ad97c2e6c66243ab13153b0bd017d0e41353076231c7a1e413c9d5e6ec274a270ad01b50ac730a96739c9c9f96d688d6812c6a539228402f401bb1948c757c921238d0e4784aa247118b007d018d4e4c45bdec31d6feb01a595713ad6a9f007d016ddd39895936d6257753d336f18d52f293240ad00dd0667116287d37bc3a86b102584a7eb2ce02f404b43596da0656b56375204b64ad7ca2006f00fc437f6259519a1798268f31179f9b219244017a01ae114b35bd359578d18e259fa8884580be80369f987a6c8ecb8aaa9ae82e7e6270f5270ad01b70cd6ce74864a184c8e47c620956a29f284914a02be0a5671bc88ddb6595e953009dba2224890274045c7ab6a962965b6ed28a82745cba722489027404bcf66c4f39940e8d9d3e4842485d6f254914a023e05927e67bb967bbaeed4b614b6d0d93240ad01130d69f96b64e1c626ad1d7d9f0f5fb31fa6a835bbc77afe33acd400001805a63c9478d4e924eacfaef526851c4224057c0a55396a7924bc93136abac8ed224264914e00d80a4e160bd9f06fbcddb6deaf2e64c491dee372fbb7bfe3e9f20c0ff1a50fcc47384e927a48d98be61613b7138470b7fdef1d500767b027cfc2708f02900e3cb9ddd60bd63bede7f6230b83139306d58d8be1d161630a64e33104000e0ea18363b2fe5d6ecbafd03d71d9ae4270af01e402eaf842deffdce7e739b39cde6e9614d667b61709bbbcf40802f0d78899d4b29afd98304c83b896d757312e944013a024cffcb5400010410400001041040000104f86d017f033b58125cf55fadd40000000049454e44ae426082),
+(89, '2024-10-11 23:38:57.500110', 118, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-483caefe-452a-4cb9-9b8a-7647e2faa578', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe010000000055145188000003fd49444154789ced9d416ee33810457f8d047829dda08f22df608ed4c891e606d251728001e86500097f162c9225c7402f9a467ae2af850353f283047c1459bf8a8a11bf751c7ffddeef010104104000010410400001041040805f0036f303db7c18361bf318701b816d46fd38ca9573df3b10e0c501a3ff9d12001c23701b61c061c49460983e8cb88d3b00c096742067dbdbdf9dee4000014e80a384b96907d789b42b00aeb70bf3d99f09e0db8c122cbbdf81002f0d18ef079674004b3a462cff18b8a439ab8eb8cd78603e7efd2308f03d019b5d88cd2ee4db0fd2aed30e9224b679a0fd4ccfbf03015e129065c6752249baeac2d88a8158ea8975daef7ef1f58f20c0b702dccccc6c84e7cef361000e03a60ff3d5611e0372ea7ced7d0702bc36c0d7894b5d012eef9f968e58de2f344c03010c776bc5af7f0401be0520ccb53e507267204fcc654e5ee14ae43aed00343b0bd01310d67fc044bac21200d4b1852496e4c26c6352a200dd006725ee2839890741d72406e6b3ed62295180ae80922c27804c038bfe066249400e8c5975c9e598a3a3666701ba02a22793635d8207c6ead8b4b5630887727104e80aa831712869cb7db2d29688aece1c0ea54401ba02ee73e71c049720cc1d71b2066ad8941205e808083111391226009ea2d498d826f07289ff4c4a14a013e05cc5dbd12a7b613a0eb94b1a58ce4a890274041425a2e6ce13ab77033467c75dc4965e4b8902f404b469d663a22f0c7d258885d5f2066274948b23c03300be356020d7db8566732b2f0f24dfc7ecdd609b01ae006a02f3c73c8200ff6f4068032b2bc1e876072b07a53f4c198b004f0094c61b6fc8a6d5afc04418708c654efed7000cc4f6636ffd3a5fff08027c0b40cc58d63ad8ac6cb777500bcdcdd4564c14a023e0ec6cd79233dd3b2c753fb71cdded49ca9d05e80d0831314fc24b3375588b7fed235f37c84f14a033a02a71e0a93fd11bc24e85bec1152b174780fe80d8014146031b75a740a8050250579800cf00c498e80514a0ece8e3a92187b52b27a9034280de80c77e62ec7b88066293a3321601fa021e6c08609ca743438ef6b108f04440989d5b02ed21b21655e2ded2d6332b250ad01170ca9d8b9f784aa54f06e2795b8194284037c0bd9fd8acc450776e5ff321174780ee80f8229c9845572bb1748ac56523d40121406f408c89004a576cd82450b695564daaee2cc0130153cd980190fcb0d010816907df6c2caf24b98db06bef3b10e0b5010fde01516cc37c1489369d86b74128260af05c407e435dd94760d7d2c7ed3a7d2f6f817fde1d08f06a804f3191ad2bf1aebc72b277e4270ad017f0f99db24584c1540c564e3015a544013a021ee4cea502ed5ff7da10e149b57267019e0030fd2f5301041040000104104000010410e08f05fc07f642122d8a5efb870000000049454e44ae426082),
+(90, '2024-10-11 23:39:12.089974', 119, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-f0188fc9-7579-44cb-bec3-2412ec604b9e', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000043149444154789ced9d4b8ae33a1486bf736dc850815e402fc5d9c15d53efcc5e4a2da0401e16c89c3bd0c372aaa107ada22e55bf07214e940f197e8ece4b8a397f751dfffcddef410001041040000104104000010410e00f80cdca051cf9c51e803df6f6c53e630f8e3af23e7606027c7300eeeeee6b7077f7847b9c9c2582afb4979080e0ee6b484fbff8fc4710e04b00e6fae69821bcc2f69860bb4fc9163f665be2bd1b6d04607b404bfe7cfe2308f02500f3bb4f4284653dcc3703df7ea619f69b1bfb9c1c8ed133104000f89d12f739b1d9e4c0948c30b92d7e986fffbe5a369b6367208000c07b3f710558dc9d254ecd314c0093fc44013e1c9043e4190809ff753fcc7ffd7cb3fce576075f43b9cda1f363f40c04f8de80b23a2f4fe5e7fde646005b5e6658e20130b92d91a7919fff08027c09405b6bd3e596a9acce6dc576af8b75374eabb300a3004d7a64efd03d56d5b9275822b064394ed51c8684fc4401c602aa718bf57ef15434b98622d1ac5320eb0f827b91ad9428c020c0358b33a512a3ec3f1239dbcd94581c8c1031989397cce2a01908200070dac4c9abe96b2e62a45b986b1970aa0bb86ca200230167b5cf7279255fe1cd1ca6649bd5cc36e1cda0a572eae0cf7f0401be04e01a2c43cd67bbe7c0c4cf5ba8fd119e641305180ce822962c3398bc8b8e57a068d2dd4b3c13a71cb64889020c035c6a77112845bda6ceea45e6c1d976b6f05a4a146014a0cf27960ec49ae85e621b74b589c56c4a89020c043cc7ced912ae94fed8272f3247d1c5304a89020c04f45acb19eb4897d9ce63aaea72574e49ea4889028c04f49e60ce1d86f782ebcbd0dec64989020c045c6292506576d69d016adaa6363facf21305180ee8fdc4536bb9bc12af8ee1536651abb30023017d5758ef0ed61e87d381cc91750d56641305180be894585bc3da8e52fafec45a72ae0569295180a180be2bac19413f5b13cf0eb033a9dd25bfa5440106019e77549d0594e218d222e6e6272eaefe440146032e114b9c9afd6b5db1d41c77b9ed631729518061806bb5affa8484ebb6d238795f59898a9d05180db8442ca1c92c525a6ece00c6fd34912e9b28c06040af443f6b2767dfd799680c975d7eb289020c055cb338e7eebd66f5ba8320bc6b8350c422c05840b7a3cacad189c0b2822d2f86678f71bfb901f876bf8c1b3103010400ced0a35ecd3abeefc5b9145a94d9166028e0123bd7dbb335d65b2f58adf1a5be71514a146034a05838d8ee87f90ad80380fd56f7b6d0da70f69bb3dd07cf4000010038cea3b36179b979feec1112f6d867fc97cde433c51e1f330301be35e0372779e6e8c47cbbbfc26650b63f875763893f922deb611006cd40000180eb5961ddc94bd79ed973fb69be944f14e0c300edf891d8d6e9fde6f6c84bf49b7599ed3524ec317c06027c6bc0bbd8b995f26a00ddb61044daa67bc5ce028c0698fecb5400010410400001041040000104f8df02fe03b10dee4cfb8084970000000049454e44ae426082),
+(91, '2024-10-11 23:41:22.169353', 120, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-68f429cb-d9f8-4519-b795-b76bca4c0c40', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041f49444154789ced9d4d8ea33010855f8d91b204690e304731379823b5fa6670941ca025b36c0954b3709531f448b368a38c92c7220a043e19e9a9fe5c7644f1ad63fbf1bde7010208208000020820800002082080807f0066b103b3740016111917116011b15b0600f3b0f99d43db1110400000a05755d515003691b15fa1ef032023829a3a01c85b02545555a7d62320e0b5019d7fd93aa0ffc8df751600510160c9bf0a6202741e3e8079044af1e7f1af40c05300baf385a85b973fb00c5970028415587eae578c800002fe0a98e566ee78fea59afdb4eaa7e410f12d5d3f02025e12e0519fc789ba1f53afaa138222961fa67e3d3df1f85720e0a9008b888874393bce1fc02640ff29fa3e007e0dc8a9f3d87a0404bc36c0e2c458329078ff123a22de6f2ae8830208a789eac7bf02014f01a87cad5de857f86950c4e29327981275ea5794bacfe35f8180a7009ce3bf2c3d4d00e082435455c464c274115289043404943ab5795d4f5bcc089a2611341bcb53da422512d00ab04b0a66ff5250d514143101d9309a9d343966eb48ef4c4053405d93c9b62e016ef54ac4e8b1639ee38bbb17a712096804381410e1b66eaa22c13d445c61b3cdd52d5422016d00e7dc39dbc4ec890173ccb9bc9dfc9198002a9180b600b7892954651b9f545971a8d8d49a64c642405bc0311daed31173c7398b01f664c53c369548404b40d56da89a82f9e9e8d73c265c816c3153502bef508904b40454551c2be578cb83e52909f01af78ac3299548404340ed9d4b9da6aa1deefa8b6aed89d944d23b13d014706c03ab14064f4cf66968c08d253316025a03aad9be5329a79e7256d5fdd4cc269548404bc0394ecc22dc4bd9a7caa2d9cedd8e528904b401d44ab49687d20be61d6026bde4a7f5412512d00670a86c973871f21fb24fae3e00ce3b137005e0b07ab92fae37594358dd958350ee63158780d680ba3fd18a35def250560a547381ec0a23e0224015f501de1aeb2bfa4ab2bc67d109ec8020e00a802d9f9a7f2700fd87642b58165869de1c02029d87040061cd0bf1bd35e7f1af40c05300aa3996ba5d7b6fe13e58cc437f046d22010d0187ca36e01328dee850458ce69843d5a4432512d00c705c5115bcb2e8651bef0af35e305b47c0155504b406d4559c9c89a0ccf61d57f4d93580551c022e001c674cdc4fe752620916f795cfd94e82f3ce045c04d8f794cd47bf02583ae8b48820de6fa5bcbd4935dbd27004041000e0bca7ac0c416504206fd9307e8abe4be75b922c1d646c3d02025e1b505771f62d7162891d8b445da7401d3bd23b13701d6013cc03609b782640c6e5a6224359e572bf69de00fea211104080d7137deb3a191711ab7bdf3b004b8722c28b4640c04b02beee29ebfd61fb961055936c71e5ac6c13d01670fa4f8b6a231c3f5d4b4384adfc63cf3601170084ff654a00010410400001041040000104fcb7803ff59c00efe92c1e0c0000000049454e44ae426082),
+(92, '2024-10-11 23:41:44.740735', 121, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-f0e94b43-8603-4838-80f8-add6da386d29', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000040e49444154789ced9d4d6edc480c461f470d78590272801c45ba59e09b4947990304909606247016f52b39c02c529d04e94f0bbbd5563f540304c98f6495cdf9a9ebfce7e73e0f020820800002082080000208208000ff03582d5dc069ac23d80cd8bc3fb0793783fd81cd9cf9c9b1ef0a04787100eeeeee4b7077f703f76d705f18f27b1bf8120e20b8fb128edb277eff5710e0ef029cc9cdade369f6cd0f98b6d358c7a1a9f3d80cd1813e61050208f0f9da1f98d903081f3130c36ee6befdaa150820c0e0ac23f8c2e03633b87dcbe1b86487cf5d81002f08f894272e0093bb336d43490c0f804179a2004f07ec66391c1ff8fb789abf7ffd48e960749121dd46e93cf75e8100af0d78c45fd3adfdbcbfb911c0a67f1f306d27c0e0366ddc9efcfd5f4180bf025062ed71b96548d1b944ec54deb93ea7e82c402f4031bdf42abd978d906903a6688ea59e130e94270ad017509c5b512ce1888a25dada0249c500d1fe20b8c747648902f40234e1d87d1b1cc24195cdc0e0c95906f7741b9f93250ad011907d6209c7d41471a309ccd1feca1f94270ad017504d8ae4e6aa4ec94e309a634c1bfdc81f944f14a027e02a96491205d2ab3c01e19e6fab61ca1205e80828d1399b19b98b121b2d40f28459a2c42c523e5180be804bef6e0362532f576cf21f06cf023af944696701fa029a7a629d404ce960c8f5c4e827736006e41305e80d68b5f342296f47d3ab9d15f74645c7a4523e51809e8056b1c48a75363dbff558bcfc58728d5196284037c0bd9ed8d6b8b9c4eea89dbd78474567017a022e559ce2e9926156edeccd6d6df9c91205e80668bb7d4ba873372427d8248625634c46284b14a023a0990afb513db14920a3b2cebe533e5180be80a6b2dd34f58ad5e5dc1172cb3937a465890274055ce613b7763e3697122fdeb1d413a55804e80b68a3f302a47ab6977a4e990a9b4aa36572cd270ad01b70e93b7b4d078b44269d01d18ee66caa6c0bd01bd0e689dc1c63dd659abd2369521694270ad017708dce25452c1b57a63ab8e897a2b6f24401ba022e559c8b4e4ef1b7ec2398aebbfc544f14a02be0ee13e1e60937b289863c2eab090801fa031ef5a5c199ce4f64ffe2c66e302d0eeb3cb881e1eb589febb4020104006ebb4cfdb2a32f8f41b47de7902b8b522c0274055c26652949e006b5ef57554cde74af7d2c023c0b10b2c1ad5f0f6c0e49ace4533bcb66020687fd2d1e6cd77505020800d43365e395cfd46672779b77337fb7378f678acdcf5981002f0d787c7a677f1cace380afe3779232090e84efc6b47d396c5ac0089d56208000c0f5acb0e6e4a55cc5f6ad6a97f6c46de589023c09508e1fd94a9cdedfdc664eb3397c58ed05c6738ee7ee2b10e0a5019fb47369e565ed9c8f1f492744b4c3b4f28902740398fe97a900020820800002082080000208f0c702fe03fe471b7b89d641870000000049454e44ae426082),
+(93, '2024-10-11 23:42:19.135087', 122, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-1826c343-204f-4d47-b3b5-b083bd0f3ea8', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000042149444154789ced9d518ae33a10456f3d1bf2a9402f6096a2ece02d69989d394bc9021ae4cf804ccd87aa24396978f046669ae4fa23b4ecce41868b5475555244f147d7f6cf9f7d1f208000020820800002082080000208f80fc055ecc255667fb6ce28cdeb19f563f3ff3c8fed01016f0e70d9850400dbdc9e08428694bfd739977b316d28d9f6f5df413d2080801d60f3612ee4d2444cf6a03cfd9900fd754619400fe801016f0d981f6fc4db9c014c0aac1f59b17e6401a60cac1ff9881e1040c09780120e8a08ae3fee229790a1aa772921e2cf747c0f08784b0054555597a0aaaad99aedde824911eb8325e4876ffcfd5720e0a500ab8848c993b732fea18488e12e161d967b40499d2fa37b40c07b032c4e8c75f939de9e4247c4db49056152940072680f082000403f3bdb8d90e1cd4911eb9cbcc094a84bc800383b133012d0c57f88aa6a0a4b80f939418b1c119309b3dda312091806702562525d0078766283a069129396c1722f5b2a918061004f96136cfe8d6952d534a939db4d75c9e458fe85b933014301bd2753c6ba04b8595323468f1d9f66712a91804180470311361337adb51031a34b563826123014f0983b97c0b0048b09b0e8b04dd6401d36a9440206026a9ce866619d9d7d606c8e4d1d1d531b4aa94402c600f6ab78f979382cfaabcd34b926a944024602aa8b0393d912aa639880e66c0335b32ef60e9548c048405deddb6620dc05c09cd1d5ccae1f5962da0084cfba16fd295e5bfb0d5e81809700f4b3f35273e2057b7b0728d376f9069d6d02c6033a17a7d9d6969324c0bd1b5f958eea96236767028602ea247c06e202055640b14e591014024c2a96b1a4d22cc5b4c37a400001007619cb02c0f2946a659bbd833a1db7449b63220103015d0584ad9db45a30af0033173b79b35a39542201c3005f24267dc6d2d6fdec0340ab0fa312091806d8ef4aa98e75b282b0dd429f178ef5eb2e5422016300dd6a9faad6d2d8d4ef14e8d6025b7a4d25123014f038267aeee2f5d9d19f7a932e0e0187009aa4d05cc426bdeec1125a0504e3440246033a17a7f9347df1431d13ebba33f7b1107000e0cb7d2cdd16025411dad56a66a944020602767e22ea16964e6baabbb03183ce3601070076b373425706e155896d9769fd0e5d1c028603fa7d2c9645e727dba6ed7cb66518e6ce041c046867ca9afeeea20b3651bd9dbc6636b5b372ea8111dfe81508780d4070c7c68eeeb44b2ea57a7652fd25278f27d7197219dd0302de1b508f63da66207c3e3dbf9e9302d8668d0a082000c2a7d441f1efbf0201af0a9854e43ca91de29900b9ac2715396fd2a5325ea4f82d5f81801700c4b489aa1f5d279755c4b60bdc4edafd1ec1713d20e02d01cf67cafaf137ad66b12b926de9359d6d0286027a3f114077108e37732d88b0ada69de54d2512300ad0528fff77f1b74c0920800002082080000208208080e300bf0164fabcdabccc52aa0000000049454e44ae426082),
+(94, '2024-10-11 23:42:38.304475', 123, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-11afebdb-bc74-4c98-89fc-5c39facbba30', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000042d49444154789ced9d4b6ee4361445cf8b04d49002bc802c45da4196147849bd83d252b20003d2b000092f037e553dc8a05971c3be35b129b30e28e0e27d49da9c5ffa9c7ffcdaf7410001041040000104104000010410e03f00aba50f701aec23acd369663662cb6ef1992d9c79e6d47705027c73c0987e860de01c81c1211cf1b1c3690ec76884035fa70f62b6bdfed56905020870019cc9ccadd369ac36620b83b3dacd59a734c9168806f4052b104080cb67bf39f306b09b4178587cc66ee6befd0f2b1040002059c7d3fccee0b630b8fded0ff37b702fd1e16b5720c03704e0eeee7e0feeee7ee07780d9dd99b7c1fd1e0edcfd00a8c3e61b9fff0a027c29c06e314f8670e0efd369fefee7238583eb047e0f691853e7a5f70a04f8de80943bcf4fede7fde646009bff1961de4e80c16dde789af9f9af20c09700145f7b5c860cc93b178fed9e9d75334fde59805e805689517a5b569dfb41cca2e728c7219bc370a0385180be8062dc8a1cfd88194bd4da1d52160344fd41708f53a444017a01728f657f3b80c16d9d3eca30b65c0e6607236c188c87b38f87afd3d66705020800b4de3997ad0727566ca071cceedb902de106b28902f40564efbc01843448fa0b1e351987356c8c1fc58902f4045c936562dac2bcc12577714f93b72a4c2951808e80c626469901256d4946b0e9ac24c338b86ca2007d0197dedd06943831ffb5488ffcd79a5e4b8902f40214ef0cd1ccd5ca62aa62a7ed8ad531e76752a2001d01c53ba76439652c75586bdc258b8e41a56ca2003d016dc6122bd61bb9dbe2695837e4b8d7a28e9428404f406b13a3cceabe2f28d223e52ed71a8f94284037c0733d31c57f5b561d8d27cea59cbbe24401ba032e4a84b2ef865cc0a98161cc624a6551de59809e80b64ed8f653f21e871a40c6cc3a9b48d94401fa029a3831b5f2c24155dd254e1c723c19e749890274045cb293aab5da630e17eba87aa2002f025cba7d75a383d7a262ade73c9512a544013a02ae27f5aafd2bbb62c9f5c4b449567d67015e026894d83c2c4e38d9c9ecb6d3b30df59d05e80c68e3c47ae8b9b452d2a490c55a8bdaaa6c0bd01570d9b37de9a714ff5b62c7cb293fc589027405b44abc977d37b56c9862c2d2dedb403b2004780160acbf5aba3af1e6ccdb1bcefe76383ccce3417cec32afd70a041000b89c326dac63396fdad40e4bc6acbeb300fd01979db294d32b9e43c47b11611466389e0e137cfe2b08f0a500393b619df21d4cf186ba7a8962d90bc1dedceef9fbbc82005f0370d6abb3cbc66da28bb665bfb9bfdb48bc536c79cd0a04f8d680f1e747c361301cbe4e1f180c6e848739e1c398b7b7c3e61f6f18a1d30a041000b8de15d6dcbc94abd8d7f64afa4e9ea2385180fe80d2c5db8a9fde6f6e0ba7d9121e960b8d6933ad2ddd5720c0b706fc943b97565e3a5beae9c2c4e68608943b0bd01d60fa5fa602082080000208208000020820c06f0bf817bc73ddfad9cb4a6d0000000049454e44ae426082),
+(95, '2024-10-11 23:43:06.101522', 124, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-3b360252-6e14-4e3c-a975-f8d9288bf09d', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000040349444154789ced9d4d8adb4010855f458659ca9003f828f2cd828f941b5847c90102ada541a6b2e8aaeeea71208b293361fcb492acf6471b8afaafb6283e74ddbf7decfb000104104000010410400001041040c03f00abd8056c87fa91c81190f3165fc819775f79ccdd01012f0e80aaaaea755655d51daaba03c0a45874477d719d77007e377ee3f37f02015f0b703735b7ca017ac55df472045c13da55ef561179c20e087869c0e1e193b9401605a4be9c0b743d1f006c875d817bf60e0820e0ef804dc415e3a472c65de44735c7b7ee1d3e750704bc22e0c14fbc02c0a2aa58cad41c43f31de92712f06c400d910f00e61d7a39de452fa79bb983eb11d0eb6c8f35743e67ef8080d706989fb8bc2b3f6f6f2a9801597e1d80a5dc016052590adeadfcfc9f40c09700345bbb0f8f98cc3a378badeac63aaca37526200bd044cf654d4bbbd31d580a6099454cae0e674f34521209c802b8722b400d47aef35e23164b6a0316c500a8f207ccaa75092591802c4093c4a94a986bc26e89a7baa0ca5f7d2c931b674a22014980e0279a62ac467852d384f585c99f69c2423f91806c40b0cea613dd59ec494513c7e636d68b7e220199803158468d4eacdb015df5690d566c9deed48904240362c4a25dff15b84cc242198f53cc8ba44e24201730d4ee8a7f56a368b460d913385d27327626201710f289dd26bbc708b8d49939763d499d484036206471dc318cd67908602cbded8a919248402220462c2d630d74c730f88455f44c1c19b110900a88996d1b17b0644d10b816597713cd6a1f01b980a0136b74126cb2c7cec14f0462c98f9248401a20660c4d13c2fdc482c1312c2eaca07526e0598055445cd7b98b68856640cef30eaca71d750675d11d9c3225201730f88905638d25f6275abb620ba5699d094805f4b25db0c41a6acc1e4f87a436f38904e40386ba735587fb3051d5bac2ba9fb874df929248401220eac42a93d530f7425f6fa16d4db2ac3b13900e0892d85b1e7aa3838968190268f62712900f88732cbd0de26170c5133d7d8485996d02520143cf762fe515a00f137857d830e5479d48402a204a621b1cf0266d1d464de79efc66070401d980f7f3cefd703a93ba6ab17b7fa25f9444025201a1dae71ee343b703da445f4f7933762620173074cac24ace3efe6cea30caa48f44d34f24e039008f4eb09e54b19eb41e5837acf5540eb637c57a4cde01010400e867ca02f033480a00cc3791f326a2977ad87638262c790704bc34e0f14cd9edb00b00e87afc0d012615cc0a3b6cb67cdf65f9f91d82396907041000608c9dc3c94b63cf6c99c280df384cf0f93f8180af05688353a5d9e9edcd4e373ecf370999ed2bfcecf7d41d10f0d28087d8b995f2c21924009aef18f3ded48904a40184ff654a00010410400001041040000104fcb7803f65f50d7b8405019e0000000049454e44ae426082),
+(96, '2024-10-11 23:43:12.648070', 125, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-3f60b834-9170-4e8d-8bbd-938ffd4de161', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000043a49444154789ced9dcb6de33a1486bf7365c04b1a9802520addc1d49492a603ab941410805a1a9070ee820f51f100b31806c924bf56a6457f208183f3266dce5f3ddb7f7ff77b104000010410400001041040000104f80360b6f2c062066cc67c01bb2efb8b137665ab332f6357208000000477775fcb68be00b0993f3fadf82dac983dadf8f305dcdddd6fa35720c0f7069cea87ed04e115e69febc9e2cb0960728b2f67b798b63cc908c07c8596fcf9f82d08f02500a7876f9613ce32adb0183e3fddcd679bdc580c876df40a0410007e27898001e630ad4698dca26fe6f3cf84115e47af40000180e6f5553f31fb7fd1dd896972bf8595ea40eec3ee171fbf0501be142087c82720acf8f365337f7eba5b7e395fc06fa10c73e87c1dbd0201be37a058e7f8a6fcbc9cdd0890639712b14c6e31f166e6c76f41802f0168b6763d0c998a756e16dbbd1aeb6e9eacb300a300bde8114a9e304b9dfb0a3101318be354d56158919f28c058402789ee899cc526b698e406b42c76963f08ee798a24518051806a661359eb1549ec2cf1942764f9cbc33455e32c49146010e0512766235c86c51257f92b9a308174a20063017be8014de19557a12415b39fb8bb8dedad245180618063b04c36cc9d2778abd109319550a60aa62451808180de4fcceab0f30e6bc41c7da544d6d58b944e14e05d00f3933bb0e5364400ecbab4928b9dbd342e2e678770b766a73fcd1604f8b701876ec3d0cc31553b168bdd1b66403a5180d180669da79ad4f6667f5b3cedeebea7b7abc596240a3010f0b6c65282e5546472f71dcbb089a322160186027a9d5844afc52e50ab2d5d19ba69475967014602bad839772566fd97aa4d06e8f289d092df92440146025a62b0495d822298898363982b80659eacb30063015d077697ca2e46f8e040964e9d12ac48270a301670e84fcc6d382d8bdda5b7295d11d99f4c204914602ca093c4dd127b57630e07edd8f2898a5804180be8ad33f4fd89c5316c5d61bb9f185dfd89028c061c62e7d67778a375c552a4b36f92557fa200c301bd2402ed94e9cae11c4beb4f949f28c0fb001efcc4924a5c1fd3dba1661bf3b10249a2002301bd24f6a5bc1a40ef27fae2a10223eb2cc0fb01663bbb5dc3ddcc2ea521a2de1a467fb62f5f67f71e2b10e0fb02ba7b71acf4279edd002cbe184e7835e24bf9ae9f376a05020800f4d5be3ec70dedccc05e633e145a14b1083014f0e65eceeeaa87e23ba6d6249ba0462c3ac722c07b018a8683f9b2d9de296bd7acffeeb69f37cd4708aa03f979b620c03f0d78b8539690b0f8eb02316d2787bb117ffd70669b1c167b03f8f82d08f02500bfbb5376cdd7d4cd97570c2637c2dd4aec927eac166ff59ee3112b104000e0a117a766ac6b6bb6d70e1ce86e68da031cf989020c06d42a5e4c5bfd8b8be5ec766533bb767e622908da75f80a04f8d68087d8b995f2f67354f9e96f8850ec2cc06880e9bf4c05104000010410400001041040804f0bf81f0b40ca9b045142d20000000049454e44ae426082),
+(97, '2024-10-11 23:43:41.608058', 126, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-be1dfc59-5448-47ca-b376-605f066c0236', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041649444154789ced9d4b6ae4481086bf18096a99053e808fa2ba59d3479a1b484799030c48cb0289e8453e559e597516d5947f2d6cebf5918220de9136e7b78ee3afdf7b1f041040000104104000010410400001fef77077779febe93a3893eff81cdc99d62f37d211dcdd7d7ffd2708f016802c8949ae483fd67c77668837a2e8cd617f78e3f59f20c07b010e33bb028b8db05c21c9dfe9b01bc062664f588100029c8eb0c3e43b6636a6d3c52e0edbd828cb67ae40000100b6310aa1cf0c6e370eb31f7e379fc33da9cd67af4080ef08f8e227ce0093bb33ad43710c7780417ea2004f076c66d51cfbcfeb61fef3f39edcc1e50a3e87746a666676ebbd0201be37608cbfa687f2f3767123804dff8c30ad07c0e036ad3c3cf9fa4f10e02d00c5d6eea75386649d8bc576cfc6ba794ed659805e8093d7b70e9eae65218c99ed98e866c8ea30a4bcb72451806e80acdcb210c62aca54a473069a0acc1cdc21b8c747248902f4028cf98fc398e67279fbd8816304869dc9c1082b06e3ee6c63cd79bffe1304780b405377ce3e617111578896381aebb5bd213f5180be80629d01628d39f53d54d14be2e8a9f8920ef98902f4049c8365628892a293a20e4b574e7ace77e944013a031a9dd8c6ce4d3c0db5492cc7d3834b270ad017f045eac8f99c289d7368133855272a7616a02fe0d4291b528e3b276bb2fe2be638fb89d28902f40634f9c45a4a21763b5075228d039915a32451808e803662a10626c14b9cd2e8bf26d1a3884580be8056274631cb117373b744d6d544abda27405f405b6321ac6e842c8400b10f6cf2c31c3c9efa6243ecd4e9b2020104004e114b495ba7dccd7a760c4b6631196be944013a028a4e1c76d83e9c586d0e8e115253841156583e77601b77a6395febb1020104004ef9c466522024efd04b7f622e39d782b474a2001d018d24c2a93f360ddd87dc015693da69a2459228404740d3b39dd5e17e9aa86aba224a05dad59f28406f403b3d30953864a674c552d2dba1adbb286211a02fe09cd9ae53a6a7b1d2c7cacaaafe44017a037850828d89a6768a65b98b6f940a8c2451806e80473f31e9bf92369ca171209b293fe94401ba025a492cc5e7dc10e6a751d3f0d02e2b4914a023e071de395e2bed8a554fa61be51949a2005d0125f468c3e6da0b0b8dfeab165bfd8902f406fce79eb279ca391b66f7b2bb6c28ed3ad289023c0350c2e6e5f36e768b5aef6e6676f1e691a80eb78bb35c3baf4080ef0da85d6123847f218e0670984feb81c791fcbf3f765f0c9ccd1e00afff0401de1450f6af5bae907462b81b0477fb11c75aeedab54e80ce8053ecdcecbc945bb3ebf60f343b34d500477ea2009d01b9db6b5af3deef6c97b4bbf12deac49cd99ec97bbf775d8100df1af02576aec354750f1220ef5fd76c4e229d28404780e97f990a208000020820800002082080007f2ce017320cf197d1649fbc0000000049454e44ae426082),
+(98, '2024-10-11 23:44:28.360147', 127, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-a9e3d9ef-f62a-4ae1-84bb-5407a952335e', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000042d49444154789ced9d5d6aeb4810464f8d047e6cc15dc05d8ab4b3213bb3969205045a8f01899a87fe51cb199887db2643fcf92120bb7d684351555f7555c79c3f7a1d7ffdd9f7410001041040000104104000010410e03f00abe5d7f989d97498998dd8b299c136620b475939f5dd81002f0ec0ddddfd1edcdd7dc73d427abc037e67481f4070f77bd81fbef1fd3f41809f0538b29b5b27b0bfdf4720b80387b14e79912d901ce8137620c04b03c62fef848f1138ccd90c27440c6e6ee991a3f70e0410e0df01dbcd59a7c181c16de13066ff34bf07f79a1d3e750702bc22e04b9e780798dd9d390e3531dc0106e589023c1db059d2c91076fc6d3accdf7e7fe674709dc0ef213f26e9bcf4de8100af0dc879e2fc70fcbcdddc0860f3fb08733c0006b739f2b0f2fb7f82003f025063ed7e7964c8d1b9466cf712ac9b758ace02f4029c2695aa88ccb1589dfb0e7304e6648e437187212f96250ad00dd03841f748b23ae6aa49ee90550ce492772a34cef28902f40434f5448321c75eb65f3b708cc0b0333b58ae2c8ebbb38d3beb14fbec4000011ac01c0f738f87b1daad04e16d04c2a7b1da88fbfb983d261c961c68c71d08f0e2809227468074c69c1f4bda3878ca13cfb431bd94270ad0137015cbb4296212cb65499232699defd2ce027406343ed13d0e0e4d9de6a29dabc64e7e523e5180ae80cbd95d3cdfcb4658ec3417704e9f28ed2c405f408dce503a10fd7478641719f6ec31e772022d9f28405f40e3f54a4e98237136ccda295bcbdbc531ca1205e80868154baa58c72a9b1b15bd5713dd6b1fb72c51808e8036134c5e2fb40697a57451d65945bb4efb04e80d68a3f36966e7b933d068e7f48d4b2af9fd3f41801f0168b473697ec87fce0262d39a938d50f544017a031e7b71ceaeec2630135a01a37aa2004f00544b2c46983a102fb2394f14c4c1dbb02d4b14a027a0ad275627e8cd1973b878c75a4f946211a02fe0728a12f6a63f312786542913db52a2ea8902f405b4d3037311d0b93f369c6279bf34c92a4f14a03ba0ed6c80da9f1dae63a52545ccf61735c722406f00ad13bca4884da7d879205d4f6094270ad017d044e7a694d37abd1abbaf537ef289023c0db0dacd6d016c29737cf9c23a6867fbd6a9dcd5d47b0702bc2ee03a517518708cbe4e98afcbb0fbfa7b1ff3203ea4a9fbb2aed30e041000b804e11c891f8a8a6707d8e5a045da5980ae804ba72c758480079d5c6a8c84b35d479628c01300a19472d6e930089f798e345fe239a43b3db33b4c17db75de81000200e79db2901da3e5ab13dd6dd946fccd6e9eee145b9eb303015e1af0f54e59863da99375fa202b93f0694ef830e6f86bb7f90e46e8b403010400ae778535372f5d7b66cfdc31bd544f14e069807a4353ac717abba5106d4bf8b46ca7e463685bbaef408097067cd1cef528afb466d71182481dba977616a037c0f4bf4c0510400001041040000104104080ff2de01ffecee5a4c662289b0000000049454e44ae426082),
+(99, '2024-10-11 23:44:39.366121', 128, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-c09129f3-0c90-48bd-aebb-a373d6dfd2d1', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000042c49444154789ced9d4b6ae4481086bf18096a99021fc04751dda08f34f8487303e9287d80066969908859e453e58659741a0fae5f8b8254a93e521044fef1c82c73fee83afffab3df830002082080000208208000020820c07f00564b17ec66b08fb04e60f7bd7e316277cefce4d47706023c39007777f725b8bbfb81fb06cceecebc1187be840308eebe84e3e1175fff0a027c2fc099dcdc3a0d0e9ce66faf076671982ebb4374a09f30030104b85ea7c17e73d86f9edce13ec68fe8313f7d06023c2160fceddd75c23cda6438476607d61fbf0cc2afde33104000e0a34e5ca0e8c4a108c30360904e14e0d30131441e8170e06fd369fef6fa9ee4e03a812f210d63e87cef3d03019e1b9056e7f9a1fcbcdfdc0860f3cf11e6ed0418dce68d8727bffe1504f81680b2d61e9721435a9dcb8aed9e17ebe639adce02f402549302827bba978d907903e6688e259f130ea41305e80b689c60727d7ec48825dada02298a01a2fd458b9de51305e809b8667186b4f6b2bf1cc039c67bb38311360cc6c3d9c7c3d769eb3303010400eaeaec9ed3d68303431e86b430bb6f453b6e209f28405fc0452766834b15684f8b70d48969d9ce5e13e944017a02aec132c9d6da0e88c1934de661364c59a2001d01d9a4b66c6684d490934d14d2bd92ed99e373b24401fa03d6578f1d38b90d1162a76294833f6f9e9b146f0ee1dda203ed3803019e1c70757d5eeac91ebd63ba42958d494fca270ad0175056e7924fdcaa62f4a6e5a1a6b793a8944e14a027a08d5862c67a4b4dda2980aeda31c7d829a9234b14a027a0f1892926de681b626ba16fae51b4abda27406f40ab13e7ac0e6bec0c0c6d3e112edb5a648902f4025c6a2cb9e5215551362ec230f6e278aec0687516a027e037b1735b5e690464fc36072bf28902f4055cfa139b8f64753944815c72ae056959a2001d018d4fcc6d6097d6c4da01b664c588f28902f407b4fd89d1ff855a771ebc666cf290d286234b14a023a0d9a977f17fa52b969c5e2cc14aac3bcfb244017a023ee41317c80d39b53f2c4bc4647f1bea4f14a033e0834eac210acdc695e236cb73ca6c0bd015d0c4ce5527e61d2deeeddeaaa602a37ca200bd01ad252e79e340eed44e4eb0b6c6d66cb7566701fa029a1d5516fb136393e2cbe1ec13befed860b5c10dc0d7a93ed769060208003c54fbbc49db446158fbc3dc2f8516e51305e80ab854fba055824b688561d31f518f6992250ad01b90c3e6b48f20bc9bfdbd0d6ef7e8ffd2e14cc91dee37679d3acf4080e706149d788ee970c4dd70f61707ced1e1dd98ff7971561b0ed8ed01f0f5af20c077050c6e369d164f7c37cb5ba88a9f64f603bb7fe20c047842c0632f4eb3a36abe96571e12ddd289027c0ea09c32b2e5b3dfd96f6e774eb37bf48939e5bd90cf7eef3a03019e1af021762ea5bcbc8f2a6f358df99c0f1bacbefe1504f81600d37f990a20800002082080000208208000ff5bc0bfdef4f4b01bb4174d0000000049454e44ae426082),
+(100, '2024-10-11 23:46:12.224153', 129, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-6cf1a80c-67e5-44a8-995f-c5c01a6d8265', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000042249444154789ced9d4b8adc301086bf8a0dbd54430e304771df2ce448b9817d943940c05e36d854167a58ea9055d44c32fd7b31638dec0f198a7aa94a63ce5f5dc797bf7b1f041040000104104000010410400001fe78b9bbbbcfe7701d9cc977e20f189c696d26e215dcdd7dfff84f10e05300b22426b9c27dcd3345fedc7d278ade1cf687373efe1304f85c80c3ccaec0f2e65109b2bcedf50480dd0016337bc20a0410a0b936339fc30e6c6314479fb7314d9c1af3892b104000000637b38bfbcce0766370fb96cdf1a91d9fba02015e10f09b9f38034ceeceb40ec5314cb18bfc44019e0dd8cccc6c04c28e7fbf1ee6dfdfeec91d5caee07348433333b35bef1508f0da8031fe9a1eb69fb78b1b016c7a1f615a0f80c16d5a7978f2e33f41804f0128b6766f86318b3854163be6731e9e937516a017a088947bcc5dc7bf952ce2b41273dc513ae315727a519228402f40ad0401a2d69b4a4c3203d50ecc1cdcb3104a1205e80838cd6cd47a49122b4b3cc47908ee691867258902f4072cd7c121dccd6edb251be16d04c2dd601b718fb10b0087e5bb7fe71304f8bf01954e4c56771d7241444849c598d9f1aa2a02e4270ad017d006cbb4210a24b31dfcb120477ea2007d0159a4d62c66c913845a4586248e399e1e5c3a5180be8066ef6e856493cffab05047d6c47245cfe1b52451805e80a6523694dc4d16c7ca58d795b2d28902f40614eb9ce294339f9dd2db71227b8731d113879244013a029acc76d484b952f634d14d8892c451118b005d01954e4c5a2f64219b21efb69ccd2ceeed73924401fa00c6663438708ccef6756772b0c580c90f73700cc0171b62a54e971508200050d7e2340d7e2467b1720cf31e1fc83a0bd01dd05a672ffb29c963ac1cc8339f939e93240ad0115067715260523a4aa9eb1353b9e2dae6bd258902740254f58949d765f94b350ea1d18e259fa8884580be802a8b9375ddde745495aab0d34f9c8aed96240ad00b50770f4cd9594cf5b1313a49d5b367b0a27d67019e00a82a2062b03293eea8da4ab38b98ab22d4c722406f4015b13c1c8e53558a950de994d9c94349a200dd00753e31d522e67de7549f739ed0d474f949270ad015d066b687366d9dd33b5533df5a94a52451802701ecc6910f7db0311f091676dcdf2f0e9b19cbb579aef30a04786140d3ef5ca268ca564a152797bbb2ef229d284037c09fce94ad05d3ab66aa905c49f989023c0790c36696eb61c0112d31d3fba56a1c48ea70bb789cedb902015e1b50aac28e11c24f20fccca736adc7e884bb31fdb8e28b81b3d903e0e33f41804f0ad8c61cb15cc1cc2e552d8e7d5b538ed16ecf5b8100af0868ce0a0b75cdf6d94775b69fe697944f14e069805c0131ade588f7ede276e330bb85bb5599ed39ecd8adfb0a047869c06fb1f3d9657a9e4102e47ed3ea7012e944013a024cffcb5400010410400001041040000104f86701bf00d683fd937646e2fa0000000049454e44ae426082),
+(101, '2024-10-11 23:46:34.826726', 130, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-583f98cb-a01c-41be-b4a6-39c2f6e35adc', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041e49444154789ced9d4baadb581086bf8a041e1e432f204b917716b2a4ec405e4a16d0200d0d12d583f3947d33ca316eec5f830bb2e58f2328ea5d75cdf9ab6bfff677bf070104104000010410400001041040803f5eeeeeee7373bbc1b40c0e613b3cb70ccee4e5b3e0eeeedbeb5f4180b70064494c72d5dc42d8f039ff89a23787edee17af7f0501de0bb09bd919b89a19d3b29bfb32b8fdf87d6af23c76213fd2ff04027c34607cf8242cd83483c1b0f9f5fb86c1c98d75dc1cf6de27104080af01eb08573bb9cfec66177663f29bf91c6e496d3efb04027c22e0c14f9c012677675a86e2186e0083fc44019e0e58cdcc6c24c6293fcfbbf9cfefb7e40e5ecfe07348b766666697de2710e0b301c94f9ceecacfebc98d0036fd1e615a7680c16d5ab87bf2f5af20c05b008aaddd0eb70cc93a178bed9e8d75f39cacb300bd0055a448aedf92a52ee5b881298ae390d561280f4b1205e8046874621242df62c412656d069a0a4c4a79bbc747248902f402947ce2e05c2fc366847f81f59f0dd84760d8981c8cb060306ece3ad63ae0eb5f4180f703849bf9bc96a2ca3ac2e437e36a23ee31760160578d4580ce80ec272e000c1e1b1de215dc81d4f790cdb63a2004780ae0182c93a3939023e6e82c068fdfa6e74aa7842451805e8046272675d8c424b9e45283e539d49e3149a2001d0187dadd02b12b31e9bf144a578b5d75a2626701fa020e9db245eb458f31579ba34e74f7d2292b9d28406f40b1ce83e7520aad8b587562f113b36294240ad011d0462cd13b5cb298a56c772ef9d53f73d4989244013a025a9dd8e83f3f24704a645d4db4aa7d02f405347e6216b35630e190b689bf28253f49a200dd008fb133c9597c700c632f4e5296b2ce02f405941475095b9a38f9e040c6c83acba474a2007d016d667b06d2947396ba1ca2406a57ac665b9228404f40d39f98c2e6636b62ed00ab49ed34d1224914a023a09544204dd94f5e26aab24f586fd3b7f21305e809b8efc5c9faaf84c850164178937254c422405f40bb7ea4b67cb54638a7b79bcaca82eace027406b4d30325444959ec5ce3cbd1499b4f949f28405fc0618ea599bcbf5bc9b491da20963a6f254914a023e05e271e3684b937fbeb5214535bc32489027404dccf3b274bbcb44595437f62be24890274051c6a2c316c1ebcc971a711aa9ccaa9851665b605e80af862a7aca7b0056ae3b6e7fe9c62bbe5270af01440c8f2778deb976abb2290c64a774bea703d39d773e71308f0d9803279bf8fc4a17b860dd6330efbc8343b36fd3ae3571b1c56bb03bcfe1504785740d9737c266f320eee106e663ff2da77bb3cf104027c20e0103b379b97726bb6e70e1ca81b9a407ea200cf020c9efb63b34e643db95dd8cd2ee166494e493516bb743f81001f0d78889debd2079ac5c6e4fd754b3b742a9d28403780e97f990a20800002082080000208208000ff5bc07fb15f0a6180e034d20000000049454e44ae426082),
+(102, '2024-10-18 23:59:11.261371', 131, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-85d313e3-ecd0-4749-ad1d-5b693ceada8f', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000042049444154789ced9d4b8ae34a10454f3c093c4cc35b809722edaca99d494be91d4843834cbc417ee56ae841a7bb1ee5ab49d9967c484370e39b59e6fcd1f5f8e7cfbe0f020820800002082080000208208000bf01ac962ed8cd0030bb82cdfb88cdbb19ec2336f3c84f5efbae40803707e0eeeebe0477773f70dfc0dd0f201cd41b10dc7d09c7d337befe2708f0bd008f2473ebed0018dc7d1bbc4a2400364314d017ac4000017e713db2b30e07ac7671d8c7a8987f690502bc3b601f31b3115f18dc6606b71f7e375fc2bd46872f5d8100ef08f814272e0093bb336d43090cb3c7569c28c08b01bb99998dc43ce5e3fa30ffb8dd5338b85ec19770cf49b599d9dc7b0502bc37608c7fa6a7f6f37e7123804d3f4798b607c0e0366d3c3df9f53f41806f0128bef638bd6548deb9786cf7ecac9be7e49d05e805682cd197e09e3ecb46c8b4015334c721cb61c8e54559a200bd0059dcb6c193c18523662c3127592065314036d6e02e4d14a02fe0a4895425ac9e78884f4054cc54f256ee2c405f40d1c4d4e3cb4e78f05ccf39b2b3de4aecb89164539628402f406389d5eba65b59046365278aa51fd4bbb24401ba01cec932ad639e36ca4084c7bbe9393f943b0bd01970f2cedb90d3912d458731765cda64391aab345180be8053ef6e83e89393fe55392c059cac898a1305e80b28de19ea046272d1f5a1dc6dce71a2345180de80a69ed8b4524a653b1515c3d194b773b0284b14a023a0cd58a263ced97193b6d4099c52e851c622405f40ab8965f740cca229856e80dc86f6d28b91250ad011d0c489d9b85ac384d613a76f2c8a1305e80e387be7b68a580b88cd688eface02bc0830d697ce7e71d6db3142708c904a3746d8f256ab7d3c9896fc598f15082000709a4f9c6a3f2f249dcc290a394e2c7d67796701ba02c6f6cdfeafb3dae0c06364daae0661739b1c58af03362d770386a36c33fdfa9f20c0b70034d599d3a043d95155a6c26a9c38d530519a284027c0b9db57bbcdb423dccd4477e9c0c81205e80a682c31ed0a00f2ab5a632c474290e24459a2002f023ccc97fd92fc74aa6c13f7e09bdd8e943b4f7e37d69b3bebb5f70a04786b40bb7ba0369aeb7c58ed3bc72872abfbada4890274043cef63499fd59d2a1ba5bc5302484d4008d01df0bcdf3997129fcc319be852be274b14a02ba0a41ef95aa03d3531468c21ddac256f55b605e80b384dca5294f0f3ab58634ca77b6a1f8b00af0214115cafe5c0cedbddb2261e10d36b0627f6a7af9d57208000403d53161e1637ae1423b4791ff10f1b89678acdaf598100029caf2109de7a0533bb3884bb4170b71ff9d4129b5fb80201de1070ca9dc3d18ccb3e1fff407342534d7014270ad019504e19d98a9fde2f6e330fb3396a623ebf6e2187925d5720c05b033ee5ce4beeac34a33900f58488bae9549a28403780e97f990a20800002082080000208208000ff5bc07f67dce459734c46e50000000049454e44ae426082),
+(103, '2024-10-18 23:59:18.161334', 132, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-f677a3c6-093b-4cc5-9a31-442741167233', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000040e49444154789ced9dcd8ddb3010851f23017ba48114b0a5d09d0529291d48a5a48000d47101092f87e19094bd400ea1b1c9fae96459f4070a18cc3fc781f8abebf8f277bf07041040000104104000010410400001fe005843b9fc7606d60b10ae5b7db0cd08571cbef2327607023c390024492e9124b9db2d12779019e002804bdc0144924bdc6f7ef1f1af20c0a70054b9da01c41d5c3015815be20ea43c99600291f42580245180b180f9ee9b9811d2cf190198c1f57507d73031600b20708cde810002bc0fd86660bd4ce48289e18a23846f7c0b5c2259bdc387ee40806704dcf9890b0024924879aa8ee10e0093fc44011e0eb01079867982df2f47e0f7d7370fa52f0097586e2d74be8ede8100cf0d287e62ba293f6f2f0c88308f11291f003031a48c9b951fff0a027c0ac029766eb7988a75ae169b7463ddad9375166014a08a1ee0f2e75247ee40ca80a517174cae0e2dc72349146020c0955b76314bdc2d6231595b50d2dbb678b1a422694b2489028c025433db07cbdd27602a4f2db38d89ae312589020c04dc66710033c213c90c982536d1b36a0beb0349a2000301d53a0345b8f26445bd6284fdb6731bed92240a3012700e96e17e622e359696cab6c5b6ce3b252489020c03743ad1c396ea2cb2646c4e518c774548270a301470f21333e0cd5f1e369f23eba613153b0b3016d0e5134f42e8f944bb3c6c713d299d28c06840a7f59a122c1e6346d7aed8d2dbae182589020c04f4114bc958f7bdb01ec5b4cbc551118b004301bd27984e62d63dedcbd05558659d051809e8ebce45cc6a28ede2e8691b6f7ea8253f49a200c3002d31e83619b0c354bd9f5875a20961ffb38f7f05013e13600d2f6c67a6fc5391ba708d3bb0beeeb0b305294fd4295301c602ee62e7ee44a9a772ca89022f3e173b2deb2cc048c0a91787b5dba6d598a3fb8e2da95dca309244010602ced53ec0ac73626d12aba174bd2d4fe5270a3012d09d1ef0f30164974f048ac5f688b99dc697240a301070db8be3a74cfb7659f7226b8d2f4375670106037a9dd8b74154d567b7d595cc3e88447ea200430127eb5c6b278b3b8bfe5d9b9ad3ce5b491205180838e9c4bec7a6f313bd67bbea44754008301c707bde19f0a24a4b2fb603a6ed949f245180b1802e9ff89e9d3ec5c95e6d3ee9ce8f7f05013e05e0d4298b3b15d9f5cc96218ac56d949f28c06300ee1d62bd00c036579d7804b493a7a60eb7179675ffd22b08f05f03ea24cf6306e22ffb1c52be00291f331189907e7cddb90680d8c2e81d0820c0fb80ad0c7bb789ef36ec3dbe052092e19b77d486ebe37620c03302eee76cb72c364fe31f709ed0243f5180c7007cfc48ca87ffc5c5f652a61b5f4d27b666da89e13a7c07023c35e02e76aea5bc6e0609009f5fd70d27914e14602020e8bf4c05104000010410400001041040807f16f01b810328563df84f850000000049454e44ae426082),
+(104, '2024-10-18 23:59:30.360509', 133, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-109e0d3c-a709-495d-80f4-9a1e6c7f2d03', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041f49444154789ced9dcd8de3381484eb8d04e848011b4087426730210d3aa4c9400aa50318403a1a90507be08f9edc3da7a1d7b376f5c1904cf9030514f87ec936e28ffef66f7ff67b400001041040000104104000010410e0b77f24494ec7ed02700a2410b6d3734b4744d6ef0249727bfc2b08f05480ac2b3f14978e9cc2064e6183d9db06be8fb7dafd7b5e4180ff35a02f177b0f845fc0fc9db0b8ec3de6f1578ff831b83c8f2100982f40fdf2f1af20c05300fadf7cdfd1b0f6e0fc7635621d68580d04f6d633104080af01ab196633e3848e764147fbc1ab710aa4d9f81fcc4080570414afaff889c9ff8b249d9f981dc8e3d6fde2f1af20c05301563333eb01840d7c1f77e3fbdbd5d2e03c029c42be353333bbb49e8100af0dc87e62bc293faf030d01b0f8d10371d901a0a3c505374f3efe1504780a40b5b5dbe9165db6ced56293c558bbe7649d05680528925abafc31a1a88edc80b80088498e5d590e538e514a14a021c0e5a973b23a6c2962495a7303388a2f647a444a14a015a0ae89f92ad5f3a2b3c45d7a20e92fdda6512951808600e727e68fc3455c900d73b5ddc780fc4401da020e49a1149fc9e41da25a62d4a4a23a2004b813e01c2ca384284b8e4e4aec92d57934e4684d14a02de0e4272e5d0947dc154a8d25946c4f1d951205680638d5ee16003926393a15b72251a078912ce1b59428402bc0a9dbb0ac7a398173ac7fb8e994d59a28406b80cf6c4ff0269a74ee604eef7042579c4aad8902b404f8882567ac37942a4a29f4d5861cb2ca51118b004d016e4d74ab1e49bad10940895deaea28eb2c404bc0a71a0bc2f916a8d14951672df949890234033825669b8c1c36a745d03986a5c67764c0a544019a019c9fe84c6fbe3a399029b22ec18ad64401da025cb52fb73c849ac586ef4f2c25e75290961205680af04aacb10b8fd6c4a303ec486ae71d2d52a2000d01a7ba7349e0f81d5587d92e29c73c2a3f51809600df8b1397aeae7f354446c927ba26d945f944015a03fc3e96648e019c8cf0f62980ce8d8b52a2000d01a74e5954179147cf2c4ef94457959612056808f04af4a5bcda38bb94aeb078dee527eb2cc0dd00b30db44bd8701c3a92aee611e0fb58f6f6cd2360977bcc4080d705b8139a0cd80dc0de234e3b80b5df92f6e2c740032cedba2fcf359a8100020080ebfb72b14b1eb8d9b3722ab428b32d4053c0d767cad6cc366bcafbb65d4c7ea20077018492549cdf3600eb50aacd6b0f54739c97c37520e6b1f10c04786dc0a7336593080110d87b226cbdc59fff10b3750456bb013cfe15047856c06e66e36e2944361b0884ab01e16af6239561ae3ab54e80c680d35961eee4a5da1f568f7fc0714293760f08703f40ade22dbbe57ce23ad02ed8cd2e694df4db5aecd27c0602bc34e053ec5c4b79ee0c1200a7c321143b0bd01c60fa5fa602082080000208208000020820c05f0bf817f0bc02595652d1630000000049454e44ae426082),
+(105, '2024-10-18 23:59:52.388362', 134, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-16efd951-3d2e-4302-8636-8481c5af0996', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000040249444154789ced9dcb6deb4810454f0d0578d9021cc00b85ca60627248930119ca0460a0b51440a166d17fd9b37a2df8c1be5a991275d0022eaaba6e55d3e6fcd6ebfed7ef7d1f041040000104104000010410400001fef7e5eeeebeb5cb08e57271d6b8386b04f7b838ab1fe5cee0eeeec7d7ff0401be05a02831ebaa082e826fe1207db0858324bd2d1c0fdff8fa9f20c0b7009cca1ff7138477d82f0bbe9fc1d688c3d5608df774931180fd02d5fcf9fa9f20c0b7009c3ebc1322acf1f56037704284dd1637ae86c37df60a0410003e53e2f57418600ecb6184fb89d5efe6fbdf1123bccf5e810002001ff7891bc0ea9e8a95b2313c0016ed1305783ae06a666627201cf8dbf96efef6eb66e9c3fd0cbe857c6966667699bd02017e362067e7f5a1fd7c7d712380adff9e6ac5b278ae62a6ae40000180969d8fe1b258892d63bb9764dddda7ec2cc02c4027bdac358aeadc0f5823b026392e251c56a3514a146016e0b1c792ba286bad49365acb85a43f08eee91629518059809266532bafe4e9b5cbc44bba21e98f123ba54401e602da868f263d926303e44cdcf417174fad69ed1305980aa83111e8025e2c99782d730f79dba80908019e03188b6518861f0e5afc7b18c8514c14602ea08b89496639d679f92bf65339b99ee9ee9312059803187a7711c84dbd418449a290ad9c565e4b8902cc020c2e4ea89a6c566215613f29ab9828c06c40e7e234533b4d40e4b2b9ee138bbd5d02a39428c044405fb1507682bd4f13a19fe8ae7254c522c054401f137d1061fab835fad6384647656701660286da39d52e0f72ec6d9bf48ddaf29312059806e87a2cd94a241ff02b9775631873519d3690cace024c0554497561ae26e16103992aeb7af254315180a980d1d9a6f4f38aea4a8902a5e55cc6c5a44401a602c6ec5c861f9a9fd826c09aa92d3f5180f980c7599c3c15e6f544559d0aab97c54a9412059808189ced50f4b5514b6486be33ddf4a29428c044c0e86cb753a6e3b1d21a0ef3e018ea3b0b3019401f048bccfabe5f846e3ea799da8a89024c050c7e76eba7787752a50c7337cb3baadb27c06c40afc4eef45e7311c7273fe488a909080166031ecf3be75768654bb377fa537e52a20073015d8f65289beb90f62773dc9bfc4401a6033e79a66c3bc2373455b226eb0117c544019e01c8110ef6f3ddca7b372b978b43b8590e87d717673f4f5e810002007037b33324ef9a70601748cea25dae27fccd4ea4678a5d9eb302017e34e0932779beb8ed06be9fdf3158dc08377342c4d6f87ad8facf6b7ecef18c1508200030d6cedd9397da3982721a9fc1e3d13e518027016a172fd63c7d7d71bb7037bb849b7507acb69abba7ae40801f0df8503bd7565e19cd2e466377e854b5b300d301a6ff652a80000208208000020820800002fcb180ff0090bb48531897a5860000000049454e44ae426082),
+(106, '2024-10-19 00:00:00.592329', 135, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-2bbb48c0-38e2-498d-8413-3d5e23006cb7', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000044249444154789ced9d4d8aa44c10869ff8146a69411fa08fa23798237df4cdf4287380015d1628318bcc48b57a601693453755af8b46cdac871482f8cf6c73fee9dafefbb7df830002082080000208208000020820c05f0093e50b9636bdb201b06169b161c90336b0c5cc6bdd1508f0e200dcddddc7cedddd57d29f11a09f210d8cdd0ac4ddf9175fff09023c05a08d9bad85ee174c3f66376856a373acffd9ae469727a5bb698092fcf9fa4f10e02900ede7575beb2c6f3059b3faf4bee2d3707163311cb6da2b1040803f03968b9b5d37f391cd6c6033fbdf6fe663e75ebcc387ae408057047cf2134780dedde9e7a638862b40233f518087031633336b816ec53fae9bf9c7fbcdd2e074051fbbfc9842e7a1f60a04786d40f613fbbbf2f37271a303eb7fb6d0cf1b40e3d6cfdccdfcfa4f10e02900c5d6aea7479a6c9d8bc5760f637d9827eb2c402dc0bde8e5772184f433d027716c421d96f4a22451805a805db94560d2ad2962c9496dc8510ce4447708a12451808a8090c4a404bd68c2dd12e701e8dcf3e3dc78125649a200b500479d58448f94b1816c98939ccec5779c41d65980ba80a8b12c570c2e0ecb1b0e9b39dd8c4dd6b8d1ddcce96e0691caa9b702010400ee22169212041acfea30ae3c79be1b904e14a00ea0f889216644887cf213d763b627c5d8b2ce023c0030bdbb035bd8dfce1d961677bf19935d3cba172f9ea6f473dd1508f0e280629d217720d2782af9f99d9d0ec39cde49270a501570cce28cf19873d79cbdc8486fc7a32451808a80a3acd179d17ad94f8c8c4d34737b1147452c0254059c33db2577582c76bfdfcda1319376947516a026e0a01343cc4a281db99bb0c491ca19e5270a501df0d94f9cf39fbca36a770c5305b094fc649d05a809384822e7dc6118e67020f7c8ba77974e14a032e090d94e81c961476911cc118892b3eace023c0470ca2772548c3977dd9db463c9272a6211a02ee09cd98e7c76ef6547d51eca842b9947e5270a501370e80a4bf5e492b689e824328ba549768f5d24890254031c2396bef88474bb115e3f05d029b2964e14a026e0609db3259e39b586a5c7924f0ced289d28405dc0a1dbcb4b292f4b6257b286b1c165ef1e2b035fff09023c1d60b28bdbd0ada486b011d80fb1db77fe315df39976d55720c0eb020e273459ea4f5cda95745618864f3f566079739bec3cafd60a041000d863e7b8c6888e239503bb9d3eb530ca3a0b501fb09f299b45ef6661a21b779fb772104e6eebce85966ff409023c07a08bc06432b3bd719be90ae4e2cb1603cbc563e01b7d8200cf01d8e2e8ec885880cde87dc586a5c53fac259d29363c660502bc34e0f399b24b8b01e6d3f517393249fb9d67ac9fdf56ebc738e7b8c60a041000389f15d6edbdd87ed84775b7fd34ead38a58047804a09457e662a7978bdbc06636a49da7717edd48e336545f81002f0d3877857128e59db69a12e7d7cdfb1e54e944012a024cffcb5400010410400001041040000104f8b680df1b07b626a63a03c10000000049454e44ae426082),
+(107, '2024-10-19 00:00:15.540064', 136, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-78838403-2d59-4455-996a-4789bb3be8f6', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041d49444154789ced9d4b8a23391086bf1819bccc843e401f45be59d3479a1b641ec5072890970569a2177aa4d25d33bd689982f2af4561cbe90f19827887ca9cbf5af77ffeeefb208000020820800002082080000208f007c06a65b1da296f99cd77b3cbcd0c6e27cc66609deff5c979ec0904100080c9dddd37807b163de2f5ecfef37bd9f305b00be0eeeebe8c3e8100020070af6a6eda609debde05309b8367ed181359813ee10402bc34e0f4b811af67b798bee190738d6e505faff3dbe8130820c08780f5fb46b6c9eb5c746236dbab99d98ff4fc1308f09280eaf5553fd1cbdac87b0bc189ed8365da1ebef1f93f41802f05b89999d9296bc2dd4f84e9ddfce74cf9002087ce97d12710e0b501c54f8cadfc1c139e63e77dc5ebd98d2938101e0ad59fff1304f81280ced63eec11537062b3c90b45127d99365adee7f37f82005f02f0bb6358bdc35de08807c1ac422849146020a08b44eadb0d9836dc5370f704649b9cf7a00b5b2489028c02743a110845f54113c269239b684fc18b8a4c413a518027016e67f785bb017723fabbe5cce242f012366767b1bcb2cbe81308f0da80a6135bd8d29cc5a604ebab62b1fb47a41305180438c4ced51324a6ea31c604143fd13dbf8d092489028c05743a91e2274296ba2c984d1c63e74aa2884580c1803e62690aaf13c712c0802ff94f09564a142349146010a0b7ce3185dc779813380b3475d8f289f903c5ce028c06f4d639e6f4f65e4f8112314f35c7b8d43dd55804180b3864b627ef2bcbd14b28dd798c5032dbb2ce028c051c32db55f5d5ca5e29a5e4e7b201f75a689175166028a08a540ab5e4dc52395dc9d90f1568d59d05180f6892485754ee7562ea8d75e74f4a1205180ae83bb0974e097ad790b3975c763955665b80b180c35440823d442e2ee274fc03a80342802700bae9e5ae2bb1d4f84a66712ff975591cc5ce020c05745302c6f4660ec10dc206b76f9b01e6dcc266f911c266f1dfb3b3ce69cc0904100078b8d1a1742556edd83cc68303a9bab3004f00349d18b6aa13c19812c604bece6f27c0380c5285cde232e8040208007ca4134b2fe21ea794dc4d6ab37d933a2004180d6892d8072bfbbc7d5777292bb4fab424518081804e12f7ec4c2784ad67b6cbf668a24a80f180de3ab7a28a9776c596366c49edbcd48b23c070403fc7e2c73879b7c47d1b4e4d3e4a270a3014f0702f67f3ffaa4cb610a56f526c8f481205180d28b6967c57d3e56666973a74ea7e3d41bc9e6a0beded845d469f4080d706b47ce2fd0453bba673728cdbd96b51052c2e8e8141cb3b0e39810002fc072078b9b56e7ab7ea22de8d75be5bf122af67d78def028c051ca707f6db705a5762eaaf0edb2f0c53ec2cc058c00777cab6381938d4535a288326ef05180df83d76eeea798751bf3679afd859802700ccfffcccff2dfd2f5301041040000104104000010410e079805f0d35d393e2fe91c40000000049454e44ae426082);
+INSERT INTO `modulo_ventas_transaccionpago` (`id`, `_fecha_creacion`, `_factura_id`, `_qr_url`, `_qr_image`) VALUES
+(108, '2024-10-19 00:00:38.171237', 137, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-56e8e146-e7d2-4e73-abcf-4b03c77d157b', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041d49444154789ced9d4b6eeb3810450f5b023294805e809722efe02da9919d594bc9020250c30624540f58fcd87e400f42751af1d5c03165f980060a64dd5b24138c2f5dc71f5ffb3e082080000208208000020820800002fc0b600d7ea577d76d84358ce9037f6406d6f9c84fce7d7b20c08b0346ff3b458023356d9d092c0601869df53aec0084251e24b5bdfeead4030104801a891c234c9fe9bdc7df1cbdb9c439b044b075fe84f50ac5fcf9fe9f20c08f008c8f371603d8e660cb47c0d8e660eb0cc6f6e77e460f0410e0b7803584c03a0fc67a310bd76987c5cc528af8573cbf0702bc24003333b3db646666bb37ebbd1b83b1940f6ed3fef08defff0902fc28c0164208614cea38bdc01160fa3bd8fb0cf91e24e97ceddd03015e1be079e25214c8f2f1943ab27cbc59601a0c181e0ad5dfff1304f8118066aef51bd34e6e0ec652e6e41b1e89769b7640b3b3003d0139318c009379e879736feeb1440fcc1c848a44013a025a257203b226f141d06392c1d260f9205b148902f402d490f2d0f3f81b8c25421a187d9cf470aca3a32251806e803ccce1c3612aa5d481d1d274ecb9a33f22174780ee80470391a453e290fdc4a9a6883b8d5851240ad015f0a89dcde290fdec98c5729a98cbe5c3a62251808e80a29d8762dbe4eab20f822e965d36e309a4148b007d01f772786fe2afc9138b76492366baa74814a027a0552c69626e5c1ca8ce364d02c950724b45a2007d00ad8b63cdc46ccdd0973346689c1dd55804e80ab873b6ab4f13690d1c8b90f3c4e2f6684c14a027e0dec5d9ef86c307efa6e819291601fa03eeb4f3646616a1a93ba7d9d9f6a6e949a52251809e80760544f209816638ac5662192c557716e0044093277aeda4ae05cb2bc0dcd4699475bd148902f4011417672802ba9d7f93a9ddbc4099b115890274043cf989256dcc196359959356ea805c1c014e00b48ac585893525677fa436cbaa3045a200a700b24f63b72df816aae4d89819eb65cfcdb4cbc5f75675ed8100af0df0ed53ebafcf1138465be24c3e9c040c8e91b4073f5dc39e4e88e8d603010478026c6f59986c7e2e53b86e6f66ef17b3746a1300eb65275c4fe981002f0b68b5f30dbcb2eca594ba2a31cb96b6eea23c51808e802612a9ab62939f3859e32c16db0639db029c00685c9c5c6319acbed41da5d9ca01b938029c00b8af9858b316a7a936d79dcf5e8651dd59809300f54c59b230c96e37eedd2cb19e9563f608f8720f0410002873adb7923ade46d2f9754c66f61ec67c24c93612aebd7b20c06b03ee5740ec65d37391cd3944bd0c9dee49b108f0df00d64b0e4c8b6e2a86301fc1f5f4c7e807c09fd703015e0df034265a5d9578bf8fa06ca64a5f939f284057c0f399b23908ab8bd32c922d61ab4814a02fa0f51381b2d57e2fcd1c93be257f2861ab4814a02320e87f990a20800002082080000208208000ff5bc03f9c73dfff4b79da540000000049454e44ae426082),
+(109, '2024-10-19 00:00:48.276783', 138, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-09f60ee2-ed37-45b9-ad7d-275f7f0b2388', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000042f49444154789ced9dcb8de3381086bf5a09e8230d388009854a6d429a0cac50368006a4a30109b5073e44b967b187a1d1bded5f374bd4070a28d49b6573fee8dafffab3f7410001041040000104104000010410e03f00b3e50b5633663363be804deb884dab19ac2336b1979597be3b10e0c501b8bbbbdf82bbbb6fb82f8343f01453fb2d6cb8fb0604f7f2b379e3f33f4180ef05d8b39a9b7fdc8db8ec4674775847982f79914d9014e8137620c04b03c60f77d61158afce6ce084f7d1e0cd8d75dc1cf6de3b1040807f010cce7cd90d18dc260627faddfc16ee8777f8dc1d08f082800f7ee20d4886392e83b77e2283fc44019e0e58cdcc6c04c286ffbcece63f7fdcb33b385fc06f21ff4ca1f3d47b0702bc3620fb89f1a1fcbcbeb911c0e2df23c4650718dce2c2c3cacfff0401be05a0dadaedf493215be76ab1dd8bb16ed6c93a0bd00b50446a193ca7122952e7be415c8098c47128ea306cc84f14a02fe0506ee546d852c49264ed06398a0192fca5bc77944e14a027e0944f0c0b394659af1bb08fc0b0111d2c3f1d37671dabdc7e814f10e05b00da9ccc2d1c467870f70592253e6c77f21d17f98902f406543f115265390526d02415b338fa963cc67cc94f14a027e01c2c934294acf516c8b173f0f434aff34d3a5180ce80462736b17332d16123e9c4587b71723c9ddb7524890274039c6a774bb9190fe92c399ef2a808a6626701ba02aa7586dc8148cd621f8b4ab5b9f889d28902f406b499ed1b8763b85112d85beb1dde188a53299d28404f401bb15003135fa015bde0f52af714b108d01570aaf6357172adfb35917596bf2ca2b2ce02f404347e6223665ea50ea0a46d4af3432df9491205e80668eacec5f456ebbc70720c976ca7cfaf7dfe2708f02d00a76adf296d9ddb20aa0349b3443a5180de807316e7089bb3d41d7ab2949c8f82b42451808e80473ff1b135f1e800ab1a13e51305e80f687bb68fc0247a3d51458d98ab9f18fdb8248902f401b4d63936de610d912983209a26d945f944017a031e7562be4af3c3516339c694a83f518027005a3fb11e7a3efa63cb3916f7b6352c94685b9228402f40a313bd969cdddb0e444ed24993f796240af014c06c6f79fcc86c792e934deb5bd3b368139407cfd88100af0b684e5419ec06ab415cae5b3e3dc506ac5737307cbed475bd76208000c0117a94ab1e6b3ef527e6874da145f94401ba024e35164ac9393f388ef541a9f11daea424518027006ad83cffc80d39361dabd20c92ddb23a5cdfbc4ef7fc3a9f20c0ff1a50fdc47d84f00e7960e7e0d9150c7723feca833d9317d97707020800bf9b299bc29161f3f9f28e25990c7773c282c5e5ba59fc75c5089d76208000c07956583379e9dc33bbe4b9108fafc94f14a03ba006264b99fdcefae636b19b4de16e594ec935169bbaef408097067c889d6b29af99410294f975cd7012e944013a024cff652a800002082080000208208000027c59c03f4f06df00f71fcabc0000000049454e44ae426082),
+(110, '2024-10-19 00:01:21.843190', 139, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-476380e2-a40f-4b43-8f33-f85f0bb33e39', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe010000000055145188000003f249444154789ced9d416ee3300c453f4701ba748039408ee2dcace8cdeca3e406f632800dce42a444bb05baa83c2deaef85013bce830210d4e717e588e24bc7fae76bdf070820800002082080000208208000023e018c6207c62b00cc173b8d7241be67a7d59fbcb61d0101270740555575e8545575810e488a7e02804e15bdaaaa4e293f825e97dd37beff2710f0bb00aba7b96e8105e1044b9677ac22af13a06f57bb77c008083835e0b2bfd14febc53cc6f90ac5fc77c1784d8b5db61f0101047c08c8c25044f4eda62af76e017a7d0ac66b52799d8e1f0101a704bcd389f5183a55938d411d5227127028601611c975f22af904ac02744f317598ef01b974beb71e0101e706984eec8b02ec1fefa423fac78b0abaa400d24e2b7eff4f20e05700c25c6b37ba057e99ccc5193ab77780942f01cece04b404b8309c008f3abf0c7e8eaaa29f2c30a3d1c84824a011a04462521df2e582ea715b4c22694e96a56c612412d0161073629e70a7944fbed052a26eb27044ef4b2e8c44025a03c69baa0eb3ada7e48a39aac35530de16e800c0a6edc62320e0e480bd819813a3253c3b80622ad66285399180a6807ded5c75626d83885d1140fe809148405b40a85890539feb44cf7fa61373c50c8f49cf978c44029a02c6db5354f5195656e40eb84e9c257fa03a593a947be31110707280cfce006a26f46205704d583bc5929abdc39c48404b409d664d1d9a3004dcd9f6200480e0ec708d8580a680d86333784d5c3f708f1140afe6ddd0d926e000407071b6b9cef25f1f2a6bb37258b1107000a0e8c4a4fb35165b5eaeb5f382d010c14824a02920acf6e5b26500e0dd0e0bdcde41998e1989041c02d87640942567cf934140d6ca3aa74d4622012d019b8a05f0f917b162892700b53f8c9148403340d089b57676b1681ea32ff4a5adbdc34824a0212076409476d99cf5ca4e81b01608c07222239180a6804dc5e2f3afefe8530d2e4eb90cad118c44025a01621bb6b5c1ba44742568cfe5709c92522712700060b321a0b6e1a0849ecfdc289d3adcc742c001804dc502b88b1dfc9cc58be50940ec99652412d010b05963f11e9bd0955d0c44d789dea9a3cc8904b40484aeb0d08b5dac9cbaa32ff46cd3c521a03d60e3e26809c24d896c4f762559821d10041c04a8ef94c57c81487e394e5986aedb5a72477789ce1ff41308f81d806ee3d8946568f4d32a0092ea9b88f866820be4de7a04049c1bb0f713839f3300a53a291ddd00c2db20383b13d00af07124968d03aac5c529f5345d1c02fe0720afb13c5eb21294fb7cf13cf9d8fc1fc1712320e09480f7ef942dde4de9e30e4db22581322712d01610fd44a0b4417475b5b9fc3346d689f5e54c8c44021a0284ff654a00010410400001041040000104fc58c03f707e1fb5aeaee7770000000049454e44ae426082),
+(111, '2024-10-19 00:01:29.522081', 140, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-1445c21b-97f1-4466-97a5-97abe8b5e92b', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe010000000055145188000003e549444154789ced9d4d6ee3300c851f470166a9003d408fe25ead37738ed2030ca0ec65701622253a9e6216a3209df47961248ef3210608fe3c918a28fee9d87efcdbf7010208208000020820800002082080804f0f5555d575bc2dc9de2e05c0a2aa00929f72f53bb3aaaad6c73f02014f01704b34bb826a01806cf6a72b9262d1da0c53d75c6fbef1f84720e0b9009b889c01f3751fa7ee13cd09ea8aa4f206001711b9c32f208080dd7115c1e5bc89bebf56987522a9c8ab39c6bbff0202be23e074b892eb49907f9d043855c555005c5f9a67fc830cfef84720e02900873c71ed9ff4e8dc92c5764d9927127017c0a1765e73fdcbc90e5a220133016689fb034b49f184ec45f5727b2b2d91803980106b4da7699793c7dfe2811959bba8434b24603620fac4910ec28d50b598755a740682e4484b24601aa05b628d179b589355ad62c9dad75d46ed424b24602200c31db614b1ade765b7bfb1f867c96252af5d6889044c04c43cd1deba776c2aceb0448cda2529a33301f7015c4546e8b54cb01d9b988b047a74dea4afb67c9d4720e0bf06c4e8bce6eab6963504e1eeff304ef48904cc05f4e8bc5b3b89028e15d0ede6a3753efe1108780a405c63598a0566ab5ddab564eeb0dda2a67b534f24602e20e88926db94e442b73b4b536c8af944eb14a34f246026c02db1a0f7c2fa6a1f305a63ebee1540158780c980de1596aa00a9caf221d0cb3941717da9b27c9c20cb0a00d713002495a5bc0c1dfcf18f40c05300ba4f34d9b0c5e9d6fce01f005e597b1659b9c642c064c071dd39f724b0249777e0a5cc0af89415a333013301314f84972331771c1acf68120b0d39b44402e6006e7de268b9f189bea4de10d1756f00f48904cc054415c7e6f83c442f213aa768a74a3d9180e980ddca0a76feaf0d3dc7be1b8c2a869648c05cc06d2f4e5840b175bfda93450de535f54402ee0258ca26a37696376cd2fa739a8ad85e8900488acb19602f0e017301c75e1c4f16c7088b4ff48d984c9f48c06cc04ed9cebd671b874e450d4b7e85ab7d04cc06ecf2c45d61fc8789d23e510050c521602e204c5435fb03e0250a6c5fa6b14d139aa8cde90102ee05b89c01b4490100fa7eb699013bae3fdd2762b3fd9bd6c9bf80806f0e38ec01d19da0753b94a471f2398f504e9f48c07cc045ec68eacce59c54e40cc81b805d15b399b243158780a9804ff60aeb0d397da12f746a73de9980f98030511537622afb5e086fc3897bda292d918089808325ae40481171b357531830a025123013f0894fec2a8e7a6b98693c1eb159b110301770fcef01ed5db1bd805ef75f09b305b4440226018e7bcaf67181dbfd638b0766f66c13301f20fc2f5302082080000208208000020820e0cb027e03dd434e5611c2902b0000000049454e44ae426082),
+(112, '2024-10-19 00:01:44.989684', 141, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-db031a5e-1e36-4376-a915-58a707246388', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000040a49444154789ced9d4b6edc381086bf1a09e8251bc8017214f60de64c39526e201d250730402d0da85159f021caed59853d0eec5f0b4392a50f1450a877b1cdf9a3e3fecf9fbd0f020820800002082080000208208000ff79b8bbbb2f6f2f27f725eca7e7d2e4446ff782bbbbef1fff09027c0a4015bd2257d43f9e63ea5e2683e7b3f31b1fff09027c2ec0ddccaec07a05bb01108a3896cb76b69ad91356208000a763bbb82f9b992f9b19841d5fb68bc336e39efe871508f01501f37b37abc69b7623dc67a2dfcdd77f5f0cc2cbe815082000f0e8272e00d1dd89696a8ee10e30c94f14e0e980cdcccc66b239fe71bd9bfff8fe5a94e37a055f42b9343333bb8d5e81005f1b50ac737c537ede2e6e04b0f86b8698ee00935b4cbc79f2e33f41804f0168b6763f5d3215ebdc2cb67b9a1e9e9375166014a0cf6c4777774f55eadc77880988591ca7aa0ec38efc4401c6020ee556aea3ef4526975044b4abc02cc13d271aa374a20023019d245631db39c26660f25272c989eec9abc694240a301eb0da0c6c66b05d8a118ebf6620bc5a496ae7d80580bb6a2c020c06549d9880a6f0cabf42492a66c730bb8dea8010e0398073b04c4b6a1f22daac337d438eacb30063019d4eacea70aac14a750c8b263c7991d289028c059c6a77a9de8c35815303e8a96b12ebc26b49a200a300a74ed9431306afc63ac1618eab9f289d28c06840ef0e2e34139d5b637772cbc312f62ebd5d15a324518081803e6269196bbabe9b44d7c75df28e289f28c06840a7138b114e54179187c8fa30d1aaf6093016d08f50f5b14b9fbbe9fc44e84b7e92440186014e99eda3d126d11463730cd3d4323beac511e0598056636e737cfd4455d861fdbe03db9c133879fc6ae40a04f8da80be17271ef5bc9a45ac210aa52b229bed04b2ce028c059c46eda93596a335f1e8003b92daca270a301e70ea4fec1a1dda4455eb0a6b9735952849146020a0abf6e57a72d17f2d44ce678fdd8b9244018602ce5d61ed380530b502d36c77427567010603babaf311a2d486d8da29567cc253525b996d018602bad93eef460880b33b48294373cc5b4912051808e825b12b3ea7b3b20c358a81a3354c9228c04040b72f8ee5f994cd80b0cf06e079247fbbb8ad06bededa73a356208000c091c5a9c7c2a9c6077449ed23e5ad7ca20063018f7bca7669c3a3e5a635c9b69e45f989020c05bcb357d83133b577d1c9691a7f52ec2cc06040f313ef73d91c31944d982c2e0061c7e2cf2bbe1a78f62287ae400001e0bd9d3cb3ac4dce7a7da97b7a060742c262fab65bfcf90d230c5a81000200e7bdc2c28363589b6f4a79a5bc233f5180e7015a152fd5bddfd92e6e37ee66b7f06a5d667b6172bb0d5f81005f1af0103b7743f7ddc6c6d479d36e7312e9440106024cbf652a80000208208000020820800002fcb580dfdee4fd5c4d96d3670000000049454e44ae426082),
+(113, '2024-10-19 00:02:18.801731', 142, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-3c8858c1-a9b6-404f-98ae-1d2f3b1ba282', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000042a49444154789ced9dcb6de3481086bf5a12d0b105380087426530210d26a4c9400cc50118208f0648d41efa49c97b9a36342bffba18ada63e348142bdbb6cce1f7df67ffeecf7208000020820800002082080000208f09f1f7777f76b5d2ee0d7b0e1d7e0ceb4d48dc1997ccb4f067777df1eff0a023c05604c7fc302b08f10b611d61103c3e7578f1b46d8f0f9fc4e8cb6e71f9d4e20800007c06e6667603e03840d77dfb09f6f963600ec02309bd9179c40806f0d18efbe59476c7a3b39f3057c7edd469f2f273756c361ef7d02010480cf2411603e630ec36684c16df2dd7cfeb16084f7de27104000a0442c29fe20c62e93bb332d83c7d8c5639c5297cd2f1eff0a023c15603533b391e822fe3aefe6bf5e3f923b389fc1af212dcdcccc2ebd4f20c0f70624eb3cdd949fd7931b016c7a1b615a7680c16d5ab879f2f1af20c053008aaddd0e4b86649d8bc576cfc6ba794ed659805e80a3d7e79ebecb421833db5314c721abc3b0a1ccb6007d01871a4bacac6c316289d279059a0acc35b8672194240ad01150cd2c40d584d5120f595906f7b45c0649a2009d0178f35928467888cb546d5992fc25df316e481205e808b8d789258b183b20a23acc4945754008f0458063b04c96b52c7a7e8df9ec369489018cacb3005d0159a4962c66c530e78dd20b169276645a06974e14a02fe090c5590018b24de6a031217b9193e7f05a9228402fc0318be38d8b587337c91c379db2d28902f4063446389552bc660cb726b2aee9edac1825890274041cec6f0d96e346d68484264449e2a8884580ae80562716314b996dc8d5168875bf563bca3a0bd013f0a94eacb1737c662a261a6e4a7e924401fa006efdc4f4dd4252828d63b894cc62503e5180de8036262975e76c840fca3246d635c7239d28404fc05d8da5b67c5da9be23e492b3eace027c09a0e9946d7b1c4a6b62f51d6b529b5c0194240ad00dd056fbaed0f427e6003a77859565da959f28404f405b6329217296c91a2c6f6559d5a62451808e80839f587cc2d2e8e04d2afbd89f289d28405700374ab009515279b9bd4c902f18b8fc44013a030e114b73f37e3b241a43e9595cea7d2b49a2001d01ad245eb3126caefa4dcb5131525bc324890274043473710c7683750456c3e7cbb0f9fcbae1ac27b7d988b7eed373bd4e208000c0f146558e5dda86d8055216bb746a97ba8b74a200dd009fce944d261aa88596e6824b1dd3244914a0372087cd7192e7b480fd8cf594dde0787b80f5e469e2e7dff40a02fcaf01c54fdc47e270c438e778f0e80a4ebe8f36fd7ed97cb6c161b51bc0e35f4180a7007c3653763320ced4b62893e1c39cf06e4ccbcb66d3ef178cd0e9040208001c6785dd2470f2ed817afd34fd467ea2005f072855bc25cf7e673db95dd8cd2ee1c36ea218bb743f8100df1a70173b97525e338304c8f3ebee2e583dfe1504780a80e97f990a208000020820800002082080007f2de05fc9cd12ad6ae2a1660000000049454e44ae426082),
+(114, '2024-10-19 00:02:48.850053', 143, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-a8f47481-5dae-4d1e-8667-73d39a9e6364', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe010000000055145188000003f649444154789ced9d4d8ae33010855f8d03593a3798a3c8376bfa487303e72873800179d96053b390542aa503b3e80a193a2f0bd34ae40f1b1ea5fa935a145ffa1c3fbe763f400001041040000104104000010410f00fc055ea07d844ca7001502f9b08b09d200b8e36f312fb0404bc3800aaaaaaebacaaaa7b1d6a9e545700f5af7907306bf96bbce3f9af40c0f7021cd5cc5ddb45de5415c0217db62c4031a00f7802025e1a70bafb6d5200570180793f097056c12650e0887e020208b80fd8aa1fa82b26053029927e88aeb3aa79870f7d02025e11f0c94f5c0120a92a52731155750780897e22010f07144b780230efd0f7cb21fafef3a3ba83d70ba0eb5c87c5642ed14f40c06b03aa9f986ecacfdb59053320e9f70948f90080492565dccc7cfe2b10f02d00b6d6eec310535d9d6dc5f6f91c9bc7d599802880935e71fd5634d5a9ee40ca005291e3d4cca1a517a94402a20096caeec3bd442c4e98ab4d5e67d526422a918040805f9d5315177ad80c602adf02b36a1de6496df2f35f81806f017036b1d9bf9a45ac9670dedb62ddf597e92712100de892825f7533ca10294f5ae5686e63f9d04f2420123006cb40bf686d88a8a9ec32b9cceb9d125422014100bf3a6bb37f35586e8e61b189258099ab17499b48402c60a8dd65a03b86e5d7fac3746b1319b110100bb0d519e81d88dd3056c7d0d4995a059a36918058c0ddd6d81eacb4b0192ebddd0c2395484020c0472c457fdafcc45ee8b3869cf6dd6441369548400cc0d9c466f5acc68c4f917589a22d9ea112090803383fd16f66c970b99b9eb62977f8921f9548400cc07740381166d4a4a2730c736d9200b83a13100e183b207a3d456b4cd21dc81259374dd22612100b1823961d7e47a9d9c915800fa55d69904a24200660653b1d97de9e4a1cac23f389043c08307640349b98d47654595758f71393532f9548400cc0f5273a99adb010192d9fd8cbd0755b0195484020c0dbc4d47dc2a15db6a5174d8499fd89044403eee6136bdd39b74e316b5c1cba72a8440202017e75f6a5bc1e40c37cc7a102439b48402860f0136f370e8ca99c59b5ed3260070401d180dbfdce750ba9159ad726c73279b5fba8440242013e9f5835d94c5fc9ddb8aed8a1d0c27c2201a180a153167ef78a5f9df3e4f756f5639aa84402a20116365f2f93e22ae5341c91058700f347b95473b89db59cf819f90404bc36c04ef23c4ec0fca70eecc026058e93a45f176839d873931bc0f35f81806f0ab0f3ebae174044ceae1747de5a8e5196c73d0101af081862e7b9f762b7d6ec7efc03fa094dec4f24e07100db3895dbd9efd8ce2a0b0e91a5f8897e5b8b2ce14f40c04b033ec5ce56ca73679000b0c3217c332d6d22016100e1ff322580000208208000020820800002fe5bc05f84a9269125820f0a0000000049454e44ae426082),
+(115, '2024-10-19 00:02:58.060471', 144, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-e147ce1e-6131-4878-b7df-2f36ad7fe12c', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041549444154789ced9dcd6de3301085dfac0cf8480329c0a5d01d6c49414ada0ee452528001ea6880c2ec81436a24674fa1d789f3743225ea83080ce69fb4283e75cdbf3ef73e400001041040000104104000010410f0cf4b55557574c30c1d83aa8e21afe6a54111b5dd0baaaa9a1fbf04029e025025d1e4ca86aaaa40c8d011437950446f0c79f3c6e39740c0730166113900388b08ce87a604d35c86000039a14ee9ff050410b0bde435a1cae4310398f60a4c3ba8a6fff30504fc38c0eef6d690e52c432ebf100695a8b3e8f9f7458070e9fd05041000e0d64f1c0120aa2a621a9a63980160a09f48c0dd01938888ec50e294b7c32cfa76bc9a3b783e003a061b8a88889c7a7f01013f1b60d6396ecacfd35e050190f8be03629a01605089099b998f5f02014f0168b636af8618cc3a378bad5a8db59b47eb4c402f4015a904cb1d8ea852a79a81980044b5cca2bd136af29b9248402f8093c4227508b9442c566801e02a30635005826a99424924a017c0596757cf8bce120fade4a26ac334b44a0c2591803e0057de2be2e85cc404f8925f5a3da04e24a02bc05be7d2d4b0c429c1928ac54f2c6e233b2008b80f601d2c03d53a03d6f2003499f40d39b4ce04f405f8d859d3503c41276b631bb6324cd193d48904dc03703eaa0298c53d2a2d372143c769af722a6598bd02e12aa636bfd01208f8de8055a76ca839ee25766e999d1240c75a81a64e24a02fa059e725a98d6a89135c79a5f88996fc1e984f24a033c0bb8368c1b2e5ae979e6d73112da806f38904f406389db8123d9fd4b64eb10467a259ed23a02f609b4f349f302de28896c5d652775e4a7e944402ba016ef389c99cc51bc7b04431551c699d09e80af09bf96a1002375c1c484b745bb0429d48405f80f7136dd87694a2d5fd00d492f35290a62412d011b08d9d5dc4d24a7e4e3bb67c22231602fa02dcfea8321c6b7fa23986ad2b2cd694a33da59f48404fc0127ab4f606f57d0f8049671d0ecaba33017700acb23840db655a4b7e4d4497fe086b97a04e24e00e80f3b135c92e1d880044640791632e5310f52aa55da29e50f2659640c0f706ac760f94da49c6ba2bdb35c9aef65b512712d011e025d105d0adf9a65cc1323be50d764010d01fb0ddef6cf7526bc3596d305d76f9511209e80bf03baa5a6671b900a7ff568516c6ce0474057c78a66cb94add79711b4beea6b992d48904dc03601ace4e636a253f797ddfc135e9147538ed193b13d019d0ce4f9c777638e2b4d7e59e027927f1cf4bd672a6e2241bc0e39740c053003e38c9131060509c0f97f24b10aea20817414c2f59e2080842a72f20800000ebd8d99dbc545bb3d7e595fa12f38904dc0dd04e1949f5ec774c7b9513669153b8d6fda6b028464eddbf80801f0db8899dedaf58da3e825528ed0268ea4402ba0284ff654a000104104000010410400001047c59c05f6f10159771c609da0000000049454e44ae426082),
+(116, '2024-10-19 00:03:15.215235', 145, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-8871cb4d-689b-487b-946c-0da69a7a53b5', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041049444154789ced9d4b8e9b401445cf0b481e16521690a5e09d4559527680979205b404c396402f83fa50e0cea8cbeac8be8c9a8f8f40ba7af5bed5e67cead8be7deef7208000020820800002082080000208f0cfc3dddd7dda4fe7ce7d0a2b3e8515086b7583d1d7fc647077f7f5eb3f4180a7006425265dc5d35d70bb30a3f4a6b09e7ef1f59f20c0730136331b809bf5f84417b5c66dd86c7fdaae003733bb077cfa0d047869407f7725bc99b30c00fd0ae1ad37b8b8b1180e5beb371040808f014b8fd9003eb1995de99cd1dfcda7e01ecde6a3df40805704dcf98913c0e8ee8c2576f1e83676f213057838603133b31e082bfe6bd8cc7ffd784feee06d009f423a353333bbb67e03015e1b90fcc4f1547e5e2e6e04b0f14f0fe3bc01746ee3cce9c9afff04019e0250d6daf5704a9756e7b262d7f99cf29c5667015a018aa4dcb3779855e7bec2380363946397cd61cc7b4b8902340454f14714e114d618b144ad4d40558199823b84245b29518066809c4f5c0cbf0ddd6a0480e5fb0a6c3dd0ad8c0e469831e85767e94bcdef3ff804019e0930ce9d437837582e79115e7af2b51ef718bb00b019b7a1ed1b08f0e280ec27ce0074c9638c474849c5e81846b7511d10023c06700c96492e621466697988de2175438e626701da022a9b18654615b1ec259743934eb29352a2000d0187dadd0c40b17a33395933a7044eb29d9ec52a250ad00a70e8940d399f03259f3343f213ab4e59d944015a03caeadcf95e4a8937ca69ca36e6f476368c52a2000d0175c45232d6f146b189b99e12a597e4a8884580a680ca261e63e26c134b52279601bd5847adce02b404d4f9c43d628ea1f42ec2accff88b7dac454a14a015e06c04d3b599bc30ef8e61f118d1ea2c4073c071752e36d1738fc3ee40c6c83a6b52365180b680e3ea5c2605b2ea2a6319db154bbb9894284053c061750eeee7d6c4bd036c4f6a936750a544019a012a25e6dac97a98a82a5d11634e39a6bbf213056809b8f3133dda3f38555bf660457ea2000f001cbac2f2904afeab8c956617313b8b9a6311a035809311dc1338503ac5aa82741961919f2840534035db771fb6d40174ae3beff35652a2000d01b5124beeb0b67af3c94fdc5bc3a444011a02cef3ce291299bb3c6feaebb93f271e52a2004d01d5bc73d6a49f2b7b394e3e145a143b0bd014f0af3d65fd58fccb3946f266b3f21305680bf860afb09cb149b37df7bd60659f4f2951806680b293e7d6437803c29b31fe0687ad77587b1b7f0ff8cd00163b01befe13047852c0d2c76deab80d606697aa17c77ee68e5abb3eee0d047845c02176ae765ef232e05716ebe30e4df21305780c2055f118e7bcf73bcbc5edca66760def96744aca27dab5f91b08f0d280bbd8b924b5ab3d4880bc7f5db539896ca2000d01a6ff652a80000208208000020820800002fcb780bf0eed2e8a396f25560000000049454e44ae426082),
+(117, '2024-10-19 00:04:03.038300', 146, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-7a63aaa9-da91-4201-b1d4-1d7041c2bb37', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000040d49444154789ced9d4b6adc401086bf8e04b3d4800fe0a34837c891826f261dc50708b49603129545bf670259b88784ccaf8d3dd3ad8f3614f5eeb233bef49cdfbef63e082080000208208000020820800002fc01b0b9f8c4aff731fc74cb9e17f611b770a69dd7be2710e0c501989999ad9399991d98d9014c07cc1e6c0d5b0e6032b3753aeedef8fb7f8200ff0520cb55943f5b19a24c06a9f3435e354b5b409228405fc0f8f0cde481fdcd1c8cb07d3f80fd628e7d3c0ccede27104080df03f611e7aea7b395c1dcc2e9dc0fbb395ba75bf10e9f7a02015e11f0e027ae00b3993127c31cfd4406f989023c1d1042e491e0097e5c4f671fefb7184a6f57b0758a1f43e8bcf43e8100af0d887ee27c577ede2fe698c0cd9f23ccfe0418cccd9ebb9d7fff4f10e0bf0034b173f9c810ad73b6d875149df7c93a0bd00b504962942d9fa4ce2c2615992da677e23bd3a12c8e009d0145b911242cc85f8e4956627a3b6c5e4352d12c6c91240ad00b9025318b5e28af144b3c84c598d966b0a4312589027404d492989335848c0d44c31c44cf67dfd18374a2007d019577182acb1652894096c9c66c1fe945f98902f404b4c132d4117392bfe01dc68688c1a29e944e14a027e03e628e6d3895fcd51d10299e1e4c3a5180be80a676e781ca45f48dc6845a27ca4f14a02f20cb1ac40e444875e7ec1366739cbe934e14a037205be7a8094b601c56d79cc5c97e62528c9244013a021afb3b5519eb647f3d5927e60006e51305e80da874622aea25c5185773a798a732d1aaf609d017d0f66c0fc66ce7080cc14774a103279a6a1c806dd79f38a64e27104000a0cd27867a4a76167deb18867c4e2ef9c93a0bf02cc0761d8cedbddc9e8a618b5ba683b8b08fc16dd42d5301fa029abab38790d98ef99cba3f31959c076b4a83d28902f401d4fd89d912a7520a54f174496a2b9f28407f401d3b87673a9a1b55553ef12e95284914a023a0ade7a548642577c586df8eea63a83b2bb32d405740e527362d5fa549360f8228c2ea758f4580de006a25480e47c2532c762daca9b75b92284047407ba32ad74eaabe2f4b014c956d543e5180de80fbd8b9293ea7eeed39cf0a335f5ac3248902740454d53e076798f260708ec6fe76181ca385814dbbc3b6a5ded7e504020800dcdda86a3cc67cb7aff21373ca5bf94401fa029a4e59caa887e82c96d14dc944970b2e9244019e00c802b7bd1fb81f1e628efbd339ea9ba783c17e31b66be71308200000671a8eb88f9499da3099b9651fb10f3712668a2dcf3981002f0d789c290bb05d87d48608c07473c6f4d331fbb7c3cd2bea4f14a033e071ce769bc52ee31faa44b7fa1305781e204f19f1c54e5fe274e365bab966d8fb815bba9f408097063cc4ceb99457cd2001281322d28274a2001d014effcb5400010410400001041040000104f86701bf0086f0fb893f1dd2a30000000049454e44ae426082),
+(118, '2024-10-19 00:04:38.380292', 147, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-baaa0e08-b6ed-4ea0-b348-fb07afeed243', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000043149444154789ced9d4b6ae43a1486bfd336d4500559409662efa0d79425f50eca4bc90202f23060737aa087e54ac31db48af44d7e0f426cc91f321cce5b2a73feeada7ffcddfb208000020820800002082080000208f01f80c5f20540f3dfbc8ed8bc9ac13a62337b9979edbb0201be39007777f75b7077f7addc32b87b04f738a40108ee7e0bdbdd1b9fff09027c2dc09ed5dc6266368777b3396c6980e59a27d94c9ef2801508f0ad01e38727e16d74d8f1c580e5e736c23a02ebb839ecbd57208000f027495c2f6e3038306c4618dc2607969f6f06e1adf70a041000f8e827de002677678a43750c3780417ea2000f07ac6666360261c35faebbf9cbf37b7607972bf82dbc3791b5cdbd5720c0f70664eb3cdd959fd78b1b016c7a1d618a3bc0e03645ee667efe2708f02500d5d66ea75b866c9dabc54ef99cbb79b2ce02f4021c2285df823b533c6511a7084c491c87a20e43492f4a1205e805a84a10b210fa9622961493dc2047314016d62c849244011e0008393ace59ec7504d8cd66064fa134c1dde675c4fd7544d53e01fa02da9ccc2d3d49a9c4721bb261768f59267319503a51809e802252115aab1b8129e6b025f98987db982ef98902f4049c8365b2fce59864abb14b1bca14c194240ad011d0e8c42466edc0517229514c568c834b270ad01770aadd45e0ec27a6f2deedb825ebc42a989fff09027c09409bc5a91d8810bc08dcc91ca7674958a51305e809a8d6b9683daf59ec9c54ac263a52b5638da22589027402b4114bd284f118a89595acff9a678a5804e80b6875622ef91d6d60e7b025d29868758509d01770cae2544d77e46e380da4376ef21305e80e687462492042c96c9f1dc3d48b93a553d65980870096e71c139b3d97d839fd01d2deaa34651d9388aaee2c405f409bd9be014dcb570e4c0e3f71f0fb4da7d28902f402d4b29d9f4d6fad31a7cce2e14a1e3b5a24890274043499edbbca5e760c8b4fd8f88969547ea2003d01e7cc76d175376a572cb5e4577d47d59d05e80f68f7b1b42d5fc508a77c7691d32c7f11d59d05e80c6824b13d1c2772deb852f28929b3135c7ea2009d01ad241e71f2394ec91af3bccb4ff944011e0658ece23657fb9bafbd6ebf2fcdb4cbb59cd5d47b05027c5f40732e8e25a95b0d677dda607ddaf296fcf5e2c66af832d779bd56208000c0299f782415a7d20b91aea90c1e296fc5ce02f4059c3a656977aa94dbfa2c42deea17b48f458047014ad8ccf2bce12fd7a3db01ee2a80b05ebc9eeef9ef7c8200ff6b40f513f7b11c8eb88f4cafe36653dc47276ca34dbf9e365f0c9cd5ee009fff09027c09c09f4ff25cae03be5cdf3018dc08efe684884df169b3e9d71346e8b402010400ce678535e9ed12b678e9c0818f896ef98902f4070ca58a17cbd9efac17b7993d1d005fce25c99d1236775f8100df1af02176aea5bcdcc2ed359513694e88904e14a02fc0f45ba602082080000208208000020820c03f0bf80dce4cc8286b44c9560000000049454e44ae426082),
+(119, '2024-10-26 00:10:18.258371', 148, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-96a4b4d1-7ae3-4231-82f4-acd904432bef', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000040b49444154789ced9d4b8ae4381086bf181b7ae98439401fc5798339d2d047ea1bd84799030cc8cb049b9885a4b09c55bd6a253554fd5a14f8911f3204f1569439bfb58e3f7eeff7208000020820800002082080000208f0cbe5eeeebe9c9709987d87d9dd99d3e0cc09dcd3e0f9415e93bbbbef1fff09027c0a4095c4225759124fe9744f83fb32ed64d15ba6fde9171fff09027c0a40c8d50e4c3b59d616c88ad11742134eeee515409228405fc0f8e6ce3662b31fa3af36384c095f0d60331c8ede3b104000784f121976cb42c861301d23b303eb5f0963fab7f70e04100078eb272ed0042bd531dc0106f98902bc1cb09999d948f6047fdc0ef31fdf1f961fae37f0652a97666666f7de3b10e06b038a759e9fcacfdb373726b0f99f11e674000c6e73e2e9cd8fff04013e05e0123b9f970cc53a87c56ef339f19eacb300bd0017d173f772af0a2173a2cde7e415e94549a200bd0057492cf944e6884916a0a9c02c39a9e82e9d28405f4035b30988e8f80c9bf33df7227fe5320d9244015e03586f83fbc261b07dab46781b61f687c136e29e6317000ec5ce027406bcd18959e125a86ee3506a7cd96d54078400af015c8365287d37bed73fd512e707a73f29eb2c405740a31373df1753f4829df2d706cbd98b944e14a02fe052bb4b712fd1f48715d1a3d58939bc96240ad00b70e994ad699bd3449735edd74e59e944017a03c23a0f4d6b6cabf55228c69ade3ed3e0924401ba01da88a5b8885c33db6d438e7b88a3221601ba025a9de83526ae69c3486a4358ecd08eb2ce02f4043492580d6e2b9879c583fc8b457ea200dd016d16a714fae2805fe2e218e60a6094fc649d05e8098814f5a918c3445f1d48aadb588a2fd28902f404b4fd89e5085f9c28a5ed4f2ced8a510b94240ad015d09e6d2e1d8897d6c41c4ffba90e954f14e025804bec9c68fa138b631801745cb6918d2451804e80cbbc87c63b8cae58a8a7f1a7339f33e86c9f009d01cf7371f29a6ba343496a873a2c8d633ac722406fc0c54f2c6a8e76245382f3b84093d4964e14a02ba0899dcf38394b5d34449c917573ca4f3a5180ae805612e3f4de99a7698f9a4e4fedb29244013a029ab9385606e1248061b7f9a7e1ebf78739db9f6e60f87a8bf77aed400001806b8dc5c3ff8bca5edb9f7d29b4289f284057c03b3365c3f4468eb18d5dea8845f98902bc041061f39ae7321d66f6fd6176cffaef617588e7e0f920ea7aebbc0301be3620fcc463240f47dcca2d8703871d9b7fde28833d377b027cfc2708f0590183b3da9867d5999959edc57998fd5ddb75ecfec21d08f00501efccd9be64b1bd76e0c039a109d55804781920263fa4c3cc6e908728de39ccee8d9f586a3176efbe0301be34e04dec1ca5bc66060950e7d7a573388974a2001d01a6ff652a80000208208000020820800002fc6f01ff0116b930fe7c97c31e0000000049454e44ae426082),
+(120, '2024-10-26 00:10:58.981578', 149, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-0d16541e-f1cb-47b3-8366-f3d573b1b034', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe010000000055145188000003f049444154789ced9d4d6edb301085df5402b2946f90a3d0370b72a4de403e4a0e50805a06b0305d7086433928bac8b829e2a74562fd7da08187f9e39016c5a78efdc7e7de07082080000208208000020820800002fe02b8881d007601b61900768903d866c839ae9d724740c08303a0aaaaba2eaaaa7a1d4e81e50a5dfd0fb0a8b6d3c31b5fff1508f81680aeab2b4c7a0050d445a815505553623c422512706fc0a26a9e789b81cbb32a2e3203d84454eb3f1801010400c02682cb69525d31a99cb18bbcb83beed1e15d4740c023023ec4892b00145545a9530f0caf0030314e24e0ee804d444466b448f0f5b48bbe3ebf4bbb793901ba2e76da52e773f60808786cc0dcfe959be9e7ed49050b20e56d064add0160522915374f7efd5720e05b000eb9739c6232efdc3db6aa3bebe1397a6702b20087a8af4e6ad75c8428155ed4c1e4e6b09717a94402b20061dc10454594aece15b02c06b02aa28b904a24201130ba636052946609c3134fed092b346252b7985422018900e87898f46082035a2adda4577bec586166934a24200b801b115a62e23750ea64737c2d6cd4abbfc83891804cc03159064c7a983c1c744f8c5261694be99d1254220159009754b58c19c748b0e9cff2191da248da44027201c72a0e102d37660497c867469bc83891805c40f7cec0d08118b3cd514f6c194b2435b489046402ba778e3cc5131373ccaed35ede76c3482512900838d4133d1234c12dea956db37f1e3182f54402b201a34d6c5aab91bb60905e9848efe8a6120948041caa38eaeb036ccd800ef32e7e7a33e5472512900338448215bdef264e7b6058275f6a05b09e484032e0439c08efcab63688e1860e9aa44d24201730cc3b7b01b1af28c5d89fe853cede2e462512900a189538343ff452a2e5d3114ac68a162a918044c038dbb7c26d62d1bea20a31efe77162e9be9b4a24200b30c489439d70454f9181be11444c03324e24201b307685951e1376c1a9fa445fe42e51e3a112094803603482d11feba7f679b9496a94712201c980616d9fc66296a2bd6cb3c4b57106863691805cc0a844f3bfdd1d374fdc4b39cb4dbb2c95484022e076bd73946d22591ea6a1d7fe1e9548402ae0b8a24a35aad8d11a36c48931d1c2dc998054c0a153163ee51cb5ebb089a6c9e8a3a51209b80360f152cee559b5edc6546adfe7787997d11c6e4f8acb297904043c3660f60ffb0c2cbf006cf315e5cdaf1705a4fc3c412f022836c91e010104fc01b08bc8696a56cf367b5f2c4494170f20e57cc71110f080808ffb6c47155b0fdb3fe0b04313e34402ee04e8bb8cd4dd7fe2627bb2dd8dcf2d4eec9bbdb76d8fb34740c043033ee4ce3d631ef6200180718708da4402d201c2df322580000208208000020820800002fe5bc06faa074998271ac2820000000049454e44ae426082),
+(121, '2024-10-26 00:11:54.572155', 150, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-d49bd927-d874-402a-b9dc-e8f6b009a4a1', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000040949444154789ced9d4daeab3810464f354819921ddca5c0ce9ede927a07612977012dc13012a87ae0b23149b77af01cddd7371f0314c01c19a954ff76ccf9a563ffe3d7de07010410400001041040000104104080ff00cc1607ac3dc06e360136adf5039bd8f3c86bdb1908f0e600dcdddd6f83bbbb6fe91286f8959f6ec010bfce6f7cfd2708f0bd007ba8b9f90a8c9f1767beee66d3dac3b8c4209b2029d017cc4080b706f44f77d67e735630b838f3c706f3541eb0b79e810002fc0b20b4a3df92b3b89bfd48e6f87e7887af9d81006f0878f2136f00a3bb332e5d710c37804e7ea2002f07a410b927052b3fafbbf9cf8f7bb883f315fc36c4650a9da7d63310e0bd01e1278e0fe5e7f5e2c600367ef6302e3b40e7362e3c8cfcfa4f10e05b008aaddd4e9774619d8bc576cfc6ba1a27eb2c402b402d89c931244b9dfb16099c31896397d5e1b0213f5180b6807fd0895b8a5892acdd20a21820c91f0cee698824518056807329e5ac1d871c3147ddc53d2e974e9228c06b00f31580dd60bd84111e3f7b60b81bb3f5b87f1ed596ddf21bbfcf2708f0ff061ca107a9b2ecd9598ca4623a6dc56c6ff945f98902b4049c83659261665c48214a9c92618e7b5930258902340464915a22623edcc1f00417388b5e08ab74a2004d01a7dadd0214214c4f53796fe91e75a2221601da028a7586dc81981dc312451fed8ad94f944e14a035a058e723a95d3461ce676799ac7d47e94401da02ea8885a168bda38a524a7ec7e996738c9244019a016a9d98646dc96276835c6dc991f561a255ed13a02da0f213bd3a965259812a764e6fdce4270ad01cf05c775ee2f4e4182ea7cca2acb300af01e47af2fc11d5969c59049b868d78b0f6c9626b95a9006d01e788a5ac1418e25e0e5188ae8864b617907516a02da0aab1e442dfa935f1e8003b92dae40aa0245180668073663b1238f58aaad215562e8fd60849a200cd0055b52f746209a5abbe879c5e841cbb481205680ba87237c7560f9511ae728c87ed5e143b0bd01a506571c2122fa104a15ab892d5e6517c919f284053402d895ed54eb2ac552b0a9276a42ec3481205680578d489396c29a2b6948879f0aa85567ea2006d01d50e4d56af63d97ba0db8ce16e3e5be7c66af87c2de35acd4000018073b5b9d28e44d852e5184ba7b6eace02b4079cf28994ad1ea8dbb523b2aedac5b48e4580570142c311fb77d2b94d745e169302a51782f5e25a652a405b40f113f71e86bf00bad496e3b0f73e3ad8f8e7159faddb60b507c0d77f8200df1790f6af9bafb1435d6ecdb99bfdc86b506d7ae90c04783bc0a93f71a8f389398158829573a25b7ea200af01e46eaf71c97bbfb35edc2676b369b85bc829b161934dcd6720c05b039e62e75259a9db15816a8708143b0bd01c60fa2f5301041040000104104000010410e0b705fc0d67d9eda79ebc4d740000000049454e44ae426082),
+(122, '2024-10-26 00:12:11.679807', 151, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-06fddda2-6903-400a-8ff9-91a1f904db2e', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000040c49444154789ced9d4d6af34810869f1a09b294210798a3b46f30471a7233f9287380406b1990a859f48fbaed0f66f1b5c910bf5e98c8961eda5054d55b55dd31e7b75ec71fbff73c082080000208208000020820800002fc07e066f9953fdef25f76dd66ecba99c13663578e72e765ec0a04787100eeeeeeebe2eeee3bed5b045f973dbdc1e29e2ebb27beff2708f02300d5ae7620599d3bc1abd5c5c9099e2d31df02c81205180b981f3f3a66d82ef9cbdb5f3b7eb3c98dcd703846af4000017e0dd8de9cdb65725f99dcae1c667ffb97f9bab8d7ecf0a92b10e015010f79e20a10dc9d10a79a18ee0093f244019e0ed8cccc6c2665821f97c3fce3cfaf2ca56f17f075c997493a5f47af4080d706e43c31dcb59fb7373716b0f0cf0c211e00935b88dcddf9fd3f41801f01e8b4f379c994a3738dd8ee255837f7293a0b300a709a14a962e8b1589dfb0e21022199e354dc61a9f6c812051806689c60a34e42d5242b641503b98a982a8b413e518091809227c67780c98de513d8de77526591692738184bc460de9d6dde6bb6f8fd3f41801f0128d1394e2930430ac2e5b206e6dc6d39ef5374166024a05a22943cb16fef912f4bd8decb83b2440146027ab10c25ffabdac573293bddbc3686294b14602080d6eae2a98e7365e7943255a2408893cb270a3016d0f5ee22a412cde904f37cd854557489ddd2ce020c05d4e80cc5137a8ed32c67b248371f867ca200a301ad765ea10893487a2b9d15f7464567c7284b146020a0552ca9621da7765276a50c6e9fc3dca9a8234b146024a0f189d9eb5573a41a5cdb86f6e63e59a200c3007db7cfbd6d3ed7dae1594f84b6e5274b146018a016068bfdad406eaf44bac430f6c6aae82cc048403315d608931c84bb043229eb2256e41305180b7898c5697694d2ce279696b3face023c05d056b653e82df6578a8a9d77acf544291601c602ee77549d0d949c185215736c4b89aa270a3016d0cee29cfde4952a91390f82a8a339ea3b0b301cd0ee1e085dd9a6d9c7e2b113d0b9c6234b146020a0e93bdf6f7a866e34c7bd9e4652924a59a200c3006d152719619d00abf339a7c7ecf65bc912051808e8ea899d133c15f3992796e2b7262004180db8dfef9c3e5ba1cce2943cb1f902d07ca20083015db7afa9e778535eecf2446ffa2eb244018601ba4959a8735f14af17db7a62512cdac722c0b300453673b319521705d2e14cc061b07c597687e960bbc12b104000008e7274f6e24e8887d995c308be63d76dc63feccdd39962d7e7ac408097063c9e29bbe5a3eafc76f924ffbd38b07c1a21beef16563096412b104000e0d7e76ce7c4b0b657bc8c70df3fa63c5180e1807afc48ac717a7bcba71b5f972fbb3becddaec35720c04b031eb473331fb6ecdd1682088d80964f146028c0f4bf4c0510400001041040000104104080ff2de05fcc2f38dd1f7f13da0000000049454e44ae426082),
+(123, '2024-10-26 00:12:40.659746', 152, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-346b0888-fdde-4a7b-88b9-8a459dc35a34', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000040649444154789ced9d4b6ee3381445cf6b09f09006b2805a8abcb34696d43b5096520b28801a1a90f07ac08fc8b8811e145d954aae070ef4f181045cbc3f19737eea73fcf573bf07010410400001041040000104104080ff01bc59fee4c36bbe6c378e72619b9b43b3ebd82710e08b037077775f83bbbbefa4af15f035ecb8c7c97d0d3b10dcf3b9f617bfff1504f81480aaab1d083bbe327973c123499d10dccb2d20250af06c40b17ad9637fdbe1cd2e0e9b997bfc054f20800000db19314e0e4c6e7ffbdd7c0dee353a7cea1308f015010f71e20ab0b83b4b0911b37766529c28c0d301c912ce24effc7a3dcc5fbfdd9b54dad7900f93c9bc8d7e0201be36604e7f9677ede7ede246005bbecfb0c40360725b22efeefcfdaf20c0a70074b9f379c894bdf359d469ea39f53e7967014601baa82f4ea56c5344c81281c5dbf20ed4f2a29428c02840358224d565fd5575ae90b318c855c4224229518081801c271222b04dd9f7b2bdecc03103d3cee2608488c1bc3bdbbcdbb20e7a0201046801db0c84bb99d9c59b738bdf53cbd9fdfb9cfc347058b5931fe71504f8a30167ea0130a56031375a62ae6c97be4b091bd34771a20023017db24c091623254fa9cdbf74739c3c5d509c28c0504037e8508de0d24ce5d42cda3d5d604966534a146020a0afe2401eb981c7d1b0746e2a72944d146024a0ade23c4c2056fb47eb98c9b1a39428c04040f5cec5ea792c65c31a31a638b196b78b61941205180868331682278591e76ebca6d239bdee62472951808180c626e63c25962c1aa88d3e6a07a65a477967014602ba2a4e95d9e993693cf199ca284e146034a01606bdb184b99e18e902c3983db6face023c01d0e4ce45667b75c25d009932eba249d94401c6021a9b7816104fd5951405f2b8621d17931205180ae8bc734d9b9b1e73e8aca3ea89023c09d0f458f262e6503b7b71f2b362731e9e098c9428c03040db773e65b652c3464acbaf262b8a13057802a09d0a6b47be72a3afeb3bd7b52d51eb5804180de872e79aa2e42a4ead7197b24d71e0aef5ce020c0634d30e5e5b79b99458059763c76e959f6ca2004301ad12d7733e3bd2a62deeddb8ac262004180f78bfde19ba624d3b0641bbca4f4a14602ca0ad6c37f59c621ddb38b166ccea3b0b301ed04dca92d73b97fd1e5a85663b19dab52d52a200c301a19472deaea42fbb71186c66c0913667cae670bb78dd00f9e3bc82009f0370d4adb3db557e10dcedb65ddc5fcb769e767bce1308f0a501f3c3992def4de76fd71fe46debc2dd9cf0c358e2cb6ecb3f2f1861d013082000f01ffb6c8736302cbb36d535f8e9a37aa2004f03e42e1e4bac7e7abbb8dd38cc6ee16edd66ef3b761bfe04027c69c043ee5c3b2bcd1e2440d9bfeedcab443651809100d3ff3215400001041040000104104000013e2ce05f7b8c0d0a2f6cea990000000049454e44ae426082),
+(124, '2024-10-26 00:12:46.021672', 153, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-e3e57881-f8f1-4738-b169-41ebe1022502', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000042d49444154789ced9d5d8aeb3810464f8d0df7d1865e402f45d9c15dd35dd2ec205e4a16d0a03c36d8d43ce8d7e90b0373d5f490fefc9058b17d90a128e9ab2a29e6fcd171fcf567cf830002082080000208208000020820c0bf0036cb079bcdb0ad87c17d4e17f22d2be9423ed6b13d10e09b03e6fcbd448023352ddc7eb8b1ec18cbdb0cf7973d5f8807496d6f3f07f540000100707777bf2e3bb0ecf81548cde0ee8438e5384f28f7955bdcdd7dfffa5710e02900f3e30fc1b3eb83fb0a70986f17f0ea1807f7400001e03796b85da6dd379b9cedd531967d2638b05d3092890eed810002006d744e636d6eb6dfae4c4ea817aecbfef0c4d7bf82004f05b89b9955d99cb43387c1f26efe6ba5e8692049e7cbe81e08f0bd0179740e35fd1c6e1f066cb2949e1c981e12d55fff0a023c05a01b6bf30fcb4e694e7e52ccd9128bd0d6e82cc040409d18165b0beeee1e018ac175f19ce0eec5086589020c04149f587c5d912dd930b34d327972960fb2459628c0284031a938a56f429c5293102139c6506ec9cd38493b0b3018d0bbb9e4eb62ceb134d7d7e68e7e85927c914f146024a0f78955a764ef58a54c9e22e6445f9a27ca270a3014f0a89ddd7d872691d3484c19aceb872c5180b180ce2792c236751298acb37cf4299788148b008301398cbdfd7c374f49150e23dce61d38e6e428c3df86c33113e20b0e8e85eba01e082000d0a23850268ba5eecb235d2d189dc72c5349f944018601fac8769d22a62b298a93ce5a00075ac85b9628c030c0398a53bc638d71e778760482e7f2c456472b4b146018e05c06d62ccc3d451653b6a528eb648e522c028c0774d9be2c912939962ee5ecde35f32c529628c04840a758729c309dd5fad8f33a961a7c94250a301670522c2da858fc6437816ccaba3f6489028c019ca3385086686acaf9fc01ca3b0bf019809362a1d6d8c4a928965695c3e425efac288e00a301a7f5ce401626b15f29d00ddbb52a4c9628c058c039b2edd913d6eaedbe20c76b554e9476166034a02c9fbabfb8b1bc9544b303db1a73b6190cdfd6589f9ada1afcaf7f05019e02708ee2d47c72e42c4cbcabd4e9228bf289028c029cd6b140c9a2f869b2d86d8ed36a66354f146024e09463a9e995be48b1061a6b532baa04180ff89863a9a6572b70ca1282fa8ca238020c079c3326452757ff57e684e5ec1cf796250a301ad0f6944d35dbf1483bdfb8d7cd49c2cdea5e3975c388ffd12b08f01c803cd6a6865fef73da21c7ecf53dedcbe4bfd6b2b68afb8c5d46f74080ef0da8db311d332c6fc0fd47ceac6c6bbee4b92ae230c080e5cdaa53fcfa5710e04901cbbb99bdeed8a5946bdbe56e66b69625d1e136e70de03fa707027c47c0877db6bbfab0a5afcfee563e6be5bd00e3011ff7946db11b1ef2294d5e2bb22dc068401f4f04ca9a95a56a976a93a1db1ca259a52c51803180263dfedba1ff3215400001041040000104104000013e0ff00f30dbfc825818713b0000000049454e44ae426082),
+(125, '2024-10-26 00:13:20.600980', 154, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-c9c817a5-dc28-4e3f-975e-3e001982c865', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000042f49444154789ced9d4d6edc300c851f6b03b3d4003d408ea2b9418f14f448bd817d941e2080bc0c60835d50d4cfa45d45d34926cf8bc09e683e580041918f944614efba8e6feffb3e400001041040000104104000010410f0cf4b555575a98f09d005802e9814314d8a9800d53429a2ee3e32a8aaea7eff2910f01000b7c46c576670cde382c9eeccf496b05f7de3fe5320e0b10087889c01ac6700d844ec2ea623df01805c006015911bbc01015f1a30bffde8108d7accc03603eb0f850027156c02058ed16f400001ff0488c849014c2a171c82a8afa24b5035b7f91fde8080af0b985435f943d41df29c6aee02c8659bed0e5155df02defd06041000601311911940d8a13fcf87e8cfa7d71c0eae674097901f4544442ea3df8080af0dc87162bc2a3f6f27150440e2ef1988e900804925265c8dbcff1408780840d164f6eed1a544977250e49d6e1c551c0246017a657bd2fc991b216282858d669d76851dd41309180b28cead38c6b05b4e62b6b620672c367809aa4050b521b444024601dc1213902b7be609eb4a3cd900b3bf9c634facb110301850033ee4a25e09111700b612db626d765acc963e91809180c612735343cacaa279c29826cde658c246bbe813091809e89365e425da72975082c5a04d2a63090c73670286029a38d1ccacacce564a8909f0544635e733c9ed949648c02840d7e39500007f910d93cb3be63b75679c48c06040a727066d8db08a3a256df14e59fa440246031aafe7a5140059e39e3477ca96e870f1cfe81309180b683396ac58efed226c57d85bb567718d919648c03040eb13cbee014fa0bbb5db36b3683156aece048c04b435969c1d97545abd0d31ba07b46f2c751c2d91804180ae1727eceefa12f25d13187a8daf5facef3f05021e02d0ea89253af445b80b202db3f664853e9180b180beda57ffa8a7cdde9f98db15bd16484b24602ca0599daf72975c630e9d77a49e48c08d009d4f04500b28de90e35d61354e2c090c2d91806180de1356ff575264e46a4bdb249ba86c13301ad0f46cbba80dd44607ad279414a1b16a3cb4440286011aedbab641642788dc9a58fbc39a2d2c54b609180ae83396b28fafea34751f41e876f9d127127033c02a27950bfc20a698fc2e5f93ca73826dc42ffff8585320e0d3029a139a043804080958cf2f335699765d9f76e48df89b40d7731937ea0d08200040b7cb548b6c58ba72baaed8aed0423d9180a180bf9f29db1cdd892a744f256361dd99805b01b28703d6a71d58a59c0b96cad09a4f6f272da77b7e9c2910f0a901254e3c6620bc00b6a34a8f19311db322ec90f8ebbb621540b1c915e0fe5320e04101767e5df67a22220284570182aa3c5b79e595a7d611301870dd9fe88ab5975c6a79a59cdfe44b39e344026e01f06eaf98fcec776c273bdd582ee6135dd95e403d9180d18037b97373e843a867e500ed0911cc9d09180e10fe962901041040000104104000010410f061017f00355cebfd179631c90000000049454e44ae426082),
+(126, '2024-10-26 00:13:53.783534', 155, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-fb069844-3cb8-4041-bdc4-95fb99f14fd2', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000041f49444154789ced9d5b6ae34a1086bf1a09fc28c3594096d2dec12c699825cd0ea4a5640101e9d12051e7a1af4a02e761dae410ff7e3056247fb4e1a7ba6e5d31e7af5ec78fbffb3e082080000208208000020820800002fc0760b1f4020eb3db36c27205bb71e41bdbd85c9a5dfbae40802707e0eeee3e4feeeebec74bc23ab87b799ba71d983c7e3a7fe3eb7f8200df025074b503d34ed4da0c103c7f222b313d02488902f4058c1fff3438c18fd1171b1ca61596dbc58d6ddc1d8ede2b104000f84c89dbb81b0c0e1c06d33112fc305f7ebe194c6fbd57208000c0473f710608c5594c8ee10e30c84f14e0e180cdcccc46a227f8fb7a98ff7eb95bbcb95cc1e7295dc6d0f9d67b05023c3720edcee15df979bbb8318185d711c27a000c6e61e5dd935fff1304f8168053ec5c2f19722a27efd86d3ea73ca7dd59805e802aa9e21d66d5c5bfad947cce90cd61492f4a8902f4026425ae2799851293cc90938aa42c6216a19428404740a3449f73745cc36660880fa4cc36b5ee22250ad011d02ad19b4d7870f795b43197ba5f2e0392cca69428402f405122500c5eba958d60ccec245772a7de951205e8063807cb9022162f3149de89e38df85cee94901205e806686c62328753319153d9acdb60397a91b289023c04b0bc782e346f23c4cade964b2ef37671d8cc58ece230dd2d1ad08e2b10e0c901657786dc81e81e338b299fb3971ddb3dfb89b28902f4069cb33810f7e922c7cffcc4ec2c4a89027404b4110b8de028099cf2a9bccd39c728250ad00df0493eb1d498a12df4a53274daa295d916a02fe0bd9f5863e7a83a9ab44d6e7e684b7e52a2007d006d07440c5156f29ebc9e1dc3e23132299f28406f40db819ddeca01bfb3031923eb1cacc8260ad01770aab1783adb5755577dc7d3c953901205e80bc827aaa63783ed1f87ede2c03112d6abc1b4ba050796eb8085f96ec0b05bb715082000d0fa89394ea93db383d78c4dbdcca944d944013a024e27f54adfe14c0991e3a7bd5cb6b18b9428403740db15565bbe426e74c82321b2396c1b17a544013a029a7c623df47cca6743dd8e9ba4b66ca2005d01cdd9be14274f6d023b6fcc796a4ee91e939f28405f40abc4727aaf3591eba93536de50078400dd01cd5c1c4b8370562c5d1abefcdcf1c50637209eba4fcff55a81000200358b935f293a29ad612bad9f580b2dca6c0bd01570ea8020979cab4f582734052ff313557716e0618012362f2fa90dc2ec6587f07a2983700e4be670bb38cbb5f30a04786e40f1138fb10e47f4f4766061deb1f0e74a1aecb9d93bc0d7ff0401be29601b89f3eb962b71147ceec5b99bfd8aa1f45d53eb04e80cf864cef6298b5dc73f407b245f7ea2000f02942ade7ae47f71b15ddc6e1c66b7e96eedb077c06edd5720c053033ec4cea594d7cc2001f2fcba7550cfb6008f0098fe97a900020820800002082080000208f0bf05fc0b874c038dbc7034fc0000000049454e44ae426082),
+(127, '2024-10-26 00:14:16.795159', 156, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-fd748e86-ecdc-4081-864f-369a928f786f', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000040449444154789ced9d4d6ee3300c851fc706b254801c608e22dface8917a03fb28738002f632800cce427f5492aeaa4c3ac9cba2a862fb830c10141f4929a2f8d667fff5bde7010208208000020820800002082080802f3faaaaaa731dae83022ea4ffbc067ba10c01a7aaaae1f1af40c05300b22526bbca06b70275a8b30b88a637bb70f1c4e35f8180e702ec227204b01c77019c2a9663ba00bfa69b6402804544ee3003025e1a305e7f35e405781b21700a2cd3a0824da0c0de7b060410f025404446001814c02ef2a667d1d9a946b7f90f6640c0cb01aee2c41900bcaac2e7105135ea948171220177076c22c913ba007d3feea2efbfcf291c5c8e80ce2e0d454444a6de3320e0b501294ef417e5e7eda0020788ff33027edd016050f12b2eee7cfc2b10f01480b2d686668821adce65c5b6f99c721f5767027a018c25a6d06fcd56a71a1013383e9ae390dd61492fd21209e805a8ce2d8dbd86a858a261ce004c056676aad9086989047404dc5c8eab6c0630c43b62b63b0ee3555a22011d0139b3ed3e4581b300183449e66dcc17b653506c6380ff38014ddde5f1af40c05300f2eabc02b00e2f858df0b521222edbec8020e02e807675465998d5daa4c64437926cf11aa89d09e80c303e31358401304e1000acb2ce51247d22017d014ded6e058c309991c4724de0549f18e5352d91805e80a653d6e51c77d5ce359f683b65e91309e80d28ab73768231a9bd26ff677c62496fe7212d91808e00ab58e0d4ca91181d1a8992ffcc39c7484b24a01bc0fa44db15d6185c51d64945ab11308f7f05029e02607c622ee5055b770680ea27e31333e34402ba036efac4a8a24b02d1d402597726e04e80c627a2d6533469921a40a26a17e61309e80e687ce28a5ccfcb566763c735d702b5dc424b24a017a094edcaaadbb626263d6d5339603e9180fe80a6da577a1cbc961d55a52bac0c732a919648404740ab58b4e98f75452c97d61c983e465a22011d01cdea5c3e6511aee9eddc1f912b30b44402ba024cddd974db00a5db6185d94c6092dacc6c13d015602b7b5527d70b6d00d9ecb7a22512d011705563b6df95feb0ba996fadad61b444023a02cc094d02ec02b815c0760ac036064d170ef184267b5faf1910400000ab588c76b639eeda15db145a984f24a02be0e699b2594a97a2ca0a98bd55f598265a2201bd0145362f4740a64d4455f3094da9ee7c96e40eb74339e7f307bd0201ff35a0c489fb08b84fe40dcee95bf1f359e03f4e4117015082c57e33208080db80eda022c72179bd450ed11d024e55def2661699ee3703025e11d09c15663693967d04ab2daf5c3ec6389180ee802a4cf2d9efd80e2a13769129fac4dc473b3b5599bacf808097065c69e752cabbd87e5f4f88a8cdb4f489047403087fcb9400020820800002082080000208f8b180bf8fc5210e010b09a20000000049454e44ae426082),
+(128, '2024-10-26 00:15:04.206007', 157, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-bf239789-b63b-4bef-9c6d-e13a609059be', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000040d49444154789ced9d4d6ea4301484eb0d48bd74df2047a16f36cacde028b981594602d52cec671b3a339bb8277fc5226a68fa1348a5f76fc788771dfbaff7fd1e104000010410400001041040000104f8eb4192e45c4fa37f9a311053ac5f0cc4c4cdef0c24c9ede35f41806f017025665db9e022904fb98173d890a43787edf48b8f7f0501be05a0e86a031036b8c2484c245b4b18c87c0b00295180be80f1fed23ea61ae362c366081bb81800ac06027bef27104080b701eb083333e38cdd00ec66bfdd1d9b5dffc31308f013017771e20c0013494c712881e1060083e244011e0e58cdcc6c448a049fafbbf1f9e9d5d297cb15e01cf2a99999d9adf71308f0b301394e9c4eede7f54243006c7a198129ee0030d0a688d39d1fff0a027c0bc02177aea7a99438341e9b7467dddc27ef2c402f804b2ac98cccd75c84a9b23d25390e6e0e9b6a8f9428401f40a3c47c216c2963495a9b01341d9824d650aa8d52a2009d00d5cd02531c9895d878e22117ba53651b83cb563651800700161b73c63caf17b78eeb0820bc1ab08e205f4678df79b7d29ffe34af20c0d70614ef0ca0183c32d609886c279bb0311db28902f4041c936578519b6fb4a1633b90a3dc5980be80c6267afcb7f96858c812adb338358a944d14e02180e5890452a3792096eb4060354bd2c37a49a7398a0caf56fcf4a7790501be36e030291be845c5e05389b59ed84ecaca260ad01b70a86c03eda4ec8c9cb6644d7a793b07958a1305e80968339654b18e008093fd6b52942c47652c027405b43d96c9570ab88974c1b56d6896fba444013a02f22cce72434e56ea3171b7fa89409e0ae3728d6952a7cb13082000001cbd2ecadc0de0c1e2d0dac4664842de59809e8022a93ca45dcbd6790ca20490a5bca87aa2000f00b43631f5f37c1d9fc7896545412cbdc0728b9428402fc03927aef3b1398b0e07eb58f269652c02f40534eba392ccf29fb2a2aa4c8595536f4d4b890274049c67b6dbf9d8929dcc3e0b917ea2385180fe80c3ccb62f523938e152ca8ea5b31201d94401fa029a15552e38344ba8eaa4d8c1445271a2009d01ad12597a277359cc52f219ef3bd7f55652a2001d01679b78e831bb27ae33b333ca30b79428404fc079bd73ba560243d7dfe08eb9dc23250ad01570b07f1e0e7ab2dc1675481e1a2dca9d05e80ab8df53b6a82ee5294d3d11a823b48a1305780c207862b25cf35e75e9fa14cb693587eb8558ae9d9f4000010000bbf9e68803ed96267076b35b20edb65ec867334b7b8add1ef3040208703856332c6696acde626679f97d20edb78febd8ed714f20c04f04fc739f6d9fdecebbe61c7668529c28c06300b9bd8229163fbd5e68b7e4a25fadddec3d39f0de4f20c08f06dce5cea595d7ec4102c0d79bc6f302ab8f7f0501be05c0f4bf4c05104000010410400001041040804f0bf8034cfa1ca2a322bdb70000000049454e44ae426082);
+INSERT INTO `modulo_ventas_transaccionpago` (`id`, `_fecha_creacion`, `_factura_id`, `_qr_url`, `_qr_image`) VALUES
+(129, '2024-10-26 00:15:16.794569', 158, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-3893e956-6437-4f62-a716-d646b4227ece', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000040c49444154789ced9d4d8adb4c10869f8a045eca9003e428f20d72a42137938fe203045acb0189caa27fe504be455a4cbef1eb854692e587161455f55675f798f3579ffdcbdffd1e041040000104104000010410400001fe0370b7f4e16e23b09ad96d1d8997f72be5b0e727af7d4720c08b03c6f4770a00fb08d34ff3fb7787fbb70d9bc357601d37006c0e3b516ddfbf771a81000240b5c46484e9620efb980cee8a39ecc61cc0efd79f70bf4129fe7cfc2b08f02900e3f38d39ecf9ec316ece7ac560d860fdba9d31020104f823e06e174fd9e1b777b3dbb4e1eeef1653c4b770fe0804784900eeeeeecbe4eeee5bbaacf71606672e5f2cd3f6f48b8f7f05013e156035338b3a798ffe0fd80da677f31f57c8f7204ae75bef1108f0da809427ce4581cc8fdf5247e6c7c58d697060786a547ffc2b08f029004dac4d37a68d7c39387389c90bc9127d993640d159809e80a3250e39ff0b00d9e098dd9d3924c3acf76489027403648912c017206b92e404934d3278749645b6c81205e80b68c432311c87c1ddc3e0cc01a2638c56179239c647a49d05e80a283e71f0e813a377ac8e7172afb963e30e65890274051c2d71f0a444aad70b434911371ab1224b14a02be0593b67234c4138de5b4aed660ee9204b14a02fa0f189d0f453366a8ad81c522a59d34b59a2007d00c72e5ef5846d8faf6a97e831dd55c511a037205b22253037c922d4ca365559c7f28e2c51809e801a66734c26278673719125636c2a3beab108d015d046e734f9864622a70390f3c4fcada2b3005d01c76960b96c1d5d64395b1a73dc906211e00440932736a5c4a69f5265f3e4ed840859a2005d016db72f8ae5004d29db6b8a587da7148b00dd01079fc870980b966780d56ecbc11dca1205e80868b5f3c2b1a85362f29fb48b148b005d01876e5f3ee46431d51853ed86a1e493aae208d01bd0f8c43cc7c1bd69b4c447ea656d48cb1205e80928e1b828666a65bb8ae543f359551c01ce034cef66b7bcd5432c1b02f8c26ef6f6b0b4c08f7584c3b2aa7fe71504f85f035aed1c45482e25564fd82eb0ca81598a4580be80363a2f909b7a65ca433d2bb2a5e693b24401ba011a4b048667ed920a88a12965a31e8b0027000ed13994c90f4dc526995cf689a02a8e0027008e1d931aa707af8ba99a95cf71090bd2ce029c04a87bca32bde72d71d63157b61f97e213776bba2d1d472080004089b5c07a717bcb93bfd2be4cd386ffb031afad5a47ecd67b0402bc36a0ddd621d56eb6e34cb1bcf2b9cce86e7683507416e044c0e066d73d6fe219c06eebc5cdae39774ccef2bc11082000cc6137f7c7256682765bc7bc5ce031127b2cd9084f1a81002f09f87d4fd9da63e1a99f52e4f5a4cab600bd01c799b2d0d66ec83be4d4a57ecdc676ca1305e80930fd2f5301041040000104104000010410e09f05fc023f29f9fcff5124200000000049454e44ae426082),
+(130, '2024-10-26 00:16:02.289266', 159, 'https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=173182515-382df0d5-220f-48ca-a07c-6e1c9fa28530', 0x89504e470d0a1a0a0000000d49484452000001fe000001fe0100000000551451880000040a49444154789ced9d4baadc3010456fc5861eaa210bc852dc3b0b595276602f250b08d8c307363703a9f4713fc8206a3a745f0d1ef8d307198a5b1f95f48cf8a7717cf9b7df030208208000020820800002082080007f012c9646f568b90276c3e10fb6b1ba34bbf69d81006f0e004992732049eef11208e90fb90ee41c76c4cb39eca75f3cff1304782dc091646eb91e86e9971967f8651e7603a2803e600602bc3560fcfc76d847030c44f83d1a70a1611b770247ef190820c0e780ed422c36823306da0d0331f1c338878f121d3e740602bc23e02e4e9c01602289c94344923b000c8a13057838603333b31140d8c11fd7c3f8e3db470a07972bc039a4cb983adf7acf4080f706a438713a2d3f6f171a0260d3af1198d6030006dab4e2f4e6f33f41809700645fbb3797189277ce1ebbaee7e4f7e49d05e80568a2be7560bae7468869053045731c5c0ec30ec58902f405641104a2e04ddc63c6126d2d3ec82fcf5ef28eafc81205e805f07a625861c0c5556ffbba03384600c38e8980a557c69dd8c61dcb75ed33030104009003be3569a23be121de8b9e383aeb35c78e2b204d14a02fa0a41e480bcd248b8bc6b40e4ce648f7dd71284e14a027a04d9691b313a01866ea8a0092624ede29214b14a01ba0f6ce2977764f9c7b715c135d3ba7f25496284027405bc50180d038e1a87fb9bc93355171a2007d015515c73b1019fd34f36a73d144375169a200bd01d93b0fa976588d3599a327cb29b3766194250ad01150672cb162ed36996cad8a09539c18cd51198b005d01b5264633f38a8d4b64ee145b51b968adf609d017d05a225997b263eda678e25cca09549c284067406589296d5ee181e18a26308cbd383c39ebe77f82002f01b88b13eb3cf9f480954d4a1305e80b683411f052a25b5d13270e553c294b14a02fa05a63415e5e61694d2c1d60a5a89d76b4c81205e808a8bc7369c8a9775479c5e654de513d5180be806a3d396527d131e71419b95d2ce4545a71a200dd0177b9731c21353a949ec5d49f985db9345180ae8066f74071d1f159e914231b89a4e244013a03aabd7d6cd7538afe79b2dcecf2a33451809e80da12e7dc779355af76d1c19b74d40121407fc079bf33aa4e5978b252f727fa90250ad015d0b4819dfc74609b27370b2dca9d05e80a683a65519a6f7c79a52a74976031681f8b008f02248503161b61373fa1ceac39c933c9e17621966be71908f0de807c92e73102e137000cbb4df30102473c8ec9a69f5f89c50060b313e0f99f20c0ab020ec362633af13d1ef61e3e0c08a47d5f538dd16e0f9c81006f086872e7eae4256fcd2ec73fa03da14971a2008f01e45346563ffb1ddb8576c361768b9ae895ed74ec71ef1908f0d680bbdcb914b5cb1924007cdde56e23fef33f4180970098fe97a900020820800002082080000208f0df02fe00411409bffb1340960000000049454e44ae426082);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `view_cliente_entradas`
+-- (Véase abajo para la vista actual)
+--
+DROP VIEW IF EXISTS `view_cliente_entradas`;
+CREATE TABLE IF NOT EXISTS `view_cliente_entradas` (
+`_cliente_id` bigint
+,`Número Factura` varchar(100)
+,`Fecha Emisión` datetime(6)
+,`Precio` decimal(10,2)
+,`ID Entrada` bigint
+,`Cantidad` int unsigned
+,`Categoría Entrada` varchar(20)
+,`ID Fiesta` bigint
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `view_cliente_productos`
+-- (Véase abajo para la vista actual)
+--
+DROP VIEW IF EXISTS `view_cliente_productos`;
+CREATE TABLE IF NOT EXISTS `view_cliente_productos` (
+`_cliente_id` bigint
+,`Número Factura` varchar(100)
+,`Fecha Emisión` datetime(6)
+,`Precio` decimal(10,2)
+,`ID Artículo` bigint
+,`Cantidad` int unsigned
+,`Nombre Artículo` varchar(100)
+,`Volumen` decimal(10,2)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `view_cliente_racha`
+-- (Véase abajo para la vista actual)
+--
+DROP VIEW IF EXISTS `view_cliente_racha`;
+CREATE TABLE IF NOT EXISTS `view_cliente_racha` (
+`_cliente_id` bigint
+,`nombre_cliente` varchar(100)
+,`apellido_cliente` varchar(100)
+,`ultima_compra` date
+,`racha_vigente` bigint
+,`racha_actual` bigint
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `view_cliente_reservaciones`
+-- (Véase abajo para la vista actual)
+--
+DROP VIEW IF EXISTS `view_cliente_reservaciones`;
+CREATE TABLE IF NOT EXISTS `view_cliente_reservaciones` (
+`_cliente_id` bigint
+,`Número Factura` varchar(100)
+,`Fecha Emisión` datetime(6)
+,`Precio` decimal(10,2)
+,`mesa_id` bigint
+,`Capacidad Mesa` int unsigned
+,`Categoría` varchar(20)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `view_entradas_fiesta`
+-- (Véase abajo para la vista actual)
+--
+DROP VIEW IF EXISTS `view_entradas_fiesta`;
+CREATE TABLE IF NOT EXISTS `view_entradas_fiesta` (
+`evento_id` bigint
+,`nombre_evento` varchar(100)
+,`fecha` date
+,`total_entradas_vendidas` decimal(32,0)
+,`categoria` varchar(20)
+,`monto_total_ventas` decimal(32,2)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `view_mejores_clientes`
+-- (Véase abajo para la vista actual)
+--
+DROP VIEW IF EXISTS `view_mejores_clientes`;
+CREATE TABLE IF NOT EXISTS `view_mejores_clientes` (
+`id` varchar(20)
+,`_nombre` varchar(100)
+,`_apellido` varchar(100)
+,`numero_compras` bigint
+,`monto_total_gastado` decimal(32,2)
+,`_fecha_emision` datetime(6)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `view_productos_mas_vendidos`
+-- (Véase abajo para la vista actual)
+--
+DROP VIEW IF EXISTS `view_productos_mas_vendidos`;
+CREATE TABLE IF NOT EXISTS `view_productos_mas_vendidos` (
+`id` bigint
+,`producto` varchar(100)
+,`cantidad_total_vendida` decimal(32,0)
+,`monto_total_ventas` decimal(32,2)
+,`_fecha_emision` datetime(6)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `view_reservaciones_fiesta`
+-- (Véase abajo para la vista actual)
+--
+DROP VIEW IF EXISTS `view_reservaciones_fiesta`;
+CREATE TABLE IF NOT EXISTS `view_reservaciones_fiesta` (
+`id` bigint
+,`nombre_evento` varchar(100)
+,`fecha` date
+,`total_mesas` bigint
+,`total_reservaciones` bigint
+,`categoria` varchar(20)
+,`monto_total_ventas` decimal(32,2)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `view_cliente_entradas`
+--
+DROP TABLE IF EXISTS `view_cliente_entradas`;
+
+DROP VIEW IF EXISTS `view_cliente_entradas`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_cliente_entradas`  AS SELECT `c`.`persona_ptr_id` AS `_cliente_id`, `fc`.`_numero_factura` AS `Número Factura`, `fc`.`_fecha_emision` AS `Fecha Emisión`, `df`.`_precio_unitario` AS `Precio`, `de`.`_entrada_id` AS `ID Entrada`, `df`.`_cantidad` AS `Cantidad`, `e`.`_categoria` AS `Categoría Entrada`, `e`.`_fiesta_id` AS `ID Fiesta` FROM ((((`modulo_clientes_cliente` `c` join `modulo_ventas_facturacliente` `fc` on((`c`.`persona_ptr_id` = `fc`.`_cliente_id`))) join `modulo_ventas_detallefactura` `df` on((`fc`.`id` = `df`.`_factura_id`))) join `modulo_ventas_detalleentrada` `de` on((`df`.`id` = `de`.`detallefactura_ptr_id`))) join `modulo_evento_entrada` `e` on((`de`.`_entrada_id` = `e`.`id`))) WHERE (`fc`.`_pagado` = true) ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `view_cliente_productos`
+--
+DROP TABLE IF EXISTS `view_cliente_productos`;
+
+DROP VIEW IF EXISTS `view_cliente_productos`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_cliente_productos`  AS SELECT `c`.`persona_ptr_id` AS `_cliente_id`, `fc`.`_numero_factura` AS `Número Factura`, `fc`.`_fecha_emision` AS `Fecha Emisión`, `df`.`_precio_unitario` AS `Precio`, `da`.`_articulo_id` AS `ID Artículo`, `df`.`_cantidad` AS `Cantidad`, `a`.`_nombre` AS `Nombre Artículo`, `a`.`_volumen` AS `Volumen` FROM ((((`modulo_clientes_cliente` `c` join `modulo_ventas_facturacliente` `fc` on((`c`.`persona_ptr_id` = `fc`.`_cliente_id`))) join `modulo_ventas_detallefactura` `df` on((`fc`.`id` = `df`.`_factura_id`))) join `modulo_ventas_detallearticulo` `da` on((`df`.`id` = `da`.`detallefactura_ptr_id`))) join `modulo_stock_articulo` `a` on((`da`.`_articulo_id` = `a`.`id`))) WHERE (`fc`.`_pagado` = true) ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `view_cliente_racha`
+--
+DROP TABLE IF EXISTS `view_cliente_racha`;
+
+DROP VIEW IF EXISTS `view_cliente_racha`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_cliente_racha`  AS WITH     `comprassemanas` as (select `fc`.`_cliente_id` AS `_cliente_id`,cast(`fc`.`_fecha_emision` as date) AS `fecha_compra`,yearweek(`fc`.`_fecha_emision`,1) AS `semana_compra` from `modulo_ventas_facturacliente` `fc` where (`fc`.`_pagado` = true) group by `fc`.`_cliente_id`,yearweek(`fc`.`_fecha_emision`,1)), `rachacalculada` as (select `comprassemanas`.`_cliente_id` AS `_cliente_id`,`comprassemanas`.`fecha_compra` AS `fecha_compra`,`comprassemanas`.`semana_compra` AS `semana_compra`,(`comprassemanas`.`semana_compra` - row_number() OVER (PARTITION BY `comprassemanas`.`_cliente_id` ORDER BY `comprassemanas`.`semana_compra` ) ) AS `grupo_racha` from `comprassemanas`), `rachafinal` as (select `rachacalculada`.`_cliente_id` AS `_cliente_id`,max(`rachacalculada`.`fecha_compra`) AS `ultima_compra`,count(0) AS `racha`,max(`rachacalculada`.`semana_compra`) AS `ultima_semana`,row_number() OVER (PARTITION BY `rachacalculada`.`_cliente_id` ORDER BY max(`rachacalculada`.`semana_compra`) desc )  AS `rn` from `rachacalculada` group by `rachacalculada`.`_cliente_id`,`rachacalculada`.`grupo_racha`) select `rf`.`_cliente_id` AS `_cliente_id`,`p`.`_nombre` AS `nombre_cliente`,`p`.`_apellido` AS `apellido_cliente`,`rf`.`ultima_compra` AS `ultima_compra`,`rf`.`racha` AS `racha_vigente`,(case when (yearweek(curdate(),1) = `rf`.`ultima_semana`) then `rf`.`racha` when (yearweek((curdate() - interval 7 day),1) = `rf`.`ultima_semana`) then `rf`.`racha` else 0 end) AS `racha_actual` from (`rachafinal` `rf` join `modulologin_persona` `p` on((`rf`.`_cliente_id` = `p`.`id`))) where (`rf`.`rn` = 1)  ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `view_cliente_reservaciones`
+--
+DROP TABLE IF EXISTS `view_cliente_reservaciones`;
+
+DROP VIEW IF EXISTS `view_cliente_reservaciones`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_cliente_reservaciones`  AS SELECT `c`.`persona_ptr_id` AS `_cliente_id`, `fc`.`_numero_factura` AS `Número Factura`, `fc`.`_fecha_emision` AS `Fecha Emisión`, `df`.`_precio_unitario` AS `Precio`, `m`.`id` AS `mesa_id`, `m`.`_capacidad` AS `Capacidad Mesa`, `m`.`_categoria` AS `Categoría` FROM ((((`modulo_clientes_cliente` `c` join `modulo_ventas_facturacliente` `fc` on((`c`.`persona_ptr_id` = `fc`.`_cliente_id`))) join `modulo_ventas_detallefactura` `df` on((`fc`.`id` = `df`.`_factura_id`))) join `modulo_ventas_detallereservacion` `dr` on((`df`.`id` = `dr`.`detallefactura_ptr_id`))) join `modulo_evento_mesa` `m` on((`dr`.`_reservacion_id` = `m`.`id`))) WHERE (`fc`.`_pagado` = true) ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `view_entradas_fiesta`
+--
+DROP TABLE IF EXISTS `view_entradas_fiesta`;
+
+DROP VIEW IF EXISTS `view_entradas_fiesta`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_entradas_fiesta`  AS SELECT `ee`.`id` AS `evento_id`, `ee`.`_nombre` AS `nombre_evento`, `ee`.`_fecha` AS `fecha`, coalesce(sum(`vdf`.`_cantidad`),0) AS `total_entradas_vendidas`, `ef`.`_categoria` AS `categoria`, coalesce(sum(`vdf`.`_subtotal`),0) AS `monto_total_ventas` FROM (((((`modulo_evento_evento` `ee` left join `modulo_evento_fiesta` `ef` on((`ef`.`evento_ptr_id` = `ee`.`id`))) left join `modulo_evento_entrada` `en` on((`en`.`_fiesta_id` = `ef`.`evento_ptr_id`))) left join `modulo_ventas_detalleentrada` `vde` on((`vde`.`_entrada_id` = `en`.`id`))) left join `modulo_ventas_detallefactura` `vdf` on((`vdf`.`id` = `vde`.`detallefactura_ptr_id`))) left join `modulo_ventas_facturacliente` `fc` on(((`fc`.`id` = `vdf`.`_factura_id`) and (`fc`.`_pagado` = 1)))) GROUP BY `ee`.`id`, `ee`.`_nombre`, `ee`.`_fecha`, `ef`.`_categoria` ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `view_mejores_clientes`
+--
+DROP TABLE IF EXISTS `view_mejores_clientes`;
+
+DROP VIEW IF EXISTS `view_mejores_clientes`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_mejores_clientes`  AS SELECT `p`.`_dni` AS `id`, `p`.`_nombre` AS `_nombre`, `p`.`_apellido` AS `_apellido`, count(distinct `fc`.`id`) AS `numero_compras`, sum(`df`.`_subtotal`) AS `monto_total_gastado`, `fc`.`_fecha_emision` AS `_fecha_emision` FROM ((`modulo_ventas_facturacliente` `fc` join `modulologin_persona` `p` on((`fc`.`_cliente_id` = `p`.`id`))) join `modulo_ventas_detallefactura` `df` on((`df`.`_factura_id` = `fc`.`id`))) WHERE (`fc`.`_pagado` = 1) GROUP BY `p`.`id`, `p`.`_nombre`, `p`.`_apellido`, cast(`fc`.`_fecha_emision` as date) ORDER BY `numero_compras` DESC, `monto_total_gastado` DESC ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `view_productos_mas_vendidos`
+--
+DROP TABLE IF EXISTS `view_productos_mas_vendidos`;
+
+DROP VIEW IF EXISTS `view_productos_mas_vendidos`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_productos_mas_vendidos`  AS SELECT `a`.`id` AS `id`, `a`.`_nombre` AS `producto`, sum(`df`.`_cantidad`) AS `cantidad_total_vendida`, sum(`df`.`_subtotal`) AS `monto_total_ventas`, `fc`.`_fecha_emision` AS `_fecha_emision` FROM (((`modulo_ventas_detallefactura` `df` join `modulo_ventas_detallearticulo` `da` on((`da`.`detallefactura_ptr_id` = `df`.`id`))) join `modulo_stock_articulo` `a` on((`da`.`_articulo_id` = `a`.`id`))) join `modulo_ventas_facturacliente` `fc` on((`df`.`_factura_id` = `fc`.`id`))) WHERE (`fc`.`_pagado` = 1) GROUP BY `a`.`id`, `a`.`_nombre`, cast(`fc`.`_fecha_emision` as date) ORDER BY `cantidad_total_vendida` DESC ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `view_reservaciones_fiesta`
+--
+DROP TABLE IF EXISTS `view_reservaciones_fiesta`;
+
+DROP VIEW IF EXISTS `view_reservaciones_fiesta`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_reservaciones_fiesta`  AS SELECT `ee`.`id` AS `id`, `ee`.`_nombre` AS `nombre_evento`, `ee`.`_fecha` AS `fecha`, count(distinct `em`.`id`) AS `total_mesas`, count(distinct `vdr`.`detallefactura_ptr_id`) AS `total_reservaciones`, `ef`.`_categoria` AS `categoria`, coalesce(sum(`vdf`.`_subtotal`),0) AS `monto_total_ventas` FROM (((((`modulo_evento_evento` `ee` join `modulo_evento_fiesta` `ef` on((`ef`.`evento_ptr_id` = `ee`.`id`))) left join `modulo_evento_mesa` `em` on((`em`.`_fiesta_id` = `ef`.`evento_ptr_id`))) left join `modulo_ventas_detallereservacion` `vdr` on((`vdr`.`_reservacion_id` = `em`.`id`))) left join `modulo_ventas_detallefactura` `vdf` on((`vdf`.`id` = `vdr`.`detallefactura_ptr_id`))) left join `modulo_ventas_facturacliente` `fc` on(((`fc`.`id` = `vdf`.`_factura_id`) and (`fc`.`_pagado` = 1)))) GROUP BY `ee`.`id`, `ee`.`_nombre`, `ee`.`_fecha`, `ef`.`_categoria` ;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

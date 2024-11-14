@@ -1,0 +1,105 @@
+{% extends "admin/change_list.html" %}
+{% load static %}
+
+{% block content %}
+{{ block.super }}
+
+    <!-- Control Panel 
+    <div class="chart-controls" style="margin: 20px; padding: 20px; background-color: #A1067D; border-color: #FF00FF; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.3);">
+        <label for="num_clients" style="color: white; font-size: 16px;">Control de Gráficos</label>
+    </div>-->
+
+    <!-- Filter Controls 
+    <div class="chart-controls" style="margin: 20px; padding: 20px; background-color: #1F2937; border-color: #FF00FF; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.3);">
+        <form method="get" style="display: flex; align-items: center; gap: 10px;">
+            <label for="num_clients" style="color: white; font-size: 16px;">Cantidad de Clientes:</label>
+            <input 
+                type="number"
+                id="num_clients"
+                name="num_clients"
+                value="{{ num_clients }}"
+                min="1"
+                max="50"
+                style="
+                    padding: 8px;
+                    border-radius: 4px;
+                    border: 1px solid #A1067D;
+                    background-color: rgb(31, 41, 55);
+                    color: white;
+                    width: 80px;
+                "
+            >
+            <button
+                type="submit"
+                style="
+                    padding: 8px 16px;
+                    background-color: #A1067D;
+                    color: white;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+                "
+                onmouseover="this.style.backgroundColor='#FF00FF'"
+                onmouseout="this.style.backgroundColor='#A1067D'"
+            >
+                Actualizar
+            </button>
+            {% for key, value in request.GET.items %}
+                {% if key != 'num_clients' %}
+                    <input type="hidden" name="{{ key }}" value="{{ value }}">
+                {% endif %}
+            {% endfor %}
+        </form>
+    </div>-->
+
+    <!-- Charts Container - Vertical Layout -->
+    <div class="charts-container" style="display: flex; flex-direction: column; gap: 30px; margin: 20px; padding: 20px; max-width: 1400px; margin-left: auto; margin-right: auto;">
+        
+        <!-- Bar Chart -->
+        <div class="chart-container" style="background-color: rgb(17, 24, 39); border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.3); padding: 20px;">
+            <h3 style="color: white; text-align: center; margin-bottom: 15px; font-size: 1.5rem;">Gráfico de Barras</h3>
+            <div style="width: 100%;">
+                {{ bar_chart|safe }}
+            </div>
+        </div>
+
+        <!-- Pie Chart -->
+        <div class="chart-container" style="background-color: rgb(17, 24, 39); border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.3); padding: 20px;">
+            <h3 style="color: white; text-align: center; margin-bottom: 15px; font-size: 1.5rem;">Gráfico de Torta</h3>
+            <div style="width: 100%;">
+                {{ pie_chart|safe }}
+            </div>
+        </div>
+
+        <!-- Line Chart -->
+        <div class="chart-container" style="background-color: rgb(17, 24, 39); border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.3); padding: 20px;">
+            <h3 style="color: white; text-align: center; margin-bottom: 15px; font-size: 1.5rem;">Gráfico de Líneas</h3>
+            <div style="width: 100%;">
+                {{ line_chart|safe }}
+            </div>
+        </div>
+    </div>
+
+    <!-- Add custom styling -->
+    <style>
+        .chart-container {
+            transition: transform 0.3s ease;
+        }
+        
+        .chart-container:hover {
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .chart-controls form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .chart-controls button {
+                margin-top: 10px;
+            }
+        }
+    </style>
+{% endblock %}

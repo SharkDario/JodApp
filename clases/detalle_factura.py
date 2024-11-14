@@ -6,6 +6,16 @@ class DetalleFacturaManager(models.Manager):
     def get_queryset(self):
         # Sobrescribir el queryset para que use los nombres de campo con guion bajo
         return super().get_queryset()
+    
+    def get_reservaciones_by_cliente(self, cliente_id):
+        """
+        Retorna todas las reservaciones asociadas a las facturas de un cliente
+        """
+        # Obtener todas las facturas del cliente
+        facturas = FacturaCliente.objects.get_facturas_by_cliente(cliente_id)
+        # Retornar todas las reservaciones asociadas a esas facturas
+        return self.filter(_factura__in=facturas)
+
 
 class DetalleFactura(models.Model):
     _factura = models.ForeignKey(FacturaCliente, on_delete=models.CASCADE, verbose_name="Factura")
@@ -46,6 +56,9 @@ class DetalleFactura(models.Model):
     @subtotal.setter
     def subtotal(self, value):
         self._subtotal = value
+
+    def __str__(self):
+        return "Detalle"
 
     class Meta:
         app_label = 'modulo_ventas'

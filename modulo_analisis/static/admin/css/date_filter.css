@@ -1,0 +1,149 @@
+/* static/admin/css/date_filter.css*/
+/* Asegúrate de que las clases utilizadas coincidan con las generadas en tu página */
+/* Estilo del contenedor principal del filtro */
+.admindatefilter {
+    margin: 5px 0;
+    padding: 0 15px 15px;
+    border-bottom: 1px solid var(--hairline-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;  /* Espacio entre los campos de fecha */
+}
+
+/* Estilo de los campos de fecha (Desde y Hasta) */
+.admindatefilter .date {
+    position: relative;  /* Para permitir el posicionamiento absoluto de los calendarios */
+}
+
+/* Estilo de los inputs de fecha */
+.admindatefilter input[type="text"].vDateField {
+    width: 140px;  /* Ajusta el tamaño del campo según lo necesario */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #1F2937;
+    color: white;
+}
+
+/* Estilo del calendario para que aparezca junto a los campos */
+.admindatefilter .calendarbox {
+    position: absolute;  /* Posiciona el calendario sobre el campo */
+    top: 100%;  /* Coloca el calendario justo debajo del input */
+    left: 0;
+    z-index: 1100;
+    background-color: #1F2937 !important;
+    border-bottom: white !important;
+}
+.calendar a.calendarnav-next {
+    color: white;
+    background-color: #1F2937;
+}
+.calendarbox { width: 280px !important; /* Fija el ancho a 280 píxeles */ max-width: 280px; /* Asegura que no se haga más grande que 280 píxeles */ min-width: 280px; /* Asegura que no se haga más pequeño que 280 píxeles */ }
+.calendar { background-color: #1F2937 ; /* Fondo oscuro para el calendario */ color: #fff; /* Texto blanco para el calendario */}
+.calendar table caption { background-color: white; /* Fondo oscuro para el caption */ color: #1F2937; /* Texto blanco para el caption */ } 
+.calendar tbody { background-color: white; /* Fondo oscuro para el tbody */ color: #fff; /* Texto blanco para el tbody */ } 
+.calendar tr { background-color: #1F2937 ; /* Fondo oscuro para las filas de la tabla */ color: #fff; /* Texto blanco para las filas de la tabla */ } 
+.calendar td { background-color: #1F2937 ; /* Fondo oscuro para las celdas de la tabla */ color: #fff; /* Texto blanco para las celdas de la tabla */ } 
+.calendar a { color: #fff; /* Texto blanco para los enlaces */ }
+.calendarbox .calendarnav-previous, .calendarbox .calendarnav-next {
+    display: block;
+    position: absolute;
+    top: 8px;
+    width: 15px;
+    height: 15px;
+    background-size: cover; /* Asegura que el fondo cubra todo el área */
+    background-repeat: no-repeat;
+    background-color: white !important;
+}
+
+.calendarnav-previous {
+    left: 10px;
+    size: 100px !important;
+    background-color: #1F2937 !important;
+}
+
+.calendarnav-next {
+    right: 10px;
+    size: 100px !important;
+    background-color: #1F2937 !important;
+}
+.calendarnav-previous::after {
+    left: 0px;
+    border: transparent !important;
+    background-color: transparent !important;
+}
+
+.calendarnav-next::after {
+    right: 0px;
+    border: transparent !important;
+    background-color: transparent !important;
+}
+
+/* Asegúrate de que el calendario no se desplace demasiado */
+@media (min-width: 768px) {
+    .calendarbox {
+        overflow: visible;
+        background-color: #1F2937 !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .calendarbox {
+        overflow: visible;
+        background-color: #1F2937 !important;
+    }
+}
+
+/* Suponiendo que los días del calendario tienen la clase 'day' */
+.calendarbox .day {
+    background-color: #1F2937 !important;
+    color: white; /* Para el texto de los días */
+  }
+  
+  /* Suponiendo que los encabezados de los días tienen la clase 'day-header' */
+  .calendarbox .day-header {
+    background-color: #252F3A !important; /* Un tono un poco más oscuro para diferenciar */
+    color: white;
+  }
+.date-filter-container {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #f8f8f8;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+.date-inputs {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.date-field {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.date-field input[type="date"],
+.date-field input[type="time"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.button {
+    padding: 5px 10px;
+    background: #79aec8;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button:hover {
+    background: #417690;
+}

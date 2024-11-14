@@ -19,6 +19,11 @@ interface Cliente {
     fecha_nacimiento: string;
     embedding: string | null;
     foto: string | null;
+    // Add stats properties
+    total_reservaciones: number | 0;
+    racha_actual: number | 0;
+    total_productos: number | 0;
+    total_entradas: number | 0;
 }
 
 interface User {

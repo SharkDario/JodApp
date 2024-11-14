@@ -62,6 +62,7 @@ class DetalleReservacionForm(forms.ModelForm):
             reservacion_choices = []
             for reservacion in self.fields['_reservacion'].queryset:
                 # Añadir el 'data-precio' a cada opción
+                #if(reservacion.disponibilidad=="Disponible"):
                 reservacion_choices.append((reservacion.id, f"{reservacion.__str__()} (Precio: {reservacion.precio})"))
             
             # Asignar las opciones personalizadas al widget

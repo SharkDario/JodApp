@@ -26,6 +26,53 @@ import string
 from django.db import transaction
 from django.utils import timezone
 from django.http import JsonResponse
+from django.db.models import Sum, Count
+from django.db import connection
+
+def get_cliente_stats(cliente_id):
+    # Para las reservaciones (contar ocurrencias del cliente_id)
+    with connection.cursor() as cursor:
+        cursor.execute("""
+            SELECT COUNT(DISTINCT mesa_id) as total_reservaciones
+            FROM view_cliente_reservaciones
+            WHERE _cliente_id = %s
+        """, [cliente_id])
+        reservaciones = cursor.fetchone()[0] or 0
+
+    # Para la racha actual
+    with connection.cursor() as cursor:
+        cursor.execute("""
+            SELECT racha_actual
+            FROM view_cliente_racha
+            WHERE _cliente_id = %s
+        """, [cliente_id])
+        result = cursor.fetchone()
+        racha = result[0] if result else 0
+
+    # Para el total de productos comprados
+    with connection.cursor() as cursor:
+        cursor.execute("""
+            SELECT COALESCE(SUM(Cantidad), 0) as total_productos
+            FROM view_cliente_productos
+            WHERE _cliente_id = %s
+        """, [cliente_id])
+        total_productos = cursor.fetchone()[0] or 0
+
+    # Para el total de entradas compradas
+    with connection.cursor() as cursor:
+        cursor.execute("""
+            SELECT COALESCE(SUM(Cantidad), 0) as total_entradas
+            FROM view_cliente_entradas
+            WHERE _cliente_id = %s
+        """, [cliente_id])
+        total_entradas = cursor.fetchone()[0] or 0
+
+    return {
+        'total_reservaciones': reservaciones,
+        'racha_actual': racha,
+        'total_productos': total_productos,
+        'total_entradas': total_entradas
+    }
 
 User = get_user_model()
 
@@ -182,7 +229,9 @@ def comprar_entradas(request):
             )
             detalle.save()
 
-            # Crear o actualizar ticket de entrada
+            # Crear o actualizar ticket de entrada 
+            # CHANGE
+            
             try:
                 ticket = TicketEntrada.objects.select_for_update().get(
                     _cliente_id=cliente_id,
@@ -199,23 +248,24 @@ def comprar_entradas(request):
                     _cantidad=cantidad
                 )
                 ticket.save()
-
+            
             # Temporal en la fase beta: 
             # Como no se puede manejar notificaciones de pagos (Webhooks para mercado pago) sin subir el proyecto backend a un servidor
             # Se reduce la cantidad de entradas populares o vip de las cantidades de la fiesta
             # Y ademas se cambia el estado de la factura a pagado, ya que no podemos verificar el pago sin utilizar webhooks 
             if (entrada.categoria=="Popular"):
-                fiesta.cantidad_entrada_popular -= cantidad
+                fiesta.cantidad_entrada_popular = fiesta.cantidad_entrada_popular - cantidad
             if (entrada.categoria=="VIP"):
-                fiesta.cantidad_entrada_vip -= cantidad
-            fiesta.save()
+                fiesta.cantidad_entrada_vip = fiesta.cantidad_entrada_vip - cantidad
             
+            
+
             # Actualizar pago
             factura.pagado = True
             factura.save()
 
             pago_url = generar_url_mercado_pago(factura)
-
+            #fiesta.save()
             return Response({
                 'success': True,
                 'message': 'Entradas compradas exitosamente',
@@ -293,6 +343,8 @@ def comprar_carrito(request):
                 detalle.save()
 
                 # Crear o actualizar ticket de artículo
+                # CHANGE
+                
                 try:
                     ticket = TicketArticulo.objects.select_for_update().get(
                         _cliente_id=cliente_id,
@@ -309,7 +361,7 @@ def comprar_carrito(request):
                         _cantidad=cantidad
                     )
                     ticket.save()
-
+                
             # Temporal en la fase beta:
             # Actualizar estado de pago directamente
             factura.pagado = True
@@ -720,6 +772,9 @@ def login_view(request):
         try:
             persona = Cliente.objects.filter_by_user(user).first()
             fecha_actual = datetime.today()
+
+            # Obtener estadísticas del cliente
+            stats = get_cliente_stats(persona.pk)
             
             # Obtener las fiestas de viernes y sábado
             fiestas_viernes = obtener_fiestas_por_dia(fecha_actual, 4) #viernes
@@ -745,6 +800,11 @@ def login_view(request):
                     'dni': persona.dni,
                     'cuil': persona.cuil,
                     'fecha_nacimiento': persona.fecha_nacimiento,
+                    # Agregar las estadísticas al objeto cliente
+                    'total_reservaciones': stats['total_reservaciones'],
+                    'racha_actual': stats['racha_actual'],
+                    'total_productos': stats['total_productos'],
+                    'total_entradas': stats['total_entradas']
                 },
                 'fiestas_viernes': fiestas_viernes,
                 'fiestas_sabado': fiestas_sabado,
@@ -767,6 +827,9 @@ def refresh_data(request):
     fiestas_viernes = obtener_fiestas_por_dia(fecha_actual, 4) #viernes
     fiestas_sabado = obtener_fiestas_por_dia(fecha_actual, 5) #sabado
 
+    # Obtener estadísticas del cliente
+    stats = get_cliente_stats(cliente.id)
+
     # Obtener productos y tragos con stock mayor a 0
     stock_data = obtener_productos_y_tragos_con_stock()
 
@@ -784,6 +847,11 @@ def refresh_data(request):
                 'dni': cliente.dni,
                 'cuil': cliente.cuil,
                 'fecha_nacimiento': cliente.fecha_nacimiento,
+                # Agregar las estadísticas al objeto cliente
+                'total_reservaciones': stats['total_reservaciones'],
+                'racha_actual': stats['racha_actual'],
+                'total_productos': stats['total_productos'],
+                'total_entradas': stats['total_entradas']
             },
             'fiestas_viernes': fiestas_viernes,
             'fiestas_sabado': fiestas_sabado,
