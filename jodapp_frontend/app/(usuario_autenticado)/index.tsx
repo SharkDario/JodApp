@@ -17,7 +17,7 @@ import { useAuth } from '@/context/AuthContext';
 const { width, height } = Dimensions.get('window');
 
 export default function DashboardScreen() {
-    const { user, fiestas } = useAuth();
+    const { user, fiestas, cliente } = useAuth();
     const [activeMap, setActiveMap] = useState<string | null>(null);
 
     // Create a mapping for the images
@@ -92,8 +92,8 @@ export default function DashboardScreen() {
                                     <Text style={styles.ticketType}>Racha</Text>
                                     <Text style={styles.ticketAmount}></Text>
                                 </View>
-                                <View style={styles.ticketBody}>
-                                    <Text style={styles.ticketPrice}>0 🔥</Text>
+                                    <View style={styles.ticketBody}>
+                                        <Text style={styles.ticketPrice}>{cliente?.racha_actual} 🔥</Text>
                                     
                                 </View>
                             </View>
@@ -107,8 +107,8 @@ export default function DashboardScreen() {
                                     <Text style={styles.ticketType}>Mesas Reservadas</Text>
                                     <Text style={styles.ticketAmount}></Text>
                                 </View>
-                                <View style={styles.ticketBody}>
-                                        <Text style={styles.ticketPrice}>0 🟪</Text>
+                                    <View style={styles.ticketBody}>
+                                        <Text style={styles.ticketPrice}>{cliente?.total_reservaciones} 🟪</Text>
 
                                 </View>
                             </View>
@@ -122,8 +122,8 @@ export default function DashboardScreen() {
                                     <Text style={styles.ticketType}>Entradas Compradas</Text>
                                     <Text style={styles.ticketAmount}></Text>
                                 </View>
-                                <View style={styles.ticketBody}>
-                                        <Text style={styles.ticketPrice}>0 🎟️</Text>
+                                    <View style={styles.ticketBody}>
+                                        <Text style={styles.ticketPrice}>{cliente?.total_entradas} 🎟️</Text>
 
                                 </View>
                             </View>
@@ -137,8 +137,8 @@ export default function DashboardScreen() {
                                     <Text style={styles.ticketType}>Bebidas Compradas</Text>
                                     <Text style={styles.ticketAmount}></Text>
                                 </View>
-                                <View style={styles.ticketBody}>
-                                        <Text style={styles.ticketPrice}>0 🍸</Text>
+                                    <View style={styles.ticketBody}>
+                                        <Text style={styles.ticketPrice}>{cliente?.total_productos} 🍸</Text>
 
                                 </View>
                             </View>
