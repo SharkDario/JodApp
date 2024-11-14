@@ -13,6 +13,7 @@ from unfold.admin import ModelAdmin, TabularInline
 from unfold.sites import UnfoldAdminSite
 from modulo_evento.views import save_mesa_position
 from modulo_ventas.views import ver_qr_pago
+from modulo_analisis.views import cliente_detail_view
 from modulo_clientes.views import registrar_cliente, login_view, actualizar_perfil, cambiar_password, refresh_data, reservar_mesa, comprar_entradas, comprar_carrito, confirmar_canje_cliente, obtener_tickets_cliente
 from .models import Mozo, Cajero, Auditor, Supervisor, Seguridad, Bartender, Administrador, Turno, Contratacion, EmpleadoTieneTurno, Domicilio, Telefono
 from .forms import ContratacionForm, EmpleadoAdminForm
@@ -51,6 +52,7 @@ class MyAdminSite(UnfoldAdminSite):
         
         # Define el orden de las aplicaciones como antes
         app_order = [
+            'modulo_analisis',
             'modulo_clientes',
             'modulo_ventas',
             'modulo_evento',
@@ -113,6 +115,13 @@ class MozoAdmin(ModelAdmin):
     list_display = ('_user', '_zona_asignada', '_sueldo', '_estado', '_fecha_inicio')
     search_fields = ('_user__username', '_zona_asignada')
     inlines = [DomicilioInline, TelefonoInline]
+    def has_delete_permission(self, request, obj=None):
+        return False
+    fieldsets = (
+        ('Mozo', {
+            'fields': ('_user', '_dni', '_cuil', '_nombre', '_apellido', '_fecha_nacimiento', '_zona_asignada', '_sueldo', '_estado', '_fecha_inicio', '_seniority', '_annos_experiencia', 'email')
+        }),
+    )
 
 @admin.register(Cajero, site=admin_site)
 class CajeroAdmin(ModelAdmin):
@@ -122,6 +131,13 @@ class CajeroAdmin(ModelAdmin):
     list_display = ('_user', '_caja_asignada', '_sueldo', '_estado', '_fecha_inicio')
     search_fields = ('_user__username', '_caja_asignada')
     inlines = [DomicilioInline, TelefonoInline]
+    def has_delete_permission(self, request, obj=None):
+        return False
+    fieldsets = (
+        ('Cajero', {
+            'fields': ('_user', '_dni', '_cuil', '_nombre', '_apellido', '_fecha_nacimiento', '_zona_asignada', '_sueldo', '_estado', '_fecha_inicio', '_seniority', '_annos_experiencia', '_caja_asignada', 'email')
+        }),
+    )
 
 @admin.register(Auditor, site=admin_site)
 class AuditorAdmin(ModelAdmin):
@@ -131,6 +147,13 @@ class AuditorAdmin(ModelAdmin):
     list_display = ('_user', '_frecuencia', '_sueldo', '_estado', '_fecha_inicio')
     search_fields = ('_user__username',)
     inlines = [DomicilioInline, TelefonoInline]
+    def has_delete_permission(self, request, obj=None):
+        return False
+    fieldsets = (
+        ('Auditor', {
+            'fields': ('_user', '_dni', '_cuil', '_nombre', '_apellido', '_fecha_nacimiento', '_zona_asignada', '_sueldo', '_estado', '_fecha_inicio', '_seniority', '_annos_experiencia', '_frecuencia', 'email')
+        }),
+    )
 
 @admin.register(Supervisor, site=admin_site)
 class SupervisorAdmin(ModelAdmin):
@@ -140,6 +163,13 @@ class SupervisorAdmin(ModelAdmin):
     list_display = ('_user', '_frecuencia', '_sueldo', '_estado', '_fecha_inicio')
     search_fields = ('_user__username',)
     inlines = [DomicilioInline, TelefonoInline]
+    def has_delete_permission(self, request, obj=None):
+        return False
+    fieldsets = (
+        ('Supervisor', {
+            'fields': ('_user', '_dni', '_cuil', '_nombre', '_apellido', '_fecha_nacimiento', '_zona_asignada', '_sueldo', '_estado', '_fecha_inicio', '_seniority', '_annos_experiencia', '_frecuencia', 'email')
+        }),
+    )
 
 @admin.register(Seguridad, site=admin_site)
 class SeguridadAdmin(ModelAdmin):
@@ -149,6 +179,13 @@ class SeguridadAdmin(ModelAdmin):
     list_display = ('_user', '_entrada_asignada', '_sueldo', '_estado', '_fecha_inicio')
     search_fields = ('_user__username', '_entrada_asignada')
     inlines = [DomicilioInline, TelefonoInline]
+    def has_delete_permission(self, request, obj=None):
+        return False
+    fieldsets = (
+        ('Guardia de Seguridad', {
+            'fields': ('_user', '_dni', '_cuil', '_nombre', '_apellido', '_fecha_nacimiento', '_zona_asignada', '_sueldo', '_estado', '_fecha_inicio', '_seniority', '_annos_experiencia', '_entrada_asignada', 'email')
+        }),
+    )
 
 @admin.register(Bartender, site=admin_site)
 class BartenderAdmin(ModelAdmin):
@@ -158,6 +195,13 @@ class BartenderAdmin(ModelAdmin):
     list_display = ('_user', '_barra_asignada', '_sueldo', '_estado', '_fecha_inicio')
     search_fields = ('_user__username', '_barra_asignada')
     inlines = [DomicilioInline, TelefonoInline]
+    def has_delete_permission(self, request, obj=None):
+        return False
+    fieldsets = (
+        ('Bartender', {
+            'fields': ('_user', '_dni', '_cuil', '_nombre', '_apellido', '_fecha_nacimiento', '_zona_asignada', '_sueldo', '_estado', '_fecha_inicio', '_seniority', '_annos_experiencia', '_barra_asignada', 'email')
+        }),
+    )
 
 @admin.register(Administrador, site=admin_site)
 class AdministradorAdmin(ModelAdmin):
@@ -167,6 +211,13 @@ class AdministradorAdmin(ModelAdmin):
     list_display = ('_user', '_nombre', '_apellido', 'cantidad_empleados_contratados')
     search_fields = ('_user__username',)
     inlines = [DomicilioInline, TelefonoInline]
+    def has_delete_permission(self, request, obj=None):
+        return False
+    fieldsets = (
+        ('Administrador', {
+            'fields': ('_user', '_dni', '_cuil', '_nombre', '_apellido', '_fecha_nacimiento', '_zona_asignada', '_sueldo', '_estado', '_fecha_inicio', '_seniority', '_annos_experiencia', 'email')
+        }),
+    )
 
     def cantidad_empleados_contratados(self, obj):
         # Calcula la cantidad de empleados contratados para el administrador actual
@@ -180,6 +231,12 @@ class TurnoAdmin(ModelAdmin):
     warn_unsaved_form = True
     list_display = ('_hora_inicio', '_hora_fin')
     search_fields = ('_hora_inicio', '_hora_fin')
+    
+    fieldsets = (
+        ('Turno', {
+            'fields': ('_hora_inicio', '_hora_fin')
+        }),
+    )
 
 @admin.register(EmpleadoTieneTurno, site=admin_site)
 class EmpleadoTieneTurnoAdmin(ModelAdmin):
@@ -187,6 +244,11 @@ class EmpleadoTieneTurnoAdmin(ModelAdmin):
     warn_unsaved_form = True
     list_display = ('_turno', '_empleado')
     search_fields = ('_turno___hora_inicio', '_turno___hora_fin', '_empleado___user__username', '_empleado___nombre')
+    fieldsets = (
+        ('Asignación de Turno', {
+            'fields': ('_turno', '_empleado')
+        }),
+    )
 
 @admin.register(Contratacion, site=admin_site)
 class ContratacionAdmin(ModelAdmin):
@@ -195,5 +257,13 @@ class ContratacionAdmin(ModelAdmin):
     warn_unsaved_form = True
     list_display = ('_tipo', '_administrador', '_empleado', '_fecha_contratacion')
     search_fields = ('_administrador___nombre', '_empleado___nombre')
+    def has_delete_permission(self, request, obj=None):
+        return False
+    fieldsets = (
+        ('Gestión de Contratación', {
+            'fields': ('_tipo', '_administrador', '_empleado', '_fecha_contratacion')
+        }),
+    )
+
     class Media:
         js = ('js/reload_form.js',)
