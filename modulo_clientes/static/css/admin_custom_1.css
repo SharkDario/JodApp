@@ -1,0 +1,27 @@
+/* static/css/admin_custom.css */
+.field-_cantidad {
+    display: flex;
+    align-items: center;
+}
+
+.field-_cantidad input[type="number"] {
+    margin-right: 8px;
+}
+
+.field-_cantidad .button-group button {
+    background-color: #a1067d; 
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    margin: 0 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.field-_cantidad .button-group button:hover {
+    background-color: #45a049; 
+}

@@ -19,3 +19,20 @@ from clases.tipo_factura import TipoFactura
 from clases.transaccion_pago import TransaccionPago
 from clases.ticket_articulo import TicketArticulo
 from clases.ticket_entrada import TicketEntrada
+
+class RachaClientes(models.Model):
+    """
+    Modelo que se conecta a la vista view_cliente_racha
+    """
+    _cliente_id = models.IntegerField(primary_key=True, verbose_name="ID del Cliente")
+    nombre_cliente = models.CharField(db_column='nombre_cliente', max_length=255, verbose_name="Nombre")
+    apellido_cliente = models.CharField(db_column='apellido_cliente', max_length=255, verbose_name="Apellido")
+    ultima_compra = models.DateField(db_column='ultima_compra', verbose_name="Última Compra")
+    racha_actual = models.IntegerField(db_column='racha_actual', verbose_name="Racha Actual")
+    racha_vigente = models.IntegerField(db_column='racha_vigente', verbose_name="Racha Vigente")
+
+    class Meta:
+        managed = False
+        db_table = 'view_cliente_racha'
+        verbose_name = 'Cliente'
+        verbose_name_plural = 'Racha de Clientes'
