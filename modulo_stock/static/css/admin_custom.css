@@ -1,0 +1,27 @@
+/* Mostrar botones de aumentar/disminuir al lado del campo de stock */
+.field-_stock {
+    display: flex;
+    align-items: center;
+}
+
+.field-_stock input[type="number"] {
+    margin-right: 8px;
+}
+
+.field-_stock .button-group button {
+    background-color: #a1067d; /* Verde */
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    margin: 0 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.field-_stock .button-group button:hover {
+    background-color: #45a049; /* Verde más oscuro */
+}

@@ -5,12 +5,21 @@ from unfold.admin import ModelAdmin, TabularInline
 from .models import Proveedor, RemitoProveedor, MovimientoStock, Empleado, Producto, EstadoProducto, DetalleRemitoProveedor, Fabricacion, Marca, Trago
 from .forms import TragoAdminForm
 
+
+
 @admin.register(Proveedor, site=admin_site)
 class ProveedorAdmin(ModelAdmin):
     compressed_fields = True
     warn_unsaved_form = True
     list_display = ('_nombre', '_condicion_iva', '_dni', '_cuil')
     search_fields = ('_nombre', '_dni', '_cuil')
+    def has_delete_permission(self, request, obj=None):
+        return False
+    fieldsets = (
+        ('Proveedor', {
+            'fields': ('_user', '_dni', '_cuil', '_nombre', '_apellido', '_fecha_nacimiento', '_condicion_iva')
+        }),
+    )
 
 class DetalleRemitoProveedorInline(TabularInline):
     model = DetalleRemitoProveedor
@@ -24,6 +33,13 @@ class RemitoProveedorAdmin(ModelAdmin):
     list_display = ('_numero_remito', '_fecha_emision_remito', '_proveedor', '_empleado')
     search_fields = ('_numero_remito', '_proveedor___nombre')
     inlines = [DetalleRemitoProveedorInline]
+    def has_delete_permission(self, request, obj=None):
+        return False
+    fieldsets = (
+        ('Remito', {
+            'fields': ('_numero_remito', '_proveedor', '_empleado', '_fecha_emision_remito')
+        }),
+    )
 
     """def get_form(self, request, obj=None, **kwargs):
         # Sobreescribe get_form para pasar el request al formulario
@@ -37,7 +53,9 @@ class ProductoAdmin(ModelAdmin):
     compressed_fields = True
     warn_unsaved_form = True
     list_display = ('_nombre', '_marca', '_precio_unitario', '_stock')
-    search_fields = ('_nombre', '_marca')
+    search_fields = ('_nombre', '_precio_unitario', '_marca___nombre')
+    def has_delete_permission(self, request, obj=None):
+        return False
     def save_model(self, request, obj, form, change):
         #Sobreescribir el método save_model para registrar los cambios de stock realizados por un empleado.
         if change:  # Verifica si es un cambio y no una creación
@@ -60,6 +78,18 @@ class ProductoAdmin(ModelAdmin):
         # Guardar los cambios normalmente
         super().save_model(request, obj, form, change)
 
+    fieldsets = (
+        ('Producto', {
+            'fields': ('_nombre', '_volumen', '_precio_unitario', '_stock', '_stock_minimo', '_marca')
+        }),
+    )
+
+    class Media:
+        css = {
+            'all': ('css/admin_custom.css',)
+        }
+        js = ('js/admin_custom.js',)
+
 
 @admin.register(EstadoProducto, site=admin_site)
 class EstadoProductoAdmin(ModelAdmin):
@@ -67,13 +97,17 @@ class EstadoProductoAdmin(ModelAdmin):
     warn_unsaved_form = True
     list_display = ('_descripcion',)
     search_fields = ('_descripcion',)
+    def has_delete_permission(self, request, obj=None):
+        return False
 
 @admin.register(Marca, site=admin_site)
 class MarcaAdmin(ModelAdmin):
     compressed_fields = True
     warn_unsaved_form = True
     list_display = ('_nombre',)
-    search_fields = ('nombre',)
+    search_fields = ('_nombre',)
+    def has_delete_permission(self, request, obj=None):
+        return False
 
 class FabricacionInline(TabularInline):
     model = Fabricacion
@@ -85,16 +119,29 @@ class TragoAdmin(ModelAdmin):
     compressed_fields = True
     warn_unsaved_form = True
     list_display = ('_nombre', '_precio_unitario', '_stock', '_volumen')
-    search_fields = ('_nombre',)
+    search_fields = ('_nombre','_precio_unitario')
     inlines = [FabricacionInline]
+    def has_delete_permission(self, request, obj=None):
+        return False
+    fieldsets = (
+        ('Trago', {
+            'fields': ('_nombre', '_volumen', '_precio_unitario', '_stock', '_stock_minimo', '_tipo')
+        }),
+    )
 
 @admin.register(MovimientoStock, site=admin_site)
 class MovimientoStockAdmin(ModelAdmin):
     compressed_fields = True
     warn_unsaved_form = True
     list_display = ('_empleado', '_producto', '_cantidad', '_fecha_movimiento')
-    search_fields = ('_empleado__nombre', '_producto__nombre')
+    search_fields = ( '_producto___nombre','_empleado___nombre')
     
+    fieldsets = (
+        ('Movimiento de Stock', {
+            'fields': ('_empleado', '_producto', '_cantidad', '_fecha_movimiento')
+        }),
+    )
+
     # Deshabilitar la opción de agregar nuevos registros
     def has_add_permission(self, request):
         return False
