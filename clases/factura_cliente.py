@@ -14,10 +14,20 @@ class FacturaManager(models.Manager):
         return super().get_queryset()
     
     def get_latest_factura_numero_for_null_empleado(self):
+        # Usar select_for_update para bloquear el acceso concurrente
+        with transaction.atomic():
+            latest_factura = self.filter(_empleado__isnull=True).select_for_update().order_by('-_numero_factura').first()
+            return int(latest_factura.numero_factura) if latest_factura else 0
         # Toma el ultimo `_numero_factura` para `FacturaCliente` objetos donde `_empleado` es null.
         # si ninguna factura existe, retorna `0` asi pueda incrementar desde `1`.
-        latest_factura = self.filter(_empleado__isnull=True).order_by('-_numero_factura').first()
-        return int(latest_factura.numero_factura) if latest_factura else 0
+        #latest_factura = self.filter(_empleado__isnull=True).order_by('-_numero_factura').first()
+        #return int(latest_factura.numero_factura) if latest_factura else 0
+    
+    def get_facturas_by_cliente(self, cliente_id):
+        """
+        Retorna todas las facturas asociadas a un cliente específico
+        """
+        return self.filter(_cliente_id=cliente_id)
 
 class FacturaCliente(models.Model):
     _cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, verbose_name="Cliente", null=True, blank=True)
@@ -102,8 +112,17 @@ class FacturaCliente(models.Model):
         # Generate a new `numero_factura` if it's a new factura with no assigned `empleado`
         if self._empleado is None and not self.pk:  # Only for new instances where `_empleado` is null
             with transaction.atomic():
-                latest_numero = FacturaCliente.objects.get_latest_factura_numero_for_null_empleado()
-                self._numero_factura = str(latest_numero + 1)  # Increment and set the new number
+                # Bloquea las filas relacionadas para evitar condiciones de carrera
+                latest_factura = (
+                    FacturaCliente.objects.select_for_update()
+                    .filter(_empleado__isnull=True)
+                    .order_by('-pk')
+                    .first()
+                )
+                # Incrementa a partir del último `_numero_factura` encontrado
+                self._numero_factura = str(int(latest_factura.numero_factura) + 1) if latest_factura else "1"
+                #latest_numero = FacturaCliente.objects.get_latest_factura_numero_for_null_empleado()
+                #self._numero_factura = str(latest_numero + 1)  # Increment and set the new number
         
         super().save(*args, **kwargs)
 
