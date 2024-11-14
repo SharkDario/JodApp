@@ -42,6 +42,13 @@ class FacturaClienteAdmin(ModelAdmin):
     search_fields = ('_numero_factura', '_fecha_emision', '_tipo_factura', '_precio_total')
     inlines = [DetalleArticuloInline, DetalleEntradaInline, DetalleReservacionInline]
     actions = ['generar_qr_mercado_pago']
+    def has_delete_permission(self, request, obj=None):
+        return False
+    fieldsets = (
+        ('Factura', {
+            'fields': ('_numero_factura', '_cliente', '_empleado', '_medio_de_pago', '_tipo_factura', '_precio_total', '_pagado')
+        }),
+    )
 
     class Media:
         js = ('js/factura_cliente.js',)
@@ -86,6 +93,8 @@ class TipoFacturaAdmin(ModelAdmin):
     warn_unsaved_form = True
     list_display = ('descripcion', )
     search_fields = ('_descripcion', )
+    def has_delete_permission(self, request, obj=None):
+        return False
 
 @admin.register(MedioDePago, site=admin_site)
 class MedioDePAgoAdmin(ModelAdmin):
@@ -93,3 +102,5 @@ class MedioDePAgoAdmin(ModelAdmin):
     warn_unsaved_form = True
     list_display = ('descripcion', )
     search_fields = ('_descripcion', )
+    def has_delete_permission(self, request, obj=None):
+        return False
