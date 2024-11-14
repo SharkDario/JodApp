@@ -4,7 +4,7 @@ from django.db import connection
 from django.utils import timezone
 from unfold.admin import ModelAdmin, TabularInline
 from moduloLogin.admin import admin_site  # Importa el AdminSite personalizado de moduloLogin
-from .forms import FiestaForm, MesaForm, EntradaInlineForm
+from .forms import FiestaForm, MesaForm, EntradaInlineForm, MesaForm_2
 from .models import Fiesta, Entrada, Mesa, MesaTieneArticulo, MovimientoFiesta, Administrador
 
 class EntradaInline(TabularInline):
@@ -20,7 +20,7 @@ class MesaTieneArticuloInline(TabularInline):
     extra = 1
 
 class MesaInline(TabularInline):
-    form = MesaForm
+    form = MesaForm_2
     model = Mesa
     extra = 0
 
@@ -38,7 +38,8 @@ class FiestaAdmin(ModelAdmin):
     search_fields = ('_nombre', '_descripcion', '_categoria', '_vestimenta')
     
     inlines = [EntradaInline, MesaInline]
-
+    def has_delete_permission(self, request, obj=None):
+        return False
     fieldsets = (
         ('Fiesta', {
             'fields': ('_nombre', '_descripcion', '_edad_minima', '_edad_maxima', '_fecha','_vestimenta','_categoria','_cantidad_entrada_popular', '_cantidad_entrada_vip', 'latitud', 'longitud')
@@ -76,6 +77,13 @@ class MesaAdmin(ModelAdmin):
     warn_unsaved_form = True
     list_display = ('_fiesta', 'numero', '_categoria', '_capacidad', '_precio', '_disponibilidad')
     search_fields = ('_fiesta___nombre', '_categoria', '_capacidad', '_precio')
+
+    fieldsets = (
+        ('Mesa', {
+            'fields': ('_fiesta', 'numero', '_categoria', '_capacidad', '_precio', '_disponibilidad')
+        }),
+    )
+
     inlines = [MesaTieneArticuloInline]
 
 @admin.register(MovimientoFiesta, site=admin_site)
@@ -84,6 +92,12 @@ class MovimientoFiestaAdmin(ModelAdmin):
     warn_unsaved_form = True
     list_display = ('_administrador', '_descripcion', '_fiesta', '_fecha')
     search_fields = ('_administrador___nombre', '_fiesta___nombre', '_fecha', '_descripcion')
+
+    fieldsets = (
+        ('Movimiento de Fiesta', {
+            'fields': ('_fecha', '_administrador', '_fiesta', '_descripcion')
+        }),
+    )
     
     # Deshabilitar la opción de agregar nuevos registros
     def has_add_permission(self, request):

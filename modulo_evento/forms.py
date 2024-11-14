@@ -13,8 +13,28 @@ class FiestaForm(forms.ModelForm):
         }
     
     
-class MesaForm(forms.ModelForm):
+class MesaForm_2(forms.ModelForm):
     
+    class Meta:
+        model = Mesa
+        fields = '__all__'
+        widgets = {
+            '_top': forms.HiddenInput(),
+            '_left': forms.HiddenInput(),
+        }
+
+class MesaForm(forms.ModelForm):
+    numero = forms.IntegerField(
+        label= "Número de Mesa",
+        widget=UnfoldAdminIntegerFieldWidget(attrs={'readonly': 'readonly'}),
+        required=False  # Si no necesitas que sea requerido
+    )
+
+    def __init__(self, *args, **kwargs):
+        super(MesaForm, self).__init__(*args, **kwargs)
+        if self.instance:
+            self.fields['numero'].initial = self.instance.numero
+
     class Meta:
         model = Mesa
         fields = '__all__'
